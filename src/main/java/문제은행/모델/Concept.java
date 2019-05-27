@@ -2,25 +2,27 @@ package 문제은행.모델;
 
 import java.util.ArrayList;
 
+import 문제은행.Concept.vo.ConceptVo;
+
 public class Concept
 {
 	public String name;
-    public ArrayList<String> word;
-    public ArrayList<String> interpret;
+    public ArrayList<ConceptVo> conceptList;
     public int count;
 
     public Concept(String name)
     {
         this.name = name;
-        this.word = new ArrayList<>();
-        this.interpret = new ArrayList<>();
+        this.conceptList = new ArrayList<>();
         this.count = 0;
     }
 
     public void add_concept(String word, String interpret)
     {
-    	this.word.add(word);
-    	this.interpret.add(interpret);
+    	ConceptVo conceptVo = new ConceptVo();
+    	conceptVo.setWord(word);
+    	conceptVo.setInterpret(interpret);
+    	conceptList.add(conceptVo);
     	count++;
     }
 
@@ -30,8 +32,10 @@ public class Concept
         {
             if (count < 10)
             {
-                this.word.add(cc.word.get(i));
-                this.interpret.add(cc.interpret.get(i));
+            	ConceptVo conceptVo = new ConceptVo();
+            	conceptVo.setWord(cc.conceptList.get(i).getWord());
+            	conceptVo.setInterpret(cc.conceptList.get(i).getInterpret());
+            	conceptList.add(conceptVo);
                 count++;
             }
         }

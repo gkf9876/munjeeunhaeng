@@ -1,7 +1,5 @@
 package 문제은행;
 
-import javax.security.auth.Subject;
-
 import 문제은행.모델.Question_bank;
 
 class Controller

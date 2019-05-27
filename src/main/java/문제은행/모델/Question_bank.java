@@ -192,16 +192,16 @@ public class Question_bank
                         case INTERPRET:                                 //용어를 해석
                             for (int i = 0; i < cc.count; i++)
                             {
-                                question[i] = String.format(cc.word.get(ran[i]));
-                                answer[i] = String.format(cc.interpret.get(ran[i]));
+                                question[i] = String.format(cc.conceptList.get(ran[i]).getWord());
+                                answer[i] = String.format(cc.conceptList.get(ran[i]).getInterpret());
                                 count++;
                             }
                             break;
                         case INFERENCE:                                 //개념에 대한 용어 유추
                             for (int i = 0; i < cc.count; i++)
                             {
-                                question[i] = String.format(cc.interpret.get(ran[i]));
-                                answer[i] = String.format(cc.word.get(ran[i]));
+                                question[i] = String.format(cc.conceptList.get(ran[i]).getWord());
+                                answer[i] = String.format(cc.conceptList.get(ran[i]).getInterpret());
                                 count++;
                             }
                             break;
@@ -210,13 +210,13 @@ public class Question_bank
                             {
                                 if (rd.nextInt(2) == 1)
                                 {
-                                    question[i] = String.format(cc.word.get(ran[i]));
-                                    answer[i] = String.format(cc.interpret.get(ran[i]));
+                                    question[i] = String.format(cc.conceptList.get(ran[i]).getWord());
+                                    answer[i] = String.format(cc.conceptList.get(ran[i]).getInterpret());
                                 }
                                 else
                                 {
-                                    question[i] = String.format(cc.interpret.get(ran[i]));
-                                    answer[i] = String.format(cc.word.get(ran[i]));
+                                    question[i] = String.format(cc.conceptList.get(ran[i]).getInterpret());
+                                    answer[i] = String.format(cc.conceptList.get(ran[i]).getWord());
                                 }
                                 count++;
                             }
@@ -395,16 +395,16 @@ public class Question_bank
                         case INTERPRET:
                             for (int i = 0; i < tr.count; i++)
                             {
-                                question[i] = String.format(tr.word.get(ran[i]));
-                                answer[i] = String.format(tr.interpret.get(ran[i]));
+                                question[i] = String.format(tr.conceptList.get(ran[i]).getWord());
+                                answer[i] = String.format(tr.conceptList.get(ran[i]).getInterpret());
                                 count++;
                             }
                             break;
                         case INFERENCE:
                             for (int i = 0; i < tr.count; i++)
                             {
-                                question[i] = String.format(tr.interpret.get(ran[i]));
-                                answer[i] = String.format(tr.word.get(ran[i]));
+                                question[i] = String.format(tr.conceptList.get(ran[i]).getInterpret());
+                                answer[i] = String.format(tr.conceptList.get(ran[i]).getWord());
                                 count++;
                             }
                             break;
@@ -413,13 +413,13 @@ public class Question_bank
                             {
                                 if (rd.nextInt(2) == 1)
                                 {
-                                    question[i] = String.format(tr.word.get(ran[i]));
-                                    answer[i] = String.format(tr.interpret.get(ran[i]));
+                                    question[i] = String.format(tr.conceptList.get(ran[i]).getWord());
+                                    answer[i] = String.format(tr.conceptList.get(ran[i]).getInterpret());
                                 }
                                 else
                                 {
-                                    question[i] = String.format(tr.interpret.get(ran[i]));
-                                    answer[i] = String.format(tr.word.get(ran[i]));
+                                    question[i] = String.format(tr.conceptList.get(ran[i]).getInterpret());
+                                    answer[i] = String.format(tr.conceptList.get(ran[i]).getWord());
                                 }
                                 count++;
                             }
