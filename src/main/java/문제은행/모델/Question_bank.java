@@ -102,16 +102,16 @@ public class Question_bank
                         case WORDTOTRANSLATE:
                             for (int i = 0; i < tr.count; i++)
                             {
-                                question[i] = String.format(tr.word.get(ran[i]));
-                                answer[i] = String.format(tr.translate.get(ran[i]));
+                                question[i] = String.format(tr.termList.get(ran[i]).getWord());
+                                answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
                                 count++;
                             }
                             break;
                         case TRANSLATETOWORD:
                             for (int i = 0; i < tr.count; i++)
                             {
-                                question[i] = String.format(tr.translate.get(ran[i]));
-                                answer[i] = String.format(tr.word.get(ran[i]));
+                                question[i] = String.format(tr.termList.get(ran[i]).getTranslate());
+                                answer[i] = String.format(tr.termList.get(ran[i]).getWord());
                                 count++;
                             }
                             break;
@@ -120,13 +120,13 @@ public class Question_bank
                             {
                                 if((int)(Math.random() % 2) == 1)
                                 {
-                                    question[i] = String.format(tr.word.get(ran[i]));
-                                    answer[i] = String.format(tr.translate.get(ran[i]));
+                                    question[i] = String.format(tr.termList.get(ran[i]).getWord());
+                                    answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
                                 }
                                 else
                                 {
-                                    question[i] = String.format(tr.translate.get(ran[i]));
-                                    answer[i] = String.format(tr.word.get(ran[i]));
+                                    question[i] = String.format(tr.termList.get(ran[i]).getTranslate());
+                                    answer[i] = String.format(tr.termList.get(ran[i]).getWord());
                                 }
                                 count++;
                             }
@@ -134,8 +134,8 @@ public class Question_bank
                         case EXAMPLE_SENTENCE:
                             for (int i = 0; i < tr.count; i++)
                             {
-                                question[i] = "\n 예문 : " + String.format(tr.exercise.get(ran[i])) + "\r\n" + " 단어 : " + String.format(tr.word.get(ran[i]));
-                                answer[i] = String.format(tr.translate.get(ran[i]));
+                                question[i] = "\n 예문 : " + String.format(tr.termList.get(ran[i]).getExercise()) + "\r\n" + " 단어 : " + String.format(tr.termList.get(ran[i]).getWord());
+                                answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
                                 count++;
                             }
                             break;
@@ -143,10 +143,10 @@ public class Question_bank
                             int k = 0;
                             for (int i = 0; i < tr.count; i++)
                             {
-                                if (tr.grammar_question.get(ran[i]) != null)
+                                if (tr.termList.get(ran[i]).getGrammarQuestion() != null)
                                 {
-                                    question[k] = String.format(tr.grammar_question.get(ran[i]));
-                                    answer[k++] = String.format(tr.grammar_answer.get(ran[i]));
+                                    question[k] = String.format(tr.termList.get(ran[i]).getGrammarQuestion());
+                                    answer[k++] = String.format(tr.termList.get(ran[i]).getGrammarAnswer());
                                     count++;
                                 }
                             }
@@ -288,16 +288,16 @@ public class Question_bank
                         case WORDTOTRANSLATE:
                             for (int i = 0; i < tr.count; i++)
                             {
-                                question[i] = String.format(tr.word.get(ran[i]));
-                                answer[i] = String.format(tr.translate.get(ran[i]));
+                                question[i] = String.format(tr.termList.get(ran[i]).getWord());
+                                answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
                                 count++;
                             }
                             break;
                         case TRANSLATETOWORD:
                             for (int i = 0; i < tr.count; i++)
                             {
-                                question[i] = String.format(tr.translate.get(ran[i]));
-                                answer[i] = String.format(tr.word.get(ran[i]));
+                                question[i] = String.format(tr.termList.get(ran[i]).getTranslate());
+                                answer[i] = String.format(tr.termList.get(ran[i]).getWord());
                                 count++;
                             }
                             break;
@@ -306,13 +306,13 @@ public class Question_bank
                             {
                                 if(rd.nextInt(2) == 1)
                                 {
-                                    question[i] = String.format(tr.word.get(ran[i]));
-                                    answer[i] = String.format(tr.translate.get(ran[i]));
+                                    question[i] = String.format(tr.termList.get(ran[i]).getWord());
+                                    answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
                                 }
                                 else
                                 {
-                                    question[i] = String.format(tr.translate.get(ran[i]));
-                                    answer[i] = String.format(tr.word.get(ran[i]));
+                                    question[i] = String.format(tr.termList.get(ran[i]).getTranslate());
+                                    answer[i] = String.format(tr.termList.get(ran[i]).getWord());
                                 }
                                 count++;
                             }
@@ -321,10 +321,10 @@ public class Question_bank
                             int j = 0;
                             for (int i = 0; i < tr.count; i++)
                             {
-                                if (tr.exercise.get(ran[i]) != null)
+                                if (tr.termList.get(ran[i]).getExercise() != null)
                                 {
-                                    question[j] = "\n 예문 : " + String.format(tr.exercise.get(ran[i])) + "\r\n" + " 단어 : " + String.format(tr.word.get(ran[i]));
-                                    answer[j++] = String.format(tr.translate.get(ran[i]));
+                                    question[j] = "\n 예문 : " + String.format(tr.termList.get(ran[i]).getExercise()) + "\r\n" + " 단어 : " + String.format(tr.termList.get(ran[i]).getWord());
+                                    answer[j++] = String.format(tr.termList.get(ran[i]).getTranslate());
                                     count++;
                                 }
                             }
@@ -335,10 +335,10 @@ public class Question_bank
                             int k = 0;
                             for (int i = 0; i < tr.count; i++)
                             {
-                                if (tr.grammar_question.get(ran[i]) != null)
+                                if (tr.termList.get(ran[i]).getGrammarQuestion() != null)
                                 {
-                                    question[k] = String.format(tr.grammar_question.get(ran[i]));
-                                    answer[k++] = String.format(tr.grammar_answer.get(ran[i]));
+                                    question[k] = String.format(tr.termList.get(ran[i]).getGrammarQuestion());
+                                    answer[k++] = String.format(tr.termList.get(ran[i]).getGrammarAnswer());
                                     count++;
                                 }
                             }

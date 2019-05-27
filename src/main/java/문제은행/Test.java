@@ -2,15 +2,15 @@ package 문제은행;
 
 import java.awt.Button;
 import java.awt.Choice;
-import java.awt.Frame;
 import java.awt.Label;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+import javax.swing.JFrame;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import 문제은행.모델.Question_bank;
 
@@ -22,9 +22,10 @@ public class Test
 	{
 		Controller con = new Controller();
 		
-		Frame f = new Frame("문제은행");
-		f.setSize(550, 580);
+		JFrame f = new JFrame("문제은행");
+		f.setSize(550, 600);
 		f.setLayout(null);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Label typeName = new Label("타입");
 		typeName.setSize(40, 40);
@@ -94,7 +95,7 @@ public class Test
 		question.setLineWrap(true);
 		f.add(question);
 		
-		TextField input = new TextField();
+		JTextField input = new JTextField();
 		input.setSize(380, 40);
 		input.setLocation(20, 500);
 		f.add(input);
