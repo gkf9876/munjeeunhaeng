@@ -1,8 +1,8 @@
 package 문제은행.Concept.vo;
 
 public class ConceptVo {
-	String word;
-	String interpret;
+	private String word;
+	private String interpret;
 	
 	public String getWord() {
 		return word;
