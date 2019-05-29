@@ -21,16 +21,17 @@ public class Question_bank
         WORDTOTRANSLATE, TRANSLATETOWORD, RANDOM, GRAMMAR, EXAMPLE_SENTENCE,        //용어 유형 키워드
         INTERPRET, INFERENCE,                                                       //개념 유형 키워드
         TERM, CONCEPT,
-        ENGLISH_VOCA, POWER_ELECTRONICS,                                                              //용어 과목 키워드
+        ENGLISH_VOCA, POWER_ELECTRONICS, JAPAN_VOCA,                                                              //용어 과목 키워드
         ENGINEER_INFORMATION_PROCESSING                                             //개념 과목 키워드
     }
 
     public Question_bank()
     {
-        sj = new Subject[3];
+        sj = new Subject[4];
         sj[0] = new English_voca("해커스", Keyword.ENGLISH_VOCA);
         sj[1] = new Engineer_Information_Processing("정보처리기사", Keyword.ENGINEER_INFORMATION_PROCESSING);
         sj[2] = new Power_Electronics("전력전자공학", Keyword.POWER_ELECTRONICS);
+        sj[3] = new Jappan_voca("일본어 공부", Keyword.JAPAN_VOCA);
         count = 0;
         rd = new Random();
     }
@@ -72,6 +73,10 @@ public class Question_bank
                             break;
                         case POWER_ELECTRONICS:
                         	tr = getSubject(Keyword.POWER_ELECTRONICS).HT[chapter];
+                        	this.name = String.format(tr.name);
+                        	break;
+                        case JAPAN_VOCA:
+                        	tr = getSubject(Keyword.JAPAN_VOCA).HT[chapter];
                         	this.name = String.format(tr.name);
                         	break;
                         default:
@@ -257,6 +262,14 @@ public class Question_bank
 
                             for (int i = start_chapter; i < end_chapter; i++)
                                 tr.add_term(((Power_Electronics)sj[2]).HT[i]);
+
+                            this.name = String.format(tr.name);
+                            break;
+                        case JAPAN_VOCA:
+                            tr = new Term("voca");
+
+                            for (int i = start_chapter; i < end_chapter; i++)
+                                tr.add_term(((Jappan_voca)sj[0]).HT[i]);
 
                             this.name = String.format(tr.name);
                             break;

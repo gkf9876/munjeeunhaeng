@@ -2,6 +2,7 @@ package 문제은행;
 
 import java.awt.Button;
 import java.awt.Choice;
+import java.awt.Font;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +10,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -44,6 +46,7 @@ public class Test
 		subject.setLocation(80, 60);
 		subject.add("ENGLISH_VOCA");
 		subject.add("POWER_ELECTRONICS");
+		subject.add("JAPAN_VOCA");
 		
 		Label chapterName = new Label("챕터");
 		chapterName.setSize(40, 40);
@@ -93,7 +96,14 @@ public class Test
 		question.setSize(500, 300);
 		question.setLocation(20, 180);
 		question.setLineWrap(true);
-		f.add(question);
+
+	    Font font = new Font("arian", Font.PLAIN, 20);
+	    question.setFont(font);
+	    
+		JScrollPane scrollPane = new JScrollPane(question, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setSize(500, 300);
+		scrollPane.setLocation(20, 180);
+		f.add(scrollPane);
 		
 		JTextField input = new JTextField();
 		input.setSize(380, 40);
@@ -115,6 +125,7 @@ public class Test
 	                    subject.removeAll();
 	                    subject.add("ENGLISH_VOCA");
 	                    subject.add("POWER_ELECTRONICS");
+	                    subject.add("JAPAN_VOCA");
 
 	                    form.removeAll();
 	                    form.add("WORDTOTRANSLATE");
@@ -163,6 +174,13 @@ public class Test
 			                	chapter.removeAll();
 			                	for(int i=1; i<(con.pb.getSubject(Question_bank.Keyword.POWER_ELECTRONICS)).HT.length; i++)
 			                		chapter.add((con.pb.getSubject(Question_bank.Keyword.POWER_ELECTRONICS)).HT[i].name);
+			                	
+			                	chapter.add("all");
+			                	break;
+			                case "JAPAN_VOCA":
+			                	chapter.removeAll();
+			                	for(int i=1; i<(con.pb.getSubject(Question_bank.Keyword.JAPAN_VOCA)).HT.length; i++)
+			                		chapter.add((con.pb.getSubject(Question_bank.Keyword.JAPAN_VOCA)).HT[i].name);
 			                	
 			                	chapter.add("all");
 			                	break;

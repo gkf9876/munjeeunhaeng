@@ -160,6 +160,9 @@ class Controller
             case "POWER_ELECTRONICS":
             	SJ = pb.getSubject(Question_bank.Keyword.POWER_ELECTRONICS);
             	break;
+            case "JAPAN_VOCA":
+                SJ = pb.getSubject(Question_bank.Keyword.JAPAN_VOCA);
+                break;
             default:
                 SJ = null;
                 break;
