@@ -44,9 +44,9 @@ public class Test
 		Choice subject = new Choice();
 		subject.setSize(100, 40);
 		subject.setLocation(80, 60);
+		subject.add("JAPAN_VOCA");
 		subject.add("ENGLISH_VOCA");
 		subject.add("POWER_ELECTRONICS");
-		subject.add("JAPAN_VOCA");
 		
 		Label chapterName = new Label("ц╘ем");
 		chapterName.setSize(40, 40);

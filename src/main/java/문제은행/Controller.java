@@ -21,73 +21,20 @@ class Controller
 
     public boolean stringCompare(String long_str, String short_str)
     {
-        int count = 0;
-        String arr1;            //짧은 문자열
-        String arr2;            //긴 문자열
-
-        String stra = "";
-        String strb = "";
-
-        if (long_str == "" && short_str == "")
-            return true;
-        else if (long_str == "" || short_str == "")
-            return false;
-
-        if (long_str == null || short_str == null)
-            return false;
-
-        /////////////////////////////////////////////스페이스바와 개행문자를 무시한다!!
-        for (int i = 0; i < long_str.length(); i++)
-        {
-            if (long_str.charAt(i) != ' ' && long_str.charAt(i) != '\n')
-            {
-                stra += long_str.charAt(i);
-            }
-        }
-
-        for (int i = 0; i < short_str.length(); i++)
-        {
-            if (short_str.charAt(i) != ' ' && short_str.charAt(i) != '\n')
-            {
-                strb += short_str.charAt(i);
-            }
-        }
-        ////////////////////////////////////////////
-
-        if (stra.length() < strb.length())
-        {
-            arr1 = strb;
-            arr2 = stra;
-        }
-        else
-        {
-            arr1 = stra;
-            arr2 = strb;
-        }
-
-        for (int i = 0; i <= arr1.length() - arr2.length(); i++)
-        {
-            if (arr1.charAt(i) == arr2.charAt(0))
-            {
-                for (int j = 0; j < arr2.length(); j++)
-                {
-                    if (arr1.charAt(i + j) == arr2.charAt(j))
-                    {
-                        count++;
-                        if (count == arr2.length())
-                            return true;
-                        continue;
-                    }
-                    else
-                    {
-                        count = 0;
-                        break;
-                    }
-                }
-            }
-        }
-        return false;
-    }              //하나의 문자열이 다른 문자열에 포함이 되는지 확인
+    	if(long_str != null && short_str != null) {
+    		String longStr = long_str.trim();
+    		String shortStr = short_str.trim();
+    		
+    		if(longStr != "" && shortStr != "") {
+        		if(longStr.equals(shortStr) || shortStr.contains(longStr))
+        			return true;
+        		else
+        			return false;
+    		}else
+    			return false;
+    	}else
+    		return false;
+    }
 
     public String Answer_input(String type, String str)
     {
