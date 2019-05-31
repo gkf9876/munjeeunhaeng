@@ -1,4 +1,4 @@
-package ¹®Á¦ÀºÇà.¸ğµ¨;
+ï»¿package ë¬¸ì œì€í–‰.ëª¨ë¸;
 
 import java.util.Random;
 
@@ -14,24 +14,24 @@ public class Question_bank
 
 	public String[] question;
     public String[] answer;
-    public int count;                                                               //¹®Á¦ °¹¼ö.
+    public int count;                                                               //ë¬¸ì œ ê°¯ìˆ˜.
 
     public enum Keyword
     {
-        WORDTOTRANSLATE, TRANSLATETOWORD, RANDOM, GRAMMAR, EXAMPLE_SENTENCE,        //¿ë¾î À¯Çü Å°¿öµå
-        INTERPRET, INFERENCE,                                                       //°³³ä À¯Çü Å°¿öµå
+        WORDTOTRANSLATE, TRANSLATETOWORD, RANDOM, GRAMMAR, EXAMPLE_SENTENCE,        //ìš©ì–´ ìœ í˜• í‚¤ì›Œë“œ
+        INTERPRET, INFERENCE,                                                       //ê°œë… ìœ í˜• í‚¤ì›Œë“œ
         TERM, CONCEPT,
-        ENGLISH_VOCA, POWER_ELECTRONICS, JAPAN_VOCA,                                                              //¿ë¾î °ú¸ñ Å°¿öµå
-        ENGINEER_INFORMATION_PROCESSING                                             //°³³ä °ú¸ñ Å°¿öµå
+        ENGLISH_VOCA, POWER_ELECTRONICS, JAPAN_VOCA,                                                              //ìš©ì–´ ê³¼ëª© í‚¤ì›Œë“œ
+        ENGINEER_INFORMATION_PROCESSING                                             //ê°œë… ê³¼ëª© í‚¤ì›Œë“œ
     }
 
     public Question_bank()
     {
         sj = new Subject[4];
-        sj[0] = new English_voca("ÇØÄ¿½º", Keyword.ENGLISH_VOCA);
-        sj[1] = new Engineer_Information_Processing("Á¤º¸Ã³¸®±â»ç", Keyword.ENGINEER_INFORMATION_PROCESSING);
-        sj[2] = new Power_Electronics("Àü·ÂÀüÀÚ°øÇĞ", Keyword.POWER_ELECTRONICS);
-        sj[3] = new Jappan_voca("ÀÏº»¾î °øºÎ", Keyword.JAPAN_VOCA);
+        sj[0] = new English_voca("í•´ì»¤ìŠ¤", Keyword.ENGLISH_VOCA);
+        sj[1] = new Engineer_Information_Processing("ì •ë³´ì²˜ë¦¬ê¸°ì‚¬", Keyword.ENGINEER_INFORMATION_PROCESSING);
+        sj[2] = new Power_Electronics("ì „ë ¥ì „ìê³µí•™", Keyword.POWER_ELECTRONICS);
+        sj[3] = new Jappan_voca("ì¼ë³¸ì–´ ê³µë¶€", Keyword.JAPAN_VOCA);
         count = 0;
         rd = new Random();
     }
@@ -139,7 +139,7 @@ public class Question_bank
                         case EXAMPLE_SENTENCE:
                             for (int i = 0; i < tr.getCount(); i++)
                             {
-                                question[i] = "\n ¿¹¹® : " + String.format(tr.termList.get(ran[i]).getExercise()) + "\r\n" + " ´Ü¾î : " + String.format(tr.termList.get(ran[i]).getWord());
+                                question[i] = "\n ì˜ˆë¬¸ : " + String.format(tr.termList.get(ran[i]).getExercise()) + "\r\n" + " ë‹¨ì–´ : " + String.format(tr.termList.get(ran[i]).getWord());
                                 answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
                                 count++;
                             }
@@ -194,7 +194,7 @@ public class Question_bank
 
                     switch (form)
                     {
-                        case INTERPRET:                                 //¿ë¾î¸¦ ÇØ¼®
+                        case INTERPRET:                                 //ìš©ì–´ë¥¼ í•´ì„
                             for (int i = 0; i < cc.count; i++)
                             {
                                 question[i] = String.format(cc.conceptList.get(ran[i]).getWord());
@@ -202,7 +202,7 @@ public class Question_bank
                                 count++;
                             }
                             break;
-                        case INFERENCE:                                 //°³³ä¿¡ ´ëÇÑ ¿ë¾î À¯Ãß
+                        case INFERENCE:                                 //ê°œë…ì— ëŒ€í•œ ìš©ì–´ ìœ ì¶”
                             for (int i = 0; i < cc.count; i++)
                             {
                                 question[i] = String.format(cc.conceptList.get(ran[i]).getWord());
@@ -336,7 +336,7 @@ public class Question_bank
                             {
                                 if (tr.termList.get(ran[i]).getExercise() != null)
                                 {
-                                    question[j] = "\n ¿¹¹® : " + String.format(tr.termList.get(ran[i]).getExercise()) + "\r\n" + " ´Ü¾î : " + String.format(tr.termList.get(ran[i]).getWord());
+                                    question[j] = "\n ì˜ˆë¬¸ : " + String.format(tr.termList.get(ran[i]).getExercise()) + "\r\n" + " ë‹¨ì–´ : " + String.format(tr.termList.get(ran[i]).getWord());
                                     answer[j++] = String.format(tr.termList.get(ran[i]).getTranslate());
                                     count++;
                                 }
@@ -368,7 +368,7 @@ public class Question_bank
                     switch (subject)
                     {
                         case ENGINEER_INFORMATION_PROCESSING:
-                            tr = new Concept("Á¤º¸Ã³¸®");
+                            tr = new Concept("ì •ë³´ì²˜ë¦¬");
 
                             for (int i = start_chapter; i < end_chapter; i++)
                                 tr.setConceptList(((Engineer_Information_Processing)sj[1]).CT[i].getConceptList());
@@ -376,7 +376,7 @@ public class Question_bank
                             this.name = String.format(tr.name);
                             break;
                         default:
-                            tr = new Concept("Á¤º¸Ã³¸®");
+                            tr = new Concept("ì •ë³´ì²˜ë¦¬");
 
                             for (int i = start_chapter; i < end_chapter; i++)
                                 tr.setConceptList(((Engineer_Information_Processing)sj[1]).CT[i].getConceptList());

@@ -1,4 +1,4 @@
-package ¹®Á¦ÀºÇà.Concept.vo;
+ï»¿package ë¬¸ì œì€í–‰.Concept.vo;
 
 public class ConceptVo {
 	private String word;

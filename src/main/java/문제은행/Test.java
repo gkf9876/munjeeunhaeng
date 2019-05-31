@@ -1,4 +1,4 @@
-package ¹®Á¦ÀºÇà;
+ï»¿package ë¬¸ì œì€í–‰;
 
 import java.awt.Button;
 import java.awt.Choice;
@@ -14,22 +14,22 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import ¹®Á¦ÀºÇà.¸ğµ¨.Question_bank;
+import ë¬¸ì œì€í–‰.ëª¨ë¸.Question_bank;
 
 public class Test
 {
-    public static int count = 0;                      //°³³ä ¹®Á¦ ³¾¶§ »ç¿ë.
+    public static int count = 0;                      //ê°œë… ë¬¸ì œ ë‚¼ë•Œ ì‚¬ìš©.
 	
 	public static void main(String[] args)
 	{
 		Controller con = new Controller();
 		
-		JFrame f = new JFrame("¹®Á¦ÀºÇà");
+		JFrame f = new JFrame("ë¬¸ì œì€í–‰");
 		f.setSize(550, 600);
 		f.setLayout(null);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		Label typeName = new Label("Å¸ÀÔ");
+		Label typeName = new Label("íƒ€ì…");
 		typeName.setSize(40, 40);
 		typeName.setLocation(20, 20);
 		Choice type = new Choice();
@@ -38,7 +38,7 @@ public class Test
 		type.add("TERM");
 		type.add("CONCEPT");
 		
-		Label subjectName = new Label("°ú¸ñ");
+		Label subjectName = new Label("ê³¼ëª©");
 		subjectName.setSize(40, 40);
 		subjectName.setLocation(20, 60);
 		Choice subject = new Choice();
@@ -48,7 +48,7 @@ public class Test
 		subject.add("ENGLISH_VOCA");
 		subject.add("POWER_ELECTRONICS");
 		
-		Label chapterName = new Label("Ã©ÅÍ");
+		Label chapterName = new Label("ì±•í„°");
 		chapterName.setSize(40, 40);
 		chapterName.setLocation(20, 100);
 		Choice chapter = new Choice();
@@ -60,7 +60,7 @@ public class Test
 		}
 		chapter.add("all");
 		
-		Label formName = new Label("À¯Çü");
+		Label formName = new Label("ìœ í˜•");
 		formName.setSize(40, 40);
 		formName.setLocation(20, 140);
 		Choice form = new Choice();
@@ -73,12 +73,12 @@ public class Test
         form.add("GRAMMAR");
 		
 		
-		Button solve = new Button("¹®Á¦Ç®±â");
+		Button solve = new Button("ë¬¸ì œí’€ê¸°");
 		solve.setSize(100, 40);
 		solve.setLocation(200,  140);
 		f.add(solve);
 		
-		Button marking = new Button("Ã¤Á¡");
+		Button marking = new Button("ì±„ì ");
 		marking.setSize(100, 40);
 		marking.setLocation(320,  140);
 		f.add(marking);
@@ -110,7 +110,7 @@ public class Test
 		input.setLocation(20, 500);
 		f.add(input);
 		
-		Button input_button = new Button("ÀÔ·Â");
+		Button input_button = new Button("ì…ë ¥");
 		input_button.setSize(100, 40);
 		input_button.setLocation(420,  500);
 		f.add(input_button);
@@ -219,7 +219,7 @@ public class Test
 			            }
 			            else
 			            {
-			                //°³³ä¹®Á¦¿¡ ¸Â°Ô ´äÀ» ÀûÀ¸¸é ¹Ù·Î ´äÀÌ ¸Â´ÂÁö È®ÀÎÇÒ ¼ö ÀÖ°Ô Çß´Ù.
+			                //ê°œë…ë¬¸ì œì— ë§ê²Œ ë‹µì„ ì ìœ¼ë©´ ë°”ë¡œ ë‹µì´ ë§ëŠ”ì§€ í™•ì¸í•  ìˆ˜ ìˆê²Œ í–ˆë‹¤.
 			                if (count == 0)
 			                {
 			                    question.append(con.Answer_input(type.getSelectedItem(), input.getText()));
@@ -248,7 +248,7 @@ public class Test
 			            }
 			            else
 			            {
-			                //°³³ä¹®Á¦¿¡ ¸Â°Ô ´äÀ» ÀûÀ¸¸é ¹Ù·Î ´äÀÌ ¸Â´ÂÁö È®ÀÎÇÒ ¼ö ÀÖ°Ô Çß´Ù.
+			                //ê°œë…ë¬¸ì œì— ë§ê²Œ ë‹µì„ ì ìœ¼ë©´ ë°”ë¡œ ë‹µì´ ë§ëŠ”ì§€ í™•ì¸í•  ìˆ˜ ìˆê²Œ í–ˆë‹¤.
 			                if (count == 0)
 			                {
 			                    question.append(con.Answer_input(type.getSelectedItem(), input.getText()));

@@ -1,9 +1,9 @@
-package №®Б¦АєЗа.ёрµЁ;
+п»їpackage л¬ём њмќЂн–‰.лЄЁлЌё;
 
 import java.util.ArrayList;
 
-import №®Б¦АєЗа.Concept.vo.ConceptVo;
-import №®Б¦АєЗа.Term.vo.TermVo;
+import л¬ём њмќЂн–‰.Concept.vo.ConceptVo;
+import л¬ём њмќЂн–‰.Term.vo.TermVo;
 
 public class Concept
 {

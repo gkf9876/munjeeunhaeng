@@ -1,8 +1,8 @@
-package ¹®Á¦ÀºÇà.¸ğµ¨;
+ï»¿package ë¬¸ì œì€í–‰.ëª¨ë¸;
 
 import java.util.ArrayList;
 
-import ¹®Á¦ÀºÇà.Term.vo.TermVo;
+import ë¬¸ì œì€í–‰.Term.vo.TermVo;
 
 public class Term
 {

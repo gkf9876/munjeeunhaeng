@@ -1,6 +1,6 @@
-package ¹®Á¦ÀºÇà.¸ğµ¨;
+ï»¿package ë¬¸ì œì€í–‰.ëª¨ë¸;
 
-import ¹®Á¦ÀºÇà.¸ğµ¨.Question_bank.Keyword;
+import ë¬¸ì œì€í–‰.ëª¨ë¸.Question_bank.Keyword;
 
 class English_voca extends Subject
 {
@@ -34,1274 +34,1274 @@ class English_voca extends Subject
         HT[24] = new Term("24");
 
 		/*
-		 * HT[1].add_term("applicant", "n.Áö¿øÀÚ, ½ÅÃ»ÀÚ",
+		 * HT[1].add_term("applicant", "n.ì§€ì›ì, ì‹ ì²­ì",
 		 * "Each applicant is required to submit a resume.");
-		 * HT[1].add_term("apprehensive", "a.°ÆÁ¤ÇÏ´Â, ¿°·ÁÇÏ´Â",
+		 * HT[1].add_term("apprehensive", "a.ê±±ì •í•˜ëŠ”, ì—¼ë ¤í•˜ëŠ”",
 		 * "Most people feel apprehensive before an important job interview.");
-		 * HT[1].add_term("aptitude", "n.Àç´É, ¼ÒÁú",
+		 * HT[1].add_term("aptitude", "n.ì¬ëŠ¥, ì†Œì§ˆ",
 		 * "The applicant should demonstarte aptitude in the following areas.");
-		 * HT[1].add_term("associate", "v.°ü·Ã½ÃÅ°´Ù",
+		 * HT[1].add_term("associate", "v.ê´€ë ¨ì‹œí‚¤ë‹¤",
 		 * "Two of the applicants were associated with a rival firm.",
 		 * "Two of the applicants were associated [    ] a rival firm.",
-		 * "with\r\nbe associated with : ~¿Í °ü·ÃµÇ´Ù \r\nin association with : ~¿Í Á¦ÈŞÇÏ¿©");
-		 * HT[1].add_term("bilingual", "a.2°³ ±¹¾î¸¦ ±¸»çÇÏ´Â",
+		 * "with\r\nbe associated with : ~ì™€ ê´€ë ¨ë˜ë‹¤ \r\nin association with : ~ì™€ ì œíœ´í•˜ì—¬");
+		 * HT[1].add_term("bilingual", "a.2ê°œ êµ­ì–´ë¥¼ êµ¬ì‚¬í•˜ëŠ”",
 		 * "Avid Pharmaceuticals is seeking a bilingual call center manager.");
-		 * HT[1].add_term("broad", "a.Æø³ĞÀº",
+		 * HT[1].add_term("broad", "a.í­ë„“ì€",
 		 * "a broad knowledge of marketing strategies."); HT[1].add_term("candidate",
-		 * "n.Áö¿ø, ÈÄº¸ÀÚ", "Five candidates will be selected for final interviews.");
-		 * HT[1].add_term("certification", "n.Áõ¸í¼­, Áõ¸í", "accounting certification");
-		 * HT[1].add_term("commensurate", "a.ºñ·ÊÇÑ, ¾×¼ö°¡ »óÀÀÇÏ´Â",
+		 * "n.ì§€ì›, í›„ë³´ì", "Five candidates will be selected for final interviews.");
+		 * HT[1].add_term("certification", "n.ì¦ëª…ì„œ, ì¦ëª…", "accounting certification");
+		 * HT[1].add_term("commensurate", "a.ë¹„ë¡€í•œ, ì•¡ìˆ˜ê°€ ìƒì‘í•˜ëŠ”",
 		 * "Wages will be commensurate with experience and qualifications.",
 		 * "Wages will be commensurate [    ] experience and qualifications.",
-		 * "with\r\nbe commensurate with : ~¿¡ ºñ·ÊÇÏ´Ù"); HT[1].add_term("confidence",
-		 * "n.È®½Å, ÀÚ½Å;½ÅÀÓ",
+		 * "with\r\nbe commensurate with : ~ì— ë¹„ë¡€í•˜ë‹¤"); HT[1].add_term("confidence",
+		 * "n.í™•ì‹ , ìì‹ ;ì‹ ì„",
 		 * "We have confidence that she can handle the position.\r\nThe recommendations showed confidence in his abilities."
 		 * , "The recommendations showed confidence [  ] his abilities.",
-		 * "in\r\nconfidence in : ~¿¡ ´ëÇÑ È®½Å, ½ÅÀÓ\r\nin confidence : ºñ¹Ğ·Î");
-		 * HT[1].add_term("consultant", "n.°í¹®, ÄÁ¼³ÅÏÆ®",
+		 * "in\r\nconfidence in : ~ì— ëŒ€í•œ í™•ì‹ , ì‹ ì„\r\nin confidence : ë¹„ë°€ë¡œ");
+		 * HT[1].add_term("consultant", "n.ê³ ë¬¸, ì»¨ì„¤í„´íŠ¸",
 		 * "Emma currently works in London as an interior design consultant.",
 		 * "I'll have to consult [    ] Mr.Long first.",
-		 * "with\r\nconsult + Àü¹®°¡ : ~¿Í »ó´ãÇÏ´Ù\r\nconsult with + ´ëµîÇÑ »ó´ë : ~¿Í »óÀÇÇÏ´Ù");
-		 * HT[1].add_term("degree", "n.ÇĞÀ§", "a bachelor's degree \na master's degree");
-		 * HT[1].add_term("eligible", "a.ÀÚ°İÀÌ ÀÕ´Â, Àû°İÀÇ",
+		 * "with\r\nconsult + ì „ë¬¸ê°€ : ~ì™€ ìƒë‹´í•˜ë‹¤\r\nconsult with + ëŒ€ë“±í•œ ìƒëŒ€ : ~ì™€ ìƒì˜í•˜ë‹¤");
+		 * HT[1].add_term("degree", "n.í•™ìœ„", "a bachelor's degree \na master's degree");
+		 * HT[1].add_term("eligible", "a.ìê²©ì´ ì‡ëŠ”, ì ê²©ì˜",
 		 * "The part time workers are also eligible for paid holidays.",
 		 * "The part time workers are also eligible [    ] paid holidays.",
-		 * "for\r\nbe eligible + membership/compensation/position : È¸¿øÀÌ µÉ/º¸»óÀ» ¹ŞÀ»/Á÷À§¿¡ ¿À¸¦ ÀÚ°İÀÌ ÀÖ´Ù.\r\nbe eligible to do : ~ÇÒ ÀÚ°İÀÌ ÀÖ´Ù"
-		 * ); HT[1].add_term("employment", "n.°í¿ë",
+		 * "for\r\nbe eligible + membership/compensation/position : íšŒì›ì´ ë /ë³´ìƒì„ ë°›ì„/ì§ìœ„ì— ì˜¤ë¥¼ ìê²©ì´ ìˆë‹¤.\r\nbe eligible to do : ~í•  ìê²©ì´ ìˆë‹¤"
+		 * ); HT[1].add_term("employment", "n.ê³ ìš©",
 		 * "The company announced employment opprtunities in its accounts department.");
-		 * HT[1].add_term("entitle", "v.~¿¡°Ô ~ÇÒ ÀÚ°İÀ» ÁÖ´Ù",
+		 * HT[1].add_term("entitle", "v.~ì—ê²Œ ~í•  ìê²©ì„ ì£¼ë‹¤",
 		 * "Executive level staff are entitled to additional benefits.",
 		 * "Executive level staff are entitled [  ] additional benefits.",
-		 * "to\r\nbe entitled to + ¸í»ç : ~¿¡ ´ëÇÑ ÀÚ°İÀÌ ÁÖ¾îÁö´Ù\r\nbe entitled to do : ~ÇÒ ÀÚ°İÀÌ ÁÖ¾îÁö´Ù"
-		 * ); HT[1].add_term("get through", "phr.(½ÃÇè µî¿¡)ÇÕ°İÇÏ´Ù, ~À» ¹«»çÈ÷ ¸¶Ä¡´Ù",
+		 * "to\r\nbe entitled to + ëª…ì‚¬ : ~ì— ëŒ€í•œ ìê²©ì´ ì£¼ì–´ì§€ë‹¤\r\nbe entitled to do : ~í•  ìê²©ì´ ì£¼ì–´ì§€ë‹¤"
+		 * ); HT[1].add_term("get through", "phr.(ì‹œí—˜ ë“±ì—)í•©ê²©í•˜ë‹¤, ~ì„ ë¬´ì‚¬íˆ ë§ˆì¹˜ë‹¤",
 		 * "Twelve people got through the first round of interviews.");
-		 * HT[1].add_term("highly", "ad.¸Å¿ì, ¸÷½Ã", "highly qualified candidates");
-		 * HT[1].add_term("increment", "n.Áõ°¡,ÀÎ»ó",
+		 * HT[1].add_term("highly", "ad.ë§¤ìš°, ëª¹ì‹œ", "highly qualified candidates");
+		 * HT[1].add_term("increment", "n.ì¦ê°€,ì¸ìƒ",
 		 * "Employees with good records will receive wage increments as an incentive.");
-		 * HT[1].add_term("lag", "v.µÚÃÄÁö´Ù,µÚ¶³¾îÁö´Ù",
+		 * HT[1].add_term("lag", "v.ë’¤ì³ì§€ë‹¤,ë’¤ë–¨ì–´ì§€ë‹¤",
 		 * "Wage increases lag considerably behind current inflation rates.",
 		 * "Wage increases lag considerably [    ] current inflation rates.",
-		 * "behind\r\nlag behind : (¼Óµµ µîÀÌ)~º¸´Ù µÚÃÄÁö´Ù, µÚ¶³¾îÁö´Ù");
-		 * HT[1].add_term("managerial", "°ü¸®ÀÇ",
+		 * "behind\r\nlag behind : (ì†ë„ ë“±ì´)~ë³´ë‹¤ ë’¤ì³ì§€ë‹¤, ë’¤ë–¨ì–´ì§€ë‹¤");
+		 * HT[1].add_term("managerial", "ê´€ë¦¬ì˜",
 		 * "I am seeking a managerial position in the accounting field.");
-		 * HT[1].add_term("match", "~¿¡ ¾î¿ï¸®´Ù, Á¶È­µÇ´Ù",
+		 * HT[1].add_term("match", "~ì— ì–´ìš¸ë¦¬ë‹¤, ì¡°í™”ë˜ë‹¤",
 		 * "The candidate's qualifications match the job description.");
-		 * HT[1].add_term("meet", "v.(ÇÊ¿ä,¿ä±¸ µîÀ»)¸¸Á·½ÃÅ°´Ù",
+		 * HT[1].add_term("meet", "v.(í•„ìš”,ìš”êµ¬ ë“±ì„)ë§Œì¡±ì‹œí‚¤ë‹¤",
 		 * "Applicants must meet all the requirements for the job.");
-		 * HT[1].add_term("minimum", "n.ÃÖ¼ÒÇÑµµ", "a minimum of three years'experience");
-		 * HT[1].add_term("occupation", "n.Á÷¾÷",
+		 * HT[1].add_term("minimum", "n.ìµœì†Œí•œë„", "a minimum of three years'experience");
+		 * HT[1].add_term("occupation", "n.ì§ì—…",
 		 * "Journalism is an interesting and challenging occupation.");
-		 * HT[1].add_term("opening", "n.°ø¼®,°á¿ø;°³½Ã,°³Àå",
+		 * HT[1].add_term("opening", "n.ê³µì„,ê²°ì›;ê°œì‹œ,ê°œì¥",
 		 * "job openings \nthe opening of a new branch"); HT[1].add_term("otherwise",
-		 * "ad.´Ş¸®,´Ù¸¥¹æ¹ıÀ¸·Î;±×·¸Áö ¾Ê´Ù¸é",
+		 * "ad.ë‹¬ë¦¬,ë‹¤ë¥¸ë°©ë²•ìœ¼ë¡œ;ê·¸ë ‡ì§€ ì•Šë‹¤ë©´",
 		 * "Applicants must apply in person unless otherwise indicated. \nApplications must be turned in before the deadline; otherwise they won't be processed in time."
-		 * ); HT[1].add_term("paycheck", "n.±Ş·á,±Ş·á ÁöºÒ ¼öÇ¥",
+		 * ); HT[1].add_term("paycheck", "n.ê¸‰ë£Œ,ê¸‰ë£Œ ì§€ë¶ˆ ìˆ˜í‘œ",
 		 * "Paychecks are mailed out each month."); HT[1].add_term("payroll",
-		 * "n.ÀÓ±İ ´ëÀå, ±Ş·á ¸íºÎ",
+		 * "n.ì„ê¸ˆ ëŒ€ì¥, ê¸‰ë£Œ ëª…ë¶€",
 		 * "Fifteen new employees were added to the payroll last month.",
-		 * "[ ] the payroll", "on\r\non the payroll : °í¿ëµÇ¾î"); HT[1].add_term("pension",
-		 * "n.¿¬±İ", "All new employees must sign up for the national pension plan.");
-		 * HT[1].add_term("probationary", "a.°ß½ÀÁßÀÇ,°¡Ã¤¿ëÀÇ",
+		 * "[ ] the payroll", "on\r\non the payroll : ê³ ìš©ë˜ì–´"); HT[1].add_term("pension",
+		 * "n.ì—°ê¸ˆ", "All new employees must sign up for the national pension plan.");
+		 * HT[1].add_term("probationary", "a.ê²¬ìŠµì¤‘ì˜,ê°€ì±„ìš©ì˜",
 		 * "The company will offer contracts on completion of a probationary period.");
-		 * HT[1].add_term("professional", "a.Á÷¾÷ÀÇ,Àü¹®ÀûÀÎn.Àü¹®°¡",
+		 * HT[1].add_term("professional", "a.ì§ì—…ì˜,ì „ë¬¸ì ì¸n.ì „ë¬¸ê°€",
 		 * "Compliance with the principles of professional ethics is mandatory. \nMerseyside Hospital is looking to hire a certified health professional."
-		 * ); HT[1].add_term("proficiency", "n.¼÷´Ş,´É¼÷",
+		 * ); HT[1].add_term("proficiency", "n.ìˆ™ë‹¬,ëŠ¥ìˆ™",
 		 * "proof of proficiency in a second language"); HT[1].add_term("prospective",
-		 * "a.Àå·¡ÀÇ,¹Ì·¡ÀÇ", "prospective employees"); HT[1].add_term("qualified",
-		 * "a.ÀÚ°İ ÀÖ´Â,Àû°İÀÇ", "qualified applicants",
+		 * "a.ì¥ë˜ì˜,ë¯¸ë˜ì˜", "prospective employees"); HT[1].add_term("qualified",
+		 * "a.ìê²© ìˆëŠ”,ì ê²©ì˜", "qualified applicants",
 		 * "Unfortunately, I'm not qualified [    ] this sort of thing.",
-		 * "for\r\nbe qualified for : ~¿¡ ÀÚ°İÀÌ ÀÖ´Ù\r\nqualifications for : ~¿¡ ´ëÇÑ ÀÚ°İ");
-		 * HT[1].add_term("recruit", "v.(½ÅÀÔ »ç¿ø µîÀ»)¸ğÁıÇÏ´Ù",
+		 * "for\r\nbe qualified for : ~ì— ìê²©ì´ ìˆë‹¤\r\nqualifications for : ~ì— ëŒ€í•œ ìê²©");
+		 * HT[1].add_term("recruit", "v.(ì‹ ì… ì‚¬ì› ë“±ì„)ëª¨ì§‘í•˜ë‹¤",
 		 * "The firm recruits promising graduates on a yearly basis.");
-		 * HT[1].add_term("reference", "n.ÃßÃµ¼­;Âü°í",
+		 * HT[1].add_term("reference", "n.ì¶”ì²œì„œ;ì°¸ê³ ",
 		 * "Philippa asked her ex-boss to write a reference for her. \n This database contains reference material on all aspects of labor law."
-		 * ); HT[1].add_term("regardless of", "phr.~¿¡ °ü°è¾øÀÌ",
+		 * ); HT[1].add_term("regardless of", "phr.~ì— ê´€ê³„ì—†ì´",
 		 * "All applicants will be considered regardless of age, gender, or race.");
-		 * HT[1].add_term("requirement", "n.ÇÊ¿äÁ¶°Ç",
+		 * HT[1].add_term("requirement", "n.í•„ìš”ì¡°ê±´",
 		 * "Frequent travel is a requirement of this position.");
-		 * HT[1].add_term("resume", "n.ÀÌ·Â¼­",
+		 * HT[1].add_term("resume", "n.ì´ë ¥ì„œ",
 		 * "Fax your resume and cover letter to the above address.");
-		 * HT[1].add_term("wage", "n.ÀÓ±İ,±Ş·á",
+		 * HT[1].add_term("wage", "n.ì„ê¸ˆ,ê¸‰ë£Œ",
 		 * "Uncertified workers earn lower wages than certified staff.");
 		 * 
-		 * HT[2].add_term("abolish", "v.(Á¦µµ,¹ı·ü µîÀ»)ÆóÁöÇÏ´Ù",
+		 * HT[2].add_term("abolish", "v.(ì œë„,ë²•ë¥  ë“±ì„)íì§€í•˜ë‹¤",
 		 * "Congress decided to abolish taxes on imported fruit.");
-		 * HT[2].add_term("access", "n.ÀÌ¿ë ±ÇÇÑ, Á¢±Ù;Åë·Î, v.~¿¡ Á¢±ÙÇÏ´Ù,µµ´ŞÇÏ´Ù",
+		 * HT[2].add_term("access", "n.ì´ìš© ê¶Œí•œ, ì ‘ê·¼;í†µë¡œ, v.~ì— ì ‘ê·¼í•˜ë‹¤,ë„ë‹¬í•˜ë‹¤",
 		 * "Only authorized personnel may request access to client files.\r\nOur new office has direct access to the subway.\r\nClick on the link to access the detailed job description."
 		 * , "Our new office has direct access [  ] the subway.",
-		 * "to\r\nhave access to : ~¿¡ Á¢±Ù ±ÇÇÑÀ» °¡Áö°í ÀÖ´Ù.\r\n¸í»ç access´Â ÀüÄ¡»ç to¿Í ¾î±¸¸¦ ÀÌ·ç¾î ÀÚÁÖ ÃâÁ¦µÈ´Ù. ÇÏÁö¸¸ µ¿»ç access´Â Å¸µ¿»çÀÌ¹Ç·Î µÚ¿¡ ÀüÄ¡»ç to°¡ ¿Ã ¼ö ¾ø´Ù´Â °ÍÀ» ²À ±â¾ïÇØµÎÀÚ."
-		 * ); HT[2].add_term("accordance", "n.ÀÏÄ¡,Á¶È­",
+		 * "to\r\nhave access to : ~ì— ì ‘ê·¼ ê¶Œí•œì„ ê°€ì§€ê³  ìˆë‹¤.\r\nëª…ì‚¬ accessëŠ” ì „ì¹˜ì‚¬ toì™€ ì–´êµ¬ë¥¼ ì´ë£¨ì–´ ìì£¼ ì¶œì œëœë‹¤. í•˜ì§€ë§Œ ë™ì‚¬ accessëŠ” íƒ€ë™ì‚¬ì´ë¯€ë¡œ ë’¤ì— ì „ì¹˜ì‚¬ toê°€ ì˜¬ ìˆ˜ ì—†ë‹¤ëŠ” ê²ƒì„ ê¼­ ê¸°ì–µí•´ë‘ì."
+		 * ); HT[2].add_term("accordance", "n.ì¼ì¹˜,ì¡°í™”",
 		 * "We strive to operate in accordance with local customs.",
 		 * "We strive to operate [  ] accordance [    ] local customs.",
-		 * "in,with\r\nin accordance with : ~¿¡ µû¶ó¼­, ~´ë·Î\r\naccordance´Â in accordance with ÇüÅÂ·Î »ç¿ëµÇ¹Ç·Î ²À ±â¾ïÇØ µÖ¾ß ÇÑ´Ù. with ´ÙÀ½¿¡´Â 'µû¶ó¾ß ÇÒ ±ÔÄ¢'ÀÌ³ª 'Èñ¸Á »çÇ×'µîÀÌ ¿Â´Ù."
-		 * ); HT[2].add_term("according to", "phr.~¿¡ µû¶ó",
+		 * "in,with\r\nin accordance with : ~ì— ë”°ë¼ì„œ, ~ëŒ€ë¡œ\r\naccordanceëŠ” in accordance with í˜•íƒœë¡œ ì‚¬ìš©ë˜ë¯€ë¡œ ê¼­ ê¸°ì–µí•´ ë‘¬ì•¼ í•œë‹¤. with ë‹¤ìŒì—ëŠ” 'ë”°ë¼ì•¼ í•  ê·œì¹™'ì´ë‚˜ 'í¬ë§ ì‚¬í•­'ë“±ì´ ì˜¨ë‹¤."
+		 * ); HT[2].add_term("according to", "phr.~ì— ë”°ë¼",
 		 * "All transactions must be handled according to the guidelines.");
-		 * HT[2].add_term("accuse", "v.ºñ³­ÇÏ´Ù,°í¼ÒÇÏ´Ù",
+		 * HT[2].add_term("accuse", "v.ë¹„ë‚œí•˜ë‹¤,ê³ ì†Œí•˜ë‹¤",
 		 * "The director accused his secretary of leaking classified information.",
 		 * "The director accused his secretary [  ] leaking classified information.",
-		 * "of\r\naccuse A of B : B¿¡ ´ëÇØ A¸¦ ºñ³­ÇÏ´Ù"); HT[2].add_term("adhere",
-		 * "v.°í¼öÇÏ´Ù,ÁöÅ°´Ù", "It is difficult to adhere to all the policies.",
+		 * "of\r\naccuse A of B : Bì— ëŒ€í•´ Aë¥¼ ë¹„ë‚œí•˜ë‹¤"); HT[2].add_term("adhere",
+		 * "v.ê³ ìˆ˜í•˜ë‹¤,ì§€í‚¤ë‹¤", "It is difficult to adhere to all the policies.",
 		 * "It is difficult to adhere [  ] all the policies.",
-		 * "to\r\nadhere to + policies/rules/standards : Á¤Ã¥/±ÔÄ¢/±âÁØÀ» °í¼öÇÏ´Ù\r\nadhere´Â '~À» °í¼öÇÏ´Ù'¶õ ÀÇ¹ÌÀÏ ¶§ ÀÚµ¿»çÀÌ¹Ç·Î ÀüÄ¡»ç to¸¦ °°ÀÌ ½á¾ßÇÑ´Ù."
-		 * ); HT[2].add_term("approval", "n.½ÂÀÎ,ÀÎ°¡",
+		 * "to\r\nadhere to + policies/rules/standards : ì •ì±…/ê·œì¹™/ê¸°ì¤€ì„ ê³ ìˆ˜í•˜ë‹¤\r\nadhereëŠ” '~ì„ ê³ ìˆ˜í•˜ë‹¤'ë€ ì˜ë¯¸ì¼ ë•Œ ìë™ì‚¬ì´ë¯€ë¡œ ì „ì¹˜ì‚¬ toë¥¼ ê°™ì´ ì¨ì•¼í•œë‹¤."
+		 * ); HT[2].add_term("approval", "n.ìŠ¹ì¸,ì¸ê°€",
 		 * "Please obtain the supervisor's approval before purchasing supplies.");
-		 * HT[2].add_term("at all times", "phr.Ç×»ó,¾ğÁ¦³ª",
+		 * HT[2].add_term("at all times", "phr.í•­ìƒ,ì–¸ì œë‚˜",
 		 * "Employees must have security cards at all times."); HT[2].add_term("attire",
-		 * "n.º¹Àå,¿ÊÂ÷¸²»õ",
+		 * "n.ë³µì¥,ì˜·ì°¨ë¦¼ìƒˆ",
 		 * "Professional business attire is required from all presentation participants."
-		 * ); HT[2].add_term("attorney", "n.º¯È£»ç",
+		 * ); HT[2].add_term("attorney", "n.ë³€í˜¸ì‚¬",
 		 * "The attorney advised his client to remain silent.");
-		 * HT[2].add_term("authorize", "v.~À» ÀÎ°¡ÇÏ´Ù",
+		 * HT[2].add_term("authorize", "v.~ì„ ì¸ê°€í•˜ë‹¤",
 		 * "Allocations of funds must be authorized by management");
-		 * HT[2].add_term("circumscribe", "v.~À» Á¦ÇÑÇÏ´Ù",
+		 * HT[2].add_term("circumscribe", "v.~ì„ ì œí•œí•˜ë‹¤",
 		 * "The new legislation will circumscribe the use of animals in product testing."
-		 * ); HT[2].add_term("code", "n.±Ô¹ü,°ü·Ê;¾ÏÈ£", "dress code\r\nemployee code");
-		 * HT[2].add_term("comply", "v.µû¸£´Ù,ÁØ¼öÇÏ´Ù",
+		 * ); HT[2].add_term("code", "n.ê·œë²”,ê´€ë¡€;ì•”í˜¸", "dress code\r\nemployee code");
+		 * HT[2].add_term("comply", "v.ë”°ë¥´ë‹¤,ì¤€ìˆ˜í•˜ë‹¤",
 		 * "Employees must comply with the regulations governing computer use.");
-		 * HT[2].add_term("concern", "n.¿ì·Á,°ÆÁ¤",
+		 * HT[2].add_term("concern", "n.ìš°ë ¤,ê±±ì •",
 		 * "Employees voiced concerns about safety at the meeting",
 		 * "Employees voiced concerns [  ] safety at the meeting",
-		 * "about\r\nconcern about/over : ~¿¡ ´ëÇÑ ¿ì·Á,°ÆÁ¤\r\nconcern°ú ÇÔ²² ¾²ÀÌ´Â ÀüÄ¡»ç about,over¸¦ ¹­¾î¼­ ¾Ë¾ÆµÎÀÚ.\r\nquestions concerning : ~¿¡ °üÇÑ Áú¹®\r\nquestion°ú ¾î¿ï¸®´Â ÀüÄ¡»ç concerning(~¿¡ °üÇÑ)À» ¹¯´Â ¹®Á¦°¡ ÃâÁ¦µÈ´Ù. concerningÀº about, regarding°ú °°Àº ÀÇ¹ÌÀÌ´Ù."
-		 * ); HT[2].add_term("custody", "n.°¨±İ,±¸·ù",
+		 * "about\r\nconcern about/over : ~ì— ëŒ€í•œ ìš°ë ¤,ê±±ì •\r\nconcernê³¼ í•¨ê»˜ ì“°ì´ëŠ” ì „ì¹˜ì‚¬ about,overë¥¼ ë¬¶ì–´ì„œ ì•Œì•„ë‘ì.\r\nquestions concerning : ~ì— ê´€í•œ ì§ˆë¬¸\r\nquestionê³¼ ì–´ìš¸ë¦¬ëŠ” ì „ì¹˜ì‚¬ concerning(~ì— ê´€í•œ)ì„ ë¬»ëŠ” ë¬¸ì œê°€ ì¶œì œëœë‹¤. concerningì€ about, regardingê³¼ ê°™ì€ ì˜ë¯¸ì´ë‹¤."
+		 * ); HT[2].add_term("custody", "n.ê°ê¸ˆ,êµ¬ë¥˜",
 		 * "The suspect was kept in custody for three days."); HT[2].add_term("effect",
-		 * "n.È¿°ú,¿µÇâ,(º±·ü µîÀÇ)È¿·Â,v.°á°ú·Î¼­ ~À» °¡Á®¿À´Ù",
+		 * "n.íš¨ê³¼,ì˜í–¥,(ë³ë¥  ë“±ì˜)íš¨ë ¥,v.ê²°ê³¼ë¡œì„œ ~ì„ ê°€ì ¸ì˜¤ë‹¤",
 		 * "The tardiness policy will be in effect starting next week.\r\nHe effected a sudden change in the company's direction."
 		 * , "The tardiness policy will be [   ] effect starting next week.",
-		 * "in\r\nin effect : (º±·ü µîÀÌ)½Ç½ÃµÈ, È¿·Â ÀÖ´Â\r\ncome into effect : ½Ç½ÃµÇ´Ù,¹ßÈ¿µÇ´Ù\r\nhave an effect on : ~¿¡ ¿µÇâÀ» ¹ÌÄ¡´Ù\r\nsecondary effect : ºÎ¼öÀû È¿°ú"
-		 * ); HT[2].add_term("enforce", "v.(º±·üÀÇ)½ÃÇàÇÏ´Ù,ÁıÇàÇÏ´Ù",
+		 * "in\r\nin effect : (ë³ë¥  ë“±ì´)ì‹¤ì‹œëœ, íš¨ë ¥ ìˆëŠ”\r\ncome into effect : ì‹¤ì‹œë˜ë‹¤,ë°œíš¨ë˜ë‹¤\r\nhave an effect on : ~ì— ì˜í–¥ì„ ë¯¸ì¹˜ë‹¤\r\nsecondary effect : ë¶€ìˆ˜ì  íš¨ê³¼"
+		 * ); HT[2].add_term("enforce", "v.(ë³ë¥ ì˜)ì‹œí–‰í•˜ë‹¤,ì§‘í–‰í•˜ë‹¤",
 		 * "All departments must enforce the no smoking policy.");
-		 * HT[2].add_term("exception", "n.¿¹¿Ü",
+		 * HT[2].add_term("exception", "n.ì˜ˆì™¸",
 		 * "Management decided not to make exceptions to the rules.",
 		 * "[   ] very few exceptions, private schools get the best exam results.",
-		 * "with\r\nwith the exception of : ~À» Á¦¿ÜÇÏ°í\r\nwith very few exceptions : °ÅÀÇ ¿¹¿Ü ¾øÀÌ"
-		 * ); HT[2].add_term("form", "n.À¯Çü,¾ç½Ä",
+		 * "with\r\nwith the exception of : ~ì„ ì œì™¸í•˜ê³ \r\nwith very few exceptions : ê±°ì˜ ì˜ˆì™¸ ì—†ì´"
+		 * ); HT[2].add_term("form", "n.ìœ í˜•,ì–‘ì‹",
 		 * "Visitors are required to present a form of identification to security guards."
-		 * ); HT[2].add_term("fraud", "n.»ç±â",
+		 * ); HT[2].add_term("fraud", "n.ì‚¬ê¸°",
 		 * "The company's owners will be charged with tax fraud.");
-		 * HT[2].add_term("habit", "n.¹ö¸©,½À°ü",
+		 * HT[2].add_term("habit", "n.ë²„ë¦‡,ìŠµê´€",
 		 * "Setting goals should be a regular habit."); HT[2].add_term("immediately",
-		 * "ad.Áï½Ã,°ğ",
+		 * "ad.ì¦‰ì‹œ,ê³§",
 		 * "Effective immediately, pension installments will be automatically deducted from each paycheck."
-		 * ); HT[2].add_term("infringement", "n.Ä§ÇØ",
+		 * ); HT[2].add_term("infringement", "n.ì¹¨í•´",
 		 * "An infringement of copyright led to the cancellation of production.");
-		 * HT[2].add_term("legislation", "n.¹ı·ü,¹ı±Ô",
+		 * HT[2].add_term("legislation", "n.ë²•ë¥ ,ë²•ê·œ",
 		 * "The committee unanimously voted for the new export limitation legislation."
-		 * ); HT[2].add_term("legitimate", "a.ÇÕ¹ıÀûÀÎ,Àû¹ıÇÑ",
+		 * ); HT[2].add_term("legitimate", "a.í•©ë²•ì ì¸,ì ë²•í•œ",
 		 * "All legitimate business expenses will be reimbursed.");
-		 * HT[2].add_term("litigation", "n.¼Ò¼Û,±â¼Ò",
+		 * HT[2].add_term("litigation", "n.ì†Œì†¡,ê¸°ì†Œ",
 		 * "We will pursue litigation against all delinquent debtors.");
-		 * HT[2].add_term("observance", "n.ÁØ¼ö",
+		 * HT[2].add_term("observance", "n.ì¤€ìˆ˜",
 		 * "We will close tomorrow in observance of the national holiday.",
 		 * "We will close tomorrow [  ] observance [  ] the national holiday.",
-		 * "in,of\r\nin observance of : ~À» ÁØ¼öÇÏ¿©"); HT[2].add_term("petition",
-		 * "n.ÁøÁ¤¼­,Åº¿ø¼­",
+		 * "in,of\r\nin observance of : ~ì„ ì¤€ìˆ˜í•˜ì—¬"); HT[2].add_term("petition",
+		 * "n.ì§„ì •ì„œ,íƒ„ì›ì„œ",
 		 * "Employees circulated a petition to ban smoking in the building.");
-		 * HT[2].add_term("policy", "n.±ÔÁ¤;º¸Çè Áõ±Ç",
+		 * HT[2].add_term("policy", "n.ê·œì •;ë³´í—˜ ì¦ê¶Œ",
 		 * "the company policy regarding absenteeism\r\na life insurance policy");
-		 * HT[2].add_term("procedure", "n.ÀıÂ÷",
+		 * HT[2].add_term("procedure", "n.ì ˆì°¨",
 		 * "The procedure for patent applications is outlined on the APTO website.");
-		 * HT[2].add_term("prohibit", "v.±İÁöÇÏ´Ù",
+		 * HT[2].add_term("prohibit", "v.ê¸ˆì§€í•˜ë‹¤",
 		 * "The museum prohibits visitors from taking pictures.",
 		 * "The museum prohibits visitors from take + [   ] pictures.",
-		 * "ing\r\nprohibit A from -ing : A°¡ -ÇÏ´Â °ÍÀ» ±İÇÏ´Ù\r\nforbid A to do : A°¡ ~ÇÏ´Â °ÍÀ» ±İÇÏ´Ù"
-		 * ); HT[2].add_term("prosecute", "v.±â¼ÒÇÏ´Ù",
+		 * "ing\r\nprohibit A from -ing : Aê°€ -í•˜ëŠ” ê²ƒì„ ê¸ˆí•˜ë‹¤\r\nforbid A to do : Aê°€ ~í•˜ëŠ” ê²ƒì„ ê¸ˆí•˜ë‹¤"
+		 * ); HT[2].add_term("prosecute", "v.ê¸°ì†Œí•˜ë‹¤",
 		 * "The government may prosecute journalists for publishing classified information."
-		 * ); HT[2].add_term("refrain", "v.ÀÚÁ¦ÇÏ´Ù,»ï°¡´Ù",
+		 * ); HT[2].add_term("refrain", "v.ìì œí•˜ë‹¤,ì‚¼ê°€ë‹¤",
 		 * "Guards should refrain from talking on shift.",
 		 * "Guards should refrain [   ] talking on shift.",
-		 * "from\r\nrefrain from : ~À» ÀÚÁ¦ÇÏ´Ù\r\nrefrainÀº ÀÚµ¿»çÀÌ¹Ç·Î ÀüÄ¡»ç fromÀÌ ÀÖ¾î¾ß ¸ñÀû¾î°¡ ¿Ã ¼ö ÀÖ´Ù."
-		 * ); HT[2].add_term("regulation", "n.±ÔÁ¤",
+		 * "from\r\nrefrain from : ~ì„ ìì œí•˜ë‹¤\r\nrefrainì€ ìë™ì‚¬ì´ë¯€ë¡œ ì „ì¹˜ì‚¬ fromì´ ìˆì–´ì•¼ ëª©ì ì–´ê°€ ì˜¬ ìˆ˜ ìˆë‹¤."
+		 * ); HT[2].add_term("regulation", "n.ê·œì •",
 		 * "Regulations regarding lunch breaks were established.");
-		 * HT[2].add_term("restrict", "v.Á¦ÇÑÇÏ´Ù,ÇÑÁ¤ÇÏ´Ù",
+		 * HT[2].add_term("restrict", "v.ì œí•œí•˜ë‹¤,í•œì •í•˜ë‹¤",
 		 * "Access is restricted to authorized personnel.",
 		 * "Access is restricted [  ] authorized personnel.",
-		 * "to\r\nrestrict A to B : A¸¦ B·Î ÇÑÁ¤ÇÏ´Ù"); HT[2].add_term("severely",
-		 * "ad.½ÉÇÏ°Ô,¾ö°İÇÏ°Ô",
+		 * "to\r\nrestrict A to B : Aë¥¼ Bë¡œ í•œì •í•˜ë‹¤"); HT[2].add_term("severely",
+		 * "ad.ì‹¬í•˜ê²Œ,ì—„ê²©í•˜ê²Œ",
 		 * "Those who share company data with outside parties will be severely reprimanded."
-		 * ); HT[2].add_term("standard", "n.±âÁØ,Ç¥ÁØ",
+		 * ); HT[2].add_term("standard", "n.ê¸°ì¤€,í‘œì¤€",
 		 * "safety standards\r\nnational standards."); HT[2].add_term("thorughly",
-		 * "ad.Ã¶ÀúÇÏ°Ô",
+		 * "ad.ì² ì €í•˜ê²Œ",
 		 * "Please read the user manual thoroughly before installing this software.");
-		 * HT[2].add_term("violate", "v.À§¹İÇÏ´Ù",
+		 * HT[2].add_term("violate", "v.ìœ„ë°˜í•˜ë‹¤",
 		 * "The content of the website may violate copyright laws.");
 		 * 
-		 * HT[3].add_term("accustomed", "a.~¿¡ ÀÍ¼÷ÇÑ",
+		 * HT[3].add_term("accustomed", "a.~ì— ìµìˆ™í•œ",
 		 * "All our employees are accustomed to using accounting software.",
 		 * "All our employees are accustomed [  ] using accounting software.",
-		 * "be accustomed to -ing : -ÇÏ´Âµ¥ ÀÍ¼÷ÇÏ´Ù\r\naccustomed´Â ÀüÄ¡»ç to¿Í Â¦À» ÀÌ·ç¾î »ç¿ëµÈ´Ù. to ´ÙÀ½¿¡´Â µ¿»ç¿øÇüÀÌ ¾Æ´Ï¶ó µ¿¸í»ç°¡ ¿Â´Ù´Â °Í¿¡ ÁÖÀÇÇÏÀÚ."
-		 * ); HT[3].add_term("acquaint", "v.~¿¡°Ô ~À» ¼÷Áö½ÃÅ°´Ù,Àß ¾Ë°Ô ÇÏ´Ù",
+		 * "be accustomed to -ing : -í•˜ëŠ”ë° ìµìˆ™í•˜ë‹¤\r\naccustomedëŠ” ì „ì¹˜ì‚¬ toì™€ ì§ì„ ì´ë£¨ì–´ ì‚¬ìš©ëœë‹¤. to ë‹¤ìŒì—ëŠ” ë™ì‚¬ì›í˜•ì´ ì•„ë‹ˆë¼ ë™ëª…ì‚¬ê°€ ì˜¨ë‹¤ëŠ” ê²ƒì— ì£¼ì˜í•˜ì."
+		 * ); HT[3].add_term("acquaint", "v.~ì—ê²Œ ~ì„ ìˆ™ì§€ì‹œí‚¤ë‹¤,ì˜ ì•Œê²Œ í•˜ë‹¤",
 		 * "The training program acquaints new employees with company procedures.",
 		 * "The training program acquaints new employees [   ] company procedures.",
-		 * "with\r\nacquaint A with B : A¿¡°Ô B¸¦ ¼÷Áö½ÃÅ°´Ù(=familiarize A with B)");
-		 * HT[3].add_term("affiliate", "n.°è¿­»ç,ÁöºÎ",
+		 * "with\r\nacquaint A with B : Aì—ê²Œ Bë¥¼ ìˆ™ì§€ì‹œí‚¤ë‹¤(=familiarize A with B)");
+		 * HT[3].add_term("affiliate", "n.ê³„ì—´ì‚¬,ì§€ë¶€",
 		 * "The company owns affiliates in several markets.");
-		 * HT[3].add_term("attendance", "n.Ãâ¼®",
+		 * HT[3].add_term("attendance", "n.ì¶œì„",
 		 * "Staff with outstanding attendance records were awarded bonuses.");
-		 * HT[3].add_term("check", "v.°Ë»çÇÏ´Ù,Á¶»çÇÏ´Ù",
+		 * HT[3].add_term("check", "v.ê²€ì‚¬í•˜ë‹¤,ì¡°ì‚¬í•˜ë‹¤",
 		 * "IT staff check all computers regularly for disk errors.\r\nClick this link to check for the latest updates."
 		 * , "IT staff check all computers regularly [   ] disk errors.",
-		 * "for\r\ncheck A for B : BÀÇ À¯¹«¸¦ È®ÀÎÇÏ±â À§ÇØ A¸¦ °Ë»çÇÏ´Ù\r\ncheck for A : A¿¡ ´ëÇØ °Ë»çÇÏ´Ù");
-		 * HT[3].add_term("colleague", "n.(Á÷¾÷»óÀÇ)µ¿·á",
+		 * "for\r\ncheck A for B : Bì˜ ìœ ë¬´ë¥¼ í™•ì¸í•˜ê¸° ìœ„í•´ Aë¥¼ ê²€ì‚¬í•˜ë‹¤\r\ncheck for A : Aì— ëŒ€í•´ ê²€ì‚¬í•˜ë‹¤");
+		 * HT[3].add_term("colleague", "n.(ì§ì—…ìƒì˜)ë™ë£Œ",
 		 * "Training programs can help increase the rapport between colleagues.");
-		 * HT[3].add_term("concentrate", "v.ÁıÁßÇÏ´Ù,ÁıÁß½ÃÅ°´Ù",
+		 * HT[3].add_term("concentrate", "v.ì§‘ì¤‘í•˜ë‹¤,ì§‘ì¤‘ì‹œí‚¤ë‹¤",
 		 * "The sales team concentrated on developing new strategies.",
 		 * "The sales team concentrated [   ] developing new strategies.",
-		 * "on\r\nconcentrate on : ~¿¡ ÁıÁßÇÏ´Ù\r\nconcentrate A on B : A¸¦ B¿¡ ÁıÁß½ÃÅ°´Ù");
-		 * HT[3].add_term("condense", "v.(Ç¥ÇöÀ»)°£Ãß¸®´Ù,¿ä¾àÇÏ´Ù",
+		 * "on\r\nconcentrate on : ~ì— ì§‘ì¤‘í•˜ë‹¤\r\nconcentrate A on B : Aë¥¼ Bì— ì§‘ì¤‘ì‹œí‚¤ë‹¤");
+		 * HT[3].add_term("condense", "v.(í‘œí˜„ì„)ê°„ì¶”ë¦¬ë‹¤,ìš”ì•½í•˜ë‹¤",
 		 * "The writer condensed the report into a brief summary.",
 		 * "The writer condensed the report [   ] a brief summary.",
-		 * "into\r\ncondense A into B : A¸¦ B·Î ¿ä¾àÇÏ´Ù"); HT[3].add_term("conglomerate",
-		 * "n.°Å´ë º¹ÇÕ±â¾÷", "The company developed into a global conglomerate.");
-		 * HT[3].add_term("convey", "v.(¿ë°ÇÀ»)Àü´ŞÇÏ´Ù",
+		 * "into\r\ncondense A into B : Aë¥¼ Bë¡œ ìš”ì•½í•˜ë‹¤"); HT[3].add_term("conglomerate",
+		 * "n.ê±°ëŒ€ ë³µí•©ê¸°ì—…", "The company developed into a global conglomerate.");
+		 * HT[3].add_term("convey", "v.(ìš©ê±´ì„)ì „ë‹¬í•˜ë‹¤",
 		 * "The secretary urgently conveyed the message to the director.",
 		 * "The secretary urgently conveyed the message [   ] the director.",
-		 * "to\r\nconvey A to B : A¸¦ B¿¡°Ô Àü´ŞÇÏ´Ù"); HT[3].add_term("corporation",
-		 * "n.ÁÖ½ÄÈ¸»ç,¹ıÀÎ", "a multinational telecommunications corporation");
-		 * HT[3].add_term("delegate", "v.(±ÇÇÑ µîÀ»)À§ÀÓÇÏ´Ùn.´ëÇ¥",
+		 * "to\r\nconvey A to B : Aë¥¼ Bì—ê²Œ ì „ë‹¬í•˜ë‹¤"); HT[3].add_term("corporation",
+		 * "n.ì£¼ì‹íšŒì‚¬,ë²•ì¸", "a multinational telecommunications corporation");
+		 * HT[3].add_term("delegate", "v.(ê¶Œí•œ ë“±ì„)ìœ„ì„í•˜ë‹¤n.ëŒ€í‘œ",
 		 * "Managers must be skilled in delegating responsibilities to subordinates.\r\nDiscussions with the delegate are going better than planned."
-		 * ); HT[3].add_term("demanding", "a.¿ä±¸°¡ ¸¹Àº", "a demanding supervisor");
-		 * HT[3].add_term("directly", "ad.°ğ¹Ù·Î",
+		 * ); HT[3].add_term("demanding", "a.ìš”êµ¬ê°€ ë§ì€", "a demanding supervisor");
+		 * HT[3].add_term("directly", "ad.ê³§ë°”ë¡œ",
 		 * "All regional branches report directly to our head office in Washington.");
-		 * HT[3].add_term("division", "n.ºÎ¼­",
+		 * HT[3].add_term("division", "n.ë¶€ì„œ",
 		 * "The technician will transfer to the automobile division after training.");
-		 * HT[3].add_term("efficiently", "ad.È¿À²ÀûÀ¸·Î",
+		 * HT[3].add_term("efficiently", "ad.íš¨ìœ¨ì ìœ¼ë¡œ",
 		 * "The software helps employees work more efficiently.");
-		 * HT[3].add_term("electronically", "ad.¿Â¶óÀÎÀ¸·Î,ÄÄÇ»ÅÍ Åë½Å¸ÁÀ¸·Î",
+		 * HT[3].add_term("electronically", "ad.ì˜¨ë¼ì¸ìœ¼ë¡œ,ì»´í“¨í„° í†µì‹ ë§ìœ¼ë¡œ",
 		 * "Sending invoices electronically saves time and resources.");
-		 * HT[3].add_term("extension", "n.¿¬Àå,¿¬±â;(ÀüÈ­ÀÇ)³»¼±",
+		 * HT[3].add_term("extension", "n.ì—°ì¥,ì—°ê¸°;(ì „í™”ì˜)ë‚´ì„ ",
 		 * "The manager granted an extension on the deadline.\r\nextension number");
-		 * HT[3].add_term("follow up on", "phr.~¿¡ ´ëÇØ ÈÄ¼Ó Á¶Ä¡ÇÏ´Ù",
+		 * HT[3].add_term("follow up on", "phr.~ì— ëŒ€í•´ í›„ì† ì¡°ì¹˜í•˜ë‹¤",
 		 * "He followed up on the manager's suggestion."); HT[3].add_term("impending",
-		 * "a.ÀÓ¹ÚÇÑ,Àı¹ÚÇÑ", "The deadline for the report is impending.");
-		 * HT[3].add_term("in one's absence", "phr.~ÀÇ ºÎÀç½Ã¿¡",
+		 * "a.ì„ë°•í•œ,ì ˆë°•í•œ", "The deadline for the report is impending.");
+		 * HT[3].add_term("in one's absence", "phr.~ì˜ ë¶€ì¬ì‹œì—",
 		 * "A replacement will work in her absence."); HT[3].add_term("in writing",
-		 * "phr.¼­¸éÀ¸·Î", "Please describe the problem in writing.");
-		 * HT[3].add_term("instruct", "v.°¡¸£Ä¡´Ù,Áö½ÃÇÏ´Ù",
+		 * "phr.ì„œë©´ìœ¼ë¡œ", "Please describe the problem in writing.");
+		 * HT[3].add_term("instruct", "v.ê°€ë¥´ì¹˜ë‹¤,ì§€ì‹œí•˜ë‹¤",
 		 * "The organizers instructed participants to pre-read the conference materials."
-		 * ); HT[3].add_term("involved", "a.°ü°èµÈ,¿¬·çµÈ",
+		 * ); HT[3].add_term("involved", "a.ê´€ê³„ëœ,ì—°ë£¨ëœ",
 		 * "Dr.Mair was personally involved in the decision making process.",
 		 * "Dr.Mair was personally involved [   ] the decision making process.",
-		 * "in\r\nbe involved in : ~¿¡ °ü¿©ÇÏ´Ù"); HT[3].add_term("manage",
-		 * "v.~À» °æ¿µÇÏ´Ù;±×·°Àú·° ~ÇÏ´Ù",
+		 * "in\r\nbe involved in : ~ì— ê´€ì—¬í•˜ë‹¤"); HT[3].add_term("manage",
+		 * "v.~ì„ ê²½ì˜í•˜ë‹¤;ê·¸ëŸ­ì €ëŸ­ ~í•˜ë‹¤",
 		 * "The boss decided Colleen could manage the new store.\r\nThey managed to do the assighed work in time."
 		 * , "They managed [   ] do the assighed work in time.",
-		 * "to\r\nmanage to do : ±×·°Àú·° ~ÇØ³»´Ù, ¿ëÄÉ ÇØ³»´Ù"); HT[3].add_term("memorandum",
-		 * "n.È¸¶÷",
+		 * "to\r\nmanage to do : ê·¸ëŸ­ì €ëŸ­ ~í•´ë‚´ë‹¤, ìš©ì¼€ í•´ë‚´ë‹¤"); HT[3].add_term("memorandum",
+		 * "n.íšŒëŒ",
 		 * "Many companies circulate a weekly memorandum summarizing business transactions."
-		 * ); HT[3].add_term("notify", "v.~¿¡°Ô ÅëÁöÇÏ´Ù,¾Ë¸®´Ù",
+		 * ); HT[3].add_term("notify", "v.~ì—ê²Œ í†µì§€í•˜ë‹¤,ì•Œë¦¬ë‹¤",
 		 * "Staff applying for leave must notify their supervisor in writing.",
 		 * "But did he notify you or any other member [  ] the team?",
-		 * "of\r\nnotify »ç¶÷ + of ³»¿ë/thatÀı : ~¿¡°Ô ~¿¡ ´ëÇØ ÅëÁöÇÏ´Ù\r\nannounce (to »ç¶÷) thatÀı : (~¿¡°Ô) ~À» ¹ßÇ¥ÇÏ´Ù\r\nThe director announced to shareholders that he would retire."
-		 * ); HT[3].add_term("on one's own", "phr.È¥ÀÚ¼­,È¥ÀÚ ÈûÀ¸·Î",
+		 * "of\r\nnotify ì‚¬ëŒ + of ë‚´ìš©/thatì ˆ : ~ì—ê²Œ ~ì— ëŒ€í•´ í†µì§€í•˜ë‹¤\r\nannounce (to ì‚¬ëŒ) thatì ˆ : (~ì—ê²Œ) ~ì„ ë°œí‘œí•˜ë‹¤\r\nThe director announced to shareholders that he would retire."
+		 * ); HT[3].add_term("on one's own", "phr.í˜¼ìì„œ,í˜¼ì í˜ìœ¼ë¡œ",
 		 * "Operating factory machinery on one's own is dangerous.");
-		 * HT[3].add_term("oversee", "v.°¨µ¶ÇÏ´Ù",
+		 * HT[3].add_term("oversee", "v.ê°ë…í•˜ë‹¤",
 		 * "An expert consultant will oversee the installation process.");
-		 * HT[3].add_term("proprietor", "n.(»óÁ¡,ÅäÁö µîÀÇ)¼ÒÀ¯ÀÚ",
+		 * HT[3].add_term("proprietor", "n.(ìƒì ,í† ì§€ ë“±ì˜)ì†Œìœ ì",
 		 * "Hiring decisions are made by the factory's proprietor.");
-		 * HT[3].add_term("quarterly", "a.ÇÑ ÇØ ³× ¹øÀÇ", "a quarterly report");
-		 * HT[3].add_term("release", "v.°ø°³ÇÏ´Ù,¹ßÇ¥ÇÏ´Ùn.¹ß¸Å",
+		 * HT[3].add_term("quarterly", "a.í•œ í•´ ë„¤ ë²ˆì˜", "a quarterly report");
+		 * HT[3].add_term("release", "v.ê³µê°œí•˜ë‹¤,ë°œí‘œí•˜ë‹¤n.ë°œë§¤",
 		 * "The  company released its annual report.\r\nThe new line of jackets will be ready for release by early next year."
-		 * ); HT[3].add_term("remind", "v.~¿¡°Ô »ó±â½ÃÅ°´Ù,ÀÏ±ú¿ì´Ù",
+		 * ); HT[3].add_term("remind", "v.~ì—ê²Œ ìƒê¸°ì‹œí‚¤ë‹¤,ì¼ê¹¨ìš°ë‹¤",
 		 * "The secretary reminded the director of his lunch meeting.",
 		 * "The secretary reminded the director [   ] his lunch meeting.",
-		 * "of\r\nremind »ç¶÷ + of ³»¿ë/thatÀı : ~¿¡°Ô ~À» »ó±â½ÃÅ°´Ù\r\nremind »ç¶÷ to do : ~¿¡°Ô ~ÇÏ¶ó°í ÀÏ·¯µÎ´Ù\r\nbe reminded to do : ~ÇÒ °ÍÀ» ÀØÁö ¾Êµµ·Ï ÁÖÁö ¹Ş´Ù"
-		 * ); HT[3].add_term("request", "n.¿äÃ»v.¿äÃ»ÇÏ´Ù",
+		 * "of\r\nremind ì‚¬ëŒ + of ë‚´ìš©/thatì ˆ : ~ì—ê²Œ ~ì„ ìƒê¸°ì‹œí‚¤ë‹¤\r\nremind ì‚¬ëŒ to do : ~ì—ê²Œ ~í•˜ë¼ê³  ì¼ëŸ¬ë‘ë‹¤\r\nbe reminded to do : ~í•  ê²ƒì„ ìŠì§€ ì•Šë„ë¡ ì£¼ì§€ ë°›ë‹¤"
+		 * ); HT[3].add_term("request", "n.ìš”ì²­v.ìš”ì²­í•˜ë‹¤",
 		 * "Factory tours are avaliable upon request.\r\nMike requested a leave of absence for one week."
-		 * , "I request that you [    ] it.(readÀÇ ÇüÅÂ¸¦ Àû±â)",
-		 * "read\r\nupon request : ¿äÃ»ÇÏ´Â ´ë·Î\r\nrequest for : ~¿¡ ´ëÇÑ ¿äÃ»\r\nrequest that + ÁÖ¾î + µ¿»ç ¿øÇü : ~°¡ ~ÇØ ÁÙ °ÍÀ» ¿äÃ»ÇÏ´Ù\r\nbe requested to do : ~ÇÏµµ·Ï ¿äÃ»¹Ş´Ù, ~ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù\r\n¸í»ç request´Â ÀüÄ¡»ç for¿À ÇÔ²² ÀÚÁÖ »ç¿ëµÇÁö¸¸, µ¿»ç request´Â Å¸µ¿»çÀÌ¹Ç·Î ÀüÄ¡»ç ¾øÀÌ ¹Ù·Î ¸ñÀû¾î°¡ ¿Â´Ù. µ¿»ç request ´ÙÀ½¿¡ thatÀıÀÌ ¿À´Â °æ¿ì thatÀı¿¡ µ¿»ç ¿øÇüÀ» »ç¿ëÇØ¾ß ÇÑ´Ù´Â °Íµµ ²À ±â¾ïÇØ µÎÀÚ."
-		 * ); HT[3].add_term("revision", "n.¼öÁ¤,°³Á¤",
+		 * , "I request that you [    ] it.(readì˜ í˜•íƒœë¥¼ ì ê¸°)",
+		 * "read\r\nupon request : ìš”ì²­í•˜ëŠ” ëŒ€ë¡œ\r\nrequest for : ~ì— ëŒ€í•œ ìš”ì²­\r\nrequest that + ì£¼ì–´ + ë™ì‚¬ ì›í˜• : ~ê°€ ~í•´ ì¤„ ê²ƒì„ ìš”ì²­í•˜ë‹¤\r\nbe requested to do : ~í•˜ë„ë¡ ìš”ì²­ë°›ë‹¤, ~í•˜ì‹œê¸° ë°”ëë‹ˆë‹¤\r\nëª…ì‚¬ requestëŠ” ì „ì¹˜ì‚¬ forì˜¤ í•¨ê»˜ ìì£¼ ì‚¬ìš©ë˜ì§€ë§Œ, ë™ì‚¬ requestëŠ” íƒ€ë™ì‚¬ì´ë¯€ë¡œ ì „ì¹˜ì‚¬ ì—†ì´ ë°”ë¡œ ëª©ì ì–´ê°€ ì˜¨ë‹¤. ë™ì‚¬ request ë‹¤ìŒì— thatì ˆì´ ì˜¤ëŠ” ê²½ìš° thatì ˆì— ë™ì‚¬ ì›í˜•ì„ ì‚¬ìš©í•´ì•¼ í•œë‹¤ëŠ” ê²ƒë„ ê¼­ ê¸°ì–µí•´ ë‘ì."
+		 * ); HT[3].add_term("revision", "n.ìˆ˜ì •,ê°œì •",
 		 * "The team manager will make revisions on the proposal.");
-		 * HT[3].add_term("submit", "v.Á¦ÃâÇÏ´Ù",
+		 * HT[3].add_term("submit", "v.ì œì¶œí•˜ë‹¤",
 		 * "Applicants should submit a resume to the personnel manager.",
 		 * "Applicants should submit a resume [   ] the personnel manager.",
-		 * "to\r\nsubmit A to B : A¸¦ B¿¡°Ô Á¦ÃâÇÏ´Ù"); HT[3].add_term("subordinate",
-		 * "n.ºÎÇÏ Á÷¿ø,ÇÏ±ŞÀÚ", "He requested the aid of a few subordinates.");
-		 * HT[3].add_term("subsidiary", "n.ÀÚÈ¸»ç",
+		 * "to\r\nsubmit A to B : Aë¥¼ Bì—ê²Œ ì œì¶œí•˜ë‹¤"); HT[3].add_term("subordinate",
+		 * "n.ë¶€í•˜ ì§ì›,í•˜ê¸‰ì", "He requested the aid of a few subordinates.");
+		 * HT[3].add_term("subsidiary", "n.ìíšŒì‚¬",
 		 * "The acting vice president oversees the subsidiary.");
-		 * HT[3].add_term("supervision", "n.°¨µ¶", "Close supervision ensures quality.");
-		 * HT[3].add_term("translation", "n.¹ø¿ª",
+		 * HT[3].add_term("supervision", "n.ê°ë…", "Close supervision ensures quality.");
+		 * HT[3].add_term("translation", "n.ë²ˆì—­",
 		 * "The company ordered a translation of the contract into Icelandic.");
 		 * 
-		 * HT[4].add_term("accomplish", "v.¼ºÃëÇÏ´Ù",
+		 * HT[4].add_term("accomplish", "v.ì„±ì·¨í•˜ë‹¤",
 		 * "Careful planning is essential for accolplishing goals.");
-		 * HT[4].add_term("adjust", "v.ÀûÀÀÇÏ´Ù",
+		 * HT[4].add_term("adjust", "v.ì ì‘í•˜ë‹¤",
 		 * "The employees quickly adjusted to their new responsibilities.",
 		 * "The employees quickly adjusted [   ] their new responsibilities.",
-		 * "to\r\nadjust to : ~¿¡ ÀûÀÀÇÏ´Ù\r\nadjust A to B : A¸¦ B¿¡ ¸ÂÃß´Ù, ÀûÀÀ½ÃÅ°´Ù");
-		 * HT[4].add_term("agree", "v.µ¿ÀÇÇÏ´Ù",
+		 * "to\r\nadjust to : ~ì— ì ì‘í•˜ë‹¤\r\nadjust A to B : Aë¥¼ Bì— ë§ì¶”ë‹¤, ì ì‘ì‹œí‚¤ë‹¤");
+		 * HT[4].add_term("agree", "v.ë™ì˜í•˜ë‹¤",
 		 * "The team agreed on the recommendations of the advisor.",
 		 * "The team agreed [   ] the recommendations of the advisor.",
-		 * "on\r\nagree on + ÀÇ°ß : (ÀÇ°ß)¿¡ µ¿ÀÇÇÏ´Ù, ¶æÀ» °°ÀÌ ÇÏ´Ù\r\nagree to + Á¦¾È, Á¶°Ç : (Á¦¾È,Á¶°Ç)¿¡ Âù¼ºÇÏ´Ù\r\nagree with + »ç¶÷ : (»ç¶÷)¿¡ µ¿ÀÇÇÏ´Ù"
-		 * ); HT[4].add_term("aspiration", "n.Æ÷ºÎ,¿­¸Á",
+		 * "on\r\nagree on + ì˜ê²¬ : (ì˜ê²¬)ì— ë™ì˜í•˜ë‹¤, ëœ»ì„ ê°™ì´ í•˜ë‹¤\r\nagree to + ì œì•ˆ, ì¡°ê±´ : (ì œì•ˆ,ì¡°ê±´)ì— ì°¬ì„±í•˜ë‹¤\r\nagree with + ì‚¬ëŒ : (ì‚¬ëŒ)ì— ë™ì˜í•˜ë‹¤"
+		 * ); HT[4].add_term("aspiration", "n.í¬ë¶€,ì—´ë§",
 		 * "Steve has aspirations to become a partner in the firm.");
-		 * HT[4].add_term("assigh", "v.¹èÁ¤ÇÏ´Ù,ÇÒ´çÇÏ´Ù",
+		 * HT[4].add_term("assigh", "v.ë°°ì •í•˜ë‹¤,í• ë‹¹í•˜ë‹¤",
 		 * "HR assigns a unique security ID to all incoming recruits.");
-		 * HT[4].add_term("assist", "v.µ½´Ù,Á¶·ÂÇÏ´Ù",
+		 * HT[4].add_term("assist", "v.ë•ë‹¤,ì¡°ë ¥í•˜ë‹¤",
 		 * "A consultant assisted with preparing for the conference.",
 		 * "A consultant assisted [   ] preparing for the conference.",
-		 * "with\r\nassist with : ~À» µ½´Ù"); HT[4].add_term("assume",
-		 * "v.(Áõ°Å´Â ¾øÀ¸³ª)»ç½ÇÀÌ¶ó°í »ı°¢ÇÏ´Ù;(Ã¥ÀÓ,¿ªÇÒÀ»)¶°¸Ã´Ù",
+		 * "with\r\nassist with : ~ì„ ë•ë‹¤"); HT[4].add_term("assume",
+		 * "v.(ì¦ê±°ëŠ” ì—†ìœ¼ë‚˜)ì‚¬ì‹¤ì´ë¼ê³  ìƒê°í•˜ë‹¤;(ì±…ì„,ì—­í• ì„)ë– ë§¡ë‹¤",
 		 * "The management assumes employees are satisfied.\r\nThe marketing department will assume respomsibility for the project."
-		 * ); HT[4].add_term("combined", "a.ÇÕµ¿ÀÇ,°áÇÕµÈ",
+		 * ); HT[4].add_term("combined", "a.í•©ë™ì˜,ê²°í•©ëœ",
 		 * "Our combined experience has produced great sales results.");
-		 * HT[4].add_term("conduct", "v.(¾÷¹« µîÀ»)¼öÇàÇÏ´Ù",
+		 * HT[4].add_term("conduct", "v.(ì—…ë¬´ ë“±ì„)ìˆ˜í–‰í•˜ë‹¤",
 		 * "IJMR Ltd. will conduct the research study."); HT[4].add_term("confidential",
-		 * "a.±â¹ĞÀÇ,³»¹ĞÇÑ", "Her assignment was highly confidential.");
-		 * HT[4].add_term("contrary", "ad.¹İ´ë·Î",
+		 * "a.ê¸°ë°€ì˜,ë‚´ë°€í•œ", "Her assignment was highly confidential.");
+		 * HT[4].add_term("contrary", "ad.ë°˜ëŒ€ë¡œ",
 		 * "Techworld is in financial trouble, despite claims to the contrary.");
-		 * HT[4].add_term("coordinate", "v.Á¶Á¤ÇÏ´Ù",
+		 * HT[4].add_term("coordinate", "v.ì¡°ì •í•˜ë‹¤",
 		 * "The Chicago office coordinated the planning process.");
-		 * HT[4].add_term("count on", "phr.~À» ¹Ï´Ù,~¿¡ ÀÇÁöÇÏ´Ù",
+		 * HT[4].add_term("count on", "phr.~ì„ ë¯¿ë‹¤,~ì— ì˜ì§€í•˜ë‹¤",
 		 * "We provide outsourcing services that clients can count on.");
-		 * HT[4].add_term("creditable", "a.ÈÇ¸¢ÇÑ,ÄªÂùÇÒ¸¸ÇÑ",
+		 * HT[4].add_term("creditable", "a.í›Œë¥­í•œ,ì¹­ì°¬í• ë§Œí•œ",
 		 * "Our Beijing office has established a creditable reputation in China.");
-		 * HT[4].add_term("direct", "v.~¿¡°Ô ±æÀ» °¡¸®Å°´Ù",
+		 * HT[4].add_term("direct", "v.~ì—ê²Œ ê¸¸ì„ ê°€ë¦¬í‚¤ë‹¤",
 		 * "The receptionist directs customers to the product display area.",
 		 * "The receptionist directs customers [   ] the product display area.",
-		 * "to\r\ndirect A to B : A¸¦ B·Î ¾È³»ÇÏ´Ù"); HT[4].add_term("disturbing", "a.¹æÇØÇÏ´Â",
+		 * "to\r\ndirect A to B : Aë¥¼ Bë¡œ ì•ˆë‚´í•˜ë‹¤"); HT[4].add_term("disturbing", "a.ë°©í•´í•˜ëŠ”",
 		 * "Listening to loud music in the office could be disturbing to coworkers.");
-		 * HT[4].add_term("draw on", "phr.~À» ÀÌ¿ëÇÏ´Ù,~¿¡ ÀÇÁöÇÏ´Ù",
+		 * HT[4].add_term("draw on", "phr.~ì„ ì´ìš©í•˜ë‹¤,~ì— ì˜ì§€í•˜ë‹¤",
 		 * "In her new position, Sheila had to draw on her experience from past jobs.");
-		 * HT[4].add_term("duplicate", "n.»çº»",
+		 * HT[4].add_term("duplicate", "n.ì‚¬ë³¸",
 		 * "Head office ordered a duplicate of the contract.",
 		 * "Mr. Yu had his secretary type the memo [   ] duplicate.",
-		 * "in\r\nin duplicate : µÎ ÅëÀ¸·Î\r\nmake duplicates of : ~ÀÇ »çº»À» ¸¸µé´Ù");
-		 * HT[4].add_term("eminent", "a.Àú¸íÇÑ,Å¹¿ùÇÑ",
+		 * "in\r\nin duplicate : ë‘ í†µìœ¼ë¡œ\r\nmake duplicates of : ~ì˜ ì‚¬ë³¸ì„ ë§Œë“¤ë‹¤");
+		 * HT[4].add_term("eminent", "a.ì €ëª…í•œ,íƒì›”í•œ",
 		 * "The consultant was an eminent researcher."); HT[4].add_term("endeavor",
-		 * "v.³ë·ÂÇÏ´Ù,¾Ö¾²´Ù", "We will endeavor to finish the project by Friday.");
-		 * HT[4].add_term("engage", "v.°ü¿©ÇÏ´Ù,Á¾»çÇÏ´Ù",
+		 * "v.ë…¸ë ¥í•˜ë‹¤,ì• ì“°ë‹¤", "We will endeavor to finish the project by Friday.");
+		 * HT[4].add_term("engage", "v.ê´€ì—¬í•˜ë‹¤,ì¢…ì‚¬í•˜ë‹¤",
 		 * "Each worker was engaged in at least two projects.",
 		 * "Each worker was engaged [   ] at least two projects.",
-		 * "in\r\nengage in : ~¿¡ Á¾»çÇÏ´Ù\r\nbe engaged in : ~¿¡ Á¾»çÇÏ´Ù, °ü¿©ÇÏ´Ù");
-		 * HT[4].add_term("execute", "v.¼öÇàÇÏ´Ù,½ÇÇàÇÏ´Ù",
+		 * "in\r\nengage in : ~ì— ì¢…ì‚¬í•˜ë‹¤\r\nbe engaged in : ~ì— ì¢…ì‚¬í•˜ë‹¤, ê´€ì—¬í•˜ë‹¤");
+		 * HT[4].add_term("execute", "v.ìˆ˜í–‰í•˜ë‹¤,ì‹¤í–‰í•˜ë‹¤",
 		 * "Assigned tasks must be executed promptly and efficiently.");
-		 * HT[4].add_term("foster", "v.ÃËÁøÇÏ´Ù,À°¼ºÇÏ´Ù",
+		 * HT[4].add_term("foster", "v.ì´‰ì§„í•˜ë‹¤,ìœ¡ì„±í•˜ë‹¤",
 		 * "Staff dinners helped foster better work relations.");
-		 * HT[4].add_term("friction", "n.ºÒÈ­,¸¶Âû",
+		 * HT[4].add_term("friction", "n.ë¶ˆí™”,ë§ˆì°°",
 		 * "Competition for performance bonuses caused friction amongst employees.");
-		 * HT[4].add_term("get along with", "phr.~¿Í »çÀÌÁÁ°Ô Áö³»´Ù",
+		 * HT[4].add_term("get along with", "phr.~ì™€ ì‚¬ì´ì¢‹ê²Œ ì§€ë‚´ë‹¤",
 		 * "The CEO gets along with his new advisor very well.");
-		 * HT[4].add_term("hardly", "ad.°ÅÀÇ ~ÇÏÁö ¾Ê´Ù",
+		 * HT[4].add_term("hardly", "ad.ê±°ì˜ ~í•˜ì§€ ì•Šë‹¤",
 		 * "She was hardly ever late for her shift.",
 		 * "She was hardly [   ] late for her shift.",
-		 * "ever\r\nhardly ever : Á»Ã³·³ ~ÇÏÁö ¾Ê´Ù"); HT[4].add_term("insubordinate",
-		 * "a.¹İÇ×ÇÏ´Â,º¹Á¾ÇÏÁö ¾Ê´Â",
+		 * "ever\r\nhardly ever : ì¢€ì²˜ëŸ¼ ~í•˜ì§€ ì•Šë‹¤"); HT[4].add_term("insubordinate",
+		 * "a.ë°˜í•­í•˜ëŠ”,ë³µì¢…í•˜ì§€ ì•ŠëŠ”",
 		 * "The intern was dismissed on charges of insubordinate behavior.");
-		 * HT[4].add_term("intention", "n.ÀÇÁö,ÀÇÇâ",
+		 * HT[4].add_term("intention", "n.ì˜ì§€,ì˜í–¥",
 		 * "She had every intention of attending the conference, but couldn't.",
-		 * "She had every intention of [attend + ] the conference, but couldn't.Àû´çÇÑ ÇüÅÂ·Î"
-		 * , "attending\r\nhave every intention of -ing : ²À -ÇÏ°íÀÚ ÇÏ´Ù");
-		 * HT[4].add_term("lax", "a.(Çàµ¿ µîÀÌ)±ÔÀ²¿¡ ¸ø ¹ÌÄ¡´Â,´À½¼ÇÑ",
+		 * "She had every intention of [attend + ] the conference, but couldn't.ì ë‹¹í•œ í˜•íƒœë¡œ"
+		 * , "attending\r\nhave every intention of -ing : ê¼­ -í•˜ê³ ì í•˜ë‹¤");
+		 * HT[4].add_term("lax", "a.(í–‰ë™ ë“±ì´)ê·œìœ¨ì— ëª» ë¯¸ì¹˜ëŠ”,ëŠìŠ¨í•œ",
 		 * "As of late, the staff has been rather lax in turning in reports.");
-		 * HT[4].add_term("malign", "v.~À» Çæ¶â´Ù,Áß»óÇÏ´Ù",
+		 * HT[4].add_term("malign", "v.~ì„ í—ëœ¯ë‹¤,ì¤‘ìƒí•˜ë‹¤",
 		 * "The company accused union activists of maligning its integrity.");
-		 * HT[4].add_term("neutrality", "n.Áß¸³,Áß¸³¼º",
+		 * HT[4].add_term("neutrality", "n.ì¤‘ë¦½,ì¤‘ë¦½ì„±",
 		 * "His neutrality was called into question."); HT[4].add_term("occasionally",
-		 * "ad.¶§¶§·Î,°¡²û", "She occasionally failed to perform critical tasks.");
-		 * HT[4].add_term("personnel", "n.(ÁıÇÕÀû)Á÷¿ø,ÀÎ¿ø",
+		 * "ad.ë•Œë•Œë¡œ,ê°€ë”", "She occasionally failed to perform critical tasks.");
+		 * HT[4].add_term("personnel", "n.(ì§‘í•©ì )ì§ì›,ì¸ì›",
 		 * "We often use an agency to find reliable temporary personnel.");
-		 * HT[4].add_term("procrastinate", "v.²Ù¹°°Å¸®´Ù",
+		 * HT[4].add_term("procrastinate", "v.ê¾¸ë¬¼ê±°ë¦¬ë‹¤",
 		 * "The director accused his assistant of procrastinating.");
-		 * HT[4].add_term("respectful", "a.Á¤ÁßÇÑ,Á¸ÁßÇÏ´Â",
+		 * HT[4].add_term("respectful", "a.ì •ì¤‘í•œ,ì¡´ì¤‘í•˜ëŠ”",
 		 * "Salesmen are reminded to be respectful to all clients.",
 		 * "We are in great respect [   ] him.",
-		 * "for\r\nrespect for : ~¿¡ ´ëÇÑ Á¸°æ\r\nwith respect : Á¸ÁßÇÏ¿©");
-		 * HT[4].add_term("respective", "a.°¢°¢ÀÇ,Àú¸¶´ÙÀÇ",
+		 * "for\r\nrespect for : ~ì— ëŒ€í•œ ì¡´ê²½\r\nwith respect : ì¡´ì¤‘í•˜ì—¬");
+		 * HT[4].add_term("respective", "a.ê°ê°ì˜,ì €ë§ˆë‹¤ì˜",
 		 * "The disputing parties explained their respective positions.");
-		 * HT[4].add_term("responsible", "a.Ã¥ÀÓÀÌ ÀÖ´Â,Ã¥ÀÓÁ®¾ß ÇÒ",
+		 * HT[4].add_term("responsible", "a.ì±…ì„ì´ ìˆëŠ”,ì±…ì„ì ¸ì•¼ í• ",
 		 * "Employees are responsible for their own safety at work.",
 		 * "Employees are responsible [   ] their own safety at work.",
-		 * "for\r\nbe responsible for : ~¿¡ ´ëÇØ Ã¥ÀÓÀÌ ÀÖ´Ù."); HT[4].add_term("routinely",
-		 * "ad.Á¤±âÀûÀ¸·Î,ÀÏ»óÀûÀ¸·Î",
+		 * "for\r\nbe responsible for : ~ì— ëŒ€í•´ ì±…ì„ì´ ìˆë‹¤."); HT[4].add_term("routinely",
+		 * "ad.ì •ê¸°ì ìœ¼ë¡œ,ì¼ìƒì ìœ¼ë¡œ",
 		 * "Government workers are routinely required to get health checkups.");
-		 * HT[4].add_term("subsequent", "a.±× ÀÌÈÄÀÇ",
+		 * HT[4].add_term("subsequent", "a.ê·¸ ì´í›„ì˜",
 		 * "The strategy was so successful that it was used for all subsequent project."
-		 * ); HT[4].add_term("transform", "v.¹Ù²Ù´Ù,º¯¸ğ½ÃÅ°´Ù",
+		 * ); HT[4].add_term("transform", "v.ë°”ê¾¸ë‹¤,ë³€ëª¨ì‹œí‚¤ë‹¤",
 		 * "Eastel Networks helps transform your business models in innovative ways.");
-		 * HT[4].add_term("undertake", "v.(ÀÏÀ»)¶°¸Ã´Ù",
+		 * HT[4].add_term("undertake", "v.(ì¼ì„)ë– ë§¡ë‹¤",
 		 * "She had to undertake the task at short notice.");
-		 * HT[4].add_term("voluntarily", "ad.ÀÚ¹ßÀûÀ¸·Î",
+		 * HT[4].add_term("voluntarily", "ad.ìë°œì ìœ¼ë¡œ",
 		 * "He voluntarily took on the arduous task to gain experience.");
-		 * HT[4].add_term("widely", "ad.³Î¸®", "a widely admired business leader");
+		 * HT[4].add_term("widely", "ad.ë„ë¦¬", "a widely admired business leader");
 		 * 
-		 * HT[5].add_term("accessible", "a.ÃâÀÔÇÒ ¼ö ÀÖ´Â;ÀÌ¿ëÇÒ ¼ö ÀÖ´Â",
+		 * HT[5].add_term("accessible", "a.ì¶œì…í•  ìˆ˜ ìˆëŠ”;ì´ìš©í•  ìˆ˜ ìˆëŠ”",
 		 * "The 18th floor is only accessible to executive-level staff.\r\nPlease make the manual accessible to all employees."
-		 * ); HT[5].add_term("accidentally", "ad.¿ì¿¬È÷,¶æÇÏÁö ¾Ê°Ô",
+		 * ); HT[5].add_term("accidentally", "ad.ìš°ì—°íˆ,ëœ»í•˜ì§€ ì•Šê²Œ",
 		 * "Alison accidentally made some errors in the financial statements.");
-		 * HT[5].add_term("advisable", "a.¹Ù¶÷Á÷ÇÑ,ÇÕ´çÇÑ",
+		 * HT[5].add_term("advisable", "a.ë°”ëŒì§í•œ,í•©ë‹¹í•œ",
 		 * "It is advisable to update IT equipment regularly.");
-		 * HT[5].add_term("aggravate", "v.¾ÇÈ­½ÃÅ°´Ù",
+		 * HT[5].add_term("aggravate", "v.ì•…í™”ì‹œí‚¤ë‹¤",
 		 * "Tensions were aggravated by the recent staff layoffs.");
-		 * HT[5].add_term("announcement", "n.°ø°í,¹ßÇ¥",
+		 * HT[5].add_term("announcement", "n.ê³µê³ ,ë°œí‘œ",
 		 * "Mr.Dane posted announcement about the general meeting.");
-		 * HT[5].add_term("apparently", "ad.º¸±â¿¡ ~ÇÑµíÇÑ,¿Ü°ü»óÀ¸·Î´Â",
+		 * HT[5].add_term("apparently", "ad.ë³´ê¸°ì— ~í•œë“¯í•œ,ì™¸ê´€ìƒìœ¼ë¡œëŠ”",
 		 * "Apparently, Mr.Jones wasn't aware of today's meeting.");
-		 * HT[5].add_term("aspect", "n.°üÁ¡,±¹¸é",
+		 * HT[5].add_term("aspect", "n.ê´€ì ,êµ­ë©´",
 		 * "The problem must be considered from every aspect."); HT[5].add_term("aware",
-		 * "a.¾Ë°í ÀÖ´Â,ÀÎ½ÄÇÏ°í ÀÖ´Â", "Workers should be made aware of safety procedures.",
+		 * "a.ì•Œê³  ìˆëŠ”,ì¸ì‹í•˜ê³  ìˆëŠ”", "Workers should be made aware of safety procedures.",
 		 * "Workers should be made aware [   ] safety procedures.",
-		 * "of\r\nbe aware + of/thatÀı : ~À» ¾Ë°í ÀÖ´Ù"); HT[5].add_term("compliance",
-		 * "n.(¸í·É,¹ı±Ô¿¡ÀÇ)ÁØ¼ö",
+		 * "of\r\nbe aware + of/thatì ˆ : ~ì„ ì•Œê³  ìˆë‹¤"); HT[5].add_term("compliance",
+		 * "n.(ëª…ë ¹,ë²•ê·œì—ì˜)ì¤€ìˆ˜",
 		 * "Government officials will inspect the plant's compliance with safety guidelines."
 		 * ,
 		 * "Government officials will inspect the plant's compliance [   ] safety guidelines."
-		 * , "with\r\nin compliance with : ~À» ÁØ¼öÇÏ¿©"); HT[5].add_term("concerned",
-		 * "a.¿°·ÁÇÏ´Â,°ÆÁ¤ÇÏ´Â;°ü·ÃµÈ",
+		 * , "with\r\nin compliance with : ~ì„ ì¤€ìˆ˜í•˜ì—¬"); HT[5].add_term("concerned",
+		 * "a.ì—¼ë ¤í•˜ëŠ”,ê±±ì •í•˜ëŠ”;ê´€ë ¨ëœ",
 		 * "Management is concerned about security.\r\nThe manual is concerned with the vacation policy."
 		 * , "Management is concerned [   ] security.",
-		 * "about\r\nbe concerned about : ~¿¡ ´ëÇØ ¿°·ÁÇÏ´Ù, ±Ù½ÉÇÏ´Ù\r\nbe concerned with : ~¿Í °ü°è°¡ ÀÖ´Ù, ~¿¡ °ü½ÉÀÌ ÀÖ´Ù."
-		 * ); HT[5].add_term("contingency", "n.ºÒÀÇÀÇ »çÅÂ,¶æ¹ÛÀÇ ÀÏ",
+		 * "about\r\nbe concerned about : ~ì— ëŒ€í•´ ì—¼ë ¤í•˜ë‹¤, ê·¼ì‹¬í•˜ë‹¤\r\nbe concerned with : ~ì™€ ê´€ê³„ê°€ ìˆë‹¤, ~ì— ê´€ì‹¬ì´ ìˆë‹¤."
+		 * ); HT[5].add_term("contingency", "n.ë¶ˆì˜ì˜ ì‚¬íƒœ,ëœ»ë°–ì˜ ì¼",
 		 * "Our team is prepared for all contingencies."); HT[5].add_term("demonstrate",
-		 * "v.Áõ¸íÇÏ´Ù;(¸ğÇü,½ÇÇè µîÀ¸·Î)¼³¸íÇÏ´Ù",
+		 * "v.ì¦ëª…í•˜ë‹¤;(ëª¨í˜•,ì‹¤í—˜ ë“±ìœ¼ë¡œ)ì„¤ëª…í•˜ë‹¤",
 		 * "Sales figures demonstrate that the advertising campaign was successful.\r\nOur representative will demonstrate how to use the instrument."
-		 * ); HT[5].add_term("divide", "v.³ª´©´Ù",
+		 * ); HT[5].add_term("divide", "v.ë‚˜ëˆ„ë‹¤",
 		 * "Required overtime will be divided equally amongst employees.",
 		 * "At end of cycle, remove dough and divide [   ] halves.",
-		 * "into\r\ndivide A into B : A¸¦ B·Î ³ª´©´Ù\r\nbe divided into : ~·Î ³ª´²Áö´Ù");
-		 * HT[5].add_term("embrace", "v.¹Ş¾ÆµéÀÌ´Ù,Æ÷¿ëÇÏ´Ù",
+		 * "into\r\ndivide A into B : Aë¥¼ Bë¡œ ë‚˜ëˆ„ë‹¤\r\nbe divided into : ~ë¡œ ë‚˜ëˆ ì§€ë‹¤");
+		 * HT[5].add_term("embrace", "v.ë°›ì•„ë“¤ì´ë‹¤,í¬ìš©í•˜ë‹¤",
 		 * "The company embraced the new technology."); HT[5].add_term("evacuate",
-		 * "v.(Áı,Àå¼Ò¿¡¼­)´ëÇÇÇÏ´Ù",
+		 * "v.(ì§‘,ì¥ì†Œì—ì„œ)ëŒ€í”¼í•˜ë‹¤",
 		 * "Occupants were told to evacuate the building immediately.");
-		 * HT[5].add_term("expertise", "n.Àü¹®Á÷ ±â¼ú",
+		 * HT[5].add_term("expertise", "n.ì „ë¬¸ì§ ê¸°ìˆ ",
 		 * "This kind of project falls outside our area of expertise.");
-		 * HT[5].add_term("extended", "a.(±â°£ µîÀ»)¿¬ÀåÇÑ,Àå±â°£¿¡ °ÉÄ£",
+		 * HT[5].add_term("extended", "a.(ê¸°ê°„ ë“±ì„)ì—°ì¥í•œ,ì¥ê¸°ê°„ì— ê±¸ì¹œ",
 		 * "Overtime is avaliable for those willing to work extended hours.");
-		 * HT[5].add_term("face", "v.(¹®Á¦ µî¿¡)Á÷¸éÇÏ´Ù",
+		 * HT[5].add_term("face", "v.(ë¬¸ì œ ë“±ì—)ì§ë©´í•˜ë‹¤",
 		 * "Businesses are faced with the echallenge of foreigh competition.",
 		 * "Businesses are faced [   ] the echallenge of foreigh competition.",
-		 * "with\r\nbe faced with : (¹®Á¦ µî¿¡)Á÷¸éÇÏ´Ù"); HT[5].add_term("failure",
-		 * "n.(±â°è µûÀ§ÀÇ)°íÀå,ÆÄ¼Õ", "A technician is on call to correct system failures.");
-		 * HT[5].add_term("feedback", "n.ÀÇ°ß,¹İÀÀ",
+		 * "with\r\nbe faced with : (ë¬¸ì œ ë“±ì—)ì§ë©´í•˜ë‹¤"); HT[5].add_term("failure",
+		 * "n.(ê¸°ê³„ ë”°ìœ„ì˜)ê³ ì¥,íŒŒì†", "A technician is on call to correct system failures.");
+		 * HT[5].add_term("feedback", "n.ì˜ê²¬,ë°˜ì‘",
 		 * "Feedback from one's colleagues can be of great assistance.");
-		 * HT[5].add_term("follow", "v.~À» µû¶ó°¡´Ù",
+		 * HT[5].add_term("follow", "v.~ì„ ë”°ë¼ê°€ë‹¤",
 		 * "The delegates followed the guide into the exhibition hall.",
-		 * "Follow this road [   ] the corner.", "to\r\nfollow A to B : A¸¦ µû¶ó B±îÁö °¡´Ù");
-		 * HT[5].add_term("implement", "v.½ÇÇàÇÏ´Ù,½Ç½ÃÇÏ´Ù",
+		 * "Follow this road [   ] the corner.", "to\r\nfollow A to B : Aë¥¼ ë”°ë¼ Bê¹Œì§€ ê°€ë‹¤");
+		 * HT[5].add_term("implement", "v.ì‹¤í–‰í•˜ë‹¤,ì‹¤ì‹œí•˜ë‹¤",
 		 * "Board members voted to implement an innovative marketing campaign.");
-		 * HT[5].add_term("inform", "v.~¿¡°Ô ¾Ë¸®´Ù",
+		 * HT[5].add_term("inform", "v.~ì—ê²Œ ì•Œë¦¬ë‹¤",
 		 * "Please inform the director that the meeting is cancelled.",
 		 * "Please inform the director [   ] the meeting is cancelled.",
-		 * "that\r\ninform »ç¶÷ + of ³»¿ë/thatÀı : ~¿¡°Ô ~À» ¾Ë¸®´Ù\t\nexplain (to »ç¶÷)that Àı : (~¿¡°Ô)~À» ¼³¸íÇÏ´Ù"
-		 * ); HT[5].add_term("instead of", "phr.~´ë½Å¿¡",
+		 * "that\r\ninform ì‚¬ëŒ + of ë‚´ìš©/thatì ˆ : ~ì—ê²Œ ~ì„ ì•Œë¦¬ë‹¤\t\nexplain (to ì‚¬ëŒ)that ì ˆ : (~ì—ê²Œ)~ì„ ì„¤ëª…í•˜ë‹¤"
+		 * ); HT[5].add_term("instead of", "phr.~ëŒ€ì‹ ì—",
 		 * "Management offered employees stock options instead of wage increases.");
-		 * HT[5].add_term("interruption", "n.Áß´Ü,¹æÇØ",
+		 * HT[5].add_term("interruption", "n.ì¤‘ë‹¨,ë°©í•´",
 		 * "The blackout caused a brief interruption in internet access.");
-		 * HT[5].add_term("make sure", "phr.È®ÀÎÇÏ´Ù",
+		 * HT[5].add_term("make sure", "phr.í™•ì¸í•˜ë‹¤",
 		 * "Tech support makes sure that the network is functioning.");
-		 * HT[5].add_term("matter", "n.¹®Á¦",
+		 * HT[5].add_term("matter", "n.ë¬¸ì œ",
 		 * "Please deal with personal matters outside the office.");
-		 * HT[5].add_term("outstanding", "a.¿ì¼öÇÑ;(ºÎÃ¤ µîÀÌ)¹Ì°áÁ¦µÈ",
+		 * HT[5].add_term("outstanding", "a.ìš°ìˆ˜í•œ;(ë¶€ì±„ ë“±ì´)ë¯¸ê²°ì œëœ",
 		 * "an outstanding busuness plan\r\noutstanding debts");
-		 * HT[5].add_term("privilege", "n.Æ¯±Ç,Æ¯Àü",
+		 * HT[5].add_term("privilege", "n.íŠ¹ê¶Œ,íŠ¹ì „",
 		 * "Experienced staff may be offered management level privileges.");
-		 * HT[5].add_term("promptly", "ad.Áï½Ã;Á¤°¢¿¡",
+		 * HT[5].add_term("promptly", "ad.ì¦‰ì‹œ;ì •ê°ì—",
 		 * "It is company policy to respond promptly to all inquiries.");
-		 * HT[5].add_term("realistically", "ad.Çö½ÇÀûÀ¸·Î",
+		 * HT[5].add_term("realistically", "ad.í˜„ì‹¤ì ìœ¼ë¡œ",
 		 * "We cannot realistically expect to have the presentation ready on time.");
-		 * HT[5].add_term("remainder", "n.³ª¸ÓÁö",
+		 * HT[5].add_term("remainder", "n.ë‚˜ë¨¸ì§€",
 		 * "Audits will continue throughout the remainder of the month.",
 		 * "Audits will continue throughout the remainder [   ] the month.",
-		 * "of\r\nthroughout the remainder of + ±â°£"); HT[5].add_term("rush", "v.¼­µÎ¸£´Ù",
+		 * "of\r\nthroughout the remainder of + ê¸°ê°„"); HT[5].add_term("rush", "v.ì„œë‘ë¥´ë‹¤",
 		 * "Crews rushed to finish construction ahead of schedule.");
-		 * HT[5].add_term("sign out", "phr.¼­¸íÇÏ¿© ¿ÜÃâÀ» ±â·ÏÇÏ´Ù",
+		 * HT[5].add_term("sign out", "phr.ì„œëª…í•˜ì—¬ ì™¸ì¶œì„ ê¸°ë¡í•˜ë‹¤",
 		 * "All employees must sign out for all breaks.");
-		 * HT[5].add_term("sophisticated", "a.(±â°è°¡)Á¤±³ÇÑ,º¹ÀâÇÑ;¼¼·ÃµÈ",
+		 * HT[5].add_term("sophisticated", "a.(ê¸°ê³„ê°€)ì •êµí•œ,ë³µì¡í•œ;ì„¸ë ¨ëœ",
 		 * "A sophisticated security system was installed.\r\nThe decorator exhibited a sophisticated taste in art."
-		 * ); HT[5].add_term("speak", "v.ÀÌ¾ß±âÇÏ´Ù",
+		 * ); HT[5].add_term("speak", "v.ì´ì•¼ê¸°í•˜ë‹¤",
 		 * "Mr.Brooke spoke to his clients about a new venture.",
 		 * "Mr.Brooke spoke to his clients [   ] a new venture.",
-		 * "about\r\nspeak to »ç¶÷ about ³»¿ë : ~¿¡°Ô ~¿¡ ´ëÇØ ÀÌ¾ß±âÇÏ´Ù\r\nspeak + ¾ğ¾î : (¾ğ¾î¸¦)¸»ÇÏ´Ù\r\nspeak´Â '~¿¡°Ô ¸»ÇÏ´Ù'¶õ ÀÚµ¿»ç·Î ¸¹ÀÌ ¾²ÀÌ¸ç ÀÌ¶§ µè´Â »ç¶÷ ¾Õ¿¡´Â to¸¦ ½á¾ß ÇÑ´Ù. speak English¿¡¼­Ã³·³ '(¾ğ¾î¸¦)¸»ÇÏ´Ù'¶õ Å¸µ¿»ç·Îµµ »ç¿ëµÈ´Ù.\r\ntell »ç¶÷ thatÀı : ~¿¡°Ô ~À» ÀÌ¾ß±âÇÏ´Ù\r\ntellÀº 4Çü½Ä µ¿»çÀÌ¸ç µÚ¿¡ »ç¶÷¸ñÀû¾î¿Í thatÀıÀÌ ¿À´Â ÇüÅÂ·Î ¸¹ÀÌ ¾²ÀÎ´Ù.\r\nMr.Bennett told reporters that he would retire soon.\r\nsay (to »ç¶÷)thatÀı : (~¿¡°Ô)~À» ÀÌ¾ß±âÇÏ´Ù\r\nsay´Â 3Çü½Ä µ¿»ç·Î thatÀıÀÌ ¸ñÀû¾î·Î ¿À´Â ÇüÅÂ·Î ¸¹ÀÌ ¾²ÀÎ´Ù. µè´Â »ç¶÷ ¾Õ¿¡´Â ²À to¸¦ ½á¾ß ÇÑ´Ù.\r\nThe customer said to her that he was happy with the purchase."
-		 * ); HT[5].add_term("take on", "phr.(¿ªÇÒ,ÀÏÀ»)¶°¸Ã´Ù",
+		 * "about\r\nspeak to ì‚¬ëŒ about ë‚´ìš© : ~ì—ê²Œ ~ì— ëŒ€í•´ ì´ì•¼ê¸°í•˜ë‹¤\r\nspeak + ì–¸ì–´ : (ì–¸ì–´ë¥¼)ë§í•˜ë‹¤\r\nspeakëŠ” '~ì—ê²Œ ë§í•˜ë‹¤'ë€ ìë™ì‚¬ë¡œ ë§ì´ ì“°ì´ë©° ì´ë•Œ ë“£ëŠ” ì‚¬ëŒ ì•ì—ëŠ” toë¥¼ ì¨ì•¼ í•œë‹¤. speak Englishì—ì„œì²˜ëŸ¼ '(ì–¸ì–´ë¥¼)ë§í•˜ë‹¤'ë€ íƒ€ë™ì‚¬ë¡œë„ ì‚¬ìš©ëœë‹¤.\r\ntell ì‚¬ëŒ thatì ˆ : ~ì—ê²Œ ~ì„ ì´ì•¼ê¸°í•˜ë‹¤\r\ntellì€ 4í˜•ì‹ ë™ì‚¬ì´ë©° ë’¤ì— ì‚¬ëŒëª©ì ì–´ì™€ thatì ˆì´ ì˜¤ëŠ” í˜•íƒœë¡œ ë§ì´ ì“°ì¸ë‹¤.\r\nMr.Bennett told reporters that he would retire soon.\r\nsay (to ì‚¬ëŒ)thatì ˆ : (~ì—ê²Œ)~ì„ ì´ì•¼ê¸°í•˜ë‹¤\r\nsayëŠ” 3í˜•ì‹ ë™ì‚¬ë¡œ thatì ˆì´ ëª©ì ì–´ë¡œ ì˜¤ëŠ” í˜•íƒœë¡œ ë§ì´ ì“°ì¸ë‹¤. ë“£ëŠ” ì‚¬ëŒ ì•ì—ëŠ” ê¼­ toë¥¼ ì¨ì•¼ í•œë‹¤.\r\nThe customer said to her that he was happy with the purchase."
+		 * ); HT[5].add_term("take on", "phr.(ì—­í• ,ì¼ì„)ë– ë§¡ë‹¤",
 		 * "BMI Construction Ltd.regularly takes on large-scale projects.");
-		 * HT[5].add_term("timely", "a.½Ã±âÀûÀıÇÑ,¶§¸¦ ¸ÂÃá",
+		 * HT[5].add_term("timely", "a.ì‹œê¸°ì ì ˆí•œ,ë•Œë¥¼ ë§ì¶˜",
 		 * "The report was completed in a timely manner.",
 		 * "The report was completed [   ] a timely manner.",
-		 * "in\r\nin a timely manner : ¶§ ¸ÂÃç"); HT[5].add_term("trigger", "v.¾ß±âÇÏ´Ù,À¯¹ßÇÏ´Ù",
+		 * "in\r\nin a timely manner : ë•Œ ë§ì¶°"); HT[5].add_term("trigger", "v.ì•¼ê¸°í•˜ë‹¤,ìœ ë°œí•˜ë‹¤",
 		 * "The reduction in breaks triggered employee complaints.");
-		 * HT[5].add_term("violation", "n.À§¹İ,À§¹è",
+		 * HT[5].add_term("violation", "n.ìœ„ë°˜,ìœ„ë°°",
 		 * "Violation of safety codes may result in dismissal.");
 		 * 
-		 * HT[6].add_term("abate", "v.´©±×·¯Áö´Ù,¾àÇØÁö´Ù,°¨¼ÒÇÏ´Ù",
+		 * HT[6].add_term("abate", "v.ëˆ„ê·¸ëŸ¬ì§€ë‹¤,ì•½í•´ì§€ë‹¤,ê°ì†Œí•˜ë‹¤",
 		 * "The recent economic crisis will not abate soon.");
-		 * HT[6].add_term("adversity", "n.¿ª°æ,ºÒ¿î",
+		 * HT[6].add_term("adversity", "n.ì—­ê²½,ë¶ˆìš´",
 		 * "The middle class faces the most adversity during depressions.");
-		 * HT[6].add_term("ailing", "a.º´µç,±«·Î¿öÇÏ´Â",
+		 * HT[6].add_term("ailing", "a.ë³‘ë“ ,ê´´ë¡œì›Œí•˜ëŠ”",
 		 * "An ailing economy has forced the unemployment rates to increase considerably."
-		 * ); HT[6].add_term("assert", "v.´Ü¾ğÇÏ´Ù,ÁÖÀåÇÏ´Ù",
+		 * ); HT[6].add_term("assert", "v.ë‹¨ì–¸í•˜ë‹¤,ì£¼ì¥í•˜ë‹¤",
 		 * "The report asserts that economic growth will continue.");
-		 * HT[6].add_term("boost", "v.(°æ±â¸¦)ºÎ¾çÇÏ´Ù,»ó½Â½ÃÅ°´Ù",
+		 * HT[6].add_term("boost", "v.(ê²½ê¸°ë¥¼)ë¶€ì–‘í•˜ë‹¤,ìƒìŠ¹ì‹œí‚¤ë‹¤",
 		 * "The real estate industry has helped boost the economy.");
-		 * HT[6].add_term("brisk", "a.È£È²ÀÇ,È°¹ßÇÑ",
+		 * HT[6].add_term("brisk", "a.í˜¸í™©ì˜,í™œë°œí•œ",
 		 * "A brisk market is developing in online shopping.");
-		 * HT[6].add_term("collapse", "n.ºØ±«",
+		 * HT[6].add_term("collapse", "n.ë¶•ê´´",
 		 * "To prevent an economic collapse, the president froze prices.");
-		 * HT[6].add_term("commerce", "n.Åë»ó,±³¿ª",
+		 * HT[6].add_term("commerce", "n.í†µìƒ,êµì—­",
 		 * "The organization promotes international commerce.");
-		 * HT[6].add_term("consequence", "n.°á°ú",
+		 * HT[6].add_term("consequence", "n.ê²°ê³¼",
 		 * "Profits grew as a consequence of increased business.");
-		 * HT[6].add_term("depression", "n.ºÒÈ²",
+		 * HT[6].add_term("depression", "n.ë¶ˆí™©",
 		 * "The entire industry is going through an economic depression.");
-		 * HT[6].add_term("deteriorate", "v.¾ÇÈ­µÇ´Ù,³ªºüÁö´Ù",
+		 * HT[6].add_term("deteriorate", "v.ì•…í™”ë˜ë‹¤,ë‚˜ë¹ ì§€ë‹¤",
 		 * "Forecasters warned that the economy would deteriorate.");
-		 * HT[6].add_term("dramatically", "ad.±ØÀûÀ¸·Î",
+		 * HT[6].add_term("dramatically", "ad.ê·¹ì ìœ¼ë¡œ",
 		 * "Interest rates climbed dramatically."); HT[6].add_term("dwindle",
-		 * "v.ÁÙ¾îµé´Ù,°¨¼ÒµÇ´Ù", "The company's economic fortunes dwindled in the 1990s.");
-		 * HT[6].add_term("economical", "a.°æÁ¦ÀûÀÎ,Àı¾àµÇ´Â",
+		 * "v.ì¤„ì–´ë“¤ë‹¤,ê°ì†Œë˜ë‹¤", "The company's economic fortunes dwindled in the 1990s.");
+		 * HT[6].add_term("economical", "a.ê²½ì œì ì¸,ì ˆì•½ë˜ëŠ”",
 		 * "Companies are searching for economical ways to utilize energy.");
-		 * HT[6].add_term("entail", "v.~À» ¼ö¹İÇÏ´Ù,~À» À¯¹ßÇÏ´Ù",
+		 * HT[6].add_term("entail", "v.~ì„ ìˆ˜ë°˜í•˜ë‹¤,~ì„ ìœ ë°œí•˜ë‹¤",
 		 * "Trade restrictions may entail economic costs."); HT[6].add_term("fairly",
-		 * "ad.»ó´çÈ÷,²Ï", "Concerns over the bankruptcy are fairly widespread.");
-		 * HT[6].add_term("fall", "v.(°ª,°¡Ä¡°¡)ÇÏ¶ôÇÏ´Ù",
+		 * "ad.ìƒë‹¹íˆ,ê½¤", "Concerns over the bankruptcy are fairly widespread.");
+		 * HT[6].add_term("fall", "v.(ê°’,ê°€ì¹˜ê°€)í•˜ë½í•˜ë‹¤",
 		 * "The rate of unemployment has fallen steadily this quarter.");
-		 * HT[6].add_term("flourish", "v.¹øÃ¢ÇÏ´Ù,À¶¼ºÇÏ´Ù",
+		 * HT[6].add_term("flourish", "v.ë²ˆì°½í•˜ë‹¤,ìœµì„±í•˜ë‹¤",
 		 * "The newly-merged firm is flourishing despite organizational weaknesses.");
-		 * HT[6].add_term("impede", "v.ÀúÇØÇÏ´Ù,¹æÇØÇÏ´Ù",
+		 * HT[6].add_term("impede", "v.ì €í•´í•˜ë‹¤,ë°©í•´í•˜ë‹¤",
 		 * "Natural calamities in the summer will impede national growth.");
-		 * HT[6].add_term("implication", "n.¿µÇâ,¹ĞÁ¢ÇÑ °ü°è",
+		 * HT[6].add_term("implication", "n.ì˜í–¥,ë°€ì ‘í•œ ê´€ê³„",
 		 * "The Supreme Court ruling has implications for small businesses.",
 		 * "The Supreme Court ruling has implications [   ] small businesses.",
-		 * "for\r\nhave implications for : ~¿¡ ¿µÇâÀ» ¹ÌÄ¡´Ù"); HT[6].add_term("indicator",
-		 * "n.ÁöÇ¥,Áö¼ö", "Current economic indicators show admirable growth in mining.");
-		 * HT[6].add_term("industrial", "a.»ê¾÷ÀÇ", "an industrial exhibition");
-		 * HT[6].add_term("lead", "v.ÀÌ²ø´Ù,ÁöÈÖÇÏ´Ù;(¾î¶² °á°ú¿¡)ÀÌ¸£´Ù",
+		 * "for\r\nhave implications for : ~ì— ì˜í–¥ì„ ë¯¸ì¹˜ë‹¤"); HT[6].add_term("indicator",
+		 * "n.ì§€í‘œ,ì§€ìˆ˜", "Current economic indicators show admirable growth in mining.");
+		 * HT[6].add_term("industrial", "a.ì‚°ì—…ì˜", "an industrial exhibition");
+		 * HT[6].add_term("lead", "v.ì´ëŒë‹¤,ì§€íœ˜í•˜ë‹¤;(ì–´ë–¤ ê²°ê³¼ì—)ì´ë¥´ë‹¤",
 		 * "She helped lead the company to success.\r\nGrowing oil markets will lead to economic improvement."
 		 * , "Growing oil markets will lead [   ] economic improvement.",
-		 * "to\r\nlead to : (¾î¶² °á°ú¿¡)ÀÌ¸£´Ù"); HT[6].add_term("likely", "a.~ÇÒ °Í °°Àº",
+		 * "to\r\nlead to : (ì–´ë–¤ ê²°ê³¼ì—)ì´ë¥´ë‹¤"); HT[6].add_term("likely", "a.~í•  ê²ƒ ê°™ì€",
 		 * "The new CEO is likely to confront major challenges.",
 		 * "The new CEO is likely [   ] confront major challenges.",
-		 * "to\r\nbe likely to do : ~ÇÒ °Í °°´Ù"); HT[6].add_term("overall", "a.Àü¹İÀûÀÎ,ÃÑÃ¼ÀûÀÎ",
+		 * "to\r\nbe likely to do : ~í•  ê²ƒ ê°™ë‹¤"); HT[6].add_term("overall", "a.ì „ë°˜ì ì¸,ì´ì²´ì ì¸",
 		 * "Overal profitability was impacted by the lagging economy.");
-		 * HT[6].add_term("promising", "a.À¯¸ÁÇÑ,Àü¸ÁÀÌ ÁÁÀº",
-		 * "a promising global economic outlook"); HT[6].add_term("prospect", "n.Àü¸Á,¿¹»ó",
+		 * HT[6].add_term("promising", "a.ìœ ë§í•œ,ì „ë§ì´ ì¢‹ì€",
+		 * "a promising global economic outlook"); HT[6].add_term("prospect", "n.ì „ë§,ì˜ˆìƒ",
 		 * "Weak industries are facing prospects of inflated interest rates.");
-		 * HT[6].add_term("prosperity", "n.¹ø¿µ",
+		 * HT[6].add_term("prosperity", "n.ë²ˆì˜",
 		 * "Strong economic growth is a prerequisite for national prosperity.",
 		 * "Industrial conflict seems to be more rampant in some countries in times [   ] prosperity."
-		 * , "of\r\nin times of prosperity : ¹ø¿µ±â¿¡"); HT[6].add_term("rapidly",
-		 * "ad.±Ş¼ÓÈ÷,»¡¸®", "Energy demand increased rapidly."); HT[6].add_term("ratio",
-		 * "n.ºñÀ²", "The bank calculated the debt ratio of the company.");
-		 * HT[6].add_term("remain", "v.¿©ÀüÈ÷ ~ÇÑ »óÅÂÀÌ´Ù;¾ÆÁ÷ ~ÇØ¾ß ÇÏ´Ù",
+		 * , "of\r\nin times of prosperity : ë²ˆì˜ê¸°ì—"); HT[6].add_term("rapidly",
+		 * "ad.ê¸‰ì†íˆ,ë¹¨ë¦¬", "Energy demand increased rapidly."); HT[6].add_term("ratio",
+		 * "n.ë¹„ìœ¨", "The bank calculated the debt ratio of the company.");
+		 * HT[6].add_term("remain", "v.ì—¬ì „íˆ ~í•œ ìƒíƒœì´ë‹¤;ì•„ì§ ~í•´ì•¼ í•˜ë‹¤",
 		 * "The cost of living should remain stable over the next decade.\r\nIt remains to be seen whether or not the tax cut will be passed."
-		 * ); HT[6].add_term("skyrocket", "v.(°¡°İ µîÀÌ)Ä¡¼Ú´Ù",
+		 * ); HT[6].add_term("skyrocket", "v.(ê°€ê²© ë“±ì´)ì¹˜ì†Ÿë‹¤",
 		 * "Production costs are expected to skyrocket."); HT[6].add_term("slowdown",
-		 * "n.°æ±â ÈÄÅğ", "Experts predict a gradual slowdown in the nation's economy.");
-		 * HT[6].add_term("soar", "v.(¹°°¡ µîÀÌ)ÆøµîÇÏ´Ù,³ôÀÌ Ä¡¼Ú´Ù",
+		 * "n.ê²½ê¸° í›„í‡´", "Experts predict a gradual slowdown in the nation's economy.");
+		 * HT[6].add_term("soar", "v.(ë¬¼ê°€ ë“±ì´)í­ë“±í•˜ë‹¤,ë†’ì´ ì¹˜ì†Ÿë‹¤",
 		 * "Rates have soared due to inflation."); HT[6].add_term("stagnant",
-		 * "a.Ä§Ã¼µÈ,ºÒ°æ±âÀÇ", "the stagnant steel industry"); HT[6].add_term("supplement",
-		 * "v.º¸¿ÏÇÏ´Ù,º¸ÃæÇÏ´Ù",
+		 * "a.ì¹¨ì²´ëœ,ë¶ˆê²½ê¸°ì˜", "the stagnant steel industry"); HT[6].add_term("supplement",
+		 * "v.ë³´ì™„í•˜ë‹¤,ë³´ì¶©í•˜ë‹¤",
 		 * "Increased export production will supplement weak domestic sales.");
-		 * HT[6].add_term("thrive", "v.¹ø¿µÇÏ´Ù,¼º°øÇÏ´Ù",
+		 * HT[6].add_term("thrive", "v.ë²ˆì˜í•˜ë‹¤,ì„±ê³µí•˜ë‹¤",
 		 * "The delivery service industry is thriving."); HT[6].add_term("unstable",
-		 * "a.ºÒ¾ÈÁ¤ÇÑ,º¯ÇÏ±â ½¬¿î", "Gas prices have been unstable in recent years.");
-		 * HT[6].add_term("volatile", "a.(°¡°İ µîÀÌ)½ÉÇÏ°Ô º¯µ¿ÇÏ´Â", "volatile stock markets");
-		 * HT[6].add_term("wane", "n.°¨¼Ò,¼èÅğ", "Consumer spending is on the wane.",
+		 * "a.ë¶ˆì•ˆì •í•œ,ë³€í•˜ê¸° ì‰¬ìš´", "Gas prices have been unstable in recent years.");
+		 * HT[6].add_term("volatile", "a.(ê°€ê²© ë“±ì´)ì‹¬í•˜ê²Œ ë³€ë™í•˜ëŠ”", "volatile stock markets");
+		 * HT[6].add_term("wane", "n.ê°ì†Œ,ì‡ í‡´", "Consumer spending is on the wane.",
 		 * "Consumer spending is [   ] the wane.",
-		 * "on\r\non the wane : °¨¼ÒÇÏ°í ÀÖ´Â, ¼è¾àÇØÁö°í ÀÖ´Â(=on the decline)");
+		 * "on\r\non the wane : ê°ì†Œí•˜ê³  ìˆëŠ”, ì‡ ì•½í•´ì§€ê³  ìˆëŠ”(=on the decline)");
 		 * 
-		 * HT[7].add_term("admission", "n.ÀÔÀå",
+		 * HT[7].add_term("admission", "n.ì…ì¥",
 		 * "Those wishing to visit the exhibit will be charged an extra admission fee."
-		 * ); HT[7].add_term("advocate", "n.¿ËÈ£ÀÚ",
+		 * ); HT[7].add_term("advocate", "n.ì˜¹í˜¸ì",
 		 * "The writer is an advocate of public education.",
 		 * "The writer is an advocate [   ] public education.",
-		 * "of\r\nan advocate of : ~ÀÇ ¿ËÈ£ÀÚ"); HT[7].add_term("alumni", "n.µ¿Ã¢»ıµé",
+		 * "of\r\nan advocate of : ~ì˜ ì˜¹í˜¸ì"); HT[7].add_term("alumni", "n.ë™ì°½ìƒë“¤",
 		 * "St.John's University alumni were invited to the graduation ceremony.");
-		 * HT[7].add_term("anonymous", "a.ÀÍ¸íÀÇ,ÀÌ¸§À» ¸ğ¸£´Â",
+		 * HT[7].add_term("anonymous", "a.ìµëª…ì˜,ì´ë¦„ì„ ëª¨ë¥´ëŠ”",
 		 * "The orphanage received $6,000 from an anonymous donor.");
-		 * HT[7].add_term("appear", "v.³ªÅ¸³ª´Ù,ÃâÇöÇÏ´Ù",
+		 * HT[7].add_term("appear", "v.ë‚˜íƒ€ë‚˜ë‹¤,ì¶œí˜„í•˜ë‹¤",
 		 * "The novelist appeared at the bookstore to sign autographs.");
-		 * HT[7].add_term("beneficial", "a.À¯ÀÍÇÑ,ÀÌ·Î¿î",
+		 * HT[7].add_term("beneficial", "a.ìœ ìµí•œ,ì´ë¡œìš´",
 		 * "The organization's work is beneficial to the community.",
 		 * "The organization's work is beneficial [   ] the community.",
-		 * "to\r\nbe beneficial to : ~¿¡ ÀÌÀÍÀÌ µÇ´Ù"); HT[7].add_term("care for",
-		 * "phr.~À» µ¹º¸´Ù", "He wondered whether he'd have time to care for a pet.");
-		 * HT[7].add_term("celebrity", "n.À¯¸í ÀÎ»ç,¸í»ç",
+		 * "to\r\nbe beneficial to : ~ì— ì´ìµì´ ë˜ë‹¤"); HT[7].add_term("care for",
+		 * "phr.~ì„ ëŒë³´ë‹¤", "He wondered whether he'd have time to care for a pet.");
+		 * HT[7].add_term("celebrity", "n.ìœ ëª… ì¸ì‚¬,ëª…ì‚¬",
 		 * "Many celebrities attended the city's summer park festival.");
-		 * HT[7].add_term("censorship", "n.°Ë¿­",
+		 * HT[7].add_term("censorship", "n.ê²€ì—´",
 		 * "The Actors Guild protested the censorship of politically controversial films."
-		 * ); HT[7].add_term("collection", "n.¼öÁı¹°,¼ÒÀåÇ°;¼ö±İ,Â¡¼ö",
+		 * ); HT[7].add_term("collection", "n.ìˆ˜ì§‘ë¬¼,ì†Œì¥í’ˆ;ìˆ˜ê¸ˆ,ì§•ìˆ˜",
 		 * "The museum has a unique collection of stamps.\r\nToll collection operates by means of an electronic system."
 		 * , "We will collect money [   ] people, present company excepted.",
-		 * " from\r\ncollect A from B : B·ÎºÎÅÍ A¸¦ ¼öÁıÇÏ´Ù"); HT[7].add_term("come in + ¼­¼ö",
-		 * "phr.~À§·Î ÀÔ»óÇÏ´Ù", "Amateur planist Andrew Ward came in third.");
-		 * HT[7].add_term("contestant", "n.°æ±âÀÚ,°æÀïÀÚ",
+		 * " from\r\ncollect A from B : Bë¡œë¶€í„° Aë¥¼ ìˆ˜ì§‘í•˜ë‹¤"); HT[7].add_term("come in + ì„œìˆ˜",
+		 * "phr.~ìœ„ë¡œ ì…ìƒí•˜ë‹¤", "Amateur planist Andrew Ward came in third.");
+		 * HT[7].add_term("contestant", "n.ê²½ê¸°ì,ê²½ìŸì",
 		 * "One of the contestants won an around-the-world ticket.");
-		 * HT[7].add_term("contributor", "n.±â°í°¡,°øÇåÀÚ",
+		 * HT[7].add_term("contributor", "n.ê¸°ê³ ê°€,ê³µí—Œì",
 		 * "The doctor is a regular contributor to the newspaper.",
 		 * "The doctor is a regular contributor [   ] the newspaper.",
-		 * "to\r\ncontributor to : ~¿¡ ´ëÇÑ ±â°í°¡"); HT[7].add_term("current", "a.ÇöÀçÀÇ",
+		 * "to\r\ncontributor to : ~ì— ëŒ€í•œ ê¸°ê³ ê°€"); HT[7].add_term("current", "a.í˜„ì¬ì˜",
 		 * "Current subscribers to the magazine will receive a free supplement.");
-		 * HT[7].add_term("defy", "v.ÀúÇ×ÇÏ´Ù",
+		 * HT[7].add_term("defy", "v.ì €í•­í•˜ë‹¤",
 		 * "The documentary series defies conventional wisdom about fitness.\r\nThe play defied all description."
-		 * ); HT[7].add_term("donation", "n.±âÁõ,±âºÎ",
+		 * ); HT[7].add_term("donation", "n.ê¸°ì¦,ê¸°ë¶€",
 		 * "The library is accepting donations of children's books.");
-		 * HT[7].add_term("edition", "n.(°£Çà¹°ÀÇ)ÆÇ",
+		 * HT[7].add_term("edition", "n.(ê°„í–‰ë¬¼ì˜)íŒ",
 		 * "A revised edition of ASU will be published soon.");
-		 * HT[7].add_term("enlightening", "a.°è¸ùÀûÀÎ,°¡¸£Ä§À» ÁÖ´Â",
+		 * HT[7].add_term("enlightening", "a.ê³„ëª½ì ì¸,ê°€ë¥´ì¹¨ì„ ì£¼ëŠ”",
 		 * "The editorial is enlightening."); HT[7].add_term("enthusiastically",
-		 * "ad.¿­±¤ÀûÀ¸·Î", "The press enthusiastically applauded the persuasive speech.");
-		 * HT[7].add_term("exhibition", "n.Àü½ÃÈ¸",
+		 * "ad.ì—´ê´‘ì ìœ¼ë¡œ", "The press enthusiastically applauded the persuasive speech.");
+		 * HT[7].add_term("exhibition", "n.ì „ì‹œíšŒ",
 		 * "The gallery hosted an exhibition of urban scenic photographs.");
-		 * HT[7].add_term("fascinating", "a.¸ÅÈ¤ÀûÀÎ,È²È¦ÇÑ",
+		 * HT[7].add_term("fascinating", "a.ë§¤í˜¹ì ì¸,í™©í™€í•œ",
 		 * "Many fascinating pieces of art were on display.",
-		 * "Many [fascinate + ] pieces of art were on display.Àû´çÇÑ ÇüÅÂ",
-		 * "fascinating\r\nfascinating : ¸ÅÈ¤ÀûÀÎ\r\nfascinated : ¸ÅÈ¤µÈ\r\nfascinatingÀº »ç¶÷ÀÌ³ª »ç¹°ÀÌ ¸ÅÈ¤ÀûÀÏ ‹š, fascinated´Â »ç¶÷ÀÌ ¹«¾ğ°¡¿¡ ¸ÅÈ¤µÇ¾úÀ» ¶§ »ç¿ëÇÑ´Ù. È¥µ¿ÇÏÁö ¾Êµµ·Ï Â÷ÀÌ¸¦ ±¸º°"
-		 * ); HT[7].add_term("have yet to do", "phr.¾ÆÁ÷ ~ÇÏ°í ÀÖÁö ¾Ê´Ù,¾ÆÁ÷ ~ÇØ¾ß ÇÏ´Ù",
+		 * "Many [fascinate + ] pieces of art were on display.ì ë‹¹í•œ í˜•íƒœ",
+		 * "fascinating\r\nfascinating : ë§¤í˜¹ì ì¸\r\nfascinated : ë§¤í˜¹ëœ\r\nfascinatingì€ ì‚¬ëŒì´ë‚˜ ì‚¬ë¬¼ì´ ë§¤í˜¹ì ì¼ ë–„, fascinatedëŠ” ì‚¬ëŒì´ ë¬´ì–¸ê°€ì— ë§¤í˜¹ë˜ì—ˆì„ ë•Œ ì‚¬ìš©í•œë‹¤. í˜¼ë™í•˜ì§€ ì•Šë„ë¡ ì°¨ì´ë¥¼ êµ¬ë³„"
+		 * ); HT[7].add_term("have yet to do", "phr.ì•„ì§ ~í•˜ê³  ìˆì§€ ì•Šë‹¤,ì•„ì§ ~í•´ì•¼ í•˜ë‹¤",
 		 * "The performance schedule of the jazz festival has yet to be decided.");
-		 * HT[7].add_term("improvise", "v.ÁïÈï ¿¬ÁÖ¸¦ ÇÏ´Ù,Áï¼®¿¡¼­ ¸¸µé´Ù",
+		 * HT[7].add_term("improvise", "v.ì¦‰í¥ ì—°ì£¼ë¥¼ í•˜ë‹¤,ì¦‰ì„ì—ì„œ ë§Œë“¤ë‹¤",
 		 * "The performers improvised a jazz melody."); HT[7].add_term("informative",
-		 * "a.À¯ÀÍÇÑ,Á¤º¸¸¦ ÁÖ´Â", "The documentary was informative and interesting.");
-		 * HT[7].add_term("issue", "n.(ÃâÆÇ¹°ÀÇ)Á¦ ~È£;¹®Á¦,ÀïÁ¡",
+		 * "a.ìœ ìµí•œ,ì •ë³´ë¥¼ ì£¼ëŠ”", "The documentary was informative and interesting.");
+		 * HT[7].add_term("issue", "n.(ì¶œíŒë¬¼ì˜)ì œ ~í˜¸;ë¬¸ì œ,ìŸì ",
 		 * "the April issue of a magazine\r\nThere are many perspectives on the issue of global warming."
-		 * ); HT[7].add_term("lend", "v.ºô·ÁÁÖ´Ù",
+		 * ); HT[7].add_term("lend", "v.ë¹Œë ¤ì£¼ë‹¤",
 		 * "The library lends a variety of audio-visual materials.");
-		 * HT[7].add_term("live", "a.(¶óµğ¿À,TV°¡)»ı¹æ¼ÛÀÎ",
-		 * "a live broadcast\r\nlive performance"); HT[7].add_term("local", "a.Áö¹æÀÇ,°íÀåÀÇ",
+		 * HT[7].add_term("live", "a.(ë¼ë””ì˜¤,TVê°€)ìƒë°©ì†¡ì¸",
+		 * "a live broadcast\r\nlive performance"); HT[7].add_term("local", "a.ì§€ë°©ì˜,ê³ ì¥ì˜",
 		 * "The tournament will be held at the local high school.");
-		 * HT[7].add_term("matinee", "n.(¿¬±Ø,À½¾ÇÈ¸ µîÀÇ)³· °ø¿¬",
+		 * HT[7].add_term("matinee", "n.(ì—°ê·¹,ìŒì•…íšŒ ë“±ì˜)ë‚® ê³µì—°",
 		 * "Tickets for the matinee cost a third of the price of a regular showing.");
-		 * HT[7].add_term("memoirs", "n.È¸°í·Ï,ÀÚ¼­Àü",
+		 * HT[7].add_term("memoirs", "n.íšŒê³ ë¡,ìì„œì „",
 		 * "The memoirs of the financial guru are already a hit.");
-		 * HT[7].add_term("municipal", "a.½ÃÀÇ,Áö¹æÀÚÄ¡ÀÇ",
+		 * HT[7].add_term("municipal", "a.ì‹œì˜,ì§€ë°©ìì¹˜ì˜",
 		 * "Municipal elections will be held in two weeks."); HT[7].add_term("must-see",
-		 * "n.²À ºÁ¾ß ÇÏ´Â °Í", "The play showing at the downtown theater is a must-see.");
-		 * HT[7].add_term("note", "v.ÁÖ¸ñÇÏ´Ù",
+		 * "n.ê¼­ ë´ì•¼ í•˜ëŠ” ê²ƒ", "The play showing at the downtown theater is a must-see.");
+		 * HT[7].add_term("note", "v.ì£¼ëª©í•˜ë‹¤",
 		 * "Please note the intricate details of the architecture.");
-		 * HT[7].add_term("out of print", "phr.ÀıÆÇµÇ¾î",
+		 * HT[7].add_term("out of print", "phr.ì ˆíŒë˜ì–´",
 		 * "The old editions are out of print."); HT[7].add_term("periodical",
-		 * "n.Á¤±â °£Çà¹°", "The periodical highlights the most recent developments in IT.");
-		 * HT[7].add_term("popular", "a.ÀÎ±â ÀÖ´Â",
+		 * "n.ì •ê¸° ê°„í–‰ë¬¼", "The periodical highlights the most recent developments in IT.");
+		 * HT[7].add_term("popular", "a.ì¸ê¸° ìˆëŠ”",
 		 * "The outdoor movie screenings were very popular."); HT[7].add_term("present",
-		 * "v.Á¦½ÃÇÏ´Ùa.ÇöÀçÀÇ;Âü¼®ÇÑ",
+		 * "v.ì œì‹œí•˜ë‹¤a.í˜„ì¬ì˜;ì°¸ì„í•œ",
 		 * "Please present valid tickets at the door.\r\nThe present owner of the resort intends to renovate it.\r\nYankees star Matt London was present at the game."
 		 * , "She received the present [   ] glee.",
-		 * "with\r\npresent A with B : A¿¡°Ô B¸¦ Á¦°øÇÏ´Ù\r\npresent B to A : A¿¡°Ô B¸¦ Á¦°øÇÏ´Ù\r\nÀüÄ¡»ç withµÚ¿¡´Â Á¦°øÇÏ´Â »ç¹°, to µÚ¿¡´Â »ç¶÷ÀÌ ¿Â´Ù."
-		 * ); HT[7].add_term("publication", "n.°£Çà¹°,ÃâÆÇ¹°",
+		 * "with\r\npresent A with B : Aì—ê²Œ Bë¥¼ ì œê³µí•˜ë‹¤\r\npresent B to A : Aì—ê²Œ Bë¥¼ ì œê³µí•˜ë‹¤\r\nì „ì¹˜ì‚¬ withë’¤ì—ëŠ” ì œê³µí•˜ëŠ” ì‚¬ë¬¼, to ë’¤ì—ëŠ” ì‚¬ëŒì´ ì˜¨ë‹¤."
+		 * ); HT[7].add_term("publication", "n.ê°„í–‰ë¬¼,ì¶œíŒë¬¼",
 		 * "A new editorial section will be included in the publication.");
-		 * HT[7].add_term("showing", "n.(¿µÈ­,¿¬±ØÀÇ)»ó¿µ",
+		 * HT[7].add_term("showing", "n.(ì˜í™”,ì—°ê·¹ì˜)ìƒì˜",
 		 * "We attended the premiere showing of the Julie Garner movie.",
 		 * "We attended the premiere showing [   ] the Julie Garner movie.",
-		 * "of\r\nshowing of : ~ÀÇ »ó¿µ"); HT[7].add_term("subscription", "n.(Á¤±â ¹ßÇà¹°ÀÇ)±¸µ¶",
+		 * "of\r\nshowing of : ~ì˜ ìƒì˜"); HT[7].add_term("subscription", "n.(ì •ê¸° ë°œí–‰ë¬¼ì˜)êµ¬ë…",
 		 * "I want to get a subscription to the Weekly Herald.");
-		 * HT[7].add_term("transferable", "a.¾çµµÇÒ ¼ö ÀÖ´Â",
+		 * HT[7].add_term("transferable", "a.ì–‘ë„í•  ìˆ˜ ìˆëŠ”",
 		 * "The ticket is not transferable."); HT[7].add_term("upcoming",
-		 * "a.´Ù°¡¿À´Â,¾ÕÀ¸·Î ¿Ã", "A reporter spoke to a candidate in the upcoming election.");
-		 * HT[7].add_term("variety", "n.´Ù¾ç¼º,º¯È­",
+		 * "a.ë‹¤ê°€ì˜¤ëŠ”,ì•ìœ¼ë¡œ ì˜¬", "A reporter spoke to a candidate in the upcoming election.");
+		 * HT[7].add_term("variety", "n.ë‹¤ì–‘ì„±,ë³€í™”",
 		 * "The newsstand has a variety of magazines and newspapers.",
 		 * "The newsstand has a variety [   ] magazines and newspapers.",
-		 * "of\r\na (large/wide) variety of : (¸Å¿ì)´Ù¾çÇÑ");
+		 * "of\r\na (large/wide) variety of : (ë§¤ìš°)ë‹¤ì–‘í•œ");
 		 * 
-		 * HT[8].add_term("affect", "v.~¿¡ ¿µÇâÀ» ¹ÌÄ¡´Ù,ºÒ¸®ÇÏ°Ô ÀÛ¿ëÇÏ´Ù",
+		 * HT[8].add_term("affect", "v.~ì— ì˜í–¥ì„ ë¯¸ì¹˜ë‹¤,ë¶ˆë¦¬í•˜ê²Œ ì‘ìš©í•˜ë‹¤",
 		 * "The frozen food industry can affect the canned goods market.");
-		 * HT[8].add_term("analysis", "n.ºĞ¼®",
+		 * HT[8].add_term("analysis", "n.ë¶„ì„",
 		 * "The latest market analysis shows an increase in used car purchases.");
-		 * HT[8].add_term("claim", "n.(»ç½Ç,¼ÒÀ¯±ÇÀÇ)ÁÖÀå",
+		 * HT[8].add_term("claim", "n.(ì‚¬ì‹¤,ì†Œìœ ê¶Œì˜)ì£¼ì¥",
 		 * "Macrochips denied claims of copying a competitor's design.");
-		 * HT[8].add_term("closely", "ad.¸é¹ĞÈ÷,¾ö¹ĞÈ÷",
+		 * HT[8].add_term("closely", "ad.ë©´ë°€íˆ,ì—„ë°€íˆ",
 		 * "Marketing departments watch the latest trends closely.",
 		 * "The cow didn't let people come close [   ] her offspring.",
-		 * "to\r\ncome close to + ¸í»ç : ~¿¡ °¡±õ´Ù, ~¿¡ À°¹ÚÇÏ´Ù"); HT[8].add_term("comparison",
-		 * "n.ºñ±³", "Online advertising is cheaper in comparison with television.",
+		 * "to\r\ncome close to + ëª…ì‚¬ : ~ì— ê°€ê¹ë‹¤, ~ì— ìœ¡ë°•í•˜ë‹¤"); HT[8].add_term("comparison",
+		 * "n.ë¹„êµ", "Online advertising is cheaper in comparison with television.",
 		 * "Online advertising is cheaper in comparison [   ] television.",
-		 * "with\r\nin comparison with : ~¿Í ºñ±³ÇØ º¼¶§"); HT[8].add_term("competition",
-		 * "n.°æÀï", "Competition in the game software market has increased.",
+		 * "with\r\nin comparison with : ~ì™€ ë¹„êµí•´ ë³¼ë•Œ"); HT[8].add_term("competition",
+		 * "n.ê²½ìŸ", "Competition in the game software market has increased.",
 		 * "They have to compete [   ] their parents' attention.",
-		 * "for\r\ncompete for : ~À» µÎ°í °æÀïÇÏ´Ù"); HT[8].add_term("consecutive", "a.¿¬¼ÓÀûÀÎ",
+		 * "for\r\ncompete for : ~ì„ ë‘ê³  ê²½ìŸí•˜ë‹¤"); HT[8].add_term("consecutive", "a.ì—°ì†ì ì¸",
 		 * "The Barkley Company achieved high sales growth for the third consecutive year."
-		 * ); HT[8].add_term("consistently", "ad.Ç×»ó,ÀÏ°üµÇ°Ô",
+		 * ); HT[8].add_term("consistently", "ad.í•­ìƒ,ì¼ê´€ë˜ê²Œ",
 		 * "The factory has consistently provided the highest grade products.",
 		 * "All of us in public life must be consistent [   ] the application of principle."
-		 * , "in\r\nbe consistent in : ~¿¡ ÀÖ¾î ½ÃÁ¾ ÀÏ°üµÈ"); HT[8].add_term("consolidate",
-		 * "v.(±Ç·Â,ÁöÀ§ µîÀ»)°­È­ÇÏ´Ù",
+		 * , "in\r\nbe consistent in : ~ì— ìˆì–´ ì‹œì¢… ì¼ê´€ëœ"); HT[8].add_term("consolidate",
+		 * "v.(ê¶Œë ¥,ì§€ìœ„ ë“±ì„)ê°•í™”í•˜ë‹¤",
 		 * "Wyman's new products have consolidated its market position.");
-		 * HT[8].add_term("contend", "v.(¹®Á¦¿¡)´ëÃ³ÇÏ´Ù,(°ï¶õ°ú)½Î¿ì´Ù",
+		 * HT[8].add_term("contend", "v.(ë¬¸ì œì—)ëŒ€ì²˜í•˜ë‹¤,(ê³¤ë€ê³¼)ì‹¸ìš°ë‹¤",
 		 * "The managers met to contend with customer appeals.",
 		 * "The managers met to contend [   ] customer appeals.",
-		 * "with\r\ncontend with : ~¿¡ ´ëÃ³ÇÏ´Ù"); HT[8].add_term("demand", "n.¼ö¿ä,v.¿ä±¸ÇÏ´Ù",
+		 * "with\r\ncontend with : ~ì— ëŒ€ì²˜í•˜ë‹¤"); HT[8].add_term("demand", "n.ìˆ˜ìš”,v.ìš”êµ¬í•˜ë‹¤",
 		 * "The company could not meet the increased demand for cell phones.\r\nMr.Hawkesby demanded that the clause be crossed out."
 		 * , "The company could not meet the increased demand [   ] cell phones.",
-		 * "for\r\ndemand for : ~¿¡ ´ëÇÑ ¼ö¿ä, ¿ä±¸\r\ndemand that + ÁÖ¾î (+should) + µ¿»ç¿øÇü");
-		 * HT[8].add_term("do one's utmost", "phr.Àü·ÂÀ» ´ÙÇÏ´Ù",
+		 * "for\r\ndemand for : ~ì— ëŒ€í•œ ìˆ˜ìš”, ìš”êµ¬\r\ndemand that + ì£¼ì–´ (+should) + ë™ì‚¬ì›í˜•");
+		 * HT[8].add_term("do one's utmost", "phr.ì „ë ¥ì„ ë‹¤í•˜ë‹¤",
 		 * "Sun Manufacturing does its utmost to ensure the quality of its products.");
-		 * HT[8].add_term("effective", "a.È¿°úÀûÀÎ;(¹ı·ü µîÀÌ)À¯È¿ÇÑ",
+		 * HT[8].add_term("effective", "a.íš¨ê³¼ì ì¸;(ë²•ë¥  ë“±ì´)ìœ íš¨í•œ",
 		 * "an effective advertising campaign\r\nIncreased tax deductions will be effective as of June 1."
-		 * ); HT[8].add_term("especially", "ad.Æ¯È÷",
+		 * ); HT[8].add_term("especially", "ad.íŠ¹íˆ",
 		 * "Big car manufacturers are facing an especially difficult year for sales.");
-		 * HT[8].add_term("examine", "v.Á¶»çÇÏ´Ù",
+		 * HT[8].add_term("examine", "v.ì¡°ì‚¬í•˜ë‹¤",
 		 * "R&D will examine food consumption trends in foreign markets.");
-		 * HT[8].add_term("expand", "v.³ĞÈ÷´Ù,È®´ëÇÏ´Ù",
+		 * HT[8].add_term("expand", "v.ë„“íˆë‹¤,í™•ëŒ€í•˜ë‹¤",
 		 * "Brahe Optics has expanded its manufacturing division.");
-		 * HT[8].add_term("expectation", "n.¿¹»ó,±â´ë",
+		 * HT[8].add_term("expectation", "n.ì˜ˆìƒ,ê¸°ëŒ€",
 		 * "The expectation is that costs will be cut.",
-		 * "Someone who goes [   ] one¡¯s expectations may be considered a hero.",
-		 * "beyond\r\nabove/beyond + one's expectations : ±â´ë ÀÌ»óÀ¸·Î");
-		 * HT[8].add_term("extremely", "ad.±Øµµ·Î,´ë´ÜÈ÷",
+		 * "Someone who goes [   ] oneâ€™s expectations may be considered a hero.",
+		 * "beyond\r\nabove/beyond + one's expectations : ê¸°ëŒ€ ì´ìƒìœ¼ë¡œ");
+		 * HT[8].add_term("extremely", "ad.ê·¹ë„ë¡œ,ëŒ€ë‹¨íˆ",
 		 * "Internet service providers struggle to survive in today's extremely competitive market."
-		 * ); HT[8].add_term("focus", "v.ÁıÁß½ÃÅ°´Ù,ÁıÁßÇÏ´Ù",
+		 * ); HT[8].add_term("focus", "v.ì§‘ì¤‘ì‹œí‚¤ë‹¤,ì§‘ì¤‘í•˜ë‹¤",
 		 * "Management decided to focus resources on expansion.",
 		 * "Management decided to focus resources [   ] expansion.",
-		 * "on\r\nfocus A on B : A¸¦ B¿¡ ÁıÁß½ÃÅ°´Ù"); HT[8].add_term("gap", "n.°İÂ÷",
+		 * "on\r\nfocus A on B : Aë¥¼ Bì— ì§‘ì¤‘ì‹œí‚¤ë‹¤"); HT[8].add_term("gap", "n.ê²©ì°¨",
 		 * "a huge gap between exports and imports",
 		 * "a huge gap between exports [   ] imports",
-		 * "and\r\ngap between A and B : A¿Í B°£ÀÇ °İÂ÷"); HT[8].add_term("gauge", "v.ÃøÁ¤ÇÏ´Ù",
+		 * "and\r\ngap between A and B : Aì™€ Bê°„ì˜ ê²©ì°¨"); HT[8].add_term("gauge", "v.ì¸¡ì •í•˜ë‹¤",
 		 * "The survey will gauge consumer reaction to utility price increases.");
-		 * HT[8].add_term("impact", "n.Ãæ°İ,¿µÇâ",
+		 * HT[8].add_term("impact", "n.ì¶©ê²©,ì˜í–¥",
 		 * "Price fluctuations had a major impact on the market.",
 		 * "Price fluctuations had a major impact [   ] the market.",
-		 * "on\r\nhave an impact on : ~¿¡ È¿°ú¸¦ ¹ÌÄ¡´Ù, ¿µÇâÀ» ÁÖ´Ù");
-		 * HT[8].add_term("intervention", "n.°£¼·",
+		 * "on\r\nhave an impact on : ~ì— íš¨ê³¼ë¥¼ ë¯¸ì¹˜ë‹¤, ì˜í–¥ì„ ì£¼ë‹¤");
+		 * HT[8].add_term("intervention", "n.ê°„ì„­",
 		 * "Government intervention in the market causes problems.");
-		 * HT[8].add_term("jeopardize", "v.À§ÅÂ·Ó°Ô ÇÏ´Ù,À§Çè¿¡ ºü¶ß¸®´Ù",
+		 * HT[8].add_term("jeopardize", "v.ìœ„íƒœë¡­ê²Œ í•˜ë‹¤,ìœ„í—˜ì— ë¹ ëœ¨ë¦¬ë‹¤",
 		 * "A bad marketing plan could jeopardize our reputation.");
-		 * HT[8].add_term("modestly", "ad.°â¼ÕÇÏ°Ô",
+		 * HT[8].add_term("modestly", "ad.ê²¸ì†í•˜ê²Œ",
 		 * "Sunshine Media modestly accepted the Best Advertisement Award.");
-		 * HT[8].add_term("momentum", "n.ÃßÁø·Â,Åº¼º",
+		 * HT[8].add_term("momentum", "n.ì¶”ì§„ë ¥,íƒ„ì„±",
 		 * "The accessories market is gaining momentum."); HT[8].add_term("monopoly",
-		 * "n.(»óÇ°ÀÇ)Àü¸Å,µ¶Á¡",
+		 * "n.(ìƒí’ˆì˜)ì „ë§¤,ë…ì ",
 		 * "Panatronic has a virtual monopoly on the manufacture of digital recorders.",
 		 * "Panatronic has a virtual monopoly [   ] the manufacture of digital recorders."
-		 * , "on\r\nhave a monopoly on : ~¿¡ ´ëÇÑ µ¶Á¡±ÇÀ» °¡Áö´Ù"); HT[8].add_term("mounting",
-		 * "a.Áõ°¡ÇÏ´Â,¿À¸£´Â",
+		 * , "on\r\nhave a monopoly on : ~ì— ëŒ€í•œ ë…ì ê¶Œì„ ê°€ì§€ë‹¤"); HT[8].add_term("mounting",
+		 * "a.ì¦ê°€í•˜ëŠ”,ì˜¤ë¥´ëŠ”",
 		 * "There is mounting pressure from management to increase productivity.");
-		 * HT[8].add_term("perception", "n.ÀÎ½Ä,Áö°¢",
+		 * HT[8].add_term("perception", "n.ì¸ì‹,ì§€ê°",
 		 * "Public perception of the product affects sales.");
-		 * HT[8].add_term("persistent", "a.²÷ÀÓ¾ø´Â,°è¼ÓµÇ´Â",
+		 * HT[8].add_term("persistent", "a.ëŠì„ì—†ëŠ”,ê³„ì†ë˜ëŠ”",
 		 * "Persistent trade problems in Asia have weakened the global economy.");
-		 * HT[8].add_term("probable", "a.À¯¸ÁÇÑ,°¡¸Á¼º ÀÖ´Â",
+		 * HT[8].add_term("probable", "a.ìœ ë§í•œ,ê°€ë§ì„± ìˆëŠ”",
 		 * "A promotion campaign aimed at probable investors began last week.");
-		 * HT[8].add_term("raise", "v.¿Ã¸®´Ù,³ôÀÌ´Ù;(ÀÇ¹®À»)Á¦±âÇÏ´Ù",
+		 * HT[8].add_term("raise", "v.ì˜¬ë¦¬ë‹¤,ë†’ì´ë‹¤;(ì˜ë¬¸ì„)ì œê¸°í•˜ë‹¤",
 		 * "We used mass mailing methods to raise awareness of our brand.\r\nThe president raised questions about the quality of the new product."
-		 * ); HT[8].add_term("randomly", "ad.ÀÓÀÇ·Î,¹«ÀÛÀ§·Î",
+		 * ); HT[8].add_term("randomly", "ad.ì„ì˜ë¡œ,ë¬´ì‘ìœ„ë¡œ",
 		 * "Participants for the study were chosen randomly from a list of volunteers."
-		 * ); HT[8].add_term("reflective", "a.¹İ¿µÇÏ´Â",
+		 * ); HT[8].add_term("reflective", "a.ë°˜ì˜í•˜ëŠ”",
 		 * "Dwindling sales are reflective of the current state of the company.",
 		 * "Dwindling sales are reflective [   ] the current state of the company.",
-		 * "of\r\nbe reflective of : ~À» ¹İ¿µÇÏ´Ù"); HT[8].add_term("respondent", "n.ÀÀ´äÀÚ",
+		 * "of\r\nbe reflective of : ~ì„ ë°˜ì˜í•˜ë‹¤"); HT[8].add_term("respondent", "n.ì‘ë‹µì",
 		 * "85% of survey respondents evaluated the product highly.");
-		 * HT[8].add_term("seasonal", "a.°èÀıÀÇ,°èÀıÀûÀÎ",
+		 * HT[8].add_term("seasonal", "a.ê³„ì ˆì˜,ê³„ì ˆì ì¸",
 		 * "The sugarcane industry is vulnerable to seasonal variations.");
-		 * HT[8].add_term("segment", "n.ºÎºĞ,Á¶°¢",
+		 * HT[8].add_term("segment", "n.ë¶€ë¶„,ì¡°ê°",
 		 * "Advertising needs to target a particular segment of the market.");
-		 * HT[8].add_term("survey", "n.¼³¹® Á¶»ç",
-		 * "Product surveys help to improve quality."); HT[8].add_term("tool", "n.µµ±¸",
+		 * HT[8].add_term("survey", "n.ì„¤ë¬¸ ì¡°ì‚¬",
+		 * "Product surveys help to improve quality."); HT[8].add_term("tool", "n.ë„êµ¬",
 		 * "Questionnaires are useful tools for product marketing.");
 		 * 
-		 * HT[9].add_term("adopt", "v.Ã¤ÅÃÇÏ´Ù",
+		 * HT[9].add_term("adopt", "v.ì±„íƒí•˜ë‹¤",
 		 * "Plenty of research must be done before adopting a particular marketing strategy."
-		 * ); HT[9].add_term("advantage", "n.ÀÌÁ¡,°­Á¡",
+		 * ); HT[9].add_term("advantage", "n.ì´ì ,ê°•ì ",
 		 * "One advantage of consumer testing is the development of marketing insight.",
 		 * "One advantage of consumer testing is the development [   ] marketing insight."
-		 * , "of\r\ntake advantage of : ~À» ÀÌ¿ëÇÏ´Ù"); HT[9].add_term("advertisement",
-		 * "n.±¤°í", "Sales have been propelled by the new advertisement.");
-		 * HT[9].add_term("advise", "v.Á¶¾ğÇØ ÁÖ´Ù,Ãæ°íÇÏ´Ù",
+		 * , "of\r\ntake advantage of : ~ì„ ì´ìš©í•˜ë‹¤"); HT[9].add_term("advertisement",
+		 * "n.ê´‘ê³ ", "Sales have been propelled by the new advertisement.");
+		 * HT[9].add_term("advise", "v.ì¡°ì–¸í•´ ì£¼ë‹¤,ì¶©ê³ í•˜ë‹¤",
 		 * "Coburn & Johnson Ltd. advises clients on intellectual property matters.",
 		 * "Coburn & Johnson Ltd. advises clients [   ] intellectual property matters.",
-		 * "on\r\nadvise A to do : A¿¡°Ô ~ÇÏ¶ó°í Á¶¾ğÇÏ´Ù\r\nadvise A on B : A¿¡°Ô B¿¡ °üÇØ Á¶¾ğÇÏ´Ù");
-		 * HT[9].add_term("agressively", "ad.Àû±ØÀûÀ¸·Î",
+		 * "on\r\nadvise A to do : Aì—ê²Œ ~í•˜ë¼ê³  ì¡°ì–¸í•˜ë‹¤\r\nadvise A on B : Aì—ê²Œ Bì— ê´€í•´ ì¡°ì–¸í•˜ë‹¤");
+		 * HT[9].add_term("agressively", "ad.ì ê·¹ì ìœ¼ë¡œ",
 		 * "The best company representatives aggressively seek out potential clients.");
-		 * HT[9].add_term("aim", "v.~À» °Ü´©´Ùn.¸ñÇ¥,¸ñÀû",
+		 * HT[9].add_term("aim", "v.~ì„ ê²¨ëˆ„ë‹¤n.ëª©í‘œ,ëª©ì ",
 		 * "Sport Apparel developed athletic gear aimed at teenagers.\r\nThe division head will outline the aims of the marketing strategy."
 		 * , "Sport Apparel developed athletic gear aimed [   ] teenagers.",
-		 * "at\r\naim to do : ~ÇÒ ÀÛÁ¤ÀÌ´Ù\r\nÁ¦Ç° + aimed at : ~À» °Ü³ÉÇÑ Á¦Ç°");
-		 * HT[9].add_term("attract", "v.²ø´Ù,À¯ÀÎÇÏ´Ù",
+		 * "at\r\naim to do : ~í•  ì‘ì •ì´ë‹¤\r\nì œí’ˆ + aimed at : ~ì„ ê²¨ëƒ¥í•œ ì œí’ˆ");
+		 * HT[9].add_term("attract", "v.ëŒë‹¤,ìœ ì¸í•˜ë‹¤",
 		 * "The automaker is making an effort to attract younger buyers.");
-		 * HT[9].add_term("await", "v.±â´Ù¸®´Ù",
+		 * HT[9].add_term("await", "v.ê¸°ë‹¤ë¦¬ë‹¤",
 		 * "Customers eagerly await the opening of the technology showroom.");
-		 * HT[9].add_term("cater", "v.¿ä±¸¸¦ µé¾îÁÖ´Ù",
+		 * HT[9].add_term("cater", "v.ìš”êµ¬ë¥¼ ë“¤ì–´ì£¼ë‹¤",
 		 * "The brand now caters to the middle class.",
 		 * "The brand now caters [   ] the middle class.",
-		 * "to\r\ncater to : ~ÀÇ ¿ä±¸¸¦ ¸¸Á·½ÃÅ°´Ù"); HT[9].add_term("confront", "v.~¿¡ Á÷¸éÇÏ´Ù",
+		 * "to\r\ncater to : ~ì˜ ìš”êµ¬ë¥¼ ë§Œì¡±ì‹œí‚¤ë‹¤"); HT[9].add_term("confront", "v.~ì— ì§ë©´í•˜ë‹¤",
 		 * "Businesses must be resourceful when confronted with crises.");
-		 * HT[9].add_term("consumer", "n.¼ÒºñÀÚ",
+		 * HT[9].add_term("consumer", "n.ì†Œë¹„ì",
 		 * "The company is working to gain consumers' trust.");
-		 * HT[9].add_term("creative", "a.Ã¢Á¶ÀûÀÎ,µ¶Ã¢ÀûÀÎ",
-		 * "He came up with a creative idea."); HT[9].add_term("customer", "n.°í°´",
+		 * HT[9].add_term("creative", "a.ì°½ì¡°ì ì¸,ë…ì°½ì ì¸",
+		 * "He came up with a creative idea."); HT[9].add_term("customer", "n.ê³ ê°",
 		 * "Telephone representatives should make the needs of customers their priority."
-		 * ); HT[9].add_term("deliberate", "a.°íÀÇÀûÀÎ",
+		 * ); HT[9].add_term("deliberate", "a.ê³ ì˜ì ì¸",
 		 * "The remark was a deliberate attempt to harm the competition.");
-		 * HT[9].add_term("diversify", "v.´Ù¾çÈ­ÇÏ´Ù",
+		 * HT[9].add_term("diversify", "v.ë‹¤ì–‘í™”í•˜ë‹¤",
 		 * "We can strengthen product appeal by diversifying packaging designs.");
-		 * HT[9].add_term("effort", "n.³ë·Â",
+		 * HT[9].add_term("effort", "n.ë…¸ë ¥",
 		 * "Advertisements were run in an effort to broaden consumer awareness of new brands."
 		 * ,
 		 * "Advertisements were run in an effort [   ] broaden consumer awareness of new brands."
-		 * , "to\r\nin an effort to do : ~ÇØº¸·Á´Â ³ë·ÂÀ¸·Î\r\nmake an effort : ³ë·ÂÇÏ´Ù");
-		 * HT[9].add_term("endorse", "v.(À¯¸íÀÎ»ç°¡ »óÇ°À»)º¸Áõ ¼±ÀüÇÏ´Ù,ÁöÁöÇÏ´Ù",
+		 * , "to\r\nin an effort to do : ~í•´ë³´ë ¤ëŠ” ë…¸ë ¥ìœ¼ë¡œ\r\nmake an effort : ë…¸ë ¥í•˜ë‹¤");
+		 * HT[9].add_term("endorse", "v.(ìœ ëª…ì¸ì‚¬ê°€ ìƒí’ˆì„)ë³´ì¦ ì„ ì „í•˜ë‹¤,ì§€ì§€í•˜ë‹¤",
 		 * "The product was endorsed by a famous actor."); HT[9].add_term("experiment",
-		 * "v.½ÇÇèÇÏ´Ù", "The marketing team experimented with new promotional techniques.",
+		 * "v.ì‹¤í—˜í•˜ë‹¤", "The marketing team experimented with new promotional techniques.",
 		 * "The marketing team experimented [   ] new promotional techniques.",
-		 * "with\r\nexperiment with : ~À» ½ÇÇèÇÏ´Ù"); HT[9].add_term("favorably",
-		 * "ad.È£ÀÇÀûÀ¸·Î,¼øÁ¶·Ó°Ô",
+		 * "with\r\nexperiment with : ~ì„ ì‹¤í—˜í•˜ë‹¤"); HT[9].add_term("favorably",
+		 * "ad.í˜¸ì˜ì ìœ¼ë¡œ,ìˆœì¡°ë¡­ê²Œ",
 		 * "The product demonstration was favorably received by consumers.\r\nEarnings continue to develop favorably."
-		 * ); HT[9].add_term("feasible", "a.½ÇÇà °¡´ÉÇÑ",
+		 * ); HT[9].add_term("feasible", "a.ì‹¤í–‰ ê°€ëŠ¥í•œ",
 		 * "Management wanted to know whether it was feasible to increase production.");
-		 * HT[9].add_term("fortify", "v.°­È­ÇÏ´Ù,Àå·ÁÇÏ´Ù",
+		 * HT[9].add_term("fortify", "v.ê°•í™”í•˜ë‹¤,ì¥ë ¤í•˜ë‹¤",
 		 * "The TX-100 will fortify MacTech's position in the industry.");
-		 * HT[9].add_term("forward", "ad.¾ÕÀ¸·Î",
+		 * HT[9].add_term("forward", "ad.ì•ìœ¼ë¡œ",
 		 * "Our company's research program has moved forward substantially.",
 		 * "I look forward [   ] meeting you in two months time.",
-		 * "to\r\nlook forward to -ing : -À» °í´ëÇÏ´Ù"); HT[9].add_term("incentive",
-		 * "n.ÇıÅÃ,Àå·Á±İ",
+		 * "to\r\nlook forward to -ing : -ì„ ê³ ëŒ€í•˜ë‹¤"); HT[9].add_term("incentive",
+		 * "n.í˜œíƒ,ì¥ë ¤ê¸ˆ",
 		 * "Financial incentives such as coupons may encourage additional purchases.");
-		 * HT[9].add_term("indicate", "v.³ªÅ¸³»´Ù,º¸¿©ÁÖ´Ù",
+		 * HT[9].add_term("indicate", "v.ë‚˜íƒ€ë‚´ë‹¤,ë³´ì—¬ì£¼ë‹¤",
 		 * "Studies indicate that consmers prefer attractively packaged products.");
-		 * HT[9].add_term("influence", "v.~¿¡ ¿µÇâÀ» ÁÖ´Ùn.¿µÇâ",
+		 * HT[9].add_term("influence", "v.~ì— ì˜í–¥ì„ ì£¼ë‹¤n.ì˜í–¥",
 		 * "The status of the real estate market influences pricing of housing units.\r\nProduct reviews have a profound influence on sales."
 		 * , "Product reviews have a profound influence [   ] sales.",
-		 * "on\r\nhave an influence on : ~¿¡ ¿µÇâÀ» ³¢Ä¡´Ù"); HT[9].add_term("instantly",
-		 * "ad.Áï°¢ÀûÀ¸·Î,Áï½Ã", "The brand logo should be instantly recognizable.");
-		 * HT[9].add_term("introduce", "v.(½ÅÁ¦Ç°À»)¼Ò°³ÇÏ´Ù,¹ßÇ¥ÇÏ´Ù",
+		 * "on\r\nhave an influence on : ~ì— ì˜í–¥ì„ ë¼ì¹˜ë‹¤"); HT[9].add_term("instantly",
+		 * "ad.ì¦‰ê°ì ìœ¼ë¡œ,ì¦‰ì‹œ", "The brand logo should be instantly recognizable.");
+		 * HT[9].add_term("introduce", "v.(ì‹ ì œí’ˆì„)ì†Œê°œí•˜ë‹¤,ë°œí‘œí•˜ë‹¤",
 		 * "ElectroLife introduced a new line of vacuum cleaners.");
-		 * HT[9].add_term("largely", "ad.ÁÖ¹®,´ëºÎºĞ",
+		 * HT[9].add_term("largely", "ad.ì£¼ë¬¸,ëŒ€ë¶€ë¶„",
 		 * "Public favor largely determines our success."); HT[9].add_term("less",
-		 * "ad.º¸´Ù ÀûÀº,´úÇÑ",
+		 * "ad.ë³´ë‹¤ ì ì€,ëœí•œ",
 		 * "Less competition among insurance companies led to higher premiums.");
-		 * HT[9].add_term("majority", "n.´ëºÎºĞ,´ë´Ù¼ö",
+		 * HT[9].add_term("majority", "n.ëŒ€ë¶€ë¶„,ëŒ€ë‹¤ìˆ˜",
 		 * "The majority of registered clients pay their dues regularly.",
 		 * "Most [   ] the advertising budget is spent on television commercials.",
-		 * "of\r\nthe majority of~ : ~ÀÇ ´ë´Ù¼ö´Â(majority ¾Õ¿¡´Â Á¤°ü»ç the¸¦ ¾´´Ù.\r\nmost of the ~ : ~ÀÇ ´ë´Ù¼ö´Â(most´Â ¹«°ü»ç·Î »ç¿ëÇÑ´Ù)"
-		 * ); HT[9].add_term("marginal", "a.¾à°£ÀÇ",
+		 * "of\r\nthe majority of~ : ~ì˜ ëŒ€ë‹¤ìˆ˜ëŠ”(majority ì•ì—ëŠ” ì •ê´€ì‚¬ theë¥¼ ì“´ë‹¤.\r\nmost of the ~ : ~ì˜ ëŒ€ë‹¤ìˆ˜ëŠ”(mostëŠ” ë¬´ê´€ì‚¬ë¡œ ì‚¬ìš©í•œë‹¤)"
+		 * ); HT[9].add_term("marginal", "a.ì•½ê°„ì˜",
 		 * "Customers showed only marginal interest in the new product.");
-		 * HT[9].add_term("mastermind", "n.(°èÈ¹ µîÀÇ)ÀÔ¾ÈÀÚ,ÁöµµÀÚ",
+		 * HT[9].add_term("mastermind", "n.(ê³„íš ë“±ì˜)ì…ì•ˆì,ì§€ë„ì",
 		 * "Mr.Dane is the mastermind behind the innovative design.",
 		 * "Mr.Dane is the mastermind [   ] the innovative design.",
-		 * "behind\r\nmastermind behind : ~ÀÇ ¹èÈÄ ÀÔ¾ÈÀÚ, ÁöµµÀÚ"); HT[9].add_term("means",
-		 * "n.¹æ¹ı,¼ö´Ü", "Direct surveys are one means of gatering consumer feedback.",
+		 * "behind\r\nmastermind behind : ~ì˜ ë°°í›„ ì…ì•ˆì, ì§€ë„ì"); HT[9].add_term("means",
+		 * "n.ë°©ë²•,ìˆ˜ë‹¨", "Direct surveys are one means of gatering consumer feedback.",
 		 * "Guests will have to enter [   ] means of a phone buzzer system.",
-		 * "by\r\nby means of : ~¿¡ ÀÇÇÏ¿©, ~À¸·Î"); HT[9].add_term("necessarily", "ad.¹İµå½Ã",
+		 * "by\r\nby means of : ~ì— ì˜í•˜ì—¬, ~ìœ¼ë¡œ"); HT[9].add_term("necessarily", "ad.ë°˜ë“œì‹œ",
 		 * "Increased production does not necessarily lead to greater revenues.");
-		 * HT[9].add_term("need", "n.ÇÊ¿ä;¿å±¸,¿ä±¸v.~ÇÒ ÇÊ¿ä°¡ ÀÖ´Ù",
+		 * HT[9].add_term("need", "n.í•„ìš”;ìš•êµ¬,ìš”êµ¬v.~í•  í•„ìš”ê°€ ìˆë‹¤",
 		 * "The company is in need of an untapped market.\r\nWe need to scrutinize each transaction for potential errors."
 		 * , "We need [   ] scrutinize each transaction for potential errors.",
-		 * "to\r\nneed to do : ~ÇÒ ÇÊ¿ä°¡ ÀÖ´Ù.\r\nneed´Â ºÎÁ¤¹®ÀÌ³ª Á¶°Ç¹®¿¡¼­ Á¶µ¿»ç·Î ¾²¿© need not do ÇüÅÂ¸¦ ÃëÇÏ±âµµ ÇÏÁö¸¸, ´ëºÎºĞÀÇ °æ¿ì ÀÏ¹İµ¿»ç·Î »ç¿ëµÇ¸ç ÀÌ¶§´Â toºÎÁ¤»ç¿Í ÇÔ²² ¾´´Ù´Â °ÍÀ» ²À ±â¾ïÇØ µÎÀÚ."
-		 * ) ; HT[9].add_term("repeatedly", "ad.°Åµì,µÇÇ®ÀÌÇÏ¿©",
+		 * "to\r\nneed to do : ~í•  í•„ìš”ê°€ ìˆë‹¤.\r\nneedëŠ” ë¶€ì •ë¬¸ì´ë‚˜ ì¡°ê±´ë¬¸ì—ì„œ ì¡°ë™ì‚¬ë¡œ ì“°ì—¬ need not do í˜•íƒœë¥¼ ì·¨í•˜ê¸°ë„ í•˜ì§€ë§Œ, ëŒ€ë¶€ë¶„ì˜ ê²½ìš° ì¼ë°˜ë™ì‚¬ë¡œ ì‚¬ìš©ë˜ë©° ì´ë•ŒëŠ” toë¶€ì •ì‚¬ì™€ í•¨ê»˜ ì“´ë‹¤ëŠ” ê²ƒì„ ê¼­ ê¸°ì–µí•´ ë‘ì."
+		 * ) ; HT[9].add_term("repeatedly", "ad.ê±°ë“­,ë˜í’€ì´í•˜ì—¬",
 		 * "Customers have repeatedly requested the new product catalog.");
-		 * HT[9].add_term("strategy", "n.Àü·«",
+		 * HT[9].add_term("strategy", "n.ì „ëµ",
 		 * "Management's strategy for expansion has been successful.");
 		 * 
-		 * HT[10].add_term("affordable", "a.(°¡°İÀÌ)¾Ë¸ÂÀº,°¨´çÇÒ ¼ö ÀÖ´Â");
-		 * HT[10].add_term("alter", "v.(¼ºÁú,Çü»óÀ»)°íÄ¡´Ù,¹Ù²Ù´Ù"); HT[10].add_term("apparel",
-		 * "n.ÀÇº¹,ÀÇ·ù"); HT[10].add_term("apply", "v.(Àû¿ëÇÏ´Ù;Áö¿øÇÏ´Ù"); HT[10].add_term("area",
-		 * "n.Áö¿ª"); HT[10].add_term("auction", "n.°æ¸Å"); HT[10].add_term("authentic",
-		 * "a.ÁøÂ¥ÀÇ,ÁøÇ°ÀÇ"); HT[10].add_term("benefit", "n.ÇıÅÃ,ÀÌÀÍv.ÇıÅÃÀ» º¸´Ù,ÀÌÀÍÀ» ¾ò´Ù");
-		 * HT[10].add_term("carefully", "ad.ÁÖÀÇ ±í°Ô,½ÅÁßÇÑ"); HT[10].add_term("charge",
-		 * "n.¿ä±İ,Ã»±¸±İ¾×;Ã¥ÀÓ,ÀÇ¹«v.~À» Ã»±¸ÇÏ´Ù;¿Ü»óÀ¸·Î ´Ş¾Æ³õ´Ù"); HT[10].add_term("delivery", "n.¹è´Ş");
-		 * HT[10].add_term("description", "n.(Á¦Ç° µîÀÇ)¼³¸í¼­,ÇØ¼³"); HT[10].add_term("dilute",
-		 * "v.Èñ¼®ÇÏ´Ù"); HT[10].add_term("equivalent", "a.~¿¡ »ó´çÇÏ´Â,¸Â¸Ô´Â");
-		 * HT[10].add_term("exactly", "ad.Á¤È®È÷"); HT[10].add_term("exclusively",
-		 * "ad.µ¶Á¡ÀûÀ¸·Î,¿À·ÎÁö"); HT[10].add_term("exquisite", "a.Á¤±³ÇÑ,¿ì¾ÆÇÑ");
-		 * HT[10].add_term("fit", "v.(Ä¡¼ö°¡)~¿¡ ²À ¸Â´Ù,~¿¡ ÀûÇÕÇÏ´Ù");
-		 * HT[10].add_term("installment", "n.ÇÒºÎ"); HT[10].add_term("lately", "ad.ÃÖ±Ù¿¡");
-		 * HT[10].add_term("merchandise", "n.»óÇ°"); HT[10].add_term("method", "n.¹æ¹ı,Çü½Ä");
-		 * HT[10].add_term("notice", "n.ÅëÁö"); HT[10].add_term("offer", "v.Á¦°øÇÏ´Ùn.Á¦°ø,¿ÀÆÛ");
-		 * HT[10].add_term("officially", "ad.°ø½ÄÀûÀ¸·Î"); HT[10].add_term("price", "n.°¡°İ");
-		 * HT[10].add_term("purchase", "v.±¸¸ÅÇÏ´Ùn.±¸¸Å"); HT[10].add_term("readily",
-		 * "ad.Áï½Ã,¼Õ½±°Ô"); HT[10].add_term("receipt", "n.¿µ¼öÁõ");
-		 * HT[10].add_term("redeemable", "a.»óÈ¯ÇÒ ¼ö ÀÖ´Â,µÇÃ£À» ¼ö ÀÖ´Â");
-		 * HT[10].add_term("refund", "n.È¯ºÒ,È¯ºÒ±İ"); HT[10].add_term("relatively",
-		 * "ad.»ó´ëÀûÀ¸·Î"); HT[10].add_term("scent", "n.Çâ±â,³¿»õ"); HT[10].add_term("sturdy",
-		 * "a.Æ°Æ°ÇÑ"); HT[10].add_term("tax", "n.¼¼±İ"); HT[10].add_term("thrifty",
-		 * "a.°Ë¼ÒÇÑ,°Ë¾àÇÏ´Â"); HT[10].add_term("valid", "a.À¯È¿ÇÑ"); HT[10].add_term("value",
-		 * "n.°¡Ä¡;°¡°İ;(µ·À» Ä¡¸¥ ¸¸Å­ÀÇ)´ë°¡¹°"); HT[10].add_term("voucher", "n.(Çö±İ ´ë¿ëÀÇ)»óÇ°±Ç,ÀÎÈ¯±Ç");
-		 * HT[10].add_term("warranty", "n.(Ç°Áú µîÀÇ)º¸Áõ,º¸Áõ¼­");
+		 * HT[10].add_term("affordable", "a.(ê°€ê²©ì´)ì•Œë§ì€,ê°ë‹¹í•  ìˆ˜ ìˆëŠ”");
+		 * HT[10].add_term("alter", "v.(ì„±ì§ˆ,í˜•ìƒì„)ê³ ì¹˜ë‹¤,ë°”ê¾¸ë‹¤"); HT[10].add_term("apparel",
+		 * "n.ì˜ë³µ,ì˜ë¥˜"); HT[10].add_term("apply", "v.(ì ìš©í•˜ë‹¤;ì§€ì›í•˜ë‹¤"); HT[10].add_term("area",
+		 * "n.ì§€ì—­"); HT[10].add_term("auction", "n.ê²½ë§¤"); HT[10].add_term("authentic",
+		 * "a.ì§„ì§œì˜,ì§„í’ˆì˜"); HT[10].add_term("benefit", "n.í˜œíƒ,ì´ìµv.í˜œíƒì„ ë³´ë‹¤,ì´ìµì„ ì–»ë‹¤");
+		 * HT[10].add_term("carefully", "ad.ì£¼ì˜ ê¹Šê²Œ,ì‹ ì¤‘í•œ"); HT[10].add_term("charge",
+		 * "n.ìš”ê¸ˆ,ì²­êµ¬ê¸ˆì•¡;ì±…ì„,ì˜ë¬´v.~ì„ ì²­êµ¬í•˜ë‹¤;ì™¸ìƒìœ¼ë¡œ ë‹¬ì•„ë†“ë‹¤"); HT[10].add_term("delivery", "n.ë°°ë‹¬");
+		 * HT[10].add_term("description", "n.(ì œí’ˆ ë“±ì˜)ì„¤ëª…ì„œ,í•´ì„¤"); HT[10].add_term("dilute",
+		 * "v.í¬ì„í•˜ë‹¤"); HT[10].add_term("equivalent", "a.~ì— ìƒë‹¹í•˜ëŠ”,ë§ë¨¹ëŠ”");
+		 * HT[10].add_term("exactly", "ad.ì •í™•íˆ"); HT[10].add_term("exclusively",
+		 * "ad.ë…ì ì ìœ¼ë¡œ,ì˜¤ë¡œì§€"); HT[10].add_term("exquisite", "a.ì •êµí•œ,ìš°ì•„í•œ");
+		 * HT[10].add_term("fit", "v.(ì¹˜ìˆ˜ê°€)~ì— ê¼­ ë§ë‹¤,~ì— ì í•©í•˜ë‹¤");
+		 * HT[10].add_term("installment", "n.í• ë¶€"); HT[10].add_term("lately", "ad.ìµœê·¼ì—");
+		 * HT[10].add_term("merchandise", "n.ìƒí’ˆ"); HT[10].add_term("method", "n.ë°©ë²•,í˜•ì‹");
+		 * HT[10].add_term("notice", "n.í†µì§€"); HT[10].add_term("offer", "v.ì œê³µí•˜ë‹¤n.ì œê³µ,ì˜¤í¼");
+		 * HT[10].add_term("officially", "ad.ê³µì‹ì ìœ¼ë¡œ"); HT[10].add_term("price", "n.ê°€ê²©");
+		 * HT[10].add_term("purchase", "v.êµ¬ë§¤í•˜ë‹¤n.êµ¬ë§¤"); HT[10].add_term("readily",
+		 * "ad.ì¦‰ì‹œ,ì†ì‰½ê²Œ"); HT[10].add_term("receipt", "n.ì˜ìˆ˜ì¦");
+		 * HT[10].add_term("redeemable", "a.ìƒí™˜í•  ìˆ˜ ìˆëŠ”,ë˜ì°¾ì„ ìˆ˜ ìˆëŠ”");
+		 * HT[10].add_term("refund", "n.í™˜ë¶ˆ,í™˜ë¶ˆê¸ˆ"); HT[10].add_term("relatively",
+		 * "ad.ìƒëŒ€ì ìœ¼ë¡œ"); HT[10].add_term("scent", "n.í–¥ê¸°,ëƒ„ìƒˆ"); HT[10].add_term("sturdy",
+		 * "a.íŠ¼íŠ¼í•œ"); HT[10].add_term("tax", "n.ì„¸ê¸ˆ"); HT[10].add_term("thrifty",
+		 * "a.ê²€ì†Œí•œ,ê²€ì•½í•˜ëŠ”"); HT[10].add_term("valid", "a.ìœ íš¨í•œ"); HT[10].add_term("value",
+		 * "n.ê°€ì¹˜;ê°€ê²©;(ëˆì„ ì¹˜ë¥¸ ë§Œí¼ì˜)ëŒ€ê°€ë¬¼"); HT[10].add_term("voucher", "n.(í˜„ê¸ˆ ëŒ€ìš©ì˜)ìƒí’ˆê¶Œ,ì¸í™˜ê¶Œ");
+		 * HT[10].add_term("warranty", "n.(í’ˆì§ˆ ë“±ì˜)ë³´ì¦,ë³´ì¦ì„œ");
 		 * 
-		 * HT[11].add_term("assemble", "v.Á¶¸³ÇÏ´Ù"); HT[11].add_term("attribute",
-		 * "v.(¿øÀÎÀ»)~¿¡ µ¹¸®´Ù,~ÀÇ ´öºĞÀ¸·Î µ¹¸®´Ù"); HT[11].add_term("automate", "v.ÀÚµ¿È­ÇÏ´Ù");
-		 * HT[11].add_term("capable", "a.~À» ÇÒ ¼ö ÀÖ´Â,~ÇÒ ´É·ÂÀÌ ÀÖ´Â");
-		 * HT[11].add_term("capacity", "n.¼ö¿ë·Â,¿ë·®"); HT[11].add_term("carelessly",
-		 * "ad.ºÎÁÖÀÇÇÏ°Ô"); HT[11].add_term("chemical", "n.È­ÇĞ Á¦Ç°");
-		 * HT[11].add_term("coming", "a.´Ù°¡¿À´Â"); HT[11].add_term("comparable",
-		 * "a.ÇÊÀûÇÏ´Â,ºñ±³µÇ´Â"); HT[11].add_term("damaged", "a.¼Õ»óµÈ,¼ÕÇØ¸¦ ÀÔÀº");
-		 * HT[11].add_term("device", "n.ÀåÄ¡"); HT[11].add_term("discontinue", "v.Áß´ÜÇÏ´Ù");
-		 * HT[11].add_term("efficiency", "n.È¿À²,´É·ü"); HT[11].add_term("equipment",
-		 * "n.Àåºñ,¼³ºñ"); HT[11].add_term("evidently", "ad.ºĞ¸íÈ÷,¸í¹éÈ÷");
-		 * HT[11].add_term("fabricate", "v.Á¦ÀÛÇÏ´Ù"); HT[11].add_term("facility", "n.½Ã¼³");
-		 * HT[11].add_term("fill", "v.~À» Ã¤¿ì´Ù"); HT[11].add_term("finished", "a.¿Ï¼ºµÈ");
-		 * HT[11].add_term("halt", "n.Áß´Ü,Á¤Áö"); HT[11].add_term("launch",
-		 * "v.(½ÅÁ¦Ç°À»)Ãâ½ÃÇÏ´Ù"); HT[11].add_term("material", "n.Àç·á,¹°Áú");
-		 * HT[11].add_term("operate", "v.(±â°è µîÀÌ)ÀÛµ¿ÇÏ´Ù,¿òÁ÷ÀÌ´Ù");
-		 * HT[11].add_term("operational", "a.ÀÛµ¿ÇÏ´Â,ÀÛµ¿ °¡´ÉÇÑ"); HT[11].add_term("place",
-		 * "v.~À» ÇÑ »óÅÂ¿¡ µÎ´Ù;(ÁÖ¹®À»)ÇÏ´Ù"); HT[11].add_term("power", "n.Àü·Â,Àü±â");
-		 * HT[11].add_term("precaution", "n.¿¹¹æ Á¶Ä¡,¿¹¹æÃ¥"); HT[11].add_term("prevent",
-		 * "v.~À» ¸·´Ù,~À» ¿¹¹æÇÏ´Ù"); HT[11].add_term("processing", "n.Ã³¸®,°¡°ø");
-		 * HT[11].add_term("procurement", "n.(ÇÊ¼öÇ°ÀÇ)Á¶´Ş"); HT[11].add_term("produce",
-		 * "v.»ı»êÇÏ´Ù"); HT[11].add_term("properly", "ad.Á¦´ë·Î,Á¤È®ÇÏ°Ô");
-		 * HT[11].add_term("protective", "a.º¸È£ÇÏ´Â"); HT[11].add_term("quota",
-		 * "n.ÇÒ´ç·®,ÇÒ´ç"); HT[11].add_term("safety", "n.¾ÈÀü"); HT[11].add_term("separately",
-		 * "ad.°³º°ÀûÀ¸·Î,µû·Îµû·Î"); HT[11].add_term("specification", "n.¸í¼¼¼­,¼³¸í¼­");
-		 * HT[11].add_term("stage", "´Ü°è"); HT[11].add_term("tolerance", "n.°ü¿ë");
-		 * HT[11].add_term("utilize", "v.ÀÌ¿ëÇÏ´Ù,È°¿ëÇÏ´Ù");
+		 * HT[11].add_term("assemble", "v.ì¡°ë¦½í•˜ë‹¤"); HT[11].add_term("attribute",
+		 * "v.(ì›ì¸ì„)~ì— ëŒë¦¬ë‹¤,~ì˜ ë•ë¶„ìœ¼ë¡œ ëŒë¦¬ë‹¤"); HT[11].add_term("automate", "v.ìë™í™”í•˜ë‹¤");
+		 * HT[11].add_term("capable", "a.~ì„ í•  ìˆ˜ ìˆëŠ”,~í•  ëŠ¥ë ¥ì´ ìˆëŠ”");
+		 * HT[11].add_term("capacity", "n.ìˆ˜ìš©ë ¥,ìš©ëŸ‰"); HT[11].add_term("carelessly",
+		 * "ad.ë¶€ì£¼ì˜í•˜ê²Œ"); HT[11].add_term("chemical", "n.í™”í•™ ì œí’ˆ");
+		 * HT[11].add_term("coming", "a.ë‹¤ê°€ì˜¤ëŠ”"); HT[11].add_term("comparable",
+		 * "a.í•„ì í•˜ëŠ”,ë¹„êµë˜ëŠ”"); HT[11].add_term("damaged", "a.ì†ìƒëœ,ì†í•´ë¥¼ ì…ì€");
+		 * HT[11].add_term("device", "n.ì¥ì¹˜"); HT[11].add_term("discontinue", "v.ì¤‘ë‹¨í•˜ë‹¤");
+		 * HT[11].add_term("efficiency", "n.íš¨ìœ¨,ëŠ¥ë¥ "); HT[11].add_term("equipment",
+		 * "n.ì¥ë¹„,ì„¤ë¹„"); HT[11].add_term("evidently", "ad.ë¶„ëª…íˆ,ëª…ë°±íˆ");
+		 * HT[11].add_term("fabricate", "v.ì œì‘í•˜ë‹¤"); HT[11].add_term("facility", "n.ì‹œì„¤");
+		 * HT[11].add_term("fill", "v.~ì„ ì±„ìš°ë‹¤"); HT[11].add_term("finished", "a.ì™„ì„±ëœ");
+		 * HT[11].add_term("halt", "n.ì¤‘ë‹¨,ì •ì§€"); HT[11].add_term("launch",
+		 * "v.(ì‹ ì œí’ˆì„)ì¶œì‹œí•˜ë‹¤"); HT[11].add_term("material", "n.ì¬ë£Œ,ë¬¼ì§ˆ");
+		 * HT[11].add_term("operate", "v.(ê¸°ê³„ ë“±ì´)ì‘ë™í•˜ë‹¤,ì›€ì§ì´ë‹¤");
+		 * HT[11].add_term("operational", "a.ì‘ë™í•˜ëŠ”,ì‘ë™ ê°€ëŠ¥í•œ"); HT[11].add_term("place",
+		 * "v.~ì„ í•œ ìƒíƒœì— ë‘ë‹¤;(ì£¼ë¬¸ì„)í•˜ë‹¤"); HT[11].add_term("power", "n.ì „ë ¥,ì „ê¸°");
+		 * HT[11].add_term("precaution", "n.ì˜ˆë°© ì¡°ì¹˜,ì˜ˆë°©ì±…"); HT[11].add_term("prevent",
+		 * "v.~ì„ ë§‰ë‹¤,~ì„ ì˜ˆë°©í•˜ë‹¤"); HT[11].add_term("processing", "n.ì²˜ë¦¬,ê°€ê³µ");
+		 * HT[11].add_term("procurement", "n.(í•„ìˆ˜í’ˆì˜)ì¡°ë‹¬"); HT[11].add_term("produce",
+		 * "v.ìƒì‚°í•˜ë‹¤"); HT[11].add_term("properly", "ad.ì œëŒ€ë¡œ,ì •í™•í•˜ê²Œ");
+		 * HT[11].add_term("protective", "a.ë³´í˜¸í•˜ëŠ”"); HT[11].add_term("quota",
+		 * "n.í• ë‹¹ëŸ‰,í• ë‹¹"); HT[11].add_term("safety", "n.ì•ˆì „"); HT[11].add_term("separately",
+		 * "ad.ê°œë³„ì ìœ¼ë¡œ,ë”°ë¡œë”°ë¡œ"); HT[11].add_term("specification", "n.ëª…ì„¸ì„œ,ì„¤ëª…ì„œ");
+		 * HT[11].add_term("stage", "ë‹¨ê³„"); HT[11].add_term("tolerance", "n.ê´€ìš©");
+		 * HT[11].add_term("utilize", "v.ì´ìš©í•˜ë‹¤,í™œìš©í•˜ë‹¤");
 		 * 
-		 * HT[12].add_term("absolute", "a.¿ÏÀüÇÑ,¿ÏÀü¹«°áÇÑ"); HT[12].add_term("accurate",
-		 * "a.Á¤È®ÇÑ"); HT[12].add_term("advance", "n.Áøº¸,ÀüÁø"); HT[12].add_term("allow",
-		 * "v.~ÇÏ°Ô ÇÏ´Ù,~À» Çã¶ôÇÏ´Ù"); HT[12].add_term("appearance", "n.¿Ü°ü,¿Ü¾ç");
-		 * HT[12].add_term("bewildering", "a.´çÈ¤ÄÉ ÇÏ´Â"); HT[12].add_term("breakthrough",
-		 * "n.(°úÇĞ µîÀÇ)ºñ¾àÀû ¹ßÀü"); HT[12].add_term("broaden", "v.³ĞÈ÷´Ù");
-		 * HT[12].add_term("compatible", "a.È£È¯¼ºÀÇ,¾ç¸³ÇÒ ¼ö ÀÖ´Â");
-		 * HT[12].add_term("complement", "v.º¸¿ÏÇÏ´Ù"); HT[12].add_term("concurrently",
-		 * "ad.µ¿½Ã¿¡"); HT[12].add_term("control", "v.°ü¸®ÇÏ´Ù,ÅëÁ¦ÇÏ´Ù");
-		 * HT[12].add_term("corrosion", "n.ºÎ½Ä"); HT[12].add_term("development",
-		 * "n.°³¹ß;¹ßÀü"); HT[12].add_term("devise", "v.°í¾ÈÇÏ´Ù,¹ß¸íÇÏ´Ù");
-		 * HT[12].add_term("disruption", "n.Áß´Ü,È¥¶õ"); HT[12].add_term("durable",
-		 * "a.³»±¸¼º ÀÖ´Â,Æ°Æ°ÇÑ"); HT[12].add_term("envision", "v.(Àå·¡ÀÇ ÀÏ µîÀ»)»ó»óÇÏ´Ù,°èÈ¹ÇÏ´Ù");
-		 * HT[12].add_term("feature", "n.Æ¯Â¡,Æ¯»ö"); HT[12].add_term("following",
-		 * "prep.~ÈÄ¿¡a.´ÙÀ½ÀÇ,´ÙÀ½¿¡ ¿À´Â"); HT[12].add_term("grant",
-		 * "v.(ÀÎÁ¤ÇÏ¿© Á¤½ÄÀ¸·Î)ÁÖ´Ù,¼ö¿©ÇÏ´Ùn.º¸Á¶±İ(¿¬±¸ºñ,ÀåÇĞ±İ µî)"); HT[12].add_term("hold",
-		 * "v.~À» ´ã´Ù,~À» ¼ö¿ëÇÏ´Ù"); HT[12].add_term("improve", "v.°³¼±ÇÏ´Ù,Çâ»ó½ÃÅ°´Ù");
-		 * HT[12].add_term("increasingly", "ad.Á¡Á¡,´õ¿í ´õ"); HT[12].add_term("indication",
-		 * "n.Â¡ÈÄ,Á¶Áü"); HT[12].add_term("innovative", "a.Çõ½ÅÀûÀÎ");
-		 * HT[12].add_term("inspect", "v.~À» Á¶»çÇÏ´Ù,°Ë»çÇÏ´Ù"); HT[12].add_term("inspiration",
-		 * "n.¿µ°¨"); HT[12].add_term("interpretation", "n.ÇØ¼®,¼³¸í");
-		 * HT[12].add_term("manufacturer", "n.Á¦Á¶È¸»ç,Á¦Á¶¾÷ÀÚ"); HT[12].add_term("obsolete",
-		 * "a.½Ã´ë¿¡ µÚ¶³¾îÁø,±¸½ÄÀÇ"); HT[12].add_term("patent", "n.Æ¯Çã±Ç,Æ¯ÇãÇ°");
-		 * HT[12].add_term("patronize", "v.~À» ´Ü°ñ·Î »ï´Ù,~¿Í °Å·¡ÇÏ´Ù");
-		 * HT[12].add_term("quality", "n.Ç°Áú,Áú"); HT[12].add_term("reliable",
-		 * "a.¹ÏÀ» ¸¸ÇÑ,½Å·ÚÇÒ ¼ö ÀÖ´Â"); HT[12].add_term("research", "n.¿¬±¸,Á¶»ç");
-		 * HT[12].add_term("revolutionary", "a.Çõ¸íÀûÀÎ"); HT[12].add_term("sleek",
-		 * "a.¼¼·ÃµÈ"); HT[12].add_term("state-of-the-art", "a.ÃÖ½Å½ÄÀÇ");
-		 * HT[12].add_term("streamline", "v.(ÀÏ µîÀ»)´É·üÀûÀ¸·Î ÇÏ´Ù,ÇÕ¸®È­ÇÏ´Ù");
-		 * HT[12].add_term("sufficiently", "ad.ÃæºĞÈ÷"); HT[12].add_term("superior",
-		 * "a.¿ì¼öÇÑ,»ó±ŞÀÇ"); HT[12].add_term("technical", "a.±â¼úÀûÀÎ");
-		 * HT[12].add_term("vulnerable", "a.Ãë¾àÇÑ");
+		 * HT[12].add_term("absolute", "a.ì™„ì „í•œ,ì™„ì „ë¬´ê²°í•œ"); HT[12].add_term("accurate",
+		 * "a.ì •í™•í•œ"); HT[12].add_term("advance", "n.ì§„ë³´,ì „ì§„"); HT[12].add_term("allow",
+		 * "v.~í•˜ê²Œ í•˜ë‹¤,~ì„ í—ˆë½í•˜ë‹¤"); HT[12].add_term("appearance", "n.ì™¸ê´€,ì™¸ì–‘");
+		 * HT[12].add_term("bewildering", "a.ë‹¹í˜¹ì¼€ í•˜ëŠ”"); HT[12].add_term("breakthrough",
+		 * "n.(ê³¼í•™ ë“±ì˜)ë¹„ì•½ì  ë°œì „"); HT[12].add_term("broaden", "v.ë„“íˆë‹¤");
+		 * HT[12].add_term("compatible", "a.í˜¸í™˜ì„±ì˜,ì–‘ë¦½í•  ìˆ˜ ìˆëŠ”");
+		 * HT[12].add_term("complement", "v.ë³´ì™„í•˜ë‹¤"); HT[12].add_term("concurrently",
+		 * "ad.ë™ì‹œì—"); HT[12].add_term("control", "v.ê´€ë¦¬í•˜ë‹¤,í†µì œí•˜ë‹¤");
+		 * HT[12].add_term("corrosion", "n.ë¶€ì‹"); HT[12].add_term("development",
+		 * "n.ê°œë°œ;ë°œì „"); HT[12].add_term("devise", "v.ê³ ì•ˆí•˜ë‹¤,ë°œëª…í•˜ë‹¤");
+		 * HT[12].add_term("disruption", "n.ì¤‘ë‹¨,í˜¼ë€"); HT[12].add_term("durable",
+		 * "a.ë‚´êµ¬ì„± ìˆëŠ”,íŠ¼íŠ¼í•œ"); HT[12].add_term("envision", "v.(ì¥ë˜ì˜ ì¼ ë“±ì„)ìƒìƒí•˜ë‹¤,ê³„íší•˜ë‹¤");
+		 * HT[12].add_term("feature", "n.íŠ¹ì§•,íŠ¹ìƒ‰"); HT[12].add_term("following",
+		 * "prep.~í›„ì—a.ë‹¤ìŒì˜,ë‹¤ìŒì— ì˜¤ëŠ”"); HT[12].add_term("grant",
+		 * "v.(ì¸ì •í•˜ì—¬ ì •ì‹ìœ¼ë¡œ)ì£¼ë‹¤,ìˆ˜ì—¬í•˜ë‹¤n.ë³´ì¡°ê¸ˆ(ì—°êµ¬ë¹„,ì¥í•™ê¸ˆ ë“±)"); HT[12].add_term("hold",
+		 * "v.~ì„ ë‹´ë‹¤,~ì„ ìˆ˜ìš©í•˜ë‹¤"); HT[12].add_term("improve", "v.ê°œì„ í•˜ë‹¤,í–¥ìƒì‹œí‚¤ë‹¤");
+		 * HT[12].add_term("increasingly", "ad.ì ì ,ë”ìš± ë”"); HT[12].add_term("indication",
+		 * "n.ì§•í›„,ì¡°ì§"); HT[12].add_term("innovative", "a.í˜ì‹ ì ì¸");
+		 * HT[12].add_term("inspect", "v.~ì„ ì¡°ì‚¬í•˜ë‹¤,ê²€ì‚¬í•˜ë‹¤"); HT[12].add_term("inspiration",
+		 * "n.ì˜ê°"); HT[12].add_term("interpretation", "n.í•´ì„,ì„¤ëª…");
+		 * HT[12].add_term("manufacturer", "n.ì œì¡°íšŒì‚¬,ì œì¡°ì—…ì"); HT[12].add_term("obsolete",
+		 * "a.ì‹œëŒ€ì— ë’¤ë–¨ì–´ì§„,êµ¬ì‹ì˜"); HT[12].add_term("patent", "n.íŠ¹í—ˆê¶Œ,íŠ¹í—ˆí’ˆ");
+		 * HT[12].add_term("patronize", "v.~ì„ ë‹¨ê³¨ë¡œ ì‚¼ë‹¤,~ì™€ ê±°ë˜í•˜ë‹¤");
+		 * HT[12].add_term("quality", "n.í’ˆì§ˆ,ì§ˆ"); HT[12].add_term("reliable",
+		 * "a.ë¯¿ì„ ë§Œí•œ,ì‹ ë¢°í•  ìˆ˜ ìˆëŠ”"); HT[12].add_term("research", "n.ì—°êµ¬,ì¡°ì‚¬");
+		 * HT[12].add_term("revolutionary", "a.í˜ëª…ì ì¸"); HT[12].add_term("sleek",
+		 * "a.ì„¸ë ¨ëœ"); HT[12].add_term("state-of-the-art", "a.ìµœì‹ ì‹ì˜");
+		 * HT[12].add_term("streamline", "v.(ì¼ ë“±ì„)ëŠ¥ë¥ ì ìœ¼ë¡œ í•˜ë‹¤,í•©ë¦¬í™”í•˜ë‹¤");
+		 * HT[12].add_term("sufficiently", "ad.ì¶©ë¶„íˆ"); HT[12].add_term("superior",
+		 * "a.ìš°ìˆ˜í•œ,ìƒê¸‰ì˜"); HT[12].add_term("technical", "a.ê¸°ìˆ ì ì¸");
+		 * HT[12].add_term("vulnerable", "a.ì·¨ì•½í•œ");
 		 * 
-		 * HT[13].add_term("apologize", "v.»ç°úÇÏ´Ù"); HT[13].add_term("appropriately",
-		 * "ad.ÀûÀıÇÏ°Ô"); HT[13].add_term("argumentative", "a.³íÀïÀûÀÎ,³íÀïÀ» ÁÁ¾ÆÇÏ´Â");
-		 * HT[13].add_term("blemish", "n.Èì,°áÁ¡"); HT[13].add_term("cause",
-		 * "v.~À» ¾ß±âÇÏ´Ù,~ÀÇ ¿øÀÎÀÌ µÇ´Ùn.¿øÀÎ"); HT[13].add_term("commitment", "n.Çå½Å,Àü³ä");
-		 * HT[13].add_term("complaint", "n.ºÒÆò"); HT[13].add_term("complete",
-		 * "v.¿Ï·áÇÏ´Ù,¿Ï¼ºÇÏ´Ù a.¿Ï·áµÈ,¿Ï¼ºµÈ"); HT[13].add_term("compliment", "n.ÄªÂù");
-		 * HT[13].add_term("confident", "a.ÀÚ½Å ÀÖ´Â"); HT[13].add_term("courteous",
-		 * "a.¿¹ÀÇ ¹Ù¸¥"); HT[13].add_term("critical", "a.ºñÆÇÀûÀÎ"); HT[13].add_term("deal",
-		 * "v.Ã³¸®ÇÏ´Ù;°Å·¡ÇÏ´Ù;ºĞ¹èÇÏ´Ù, n.°Å·¡"); HT[13].add_term("defective", "a.°áÇÔÀÌ ÀÖ´Â");
-		 * HT[13].add_term("disclose", "v.°ø°³ÇÏ´Ù,µå·¯³»´Ù"); HT[13].add_term("escort",
-		 * "v.~À» ¹Ù·¡´Ù ÁÖ´Ù,¿¡½ºÄÚÆ®ÇÏ´Ù"); HT[13].add_term("evaluation", "n.Æò°¡");
-		 * HT[13].add_term("fix", "v.¼ö¸®ÇÏ´Ù"); HT[13].add_term("for free", "phr.¹«·á·Î");
-		 * HT[13].add_term("further", "a.±× ÀÌ»óÀÇ"); HT[13].add_term("genuine",
-		 * "a.ÁøÂ¥ÀÇ,ÁøÇ°ÀÇ"); HT[13].add_term("guarantee", "v.º¸ÀåÇÏ´Ù, n.º¸Àå");
-		 * HT[13].add_term("hesitate", "v.ÁÖÀúÇÏ´Ù"); HT[13].add_term("inconvenience",
-		 * "n.ºÒÆí"); HT[13].add_term("infuriate", "v.°İºĞ½ÃÅ°´Ù,È­³ª°Ô ÇÏ´Ù");
-		 * HT[13].add_term("inquire", "v.Áú¹®ÇÏ´Ù"); HT[13].add_term("insert", "v.»ğÀÔÇÏ´Ù");
-		 * HT[13].add_term("mistakenly", "ad.Àß¸øµÇ°Ô,Æ²¸®°Ô"); HT[13].add_term("notification",
-		 * "n.ÅëÁö"); HT[13].add_term("politely", "ad.¿¹ÀÇ ¹Ù¸£°Ô"); HT[13].add_term("rebate",
-		 * "v.È¯ºÒÇÏ´Ù,¸®º£ÀÌÆ®ÇÏ´Ù"); HT[13].add_term("replace", "v.~À» ±³Ã¼ÇÏ´Ù,´ëÃ¼ÇÏ´Ù");
-		 * HT[13].add_term("respond", "v.ÀÀ´äÇÏ´Ù"); HT[13].add_term("return",
-		 * "v.¹İÈ¯ÇÏ´Ù,¹İ¼ÛÇÏ´Ù"); HT[13].add_term("satisfaction", "n.¸¸Á·");
-		 * HT[13].add_term("seriously", "ad.ÁøÁöÇÏ°Ô"); HT[13].add_term("specific",
-		 * "a.±¸Ã¼ÀûÀÎ,¸íÈ®ÇÑ"); HT[13].add_term("unwavering", "a.È®°íÇÑ,µ¿¿äÇÏÁö ¾Ê´Â");
+		 * HT[13].add_term("apologize", "v.ì‚¬ê³¼í•˜ë‹¤"); HT[13].add_term("appropriately",
+		 * "ad.ì ì ˆí•˜ê²Œ"); HT[13].add_term("argumentative", "a.ë…¼ìŸì ì¸,ë…¼ìŸì„ ì¢‹ì•„í•˜ëŠ”");
+		 * HT[13].add_term("blemish", "n.í ,ê²°ì "); HT[13].add_term("cause",
+		 * "v.~ì„ ì•¼ê¸°í•˜ë‹¤,~ì˜ ì›ì¸ì´ ë˜ë‹¤n.ì›ì¸"); HT[13].add_term("commitment", "n.í—Œì‹ ,ì „ë…");
+		 * HT[13].add_term("complaint", "n.ë¶ˆí‰"); HT[13].add_term("complete",
+		 * "v.ì™„ë£Œí•˜ë‹¤,ì™„ì„±í•˜ë‹¤ a.ì™„ë£Œëœ,ì™„ì„±ëœ"); HT[13].add_term("compliment", "n.ì¹­ì°¬");
+		 * HT[13].add_term("confident", "a.ìì‹  ìˆëŠ”"); HT[13].add_term("courteous",
+		 * "a.ì˜ˆì˜ ë°”ë¥¸"); HT[13].add_term("critical", "a.ë¹„íŒì ì¸"); HT[13].add_term("deal",
+		 * "v.ì²˜ë¦¬í•˜ë‹¤;ê±°ë˜í•˜ë‹¤;ë¶„ë°°í•˜ë‹¤, n.ê±°ë˜"); HT[13].add_term("defective", "a.ê²°í•¨ì´ ìˆëŠ”");
+		 * HT[13].add_term("disclose", "v.ê³µê°œí•˜ë‹¤,ë“œëŸ¬ë‚´ë‹¤"); HT[13].add_term("escort",
+		 * "v.~ì„ ë°”ë˜ë‹¤ ì£¼ë‹¤,ì—ìŠ¤ì½”íŠ¸í•˜ë‹¤"); HT[13].add_term("evaluation", "n.í‰ê°€");
+		 * HT[13].add_term("fix", "v.ìˆ˜ë¦¬í•˜ë‹¤"); HT[13].add_term("for free", "phr.ë¬´ë£Œë¡œ");
+		 * HT[13].add_term("further", "a.ê·¸ ì´ìƒì˜"); HT[13].add_term("genuine",
+		 * "a.ì§„ì§œì˜,ì§„í’ˆì˜"); HT[13].add_term("guarantee", "v.ë³´ì¥í•˜ë‹¤, n.ë³´ì¥");
+		 * HT[13].add_term("hesitate", "v.ì£¼ì €í•˜ë‹¤"); HT[13].add_term("inconvenience",
+		 * "n.ë¶ˆí¸"); HT[13].add_term("infuriate", "v.ê²©ë¶„ì‹œí‚¤ë‹¤,í™”ë‚˜ê²Œ í•˜ë‹¤");
+		 * HT[13].add_term("inquire", "v.ì§ˆë¬¸í•˜ë‹¤"); HT[13].add_term("insert", "v.ì‚½ì…í•˜ë‹¤");
+		 * HT[13].add_term("mistakenly", "ad.ì˜ëª»ë˜ê²Œ,í‹€ë¦¬ê²Œ"); HT[13].add_term("notification",
+		 * "n.í†µì§€"); HT[13].add_term("politely", "ad.ì˜ˆì˜ ë°”ë¥´ê²Œ"); HT[13].add_term("rebate",
+		 * "v.í™˜ë¶ˆí•˜ë‹¤,ë¦¬ë² ì´íŠ¸í•˜ë‹¤"); HT[13].add_term("replace", "v.~ì„ êµì²´í•˜ë‹¤,ëŒ€ì²´í•˜ë‹¤");
+		 * HT[13].add_term("respond", "v.ì‘ë‹µí•˜ë‹¤"); HT[13].add_term("return",
+		 * "v.ë°˜í™˜í•˜ë‹¤,ë°˜ì†¡í•˜ë‹¤"); HT[13].add_term("satisfaction", "n.ë§Œì¡±");
+		 * HT[13].add_term("seriously", "ad.ì§„ì§€í•˜ê²Œ"); HT[13].add_term("specific",
+		 * "a.êµ¬ì²´ì ì¸,ëª…í™•í•œ"); HT[13].add_term("unwavering", "a.í™•ê³ í•œ,ë™ìš”í•˜ì§€ ì•ŠëŠ”");
 		 * 
-		 * HT[14].add_term("accumulate", "v.ÃàÀûÇÏ´Ù"); HT[14].add_term("allowance",
-		 * "n.Çã¿ëÄ¡;ÂüÀÛ,Æ¯º°ÇÑ °í·Á"); HT[14].add_term("approximately", "ad.´ë·«");
-		 * HT[14].add_term("attraction", "n.°ü±¤ ¸í¼Ò"); HT[14].add_term("away", "ad.¶³¾îÁ®¼­");
-		 * HT[14].add_term("baggage", "n.¼öÈ­¹°"); HT[14].add_term("beforehand",
-		 * "ad.(Á¤ÇØÁø ¶§º¸´Ù)ÀÌÀü¿¡,¹Ì¸®"); HT[14].add_term("board", "v.Å¾½ÂÇÏ´Ù,n.ÀÌ»çÈ¸");
-		 * HT[14].add_term("brochure", "n.(È«º¸¿ë)¼ÒÃ¥ÀÚ,ºê·Î¼Å"); HT[14].add_term("customs",
-		 * "n.¼¼°ü"); HT[14].add_term("declare", "v.(¼¼°ü¿¡¼­)½Å°íÇÏ´Ù");
-		 * HT[14].add_term("depart", "v.Ãâ¹ßÇÏ´Ù"); HT[14].add_term("destination", "n.¸ñÀûÁö");
-		 * HT[14].add_term("diverse", "a.´Ù¾çÇÑ"); HT[14].add_term("dramatic", "a.±ØÀûÀÎ,¸ÚÁø");
-		 * HT[14].add_term("duty", "n.°ü¼¼,¼¼±İ;ÀÇ¹«"); HT[14].add_term("embassy", "n.´ë»ç°ü");
-		 * HT[14].add_term("emergency", "n.ºñ»ó»çÅÂ"); HT[14].add_term("exotic",
-		 * "a.ÀÌ±¹ÀûÀÎ,¸ÅÈ¤ÀûÀÎ"); HT[14].add_term("fill out/in", "phr.(¼­·ù¿¡)Àû¾î ³Ö´Ù");
-		 * HT[14].add_term("hospitality", "n.È¯´ë,Ä£Àı"); HT[14].add_term("indulge",
-		 * "v.Å½´ĞÇÏ´Ù,ºüÁö´Ù"); HT[14].add_term("international", "a.±¹Á¦ÀûÀÎ");
-		 * HT[14].add_term("itinerary", "n.¿©Çà ÀÏÁ¤"); HT[14].add_term("jet lag",
-		 * "phr.½ÃÂ÷Áß(¿©Çà½Ã ½ÃÂ÷·Î ÀÎÇÑ ÇÇ·Î)"); HT[14].add_term("laundry", "n.¼¼Å¹¹°");
-		 * HT[14].add_term("locate", "v.(~ÀÇ À§Ä¡¸¦)Ã£¾Æ³»´Ù;~À» À§Ä¡½ÃÅ°´Ù");
-		 * HT[14].add_term("missing", "a.Çà¹æ ºÒ¸íÀÇ,»ç¶óÁø"); HT[14].add_term("overhead",
-		 * "a.¸Ó¸® À§ÀÇ"); HT[14].add_term("precisely", "ad.Á¤È®È÷");
-		 * HT[14].add_term("prior to", "prep.~ÀÌÀü¿¡"); HT[14].add_term("proximity",
-		 * "n.°¡±î¿ò,±ÙÁ¢ÇÑ"); HT[14].add_term("remittance", "n.¼Û±İ");
-		 * HT[14].add_term("round trip", "phr.¿Õº¹ ¿©Çà"); HT[14].add_term("seating",
-		 * "n.(ÁıÇÕÀû)ÁÂ¼® ¼³ºñ;ÁÂ¼® ¹è¿­"); HT[14].add_term("superb", "a.¶Ù¾î³­,ÃÖ°íÀÇ");
-		 * HT[14].add_term("swap", "v.¸Â¹Ù²Ù´Ù,±³È¯ÇÏ´Ù"); HT[14].add_term("touch down",
-		 * "phr.Âø·úÇÏ´Ù"); HT[14].add_term("tour", "n.(°øÀå, ½Ã¼³ µîÀÇ)°ßÇĞ,ÂªÀº ¿©Çà");
-		 * HT[14].add_term("unavailable", "a.±¸ÇÒ ¼ö ¾ø´Â, ÀÌ¿ëÇÒ ¼ö ¾ø´Â");
-		 * HT[14].add_term("unique", "a.µ¶Æ¯ÇÑ"); HT[14].add_term("unlimited", "a.¹«Á¦ÇÑÀÇ");
+		 * HT[14].add_term("accumulate", "v.ì¶•ì í•˜ë‹¤"); HT[14].add_term("allowance",
+		 * "n.í—ˆìš©ì¹˜;ì°¸ì‘,íŠ¹ë³„í•œ ê³ ë ¤"); HT[14].add_term("approximately", "ad.ëŒ€ëµ");
+		 * HT[14].add_term("attraction", "n.ê´€ê´‘ ëª…ì†Œ"); HT[14].add_term("away", "ad.ë–¨ì–´ì ¸ì„œ");
+		 * HT[14].add_term("baggage", "n.ìˆ˜í™”ë¬¼"); HT[14].add_term("beforehand",
+		 * "ad.(ì •í•´ì§„ ë•Œë³´ë‹¤)ì´ì „ì—,ë¯¸ë¦¬"); HT[14].add_term("board", "v.íƒ‘ìŠ¹í•˜ë‹¤,n.ì´ì‚¬íšŒ");
+		 * HT[14].add_term("brochure", "n.(í™ë³´ìš©)ì†Œì±…ì,ë¸Œë¡œì…”"); HT[14].add_term("customs",
+		 * "n.ì„¸ê´€"); HT[14].add_term("declare", "v.(ì„¸ê´€ì—ì„œ)ì‹ ê³ í•˜ë‹¤");
+		 * HT[14].add_term("depart", "v.ì¶œë°œí•˜ë‹¤"); HT[14].add_term("destination", "n.ëª©ì ì§€");
+		 * HT[14].add_term("diverse", "a.ë‹¤ì–‘í•œ"); HT[14].add_term("dramatic", "a.ê·¹ì ì¸,ë©‹ì§„");
+		 * HT[14].add_term("duty", "n.ê´€ì„¸,ì„¸ê¸ˆ;ì˜ë¬´"); HT[14].add_term("embassy", "n.ëŒ€ì‚¬ê´€");
+		 * HT[14].add_term("emergency", "n.ë¹„ìƒì‚¬íƒœ"); HT[14].add_term("exotic",
+		 * "a.ì´êµ­ì ì¸,ë§¤í˜¹ì ì¸"); HT[14].add_term("fill out/in", "phr.(ì„œë¥˜ì—)ì ì–´ ë„£ë‹¤");
+		 * HT[14].add_term("hospitality", "n.í™˜ëŒ€,ì¹œì ˆ"); HT[14].add_term("indulge",
+		 * "v.íƒë‹‰í•˜ë‹¤,ë¹ ì§€ë‹¤"); HT[14].add_term("international", "a.êµ­ì œì ì¸");
+		 * HT[14].add_term("itinerary", "n.ì—¬í–‰ ì¼ì •"); HT[14].add_term("jet lag",
+		 * "phr.ì‹œì°¨ì¤‘(ì—¬í–‰ì‹œ ì‹œì°¨ë¡œ ì¸í•œ í”¼ë¡œ)"); HT[14].add_term("laundry", "n.ì„¸íƒë¬¼");
+		 * HT[14].add_term("locate", "v.(~ì˜ ìœ„ì¹˜ë¥¼)ì°¾ì•„ë‚´ë‹¤;~ì„ ìœ„ì¹˜ì‹œí‚¤ë‹¤");
+		 * HT[14].add_term("missing", "a.í–‰ë°© ë¶ˆëª…ì˜,ì‚¬ë¼ì§„"); HT[14].add_term("overhead",
+		 * "a.ë¨¸ë¦¬ ìœ„ì˜"); HT[14].add_term("precisely", "ad.ì •í™•íˆ");
+		 * HT[14].add_term("prior to", "prep.~ì´ì „ì—"); HT[14].add_term("proximity",
+		 * "n.ê°€ê¹Œì›€,ê·¼ì ‘í•œ"); HT[14].add_term("remittance", "n.ì†¡ê¸ˆ");
+		 * HT[14].add_term("round trip", "phr.ì™•ë³µ ì—¬í–‰"); HT[14].add_term("seating",
+		 * "n.(ì§‘í•©ì )ì¢Œì„ ì„¤ë¹„;ì¢Œì„ ë°°ì—´"); HT[14].add_term("superb", "a.ë›°ì–´ë‚œ,ìµœê³ ì˜");
+		 * HT[14].add_term("swap", "v.ë§ë°”ê¾¸ë‹¤,êµí™˜í•˜ë‹¤"); HT[14].add_term("touch down",
+		 * "phr.ì°©ë¥™í•˜ë‹¤"); HT[14].add_term("tour", "n.(ê³µì¥, ì‹œì„¤ ë“±ì˜)ê²¬í•™,ì§§ì€ ì—¬í–‰");
+		 * HT[14].add_term("unavailable", "a.êµ¬í•  ìˆ˜ ì—†ëŠ”, ì´ìš©í•  ìˆ˜ ì—†ëŠ”");
+		 * HT[14].add_term("unique", "a.ë…íŠ¹í•œ"); HT[14].add_term("unlimited", "a.ë¬´ì œí•œì˜");
 		 * 
-		 * HT[15].add_term("agreement", "n.°è¾à,ÇùÁ¤;ÇÕÀÇ"); HT[15].add_term("alliance",
-		 * "n.µ¿¸Í,Á¦ÈŞ"); HT[15].add_term("annotated", "a.(Ã¥ µîÀÌ)ÁÖ¼®ÀÌ ´Ş¸°");
-		 * HT[15].add_term("annulment", "n.¹«È¿È­,Ãë¼Ò"); HT[15].add_term("arbitration",
-		 * "n.ÁßÀç"); HT[15].add_term("bid", "n.ÀÔÂû"); HT[15].add_term("challenging",
-		 * "a.µµÀüÀûÀÎ,Èûµç"); HT[15].add_term("collaborate", "v.°øµ¿À¸·Î ÀÏÇÏ´Ù,Çùµ¿ÇÏ´Ù");
-		 * HT[15].add_term("compromise", "n.Å¸Çù,È­ÇØ"); HT[15].add_term("contract",
-		 * "n.°è¾à v.°è¾àÇÏ´Ù;¼öÃàÇÏ´Ù"); HT[15].add_term("cooperatively", "ad.Çù·ÂÇÏ¿©,ÇùÁ¶ÀûÀ¸·Î");
-		 * HT[15].add_term("deadlock", "n.±³Âø »óÅÂ"); HT[15].add_term("dispute",
-		 * "n.³íÀï,ºĞÀï"); HT[15].add_term("embark", "v.Âø¼öÇÏ´Ù,³ª¼­´Ù");
-		 * HT[15].add_term("expire", "v.(°è¾à µîÀÌ)¸¸±â°¡ µÇ´Ù"); HT[15].add_term("foundation",
-		 * "n.Åä´ë,±âÃÊ"); HT[15].add_term("impartially", "ad.°í¸íÁ¤´ëÇÏ°Ô,Ä¡¿ìÄ¡Áö ¾Ê°Ô");
-		 * HT[15].add_term("imperative", "a.¹İµå½Ã ÇØ¾ß ÇÏ´Â,ÇÊ¼öÀûÀÎ");
-		 * HT[15].add_term("impression", "n.ÀÎ»ó"); HT[15].add_term("initially",
-		 * "ad.Ã³À½¿¡, ÃÊ±â¿¡"); HT[15].add_term("mediation", "n.Á¶Á¤,ÁßÀç");
-		 * HT[15].add_term("moderator", "n.(Åä·Ğ µîÀÇ)»çÈ¸ÀÚ, ÁßÀçÀÚ"); HT[15].add_term("modify",
-		 * "v.ÀÏºÎ º¯°æÇÏ´Ù,¼öÁ¤ÇÏ´Ù"); HT[15].add_term("narrow", "v.(¹üÀ§ µîÀ»)Á¼È÷´Ù");
-		 * HT[15].add_term("negotiation", "n.±³¼·,Çù»ó"); HT[15].add_term("opposing",
-		 * "a.´ë¸³ÇÏ´Â,¹İ´ëÇÏ´Â"); HT[15].add_term("originally", "ad.¿ø·¡,Ã³À½¿¡´Â");
-		 * HT[15].add_term("preamble", "n.¼­·Ğ,¼­¹®"); HT[15].add_term("proceed",
-		 * "v.(ÀÏÀÌ)ÇàÇØÁö´Ù,ÁøÃ´µÇ´Ù"); HT[15].add_term("proposal", "n.°èÈ¹,¾È");
-		 * HT[15].add_term("provision", "n.(Á¶¾àÀÇ)Á¶Ç×"); HT[15].add_term("renew",
-		 * "v.(°è¾à µîÀ»)°»½ÅÇÏ´Ù"); HT[15].add_term("review", "v.°ËÅäÇÏ´Ù,ÀçÁ¶»çÇÏ´Ù");
-		 * HT[15].add_term("rigid", "a.¾ö°İÇÑ,¿Ï°íÇÑ"); HT[15].add_term("settle",
-		 * "v.ÇØ°áÇÏ´Ù,Ã³¸®ÇÏ´Ù"); HT[15].add_term("solicit", "v.¿äÃ»ÇÏ´Ù,°£Ã»ÇÏ´Ù");
-		 * HT[15].add_term("stipulation", "n.°è¾à Á¶°Ç"); HT[15].add_term("surely",
-		 * "ad.Æ²¸²¾øÀÌ,²À"); HT[15].add_term("term", "n.Á¶°Ç;ÀÓ±â,±âÇÑ");
-		 * HT[15].add_term("terminate", "v.³¡³»´Ù, Á¾°á½ÃÅ°´Ù");
+		 * HT[15].add_term("agreement", "n.ê³„ì•½,í˜‘ì •;í•©ì˜"); HT[15].add_term("alliance",
+		 * "n.ë™ë§¹,ì œíœ´"); HT[15].add_term("annotated", "a.(ì±… ë“±ì´)ì£¼ì„ì´ ë‹¬ë¦°");
+		 * HT[15].add_term("annulment", "n.ë¬´íš¨í™”,ì·¨ì†Œ"); HT[15].add_term("arbitration",
+		 * "n.ì¤‘ì¬"); HT[15].add_term("bid", "n.ì…ì°°"); HT[15].add_term("challenging",
+		 * "a.ë„ì „ì ì¸,í˜ë“ "); HT[15].add_term("collaborate", "v.ê³µë™ìœ¼ë¡œ ì¼í•˜ë‹¤,í˜‘ë™í•˜ë‹¤");
+		 * HT[15].add_term("compromise", "n.íƒ€í˜‘,í™”í•´"); HT[15].add_term("contract",
+		 * "n.ê³„ì•½ v.ê³„ì•½í•˜ë‹¤;ìˆ˜ì¶•í•˜ë‹¤"); HT[15].add_term("cooperatively", "ad.í˜‘ë ¥í•˜ì—¬,í˜‘ì¡°ì ìœ¼ë¡œ");
+		 * HT[15].add_term("deadlock", "n.êµì°© ìƒíƒœ"); HT[15].add_term("dispute",
+		 * "n.ë…¼ìŸ,ë¶„ìŸ"); HT[15].add_term("embark", "v.ì°©ìˆ˜í•˜ë‹¤,ë‚˜ì„œë‹¤");
+		 * HT[15].add_term("expire", "v.(ê³„ì•½ ë“±ì´)ë§Œê¸°ê°€ ë˜ë‹¤"); HT[15].add_term("foundation",
+		 * "n.í† ëŒ€,ê¸°ì´ˆ"); HT[15].add_term("impartially", "ad.ê³ ëª…ì •ëŒ€í•˜ê²Œ,ì¹˜ìš°ì¹˜ì§€ ì•Šê²Œ");
+		 * HT[15].add_term("imperative", "a.ë°˜ë“œì‹œ í•´ì•¼ í•˜ëŠ”,í•„ìˆ˜ì ì¸");
+		 * HT[15].add_term("impression", "n.ì¸ìƒ"); HT[15].add_term("initially",
+		 * "ad.ì²˜ìŒì—, ì´ˆê¸°ì—"); HT[15].add_term("mediation", "n.ì¡°ì •,ì¤‘ì¬");
+		 * HT[15].add_term("moderator", "n.(í† ë¡  ë“±ì˜)ì‚¬íšŒì, ì¤‘ì¬ì"); HT[15].add_term("modify",
+		 * "v.ì¼ë¶€ ë³€ê²½í•˜ë‹¤,ìˆ˜ì •í•˜ë‹¤"); HT[15].add_term("narrow", "v.(ë²”ìœ„ ë“±ì„)ì¢íˆë‹¤");
+		 * HT[15].add_term("negotiation", "n.êµì„­,í˜‘ìƒ"); HT[15].add_term("opposing",
+		 * "a.ëŒ€ë¦½í•˜ëŠ”,ë°˜ëŒ€í•˜ëŠ”"); HT[15].add_term("originally", "ad.ì›ë˜,ì²˜ìŒì—ëŠ”");
+		 * HT[15].add_term("preamble", "n.ì„œë¡ ,ì„œë¬¸"); HT[15].add_term("proceed",
+		 * "v.(ì¼ì´)í–‰í•´ì§€ë‹¤,ì§„ì²™ë˜ë‹¤"); HT[15].add_term("proposal", "n.ê³„íš,ì•ˆ");
+		 * HT[15].add_term("provision", "n.(ì¡°ì•½ì˜)ì¡°í•­"); HT[15].add_term("renew",
+		 * "v.(ê³„ì•½ ë“±ì„)ê°±ì‹ í•˜ë‹¤"); HT[15].add_term("review", "v.ê²€í† í•˜ë‹¤,ì¬ì¡°ì‚¬í•˜ë‹¤");
+		 * HT[15].add_term("rigid", "a.ì—„ê²©í•œ,ì™„ê³ í•œ"); HT[15].add_term("settle",
+		 * "v.í•´ê²°í•˜ë‹¤,ì²˜ë¦¬í•˜ë‹¤"); HT[15].add_term("solicit", "v.ìš”ì²­í•˜ë‹¤,ê°„ì²­í•˜ë‹¤");
+		 * HT[15].add_term("stipulation", "n.ê³„ì•½ ì¡°ê±´"); HT[15].add_term("surely",
+		 * "ad.í‹€ë¦¼ì—†ì´,ê¼­"); HT[15].add_term("term", "n.ì¡°ê±´;ì„ê¸°,ê¸°í•œ");
+		 * HT[15].add_term("terminate", "v.ëë‚´ë‹¤, ì¢…ê²°ì‹œí‚¤ë‹¤");
 		 * 
-		 * HT[16].add_term("acclaim", "n.Âù»ç,È£Æò"); HT[16].add_term("antitrust",
-		 * "a.µ¶Á¡ ±İÁöÀÇ"); HT[16].add_term("assure", "v.~¿¡°Ô º¸ÀåÇÏ´Ù,~À» ¾È½É½ÃÅ°´Ù");
-		 * HT[16].add_term("at the latest", "phr.´Ê¾îµµ"); HT[16].add_term("attain",
-		 * "v.(¸ñÇ¥¸¦)´Ş¼ºÇÏ´Ù"); HT[16].add_term("bulk", "a.´ë·®ÀÇ");
-		 * HT[16].add_term("capitalize on", "phr.~À» ÀÌ¿ëÇÏ´Ù,±âÈ¸·Î »ï´Ù");
-		 * HT[16].add_term("commodity", "n.»óÇ°,»ê¹°"); HT[16].add_term("completely",
-		 * "ad.ÀüÀûÀ¸·Î,¿ÏÀüÈ÷"); HT[16].add_term("confirmation", "n.È®ÀÎ,È®Áõ");
-		 * HT[16].add_term("consignment", "n.À§Å¹ ÆÇ¸Å"); HT[16].add_term("contact",
-		 * "~¿Í ¿¬¶ôÀ» ÃëÇÏ´Ù, n.(»ó¾÷Àû ¸ñÀûÀ¸·Î)±³¼·ÇÏ°í ÀÖ´Â »ç¶÷"); HT[16].add_term("cultivation",
-		 * "n.¿ìÈ£ ÁõÁø,¾ç¼º"); HT[16].add_term("dealer", "n.ÆÇ¸Å¾÷ÀÚ,»óÀÎ");
-		 * HT[16].add_term("depot", "n.Ã¢°í,ÀúÀå¼Ò"); HT[16].add_term("diminish", "v.°¨¼ÒÇÏ´Ù");
-		 * HT[16].add_term("distribute", "v.¹èÆ÷ÇÏ´Ù,¹è±ŞÇÏ´Ù"); HT[16].add_term("diversified",
-		 * "a.´Ù¾çÈ­,¿©·¯ °¡ÁöÀÇ"); HT[16].add_term("do business with", "phr.~¿Í °Å·¡ÇÏ´Ù");
-		 * HT[16].add_term("encompass", "v.Æ÷ÇÔÇÏ´Ù,µÑ·¯½Î´Ù"); HT[16].add_term("engrave",
-		 * "v.(¹®ÀÚ, µµ¾È µîÀ»)~¿¡ ¼¼±â´Ù"); HT[16].add_term("enviable", "a.ºÎ·¯¿öÇÒ ¸¸ÇÑ, »ù³ª´Â");
-		 * HT[16].add_term("inevitable", "a.ºÒ°¡ÇÇÇÑ"); HT[16].add_term("inventory",
-		 * "n.Àç°íÇ°, Àç°í¸ñ·Ï"); HT[16].add_term("invoice", "n.¼ÛÀå,ÀÎº¸ÀÌ½º");
-		 * HT[16].add_term("keep track of", "phr.~À» °è¼Ó ¾Ë°í ÀÖ´Ù,~¿¡ ´ëÇØ ²÷ÀÓ¾øÀÌ Á¤º¸¸¦ ¾ò¾î³»´Ù");
-		 * HT[16].add_term("order", "v.ÁÖ¹®ÇÏ´Ù"); HT[16].add_term("provide",
-		 * "v.°ø±ŞÇÏ´Ù,Á¦°øÇÏ´Ù"); HT[16].add_term("quota", "n.°ßÀû¾×"); HT[16].add_term("refuse",
-		 * "v.°ÅÀıÇÏ´Ù"); HT[16].add_term("represent", "v.~À» ´ëÇ¥ÇÏ´Ù");
-		 * HT[16].add_term("retail", "n.¼Ò¸Å"); HT[16].add_term("satisfactory",
-		 * "a.¸¸Á·½º·¯¿î"); HT[16].add_term("selection", "n.¼±ÅÃµÈ °Í,Á¤¼±Ç°");
-		 * HT[16].add_term("short", "a.ºÎÁ·ÇÑ"); HT[16].add_term("shortly",
-		 * "ad.°ğ, ¾ó¸¶ ¾È ÀÖ¾î"); HT[16].add_term("stock", "n.Àç°í;ÁÖ½Ä");
-		 * HT[16].add_term("subject", "a.~ÀÇ ¿µÇâÀ» ¹Ş±â ½¬¿î;(µ¿ÀÇ µîÀ»)Á¶°ÇÀ¸·Î ÇÏ´Â v.~¿¡°Ô (~À») ¹Ş°Ô ÇÏ´Ù");
-		 * HT[16].add_term("supply", "v.°ø±ŞÇÏ´Ù n.°ø±Ş;(-s)ºñÇ°, ¼Ò¸ğÇ°");
-		 * HT[16].add_term("temporarily", "ad.ÀÏ½ÃÀûÀ¸·Î"); HT[16].add_term("unable",
-		 * "a.~ÇÒ ¼ö ¾ø´Â");
+		 * HT[16].add_term("acclaim", "n.ì°¬ì‚¬,í˜¸í‰"); HT[16].add_term("antitrust",
+		 * "a.ë…ì  ê¸ˆì§€ì˜"); HT[16].add_term("assure", "v.~ì—ê²Œ ë³´ì¥í•˜ë‹¤,~ì„ ì•ˆì‹¬ì‹œí‚¤ë‹¤");
+		 * HT[16].add_term("at the latest", "phr.ëŠ¦ì–´ë„"); HT[16].add_term("attain",
+		 * "v.(ëª©í‘œë¥¼)ë‹¬ì„±í•˜ë‹¤"); HT[16].add_term("bulk", "a.ëŒ€ëŸ‰ì˜");
+		 * HT[16].add_term("capitalize on", "phr.~ì„ ì´ìš©í•˜ë‹¤,ê¸°íšŒë¡œ ì‚¼ë‹¤");
+		 * HT[16].add_term("commodity", "n.ìƒí’ˆ,ì‚°ë¬¼"); HT[16].add_term("completely",
+		 * "ad.ì „ì ìœ¼ë¡œ,ì™„ì „íˆ"); HT[16].add_term("confirmation", "n.í™•ì¸,í™•ì¦");
+		 * HT[16].add_term("consignment", "n.ìœ„íƒ íŒë§¤"); HT[16].add_term("contact",
+		 * "~ì™€ ì—°ë½ì„ ì·¨í•˜ë‹¤, n.(ìƒì—…ì  ëª©ì ìœ¼ë¡œ)êµì„­í•˜ê³  ìˆëŠ” ì‚¬ëŒ"); HT[16].add_term("cultivation",
+		 * "n.ìš°í˜¸ ì¦ì§„,ì–‘ì„±"); HT[16].add_term("dealer", "n.íŒë§¤ì—…ì,ìƒì¸");
+		 * HT[16].add_term("depot", "n.ì°½ê³ ,ì €ì¥ì†Œ"); HT[16].add_term("diminish", "v.ê°ì†Œí•˜ë‹¤");
+		 * HT[16].add_term("distribute", "v.ë°°í¬í•˜ë‹¤,ë°°ê¸‰í•˜ë‹¤"); HT[16].add_term("diversified",
+		 * "a.ë‹¤ì–‘í™”,ì—¬ëŸ¬ ê°€ì§€ì˜"); HT[16].add_term("do business with", "phr.~ì™€ ê±°ë˜í•˜ë‹¤");
+		 * HT[16].add_term("encompass", "v.í¬í•¨í•˜ë‹¤,ë‘˜ëŸ¬ì‹¸ë‹¤"); HT[16].add_term("engrave",
+		 * "v.(ë¬¸ì, ë„ì•ˆ ë“±ì„)~ì— ì„¸ê¸°ë‹¤"); HT[16].add_term("enviable", "a.ë¶€ëŸ¬ì›Œí•  ë§Œí•œ, ìƒ˜ë‚˜ëŠ”");
+		 * HT[16].add_term("inevitable", "a.ë¶ˆê°€í”¼í•œ"); HT[16].add_term("inventory",
+		 * "n.ì¬ê³ í’ˆ, ì¬ê³ ëª©ë¡"); HT[16].add_term("invoice", "n.ì†¡ì¥,ì¸ë³´ì´ìŠ¤");
+		 * HT[16].add_term("keep track of", "phr.~ì„ ê³„ì† ì•Œê³  ìˆë‹¤,~ì— ëŒ€í•´ ëŠì„ì—†ì´ ì •ë³´ë¥¼ ì–»ì–´ë‚´ë‹¤");
+		 * HT[16].add_term("order", "v.ì£¼ë¬¸í•˜ë‹¤"); HT[16].add_term("provide",
+		 * "v.ê³µê¸‰í•˜ë‹¤,ì œê³µí•˜ë‹¤"); HT[16].add_term("quota", "n.ê²¬ì ì•¡"); HT[16].add_term("refuse",
+		 * "v.ê±°ì ˆí•˜ë‹¤"); HT[16].add_term("represent", "v.~ì„ ëŒ€í‘œí•˜ë‹¤");
+		 * HT[16].add_term("retail", "n.ì†Œë§¤"); HT[16].add_term("satisfactory",
+		 * "a.ë§Œì¡±ìŠ¤ëŸ¬ìš´"); HT[16].add_term("selection", "n.ì„ íƒëœ ê²ƒ,ì •ì„ í’ˆ");
+		 * HT[16].add_term("short", "a.ë¶€ì¡±í•œ"); HT[16].add_term("shortly",
+		 * "ad.ê³§, ì–¼ë§ˆ ì•ˆ ìˆì–´"); HT[16].add_term("stock", "n.ì¬ê³ ;ì£¼ì‹");
+		 * HT[16].add_term("subject", "a.~ì˜ ì˜í–¥ì„ ë°›ê¸° ì‰¬ìš´;(ë™ì˜ ë“±ì„)ì¡°ê±´ìœ¼ë¡œ í•˜ëŠ” v.~ì—ê²Œ (~ì„) ë°›ê²Œ í•˜ë‹¤");
+		 * HT[16].add_term("supply", "v.ê³µê¸‰í•˜ë‹¤ n.ê³µê¸‰;(-s)ë¹„í’ˆ, ì†Œëª¨í’ˆ");
+		 * HT[16].add_term("temporarily", "ad.ì¼ì‹œì ìœ¼ë¡œ"); HT[16].add_term("unable",
+		 * "a.~í•  ìˆ˜ ì—†ëŠ”");
 		 * 
 		 * 
-		 * HT[17].add_term("accelerate", "v.ÃËÁøÇÏ´Ù,°¡¼ÓÈ­ÇÏ´Ù"); HT[17].add_term("acknowledge",
-		 * "v.ÀÎÁ¤ÇÏ´Ù;(ÆíÁö µîÀÇ)¼ö·ÉÀ» ¾Ë¸®´Ù"); HT[17].add_term("address",
-		 * "n.ÁÖ¼Ò v.(¾î·Á¿î ¹®Á¦ µîÀ»)´Ù·ç´Ù,Ã³¸®ÇÏ´Ù"); HT[17].add_term("adequately", "ad.ÀûÀıÈ÷");
-		 * HT[17].add_term("affix", "v.(¿ìÇ¥ µîÀ»)ºÙÀÌ´Ù"); HT[17].add_term("attach",
-		 * "v.ºÙÀÌ´Ù,Á¢ÂøÇÏ´Ù"); HT[17].add_term("bilateral", "a.½Ö¹æÀÇ");
-		 * HT[17].add_term("by hand", "phr.ÀÎÆíÀ¸·Î,¼ÕÀ¸·Î"); HT[17].add_term("carton",
-		 * "n.(Å«)ÆÇÁö »óÀÚ"); HT[17].add_term("caution", "n.ÁÖÀÇ,Á¶½É");
-		 * HT[17].add_term("convenlence", "n.ÆíÀÇ,Æí¸®"); HT[17].add_term("correspondence",
-		 * "n.ÆíÁö,Åë½Å¹®"); HT[17].add_term("courier", "n.±Ş¼Û ÅÃ¹è");
-		 * HT[17].add_term("deliver", "v.¹è´ŞÇÏ´Ù;(¿¬¼³À»)ÇÏ´Ù"); HT[17].add_term("detach",
-		 * "v.¶¼´Ù"); HT[17].add_term("efficient", "a.(±â°è,¹æ¹ı µîÀÌ)´É·üÀûÀÎ,È¿°úÀûÀÎ");
-		 * HT[17].add_term("embargo", "n.(Æ¯Á¤ »óÇ°ÀÇ)¹«¿ª ±İÁö,Åë»ó Á¤Áö"); HT[17].add_term("enact",
-		 * "v.Á¦Á¤ÇÏ´Ù"); HT[17].add_term("enclose", "v.~À» µ¿ºÀÇÏ´Ù;~À» ¿¡¿ö½Î´Ù");
-		 * HT[17].add_term("ensure", "v.º¸ÁõÇÏ´Ù,È®½ÇÇÏ°Ô ÇÏ´Ù"); HT[17].add_term("envelope",
-		 * "n.ºÀÅõ"); HT[17].add_term("expedite", "v.½Å¼ÓÈ÷ Ã³¸®ÇÏ´Ù,ÁøÃ´½ÃÅ°´Ù");
-		 * HT[17].add_term("fragile", "a.±úÁö±â ½¬¿î"); HT[17].add_term("handle",
-		 * "v.´Ù·ç´Ù,Ãë±ŞÇÏ´Ù"); HT[17].add_term("impose", "v.(¼¼±İ µîÀ»)ºÎ°úÇÏ´Ù");
-		 * HT[17].add_term("inaugurate", "v.Á¤½ÄÀ¸·Î ~À» °³½ÃÇÏ´Ù"); HT[17].add_term("incorrect",
-		 * "a.ºÎÁ¤È®ÇÑ"); HT[17].add_term("oblige", "v.~¿¡°Ô °­¿äÇÏ´Ù,ÇÒ ¼ö ¾øÀÌ ~ÇÏ°Ô ÇÏ´Ù");
-		 * HT[17].add_term("particularly", "ad.Æ¯È÷"); HT[17].add_term("perishable",
-		 * "a.ºÎÆĞÇÏ±â ½¬¿î"); HT[17].add_term("postage", "n.¿ìÆí ¿ä±İ");
-		 * HT[17].add_term("recipient", "n.¼ö½ÅÀÚ"); HT[17].add_term("reciprocal",
-		 * "a.»óÈ£ÀÇ,¼­·ÎÀÇ"); HT[17].add_term("remarkable", "a.ÇöÀúÇÑ,µÎµå·¯Áø");
-		 * HT[17].add_term("retaliation", "n.º¸º¹"); HT[17].add_term("shipment",
-		 * "n.¼±Àû,(È­¹°ÀÇ)¹ß¼Û;Å¹¼ÛÈ­¹°"); HT[17].add_term("step", "n.´Ü°è;Á¶Ä¡,¼ö´Ü");
-		 * HT[17].add_term("surplus", "n.À×¿©,ÈæÀÚ");
+		 * HT[17].add_term("accelerate", "v.ì´‰ì§„í•˜ë‹¤,ê°€ì†í™”í•˜ë‹¤"); HT[17].add_term("acknowledge",
+		 * "v.ì¸ì •í•˜ë‹¤;(í¸ì§€ ë“±ì˜)ìˆ˜ë ¹ì„ ì•Œë¦¬ë‹¤"); HT[17].add_term("address",
+		 * "n.ì£¼ì†Œ v.(ì–´ë ¤ìš´ ë¬¸ì œ ë“±ì„)ë‹¤ë£¨ë‹¤,ì²˜ë¦¬í•˜ë‹¤"); HT[17].add_term("adequately", "ad.ì ì ˆíˆ");
+		 * HT[17].add_term("affix", "v.(ìš°í‘œ ë“±ì„)ë¶™ì´ë‹¤"); HT[17].add_term("attach",
+		 * "v.ë¶™ì´ë‹¤,ì ‘ì°©í•˜ë‹¤"); HT[17].add_term("bilateral", "a.ìŒë°©ì˜");
+		 * HT[17].add_term("by hand", "phr.ì¸í¸ìœ¼ë¡œ,ì†ìœ¼ë¡œ"); HT[17].add_term("carton",
+		 * "n.(í°)íŒì§€ ìƒì"); HT[17].add_term("caution", "n.ì£¼ì˜,ì¡°ì‹¬");
+		 * HT[17].add_term("convenlence", "n.í¸ì˜,í¸ë¦¬"); HT[17].add_term("correspondence",
+		 * "n.í¸ì§€,í†µì‹ ë¬¸"); HT[17].add_term("courier", "n.ê¸‰ì†¡ íƒë°°");
+		 * HT[17].add_term("deliver", "v.ë°°ë‹¬í•˜ë‹¤;(ì—°ì„¤ì„)í•˜ë‹¤"); HT[17].add_term("detach",
+		 * "v.ë–¼ë‹¤"); HT[17].add_term("efficient", "a.(ê¸°ê³„,ë°©ë²• ë“±ì´)ëŠ¥ë¥ ì ì¸,íš¨ê³¼ì ì¸");
+		 * HT[17].add_term("embargo", "n.(íŠ¹ì • ìƒí’ˆì˜)ë¬´ì—­ ê¸ˆì§€,í†µìƒ ì •ì§€"); HT[17].add_term("enact",
+		 * "v.ì œì •í•˜ë‹¤"); HT[17].add_term("enclose", "v.~ì„ ë™ë´‰í•˜ë‹¤;~ì„ ì—ì›Œì‹¸ë‹¤");
+		 * HT[17].add_term("ensure", "v.ë³´ì¦í•˜ë‹¤,í™•ì‹¤í•˜ê²Œ í•˜ë‹¤"); HT[17].add_term("envelope",
+		 * "n.ë´‰íˆ¬"); HT[17].add_term("expedite", "v.ì‹ ì†íˆ ì²˜ë¦¬í•˜ë‹¤,ì§„ì²™ì‹œí‚¤ë‹¤");
+		 * HT[17].add_term("fragile", "a.ê¹¨ì§€ê¸° ì‰¬ìš´"); HT[17].add_term("handle",
+		 * "v.ë‹¤ë£¨ë‹¤,ì·¨ê¸‰í•˜ë‹¤"); HT[17].add_term("impose", "v.(ì„¸ê¸ˆ ë“±ì„)ë¶€ê³¼í•˜ë‹¤");
+		 * HT[17].add_term("inaugurate", "v.ì •ì‹ìœ¼ë¡œ ~ì„ ê°œì‹œí•˜ë‹¤"); HT[17].add_term("incorrect",
+		 * "a.ë¶€ì •í™•í•œ"); HT[17].add_term("oblige", "v.~ì—ê²Œ ê°•ìš”í•˜ë‹¤,í•  ìˆ˜ ì—†ì´ ~í•˜ê²Œ í•˜ë‹¤");
+		 * HT[17].add_term("particularly", "ad.íŠ¹íˆ"); HT[17].add_term("perishable",
+		 * "a.ë¶€íŒ¨í•˜ê¸° ì‰¬ìš´"); HT[17].add_term("postage", "n.ìš°í¸ ìš”ê¸ˆ");
+		 * HT[17].add_term("recipient", "n.ìˆ˜ì‹ ì"); HT[17].add_term("reciprocal",
+		 * "a.ìƒí˜¸ì˜,ì„œë¡œì˜"); HT[17].add_term("remarkable", "a.í˜„ì €í•œ,ë‘ë“œëŸ¬ì§„");
+		 * HT[17].add_term("retaliation", "n.ë³´ë³µ"); HT[17].add_term("shipment",
+		 * "n.ì„ ì ,(í™”ë¬¼ì˜)ë°œì†¡;íƒì†¡í™”ë¬¼"); HT[17].add_term("step", "n.ë‹¨ê³„;ì¡°ì¹˜,ìˆ˜ë‹¨");
+		 * HT[17].add_term("surplus", "n.ì‰ì—¬,í‘ì");
 		 * 
-		 * HT[18].add_term("accommodate", "v.(°Ç¹° µîÀÌ)~À» ¼ö¿ëÇÏ´Ù,¼÷¹Ú½ÃÅ°´Ù");
-		 * HT[18].add_term("agreeably", "ad.ÄèÀûÇÏ°Ô,±âºĞ ÁÁ°Ô"); HT[18].add_term("ahead",
-		 * "ad.¹Ì¸®,¾Õ¼­¼­"); HT[18].add_term("amenity", "n.ÆíÀÇ ½Ã¼³");
-		 * HT[18].add_term("assorted", "a.¿©·¯ °¡Áö Á¾·ùÀÇ,´ÙÃ¤·Î¿î");
-		 * HT[18].add_term("atmosphere", "n.ºĞÀ§±â,È¯°æ"); HT[18].add_term("available",
-		 * "a.(»ç¹°ÀÌ)ÀÌ¿ë °¡´ÉÇÑ;(»ç¶÷ÀÌ)½Ã°£ÀÌ ÀÖ´Â"); HT[18].add_term("belongings", "n.¼ÒÁöÇ°,¼ÒÀ¯¹°");
-		 * HT[18].add_term("check in", "phr.Ã¼Å©ÀÎÇÏ´Ù,¼÷¹Ú¼ö¼ÓÀ» ÇÏ´Ù"); HT[18].add_term("chef",
-		 * "n.ÁÖ¹æÀå"); HT[18].add_term("choice", "n.¼±ÅÃ¹°,¼±ÅÃ»çÇ×,¼±ÅÃ");
-		 * HT[18].add_term("compensate", "v.~¿¡°Ô º¸»óÇÏ´Ù"); HT[18].add_term("complication",
-		 * "n.º¹ÀâÇÑ ¹®Á¦"); HT[18].add_term("complimentary", "a.¹«·áÀÇ,¿ì´ëÀÇ");
-		 * HT[18].add_term("confirm", "v.È®ÀÎÇÏ´Ù"); HT[18].add_term("connoisseur",
-		 * "n.°¨Á¤°¡,°¨½Ä°¡"); HT[18].add_term("container", "n.±×¸©,¿ë±â");
-		 * HT[18].add_term("conveniently", "ad.Æí¸®ÇÏ°Ô"); HT[18].add_term("cuisine",
-		 * "n.(µ¶Æ¯ÇÑ)¿ä¸®"); HT[18].add_term("dignitary", "n.°íÀ§ °ü¸®");
-		 * HT[18].add_term("elegant", "a.¿ì¾ÆÇÑ,°í»óÇÑ"); HT[18].add_term("entirely",
-		 * "ad.¿ÏÀüÈ÷"); HT[18].add_term("extensive", "a.±¤¹üÀ§ÇÑ,³ĞÀº");
-		 * HT[18].add_term("flavor", "n.¸À,Ç³¹Ì"); HT[18].add_term("forfeit",
-		 * "v.(¹ú·Î¼­ ±Ç¸®,Àç»ê µîÀ»)ÀÒ´Ù,¸ô¼ö´çÇÏ´Ù"); HT[18].add_term("freshness", "n.½Å¼±ÇÔ");
-		 * HT[18].add_term("indigenous", "a.Áö¿ª °íÀ¯ÀÇ,ÅäÂøÀÇ"); HT[18].add_term("make",
-		 * "v.~À» ÇÏ´Ù,~À» ¸¸µé´Ù"); HT[18].add_term("occupancy", "n.(È£ÅÚ µîÀÇ)ÀÌ¿ë·ü");
-		 * HT[18].add_term("polish", "v.~À» ´Û´Ù,~ÀÇ À±À» ³»´Ù"); HT[18].add_term("rate",
-		 * "n.¿ä±İ"); HT[18].add_term("reception", "n.È¯¿µÈ¸;(È£ÅÚÀÇ)Á¢¼öÃ³");
-		 * HT[18].add_term("recipe", "n.¿ä¸®¹ı,Á¶¸®¹ı"); HT[18].add_term("reservation",
-		 * "n.¿¹¾à"); HT[18].add_term("retain", "v.º¸À¯ÇÏ´Ù,À¯ÁöÇÏ´Ù"); HT[18].add_term("stir",
-		 * "v.ÈÖÁ£´Ù,µÚ¼¯´Ù"); HT[18].add_term("taste", "v.~ÀÇ ¸ÀÀ» º¸´Ù,½Ã½ÄÇÏ´Ù");
-		 * HT[18].add_term("utensil", "n.(ºÎ¾ı¿¡¼­ ¾²´Â)µµ±¸,±â±¸");
+		 * HT[18].add_term("accommodate", "v.(ê±´ë¬¼ ë“±ì´)~ì„ ìˆ˜ìš©í•˜ë‹¤,ìˆ™ë°•ì‹œí‚¤ë‹¤");
+		 * HT[18].add_term("agreeably", "ad.ì¾Œì í•˜ê²Œ,ê¸°ë¶„ ì¢‹ê²Œ"); HT[18].add_term("ahead",
+		 * "ad.ë¯¸ë¦¬,ì•ì„œì„œ"); HT[18].add_term("amenity", "n.í¸ì˜ ì‹œì„¤");
+		 * HT[18].add_term("assorted", "a.ì—¬ëŸ¬ ê°€ì§€ ì¢…ë¥˜ì˜,ë‹¤ì±„ë¡œìš´");
+		 * HT[18].add_term("atmosphere", "n.ë¶„ìœ„ê¸°,í™˜ê²½"); HT[18].add_term("available",
+		 * "a.(ì‚¬ë¬¼ì´)ì´ìš© ê°€ëŠ¥í•œ;(ì‚¬ëŒì´)ì‹œê°„ì´ ìˆëŠ”"); HT[18].add_term("belongings", "n.ì†Œì§€í’ˆ,ì†Œìœ ë¬¼");
+		 * HT[18].add_term("check in", "phr.ì²´í¬ì¸í•˜ë‹¤,ìˆ™ë°•ìˆ˜ì†ì„ í•˜ë‹¤"); HT[18].add_term("chef",
+		 * "n.ì£¼ë°©ì¥"); HT[18].add_term("choice", "n.ì„ íƒë¬¼,ì„ íƒì‚¬í•­,ì„ íƒ");
+		 * HT[18].add_term("compensate", "v.~ì—ê²Œ ë³´ìƒí•˜ë‹¤"); HT[18].add_term("complication",
+		 * "n.ë³µì¡í•œ ë¬¸ì œ"); HT[18].add_term("complimentary", "a.ë¬´ë£Œì˜,ìš°ëŒ€ì˜");
+		 * HT[18].add_term("confirm", "v.í™•ì¸í•˜ë‹¤"); HT[18].add_term("connoisseur",
+		 * "n.ê°ì •ê°€,ê°ì‹ê°€"); HT[18].add_term("container", "n.ê·¸ë¦‡,ìš©ê¸°");
+		 * HT[18].add_term("conveniently", "ad.í¸ë¦¬í•˜ê²Œ"); HT[18].add_term("cuisine",
+		 * "n.(ë…íŠ¹í•œ)ìš”ë¦¬"); HT[18].add_term("dignitary", "n.ê³ ìœ„ ê´€ë¦¬");
+		 * HT[18].add_term("elegant", "a.ìš°ì•„í•œ,ê³ ìƒí•œ"); HT[18].add_term("entirely",
+		 * "ad.ì™„ì „íˆ"); HT[18].add_term("extensive", "a.ê´‘ë²”ìœ„í•œ,ë„“ì€");
+		 * HT[18].add_term("flavor", "n.ë§›,í’ë¯¸"); HT[18].add_term("forfeit",
+		 * "v.(ë²Œë¡œì„œ ê¶Œë¦¬,ì¬ì‚° ë“±ì„)ìƒë‹¤,ëª°ìˆ˜ë‹¹í•˜ë‹¤"); HT[18].add_term("freshness", "n.ì‹ ì„ í•¨");
+		 * HT[18].add_term("indigenous", "a.ì§€ì—­ ê³ ìœ ì˜,í† ì°©ì˜"); HT[18].add_term("make",
+		 * "v.~ì„ í•˜ë‹¤,~ì„ ë§Œë“¤ë‹¤"); HT[18].add_term("occupancy", "n.(í˜¸í…” ë“±ì˜)ì´ìš©ë¥ ");
+		 * HT[18].add_term("polish", "v.~ì„ ë‹¦ë‹¤,~ì˜ ìœ¤ì„ ë‚´ë‹¤"); HT[18].add_term("rate",
+		 * "n.ìš”ê¸ˆ"); HT[18].add_term("reception", "n.í™˜ì˜íšŒ;(í˜¸í…”ì˜)ì ‘ìˆ˜ì²˜");
+		 * HT[18].add_term("recipe", "n.ìš”ë¦¬ë²•,ì¡°ë¦¬ë²•"); HT[18].add_term("reservation",
+		 * "n.ì˜ˆì•½"); HT[18].add_term("retain", "v.ë³´ìœ í•˜ë‹¤,ìœ ì§€í•˜ë‹¤"); HT[18].add_term("stir",
+		 * "v.íœ˜ì “ë‹¤,ë’¤ì„ë‹¤"); HT[18].add_term("taste", "v.~ì˜ ë§›ì„ ë³´ë‹¤,ì‹œì‹í•˜ë‹¤");
+		 * HT[18].add_term("utensil", "n.(ë¶€ì—Œì—ì„œ ì“°ëŠ”)ë„êµ¬,ê¸°êµ¬");
 		 * 
-		 * HT[19].add_term("anticipate", "v.±â´ëÇÏ´Ù,¿¹»óÇÏ´Ù"); HT[19].add_term("decline",
-		 * "n.°¨¼Ò,ÇÏ¶ô v.(ÃÊ´ë,½ÅÃ»À»)°ÅÀıÇÏ´Ù"); HT[19].add_term("decrease", "v.°¨¼ÒÇÏ´Ù");
-		 * HT[19].add_term("demoralize", "v.~ÀÇ »ç±â¸¦ ²ª´Ù"); HT[19].add_term("depend",
-		 * "v.~¿¡ µû¶ó °áÁ¤µÇ´Ù,~¿¡ ´Ş·Á ÀÖ´Ù"); HT[19].add_term("deviate", "v.ºø³ª°¡´Ù, ÀÏÅ»ÇÏ´Ù");
-		 * HT[19].add_term("disappointing", "a.½Ç¸Á½º·¯¿î, ½Ç¸Á½ÃÅ°´Â");
-		 * HT[19].add_term("encouraging", "a.¿ë±â¸¦ ºÏµ¸¿öÁÖ´Â"); HT[19].add_term("exceed",
-		 * "v.~À» ÃÊ°úÇÏ´Ù"); HT[19].add_term("factor", "n.¿ä¼Ò, ¿øÀÎ");
-		 * HT[19].add_term("figure", "n.ÇÕ°è ¼ö, ÃÑ¾×"); HT[19].add_term("growth",
-		 * "n.¼ºÀå, ¹ßÀü"); HT[19].add_term("illustrate", "v.¼³¸íÇÏ´Ù, ¿¹ÁõÇÏ´Ù");
-		 * HT[19].add_term("impressive", "a.±²ÀåÇÑ, ÀÎ»óÀûÀÎ"); HT[19].add_term("inaccurate",
-		 * "a.ºÎÁ¤È®ÇÑ"); HT[19].add_term("increase", "n.Áõ°¡ v.Áõ°¡ÇÏ´Ù");
-		 * HT[19].add_term("incur", "v.(¼Õ½ÇÀ»)ÀÔ´Ù, (ºúÀ»)Áö´Ù"); HT[19].add_term("indicative",
-		 * "a.³ªÅ¸³»´Â, ¾Ï½ÃÇÏ´Â"); HT[19].add_term("infusion", "n.ÁÖÀÔ, È¥ÇÕ");
-		 * HT[19].add_term("make up for", "phr.~À» ¸¸È¸ÇÏ´Ù, º¸»óÇÏ´Ù");
-		 * HT[19].add_term("markedly", "ad.ÇöÀúÇÏ°Ô, ´«¿¡ ¶ç°Ô"); HT[19].add_term("meagerly",
-		 * "ad.ºó¾àÇÏ°Ô, ºÒÃæºĞÇÏ°Ô"); HT[19].add_term("minimally", "ad.±ØÈ÷ ÀÛ°Ô, ÃÖ¼ÒÇÑÀ¸·Î");
-		 * HT[19].add_term("offset", "v.»ó¼âÇÏ´Ù, ¹úÃæÇÏ´Ù"); HT[19].add_term("percentage",
-		 * "n.¹éºĞÀ²"); HT[19].add_term("production", "n.»ı»ê, »ı»ê·®");
-		 * HT[19].add_term("profit", "n.ÀÌÀÍ, ¼öÀÍ"); HT[19].add_term("projection",
-		 * "n.¿¹»ó, ¿¹»óÄ¡"); HT[19].add_term("proportion", "n.ºÎºĞ, ¸ò");
-		 * HT[19].add_term("recent", "a.ÃÖ±ÙÀÇ"); HT[19].add_term("reduce",
-		 * "v.ÁÙÀÌ´Ù, °¨¼Ò½ÃÅ°´Ù"); HT[19].add_term("regular", "a.Á¤±âÀûÀÎ; ´Ü°ñÀÇ");
-		 * HT[19].add_term("representative", "n.ÆÇ¸Å ´ë¸®ÀÎ, ¼¼ÀÏÁî¸Ç; ´ëÇ¥ÀÚ");
-		 * HT[19].add_term("revenue", "n.¼öÀÔ"); HT[19].add_term("sale",
-		 * "n.(-s)¸ÅÃâ¾×, ¸Å»ó°í; Àç°í Á¤¸® ÆÇ¸Å"); HT[19].add_term("significantly",
-		 * "ad.»ó´çÈ÷, µÎµå·¯Áö°Ô"); HT[19].add_term("slightly", "ad.¾à°£");
-		 * HT[19].add_term("substantial", "a.»ó´çÇÑ"); HT[19].add_term("summarize",
-		 * "v.¿ä¾àÇÏ´Ù"); HT[19].add_term("tend", "v.~ÇÏ´Â °æÇâÀÌ ÀÖ´Ù, ~ÇÏ±â ½±´Ù");
-		 * HT[19].add_term("unusually", "ad.À¯³­È÷, ºñÁ¤»óÀûÀ¸·Î");
+		 * HT[19].add_term("anticipate", "v.ê¸°ëŒ€í•˜ë‹¤,ì˜ˆìƒí•˜ë‹¤"); HT[19].add_term("decline",
+		 * "n.ê°ì†Œ,í•˜ë½ v.(ì´ˆëŒ€,ì‹ ì²­ì„)ê±°ì ˆí•˜ë‹¤"); HT[19].add_term("decrease", "v.ê°ì†Œí•˜ë‹¤");
+		 * HT[19].add_term("demoralize", "v.~ì˜ ì‚¬ê¸°ë¥¼ êº¾ë‹¤"); HT[19].add_term("depend",
+		 * "v.~ì— ë”°ë¼ ê²°ì •ë˜ë‹¤,~ì— ë‹¬ë ¤ ìˆë‹¤"); HT[19].add_term("deviate", "v.ë¹—ë‚˜ê°€ë‹¤, ì¼íƒˆí•˜ë‹¤");
+		 * HT[19].add_term("disappointing", "a.ì‹¤ë§ìŠ¤ëŸ¬ìš´, ì‹¤ë§ì‹œí‚¤ëŠ”");
+		 * HT[19].add_term("encouraging", "a.ìš©ê¸°ë¥¼ ë¶ë‹ì›Œì£¼ëŠ”"); HT[19].add_term("exceed",
+		 * "v.~ì„ ì´ˆê³¼í•˜ë‹¤"); HT[19].add_term("factor", "n.ìš”ì†Œ, ì›ì¸");
+		 * HT[19].add_term("figure", "n.í•©ê³„ ìˆ˜, ì´ì•¡"); HT[19].add_term("growth",
+		 * "n.ì„±ì¥, ë°œì „"); HT[19].add_term("illustrate", "v.ì„¤ëª…í•˜ë‹¤, ì˜ˆì¦í•˜ë‹¤");
+		 * HT[19].add_term("impressive", "a.êµ‰ì¥í•œ, ì¸ìƒì ì¸"); HT[19].add_term("inaccurate",
+		 * "a.ë¶€ì •í™•í•œ"); HT[19].add_term("increase", "n.ì¦ê°€ v.ì¦ê°€í•˜ë‹¤");
+		 * HT[19].add_term("incur", "v.(ì†ì‹¤ì„)ì…ë‹¤, (ë¹šì„)ì§€ë‹¤"); HT[19].add_term("indicative",
+		 * "a.ë‚˜íƒ€ë‚´ëŠ”, ì•”ì‹œí•˜ëŠ”"); HT[19].add_term("infusion", "n.ì£¼ì…, í˜¼í•©");
+		 * HT[19].add_term("make up for", "phr.~ì„ ë§ŒíšŒí•˜ë‹¤, ë³´ìƒí•˜ë‹¤");
+		 * HT[19].add_term("markedly", "ad.í˜„ì €í•˜ê²Œ, ëˆˆì— ë„ê²Œ"); HT[19].add_term("meagerly",
+		 * "ad.ë¹ˆì•½í•˜ê²Œ, ë¶ˆì¶©ë¶„í•˜ê²Œ"); HT[19].add_term("minimally", "ad.ê·¹íˆ ì‘ê²Œ, ìµœì†Œí•œìœ¼ë¡œ");
+		 * HT[19].add_term("offset", "v.ìƒì‡„í•˜ë‹¤, ë²Œì¶©í•˜ë‹¤"); HT[19].add_term("percentage",
+		 * "n.ë°±ë¶„ìœ¨"); HT[19].add_term("production", "n.ìƒì‚°, ìƒì‚°ëŸ‰");
+		 * HT[19].add_term("profit", "n.ì´ìµ, ìˆ˜ìµ"); HT[19].add_term("projection",
+		 * "n.ì˜ˆìƒ, ì˜ˆìƒì¹˜"); HT[19].add_term("proportion", "n.ë¶€ë¶„, ëª«");
+		 * HT[19].add_term("recent", "a.ìµœê·¼ì˜"); HT[19].add_term("reduce",
+		 * "v.ì¤„ì´ë‹¤, ê°ì†Œì‹œí‚¤ë‹¤"); HT[19].add_term("regular", "a.ì •ê¸°ì ì¸; ë‹¨ê³¨ì˜");
+		 * HT[19].add_term("representative", "n.íŒë§¤ ëŒ€ë¦¬ì¸, ì„¸ì¼ì¦ˆë§¨; ëŒ€í‘œì");
+		 * HT[19].add_term("revenue", "n.ìˆ˜ì…"); HT[19].add_term("sale",
+		 * "n.(-s)ë§¤ì¶œì•¡, ë§¤ìƒê³ ; ì¬ê³  ì •ë¦¬ íŒë§¤"); HT[19].add_term("significantly",
+		 * "ad.ìƒë‹¹íˆ, ë‘ë“œëŸ¬ì§€ê²Œ"); HT[19].add_term("slightly", "ad.ì•½ê°„");
+		 * HT[19].add_term("substantial", "a.ìƒë‹¹í•œ"); HT[19].add_term("summarize",
+		 * "v.ìš”ì•½í•˜ë‹¤"); HT[19].add_term("tend", "v.~í•˜ëŠ” ê²½í–¥ì´ ìˆë‹¤, ~í•˜ê¸° ì‰½ë‹¤");
+		 * HT[19].add_term("unusually", "ad.ìœ ë‚œíˆ, ë¹„ì •ìƒì ìœ¼ë¡œ");
 		 * 
-		 * HT[20].add_term("accountant", "n.È¸°è»ç"); HT[20].add_term("accurately",
-		 * "ad.Á¤È®ÇÏ°Ô"); HT[20].add_term("allocate", "v.ÇÒ´çÇÏ´Ù, ¹èºĞÇÏ´Ù");
-		 * HT[20].add_term("amend", "v.¼öÁ¤ÇÏ´Ù"); HT[20].add_term("audit", "n.È¸°è °¨»ç, ½É»ç");
-		 * HT[20].add_term("barely", "ad.°¡±î½º·Î, °ÅÀÇ ~ÇÏÁö ¾Ê´Â"); HT[20].add_term("budget",
-		 * "n.¿¹»ê"); HT[20].add_term("calculate", "v.°è»êÇÏ´Ù"); HT[20].add_term("committee",
-		 * "n.À§¿øÈ¸"); HT[20].add_term("compare", "v.ºñ±³ÇÏ´Ù"); HT[20].add_term("curtail",
-		 * "v.~À» ÁÙÀÌ´Ù, »è°¨ÇÏ´Ù"); HT[20].add_term("deduct", "v.°øÁ¦ÇÏ´Ù, »©´Ù");
-		 * HT[20].add_term("deficient", "a.ºÎÁ·ÇÑ, ºÒÃæºĞÇÑ"); HT[20].add_term("deficit",
-		 * "n.ÀûÀÚ, ºÎÁ·¾×"); HT[20].add_term("discrepancy", "n.ºÒÀÏÄ¡, Â÷ÀÌ");
-		 * HT[20].add_term("excess", "n.ÃÊ°ú, ÃÊ°ú·®"); HT[20].add_term("exempt",
-		 * "a.¸éÁ¦µÈ, ~ÀÌ ¾ø´Â"); HT[20].add_term("expenditure", "n.ÁöÃâ, ºñ¿ë");
-		 * HT[20].add_term("financial", "a.ÀçÁ¤ÀÇ, ±İÀü»óÀÇ"); HT[20].add_term("fiscal",
-		 * "a.È¸°èÀÇ, ÀçÁ¤»óÀÇ"); HT[20].add_term("fund", "n.ÀÚ±İ v.ÀÚ±İÀ» °ø±ŞÇÏ´Ù");
-		 * HT[20].add_term("generate", "v.Ã¢ÃâÇÏ´Ù, ¾ß±âÇÏ´Ù"); HT[20].add_term("in the red",
-		 * "phr.ÀûÀÚ »óÅÂÀÎ"); HT[20].add_term("incidental", "a.ºÎ¼öÀûÀÎ");
-		 * HT[20].add_term("inconsistency", "n.ºÒÀÏÄ¡"); HT[20].add_term("inflation",
-		 * "n.ÀÎÇÃ·¹ÀÌ¼Ç, ¹°°¡»ó½Â, ÅëÈ­ÆØÃ¢"); HT[20].add_term("ledger", "n.È¸°è ÀåºÎ");
-		 * HT[20].add_term("liable", "a.Ã¥ÀÓÁ®¾ß ÇÒ; ~ÇÏ±â ½¬¿î"); HT[20].add_term("liability",
-		 * "n.Ã¥ÀÓ; (-ties)ºÎÃ¤, Ã¤¹«"); HT[20].add_term("monetary", "a.±İÀüÀÇ, ÀçÁ¤ÀûÀÎ");
-		 * HT[20].add_term("outlay", "n.ÁöÃâ, °æºñ"); HT[20].add_term("overcome", "v.±Øº¹ÇÏ´Ù");
-		 * HT[20].add_term("preferred", "a.¿ì¼±ÀÇ, ¼±È£µÇ´Â"); HT[20].add_term("recently",
-		 * "ad.ÃÖ±Ù¿¡"); HT[20].add_term("reimburse", "v.º¯Á¦ÇÏ´Ù, »óÈ¯ÇÏ´Ù");
-		 * HT[20].add_term("rigorously", "ad.¾ö°İÈ÷"); HT[20].add_term("spend",
-		 * "v.~À» ¾²´Ù, ¼ÒºñÇÏ´Ù"); HT[20].add_term("stringently", "ad.¾ö°İÈ÷, ¾öÁßÇÏ°Ô");
-		 * HT[20].add_term("substantially", "ad.Å©°Ô, »ó´çÈ÷"); HT[20].add_term("total",
-		 * "a.ÃÑ°èÀÇ, ÀüºÎÀÇ"); HT[20].add_term("turnover", "n.ÃÑ ¸Å»ó°í, °Å·¡¾×; ÀÌÁ÷·ü");
-		 * HT[20].add_term("worth", "a.~ÀÇ °¡Ä¡°¡ ÀÖ´Â n.°¡Ä¡, (¾ó¸¶)¾îÄ¡");
+		 * HT[20].add_term("accountant", "n.íšŒê³„ì‚¬"); HT[20].add_term("accurately",
+		 * "ad.ì •í™•í•˜ê²Œ"); HT[20].add_term("allocate", "v.í• ë‹¹í•˜ë‹¤, ë°°ë¶„í•˜ë‹¤");
+		 * HT[20].add_term("amend", "v.ìˆ˜ì •í•˜ë‹¤"); HT[20].add_term("audit", "n.íšŒê³„ ê°ì‚¬, ì‹¬ì‚¬");
+		 * HT[20].add_term("barely", "ad.ê°€ê¹ŒìŠ¤ë¡œ, ê±°ì˜ ~í•˜ì§€ ì•ŠëŠ”"); HT[20].add_term("budget",
+		 * "n.ì˜ˆì‚°"); HT[20].add_term("calculate", "v.ê³„ì‚°í•˜ë‹¤"); HT[20].add_term("committee",
+		 * "n.ìœ„ì›íšŒ"); HT[20].add_term("compare", "v.ë¹„êµí•˜ë‹¤"); HT[20].add_term("curtail",
+		 * "v.~ì„ ì¤„ì´ë‹¤, ì‚­ê°í•˜ë‹¤"); HT[20].add_term("deduct", "v.ê³µì œí•˜ë‹¤, ë¹¼ë‹¤");
+		 * HT[20].add_term("deficient", "a.ë¶€ì¡±í•œ, ë¶ˆì¶©ë¶„í•œ"); HT[20].add_term("deficit",
+		 * "n.ì ì, ë¶€ì¡±ì•¡"); HT[20].add_term("discrepancy", "n.ë¶ˆì¼ì¹˜, ì°¨ì´");
+		 * HT[20].add_term("excess", "n.ì´ˆê³¼, ì´ˆê³¼ëŸ‰"); HT[20].add_term("exempt",
+		 * "a.ë©´ì œëœ, ~ì´ ì—†ëŠ”"); HT[20].add_term("expenditure", "n.ì§€ì¶œ, ë¹„ìš©");
+		 * HT[20].add_term("financial", "a.ì¬ì •ì˜, ê¸ˆì „ìƒì˜"); HT[20].add_term("fiscal",
+		 * "a.íšŒê³„ì˜, ì¬ì •ìƒì˜"); HT[20].add_term("fund", "n.ìê¸ˆ v.ìê¸ˆì„ ê³µê¸‰í•˜ë‹¤");
+		 * HT[20].add_term("generate", "v.ì°½ì¶œí•˜ë‹¤, ì•¼ê¸°í•˜ë‹¤"); HT[20].add_term("in the red",
+		 * "phr.ì ì ìƒíƒœì¸"); HT[20].add_term("incidental", "a.ë¶€ìˆ˜ì ì¸");
+		 * HT[20].add_term("inconsistency", "n.ë¶ˆì¼ì¹˜"); HT[20].add_term("inflation",
+		 * "n.ì¸í”Œë ˆì´ì…˜, ë¬¼ê°€ìƒìŠ¹, í†µí™”íŒ½ì°½"); HT[20].add_term("ledger", "n.íšŒê³„ ì¥ë¶€");
+		 * HT[20].add_term("liable", "a.ì±…ì„ì ¸ì•¼ í• ; ~í•˜ê¸° ì‰¬ìš´"); HT[20].add_term("liability",
+		 * "n.ì±…ì„; (-ties)ë¶€ì±„, ì±„ë¬´"); HT[20].add_term("monetary", "a.ê¸ˆì „ì˜, ì¬ì •ì ì¸");
+		 * HT[20].add_term("outlay", "n.ì§€ì¶œ, ê²½ë¹„"); HT[20].add_term("overcome", "v.ê·¹ë³µí•˜ë‹¤");
+		 * HT[20].add_term("preferred", "a.ìš°ì„ ì˜, ì„ í˜¸ë˜ëŠ”"); HT[20].add_term("recently",
+		 * "ad.ìµœê·¼ì—"); HT[20].add_term("reimburse", "v.ë³€ì œí•˜ë‹¤, ìƒí™˜í•˜ë‹¤");
+		 * HT[20].add_term("rigorously", "ad.ì—„ê²©íˆ"); HT[20].add_term("spend",
+		 * "v.~ì„ ì“°ë‹¤, ì†Œë¹„í•˜ë‹¤"); HT[20].add_term("stringently", "ad.ì—„ê²©íˆ, ì—„ì¤‘í•˜ê²Œ");
+		 * HT[20].add_term("substantially", "ad.í¬ê²Œ, ìƒë‹¹íˆ"); HT[20].add_term("total",
+		 * "a.ì´ê³„ì˜, ì „ë¶€ì˜"); HT[20].add_term("turnover", "n.ì´ ë§¤ìƒê³ , ê±°ë˜ì•¡; ì´ì§ë¥ ");
+		 * HT[20].add_term("worth", "a.~ì˜ ê°€ì¹˜ê°€ ìˆëŠ” n.ê°€ì¹˜, (ì–¼ë§ˆ)ì–´ì¹˜");
 		 * 
-		 * HT[21].add_term("accept", "v.¼ö¶ôÇÏ´Ù, ½Â³«ÇÏ´Ù"); HT[21].add_term("acquire",
-		 * "v.¸ÅÀÔÇÏ´Ù, ÃëµæÇÏ´Ù"); HT[21].add_term("active", "a.Àû±ØÀûÀÎ, È°¹ßÇÑ");
-		 * HT[21].add_term("allegedly", "ad.ÁÖÀåÇÏ´Â ¹Ù¿¡ µû¸£¸é"); HT[21].add_term("announce",
-		 * "v.¹ßÇ¥ÇÏ´Ù"); HT[21].add_term("asset", "n.ÀÚ»ê"); HT[21].add_term("authority",
-		 * "n.±ÇÇÑ; ´ç±¹, °üÇå"); HT[21].add_term("clout", "n.¿µÇâ·Â");
-		 * HT[21].add_term("considerable", "a.(Á¤µµ³ª ¾çÀÌ)»ó´çÇÑ");
-		 * HT[21].add_term("contingent", "a.~¿¡ µû¶ó °áÁ¤µÇ´Â, ~¿©ÇÏ¿¡ ´Ş¸°");
-		 * HT[21].add_term("contribute", "v.±â¿©ÇÏ´Ù, °øÇåÇÏ´Ù"); HT[21].add_term("dedicated",
-		 * "a.(¸ñÇ¥ µî¿¡)ÀÏ½ÅÀ» ¹ÙÄ£, Çå½ÅÀûÀÎ"); HT[21].add_term("emerge", "v.ºÎ°¢ÇÏ´Ù, ³ªÅ¸³ª´Ù");
-		 * HT[21].add_term("enhance", "v.(Áú µîÀ»)³ôÀÌ´Ù, °­È­ÇÏ´Ù"); HT[21].add_term("establish",
-		 * "v.¼³¸³ÇÏ´Ù"); HT[21].add_term("established", "a.È®°íÇÑ, Á¤ÆòÀÌ ÀÖ´Â");
-		 * HT[21].add_term("expansion", "n.È®Àå, ÆØÃ¢"); HT[21].add_term("force", "n.¼¼·Â");
-		 * HT[21].add_term("foresee", "v.¿¹°ßÇÏ´Ù, ¿¹°¨ÇÏ´Ù"); HT[21].add_term("go through",
-		 * "phr.(°í³­, °æÇèÀ»)°Ş´Ù"); HT[21].add_term("independent", "a.µ¶¸³ÀÇ, µ¶ÀÚÀûÀÎ");
-		 * HT[21].add_term("informed", "a.Á¤º¸¿¡ ±Ù°ÅÇÑ"); HT[21].add_term("initiate",
-		 * "v.(»ç¾÷ µîÀ»)½ÃÀÛÇÏ´Ù, Âø¼öÇÏ´Ù"); HT[21].add_term("interested", "a.°ü·Ã ÀÖ´Â; °ü½ÉÀÌ ÀÖ´Â");
-		 * HT[21].add_term("liquidate", "v.(È¸»ç¸¦)Á¤¸®ÇÏ´Ù, ÇØ»êÇÏ´Ù"); HT[21].add_term("merge",
-		 * "v.ÇÕº´ÇÏ´Ù, º´ÇÕÇÏ´Ù"); HT[21].add_term("premier", "a.À¸¶äÀÇ, Ã¹Â°ÀÇ");
-		 * HT[21].add_term("productivity", "n.»ı»ê¼º"); HT[21].add_term("progressive",
-		 * "a.Áøº¸ÀûÀÎ"); HT[21].add_term("relocate", "v.(°øÀå µîÀ»)ÀÌÀüÇÏ´Ù");
-		 * HT[21].add_term("reveal", "v.¹àÈ÷´Ù, ´©¼³ÇÏ´Ù"); HT[21].add_term("run",
-		 * "v.~À» °æ¿µÇÏ´Ù"); HT[21].add_term("simultaneously", "ad.µ¿½Ã¿¡");
-		 * HT[21].add_term("stance", "n.ÅÂµµ, ÀÔÀå"); HT[21].add_term("strategic",
-		 * "a.Àü·«ÀûÀÎ"); HT[21].add_term("strike", "n.µ¿¸Í ÆÄ¾÷, ³ëµ¿ ÀïÀÇ");
-		 * HT[21].add_term("struggle", "v.¾Ö¾²´Ù, ºĞÅõÇÏ´Ù"); HT[21].add_term("subsidize",
-		 * "v.~¿¡ º¸Á¶±İÀ» Áö±ŞÇÏ´Ù"); HT[21].add_term("surpass", "v.~À» ´É°¡ÇÏ´Ù, ³Ñ¾î¼­´Ù");
-		 * HT[21].add_term("takeover", "n.ÀÎ¼ö"); HT[21].add_term("uncertain",
-		 * "a.È®½ÅÀÌ ¾ø´Â, ºÒÈ®½ÇÇÑ"); HT[21].add_term("waive", "v.(±Ç¸®, Ã»±¸ µîÀ»)Æ÷±âÇÏ´Ù");
+		 * HT[21].add_term("accept", "v.ìˆ˜ë½í•˜ë‹¤, ìŠ¹ë‚™í•˜ë‹¤"); HT[21].add_term("acquire",
+		 * "v.ë§¤ì…í•˜ë‹¤, ì·¨ë“í•˜ë‹¤"); HT[21].add_term("active", "a.ì ê·¹ì ì¸, í™œë°œí•œ");
+		 * HT[21].add_term("allegedly", "ad.ì£¼ì¥í•˜ëŠ” ë°”ì— ë”°ë¥´ë©´"); HT[21].add_term("announce",
+		 * "v.ë°œí‘œí•˜ë‹¤"); HT[21].add_term("asset", "n.ìì‚°"); HT[21].add_term("authority",
+		 * "n.ê¶Œí•œ; ë‹¹êµ­, ê´€í—Œ"); HT[21].add_term("clout", "n.ì˜í–¥ë ¥");
+		 * HT[21].add_term("considerable", "a.(ì •ë„ë‚˜ ì–‘ì´)ìƒë‹¹í•œ");
+		 * HT[21].add_term("contingent", "a.~ì— ë”°ë¼ ê²°ì •ë˜ëŠ”, ~ì—¬í•˜ì— ë‹¬ë¦°");
+		 * HT[21].add_term("contribute", "v.ê¸°ì—¬í•˜ë‹¤, ê³µí—Œí•˜ë‹¤"); HT[21].add_term("dedicated",
+		 * "a.(ëª©í‘œ ë“±ì—)ì¼ì‹ ì„ ë°”ì¹œ, í—Œì‹ ì ì¸"); HT[21].add_term("emerge", "v.ë¶€ê°í•˜ë‹¤, ë‚˜íƒ€ë‚˜ë‹¤");
+		 * HT[21].add_term("enhance", "v.(ì§ˆ ë“±ì„)ë†’ì´ë‹¤, ê°•í™”í•˜ë‹¤"); HT[21].add_term("establish",
+		 * "v.ì„¤ë¦½í•˜ë‹¤"); HT[21].add_term("established", "a.í™•ê³ í•œ, ì •í‰ì´ ìˆëŠ”");
+		 * HT[21].add_term("expansion", "n.í™•ì¥, íŒ½ì°½"); HT[21].add_term("force", "n.ì„¸ë ¥");
+		 * HT[21].add_term("foresee", "v.ì˜ˆê²¬í•˜ë‹¤, ì˜ˆê°í•˜ë‹¤"); HT[21].add_term("go through",
+		 * "phr.(ê³ ë‚œ, ê²½í—˜ì„)ê²ªë‹¤"); HT[21].add_term("independent", "a.ë…ë¦½ì˜, ë…ìì ì¸");
+		 * HT[21].add_term("informed", "a.ì •ë³´ì— ê·¼ê±°í•œ"); HT[21].add_term("initiate",
+		 * "v.(ì‚¬ì—… ë“±ì„)ì‹œì‘í•˜ë‹¤, ì°©ìˆ˜í•˜ë‹¤"); HT[21].add_term("interested", "a.ê´€ë ¨ ìˆëŠ”; ê´€ì‹¬ì´ ìˆëŠ”");
+		 * HT[21].add_term("liquidate", "v.(íšŒì‚¬ë¥¼)ì •ë¦¬í•˜ë‹¤, í•´ì‚°í•˜ë‹¤"); HT[21].add_term("merge",
+		 * "v.í•©ë³‘í•˜ë‹¤, ë³‘í•©í•˜ë‹¤"); HT[21].add_term("premier", "a.ìœ¼ëœ¸ì˜, ì²«ì§¸ì˜");
+		 * HT[21].add_term("productivity", "n.ìƒì‚°ì„±"); HT[21].add_term("progressive",
+		 * "a.ì§„ë³´ì ì¸"); HT[21].add_term("relocate", "v.(ê³µì¥ ë“±ì„)ì´ì „í•˜ë‹¤");
+		 * HT[21].add_term("reveal", "v.ë°íˆë‹¤, ëˆ„ì„¤í•˜ë‹¤"); HT[21].add_term("run",
+		 * "v.~ì„ ê²½ì˜í•˜ë‹¤"); HT[21].add_term("simultaneously", "ad.ë™ì‹œì—");
+		 * HT[21].add_term("stance", "n.íƒœë„, ì…ì¥"); HT[21].add_term("strategic",
+		 * "a.ì „ëµì ì¸"); HT[21].add_term("strike", "n.ë™ë§¹ íŒŒì—…, ë…¸ë™ ìŸì˜");
+		 * HT[21].add_term("struggle", "v.ì• ì“°ë‹¤, ë¶„íˆ¬í•˜ë‹¤"); HT[21].add_term("subsidize",
+		 * "v.~ì— ë³´ì¡°ê¸ˆì„ ì§€ê¸‰í•˜ë‹¤"); HT[21].add_term("surpass", "v.~ì„ ëŠ¥ê°€í•˜ë‹¤, ë„˜ì–´ì„œë‹¤");
+		 * HT[21].add_term("takeover", "n.ì¸ìˆ˜"); HT[21].add_term("uncertain",
+		 * "a.í™•ì‹ ì´ ì—†ëŠ”, ë¶ˆí™•ì‹¤í•œ"); HT[21].add_term("waive", "v.(ê¶Œë¦¬, ì²­êµ¬ ë“±ì„)í¬ê¸°í•˜ë‹¤");
 		 * 
-		 * HT[22].add_term("aid", "n.¿øÁ¶"); HT[22].add_term("chance", "n.°¡´É¼º");
-		 * HT[22].add_term("clear", "¸¼°Ô °µ"); HT[22].add_term("conserve",
-		 * "v.º¸Á¸ÇÏ´Ù, À¯ÁöÇÏ´Ù"); HT[22].add_term("contaminate", "v.¿À¿°½ÃÅ°´Ù");
-		 * HT[22].add_term("continually", "ad.°è¼ÓÇØ¼­"); HT[22].add_term("damage",
-		 * "n.¼ÕÇØ, ÇÇÇØ v.(¹°°Ç¿¡)¼ÕÇØ¸¦ ÀÔÈ÷´Ù"); HT[22].add_term("deciduous", "a.³«¿±¼ºÀÇ");
-		 * HT[22].add_term("deplete", "v.°í°¥½ÃÅ°´Ù"); HT[22].add_term("disaster", "n.Àç³­");
-		 * HT[22].add_term("discharge", "v.¹æÃâÇÏ´Ù"); HT[22].add_term("dispose",
-		 * "v.Ã³ºĞÇÏ´Ù, Ã³¸®ÇÏ´Ù"); HT[22].add_term("drought", "n.°¡¹³");
-		 * HT[22].add_term("ecology", "n.ÀÚ¿¬ È¯°æ, »ıÅÂ"); HT[22].add_term("emission",
-		 * "n.¹æÃâ, ¹èÃâ°¡½º"); HT[22].add_term("endangered", "a.¸êÁ¾ À§±â¿¡ Ã³ÇÑ");
-		 * HT[22].add_term("environmental", "a.È¯°æÀûÀÎ"); HT[22].add_term("extinction",
-		 * "n.¸êÁ¾"); HT[22].add_term("flood", "n.È«¼ö"); HT[22].add_term("forecast",
-		 * "n.(³¯¾¾ÀÇ)¿¹º¸"); HT[22].add_term("fumes", "n.°¡½º, ¿¬±â");
-		 * HT[22].add_term("habitat", "n.(µ¿, ½Ä¹°ÀÇ)¼­½ÄÁö"); HT[22].add_term("ideal",
-		 * "a.ÀÌ»óÀûÀÎ"); HT[22].add_term("inclement", "a.(³¯¾¾°¡)±ÄÀº, È¤µ¶ÇÑ");
-		 * HT[22].add_term("inflict", "v.(°íÅë, ÇÇÇØ)¸¦ °¡ÇÏ´Ù, ÀÔÈ÷´Ù");
-		 * HT[22].add_term("meteorological", "a.±â»óÀÇ, ±â»óÇĞ»óÀÇ");
-		 * HT[22].add_term("migration", "n.ÀÌµ¿, ÀÌÁÖ"); HT[22].add_term("mining",
-		 * "n.Ã¤±¼, Ã¤±¤"); HT[22].add_term("occur", "v.(ÀÏÀÌ)¹ß»ıÇÏ´Ù, »ı±â´Ù");
-		 * HT[22].add_term("organization", "n.´ÜÃ¼"); HT[22].add_term("pollutant",
-		 * "n.¿À¿° ¹°Áú"); HT[22].add_term("precipitation", "n.°­¼ö·®, °­¿ì·®");
-		 * HT[22].add_term("prominent", "a.Àú¸íÇÑ, µÎµå·¯Áø"); HT[22].add_term("purify",
-		 * "v.Á¤È­½ÃÅ°´Ù"); HT[22].add_term("recycling", "n.ÀçÈ°¿ë");
-		 * HT[22].add_term("resource", "n.ÀÚ¿ø"); HT[22].add_term("sewage", "n.ÇÏ¼ö, ¿À¼ö");
-		 * HT[22].add_term("shower", "n.¼Ò³ª±â"); HT[22].add_term("solution", "n.ÇØ°áÃ¥");
-		 * HT[22].add_term("southern", "a.³²ÂÊÀÇ"); HT[22].add_term("vague", "a.¸ğÈ£ÇÑ, ¾Ö¸ÅÇÑ");
-		 * HT[22].add_term("waste", "n.¾²·¹±â");
+		 * HT[22].add_term("aid", "n.ì›ì¡°"); HT[22].add_term("chance", "n.ê°€ëŠ¥ì„±");
+		 * HT[22].add_term("clear", "ë§‘ê²Œ ê° "); HT[22].add_term("conserve",
+		 * "v.ë³´ì¡´í•˜ë‹¤, ìœ ì§€í•˜ë‹¤"); HT[22].add_term("contaminate", "v.ì˜¤ì—¼ì‹œí‚¤ë‹¤");
+		 * HT[22].add_term("continually", "ad.ê³„ì†í•´ì„œ"); HT[22].add_term("damage",
+		 * "n.ì†í•´, í”¼í•´ v.(ë¬¼ê±´ì—)ì†í•´ë¥¼ ì…íˆë‹¤"); HT[22].add_term("deciduous", "a.ë‚™ì—½ì„±ì˜");
+		 * HT[22].add_term("deplete", "v.ê³ ê°ˆì‹œí‚¤ë‹¤"); HT[22].add_term("disaster", "n.ì¬ë‚œ");
+		 * HT[22].add_term("discharge", "v.ë°©ì¶œí•˜ë‹¤"); HT[22].add_term("dispose",
+		 * "v.ì²˜ë¶„í•˜ë‹¤, ì²˜ë¦¬í•˜ë‹¤"); HT[22].add_term("drought", "n.ê°€ë­„");
+		 * HT[22].add_term("ecology", "n.ìì—° í™˜ê²½, ìƒíƒœ"); HT[22].add_term("emission",
+		 * "n.ë°©ì¶œ, ë°°ì¶œê°€ìŠ¤"); HT[22].add_term("endangered", "a.ë©¸ì¢… ìœ„ê¸°ì— ì²˜í•œ");
+		 * HT[22].add_term("environmental", "a.í™˜ê²½ì ì¸"); HT[22].add_term("extinction",
+		 * "n.ë©¸ì¢…"); HT[22].add_term("flood", "n.í™ìˆ˜"); HT[22].add_term("forecast",
+		 * "n.(ë‚ ì”¨ì˜)ì˜ˆë³´"); HT[22].add_term("fumes", "n.ê°€ìŠ¤, ì—°ê¸°");
+		 * HT[22].add_term("habitat", "n.(ë™, ì‹ë¬¼ì˜)ì„œì‹ì§€"); HT[22].add_term("ideal",
+		 * "a.ì´ìƒì ì¸"); HT[22].add_term("inclement", "a.(ë‚ ì”¨ê°€)ê¶‚ì€, í˜¹ë…í•œ");
+		 * HT[22].add_term("inflict", "v.(ê³ í†µ, í”¼í•´)ë¥¼ ê°€í•˜ë‹¤, ì…íˆë‹¤");
+		 * HT[22].add_term("meteorological", "a.ê¸°ìƒì˜, ê¸°ìƒí•™ìƒì˜");
+		 * HT[22].add_term("migration", "n.ì´ë™, ì´ì£¼"); HT[22].add_term("mining",
+		 * "n.ì±„êµ´, ì±„ê´‘"); HT[22].add_term("occur", "v.(ì¼ì´)ë°œìƒí•˜ë‹¤, ìƒê¸°ë‹¤");
+		 * HT[22].add_term("organization", "n.ë‹¨ì²´"); HT[22].add_term("pollutant",
+		 * "n.ì˜¤ì—¼ ë¬¼ì§ˆ"); HT[22].add_term("precipitation", "n.ê°•ìˆ˜ëŸ‰, ê°•ìš°ëŸ‰");
+		 * HT[22].add_term("prominent", "a.ì €ëª…í•œ, ë‘ë“œëŸ¬ì§„"); HT[22].add_term("purify",
+		 * "v.ì •í™”ì‹œí‚¤ë‹¤"); HT[22].add_term("recycling", "n.ì¬í™œìš©");
+		 * HT[22].add_term("resource", "n.ìì›"); HT[22].add_term("sewage", "n.í•˜ìˆ˜, ì˜¤ìˆ˜");
+		 * HT[22].add_term("shower", "n.ì†Œë‚˜ê¸°"); HT[22].add_term("solution", "n.í•´ê²°ì±…");
+		 * HT[22].add_term("southern", "a.ë‚¨ìª½ì˜"); HT[22].add_term("vague", "a.ëª¨í˜¸í•œ, ì• ë§¤í•œ");
+		 * HT[22].add_term("waste", "n.ì“°ë ˆê¸°");
 		 * 
-		 * HT[23].add_term("account", "n.°í·Á; °èÁÂ v.(~ÀÇ ÀÌÀ¯¸¦)¹àÈ÷´Ù, ¼³¸íÇÏ´Ù;(~ÀÇ ºñÀ²À»)Â÷ÁöÇÏ´Ù");
-		 * HT[23].add_term("accrue", "v.ÃàÀûÇÏ´Ù, ¸ğÀ¸´Ù"); HT[23].add_term("amount",
-		 * "n.¾×¼ö, ¾ç"); HT[23].add_term("balance", "n.Â÷°¨ ÀÜ¾×, ÀÜ°í");
-		 * HT[23].add_term("belatedly", "ad.µÚ´Ê°Ô"); HT[23].add_term("bill",
-		 * "v.~¿¡°Ô Ã»±¸¼­¸¦ º¸³»´Ù n.Ã»±¸¼­, °è»ê¼­"); HT[23].add_term("bounce",
-		 * "v.(¼öÇ¥ µîÀÌ)ºÎµµ°¡ ³ª µÇµ¹¾Æ¿À´Ù"); HT[23].add_term("cash", "Çö±İÀ¸·Î ¹Ù²Ù´Ù");
-		 * HT[23].add_term("collateral", "n.´ãº¸, Àú´ç¹°"); HT[23].add_term("confiscate",
-		 * "v.¾Ğ¼öÇÏ´Ù, ¸ô¼öÇÏ´Ù"); HT[23].add_term("convert", "v.ÀüÈ¯ÇÏ´Ù, º¯È¯ÇÏ´Ù");
-		 * HT[23].add_term("counterfeit", "n.°¡Â¥, ¸ğÁ¶Ç°"); HT[23].add_term("curb",
-		 * "v.¾ïÁ¦ÇÏ´Ù"); HT[23].add_term("delinquent", "a.(¼¼±İ µîÀÌ)¿¬Ã¼µÈ, ¹ÌºÒÀÇ");
-		 * HT[23].add_term("deposit", "v.ÀÔ±İÇÏ´Ù, ¿¹±İÇÏ´Ù"); HT[23].add_term("deterrent",
-		 * "n.¹æÇØ¹°, ¾ïÁö¹°"); HT[23].add_term("document", "n.¼­·ù, ¹®¼­ v.±â·ÏÇÏ´Ù, ¹®¼­¸¦ ÀÛ¼ºÇÏ´Ù");
-		 * HT[23].add_term("due", "a.¸¸±â°¡ µÈ, ÁöºÒ±âÀÏÀÌ µÈ; (±İÀü µîÀÌ)~¿¡°Ô ¸¶¶¥È÷ Áö±ŞµÇ¾î¾ß ÇÒ");
-		 * HT[23].add_term("expect", "v.¿¹»óÇÏ´Ù, ±â´ëÇÏ´Ù"); HT[23].add_term("heavily",
-		 * "ad.¸÷½Ã, ½ÉÇÏ°Ô"); HT[23].add_term("identification", "n.½ÅºĞ Áõ¸í¼­");
-		 * HT[23].add_term("in common", "phr.°øµ¿À¸·Î, °øÅëÀ¸·Î"); HT[23].add_term("interest",
-		 * "n.°ü½É; °ü¸®; ÀÌÀÚ"); HT[23].add_term("investigation", "n.Á¶»ç");
-		 * HT[23].add_term("loan", "n.´ëºÎ, ´ëºÎ±İ"); HT[23].add_term("lower",
-		 * "v.(¾ç, °¡°İÀ»)ÁÙÀÌ´Ù"); HT[23].add_term("mortgage", "n.ÁÖÅÃ À¶ÀÚ, Àú´ç À¶ÀÚ±İ");
-		 * HT[23].add_term("overdue", "a.¹Ì³³ÀÇ, ÁöºÒ±âÇÑÀÌ ³ÑÀº"); HT[23].add_term("owe",
-		 * "v.ºúÁö°í ÀÖ´Ù"); HT[23].add_term("owing to", "phr.~·Î ÀÎÇÏ¿©");
-		 * HT[23].add_term("payable", "a.ÁöºÒÇØ¾ß ÇÏ´Â"); HT[23].add_term("personal",
-		 * "a.°³ÀÎÀÇ"); HT[23].add_term("previously", "ad.ÀÌÀü¿¡");
-		 * HT[23].add_term("regrettably", "ad.À¯°¨½º·´°Ôµµ"); HT[23].add_term("relation",
-		 * "n.°ü°è"); HT[23].add_term("scrutinize", "v.¼¼¹ĞÈ÷ Á¶»çÇÏ´Ù");
-		 * HT[23].add_term("statement", "n.¸í¼¼¼­, ¼º¸í¼­"); HT[23].add_term("study", "n.¿¬±¸");
-		 * HT[23].add_term("sustain", "v.Áö¼ÓÇÏ´Ù"); HT[23].add_term("transaction",
-		 * "n.°Å·¡, ¾÷¹«"); HT[23].add_term("turn down", "phr.°ÅÀıÇÏ´Ù");
-		 * HT[23].add_term("unexpected", "a.¿¹±âÄ¡ ¾ÊÀº"); HT[23].add_term("withdrawal",
-		 * "n.(¿¹±İÀÇ)ÀÎÃâ");
+		 * HT[23].add_term("account", "n.ê³ ë ¤; ê³„ì¢Œ v.(~ì˜ ì´ìœ ë¥¼)ë°íˆë‹¤, ì„¤ëª…í•˜ë‹¤;(~ì˜ ë¹„ìœ¨ì„)ì°¨ì§€í•˜ë‹¤");
+		 * HT[23].add_term("accrue", "v.ì¶•ì í•˜ë‹¤, ëª¨ìœ¼ë‹¤"); HT[23].add_term("amount",
+		 * "n.ì•¡ìˆ˜, ì–‘"); HT[23].add_term("balance", "n.ì°¨ê° ì”ì•¡, ì”ê³ ");
+		 * HT[23].add_term("belatedly", "ad.ë’¤ëŠ¦ê²Œ"); HT[23].add_term("bill",
+		 * "v.~ì—ê²Œ ì²­êµ¬ì„œë¥¼ ë³´ë‚´ë‹¤ n.ì²­êµ¬ì„œ, ê³„ì‚°ì„œ"); HT[23].add_term("bounce",
+		 * "v.(ìˆ˜í‘œ ë“±ì´)ë¶€ë„ê°€ ë‚˜ ë˜ëŒì•„ì˜¤ë‹¤"); HT[23].add_term("cash", "í˜„ê¸ˆìœ¼ë¡œ ë°”ê¾¸ë‹¤");
+		 * HT[23].add_term("collateral", "n.ë‹´ë³´, ì €ë‹¹ë¬¼"); HT[23].add_term("confiscate",
+		 * "v.ì••ìˆ˜í•˜ë‹¤, ëª°ìˆ˜í•˜ë‹¤"); HT[23].add_term("convert", "v.ì „í™˜í•˜ë‹¤, ë³€í™˜í•˜ë‹¤");
+		 * HT[23].add_term("counterfeit", "n.ê°€ì§œ, ëª¨ì¡°í’ˆ"); HT[23].add_term("curb",
+		 * "v.ì–µì œí•˜ë‹¤"); HT[23].add_term("delinquent", "a.(ì„¸ê¸ˆ ë“±ì´)ì—°ì²´ëœ, ë¯¸ë¶ˆì˜");
+		 * HT[23].add_term("deposit", "v.ì…ê¸ˆí•˜ë‹¤, ì˜ˆê¸ˆí•˜ë‹¤"); HT[23].add_term("deterrent",
+		 * "n.ë°©í•´ë¬¼, ì–µì§€ë¬¼"); HT[23].add_term("document", "n.ì„œë¥˜, ë¬¸ì„œ v.ê¸°ë¡í•˜ë‹¤, ë¬¸ì„œë¥¼ ì‘ì„±í•˜ë‹¤");
+		 * HT[23].add_term("due", "a.ë§Œê¸°ê°€ ëœ, ì§€ë¶ˆê¸°ì¼ì´ ëœ; (ê¸ˆì „ ë“±ì´)~ì—ê²Œ ë§ˆë•…íˆ ì§€ê¸‰ë˜ì–´ì•¼ í• ");
+		 * HT[23].add_term("expect", "v.ì˜ˆìƒí•˜ë‹¤, ê¸°ëŒ€í•˜ë‹¤"); HT[23].add_term("heavily",
+		 * "ad.ëª¹ì‹œ, ì‹¬í•˜ê²Œ"); HT[23].add_term("identification", "n.ì‹ ë¶„ ì¦ëª…ì„œ");
+		 * HT[23].add_term("in common", "phr.ê³µë™ìœ¼ë¡œ, ê³µí†µìœ¼ë¡œ"); HT[23].add_term("interest",
+		 * "n.ê´€ì‹¬; ê´€ë¦¬; ì´ì"); HT[23].add_term("investigation", "n.ì¡°ì‚¬");
+		 * HT[23].add_term("loan", "n.ëŒ€ë¶€, ëŒ€ë¶€ê¸ˆ"); HT[23].add_term("lower",
+		 * "v.(ì–‘, ê°€ê²©ì„)ì¤„ì´ë‹¤"); HT[23].add_term("mortgage", "n.ì£¼íƒ ìœµì, ì €ë‹¹ ìœµìê¸ˆ");
+		 * HT[23].add_term("overdue", "a.ë¯¸ë‚©ì˜, ì§€ë¶ˆê¸°í•œì´ ë„˜ì€"); HT[23].add_term("owe",
+		 * "v.ë¹šì§€ê³  ìˆë‹¤"); HT[23].add_term("owing to", "phr.~ë¡œ ì¸í•˜ì—¬");
+		 * HT[23].add_term("payable", "a.ì§€ë¶ˆí•´ì•¼ í•˜ëŠ”"); HT[23].add_term("personal",
+		 * "a.ê°œì¸ì˜"); HT[23].add_term("previously", "ad.ì´ì „ì—");
+		 * HT[23].add_term("regrettably", "ad.ìœ ê°ìŠ¤ëŸ½ê²Œë„"); HT[23].add_term("relation",
+		 * "n.ê´€ê³„"); HT[23].add_term("scrutinize", "v.ì„¸ë°€íˆ ì¡°ì‚¬í•˜ë‹¤");
+		 * HT[23].add_term("statement", "n.ëª…ì„¸ì„œ, ì„±ëª…ì„œ"); HT[23].add_term("study", "n.ì—°êµ¬");
+		 * HT[23].add_term("sustain", "v.ì§€ì†í•˜ë‹¤"); HT[23].add_term("transaction",
+		 * "n.ê±°ë˜, ì—…ë¬´"); HT[23].add_term("turn down", "phr.ê±°ì ˆí•˜ë‹¤");
+		 * HT[23].add_term("unexpected", "a.ì˜ˆê¸°ì¹˜ ì•Šì€"); HT[23].add_term("withdrawal",
+		 * "n.(ì˜ˆê¸ˆì˜)ì¸ì¶œ");
 		 * 
-		 * HT[24].add_term("bond", "n.Ã¤±Ç"); HT[24].add_term("cautiously", "ad.Á¶½É½º·´°Ô");
-		 * HT[24].add_term("confusion", "n.È¥¶õ"); HT[24].add_term("consent", "n.µ¿ÀÇ");
-		 * HT[24].add_term("consider", "v.°í·ÁÇÏ´Ù"); HT[24].add_term("controversy",
-		 * "n.³í¶õ"); HT[24].add_term("depreciation", "n.°¡Ä¡ ÇÏ¶ô, È­ÆóÀÇ ±¸¸Å·Â ÀúÇÏ");
-		 * HT[24].add_term("devastate", "v.È²Æó½ÃÅ°´Ù"); HT[24].add_term("dividend",
-		 * "n.¹è´ç±İ"); HT[24].add_term("entrepreneur", "n.»ç¾÷°¡");
-		 * HT[24].add_term("eventually", "ad.°á±¹, ¸¶Ä§³»"); HT[24].add_term("foreseeable",
-		 * "a.¿¹°ßÇÒ ¼ö ÀÖ´Â"); HT[24].add_term("increasing", "a.Áõ°¡ÇÏ´Â");
-		 * HT[24].add_term("inherently", "ad.º»ÁúÀûÀ¸·Î"); HT[24].add_term("innate",
-		 * "a.Å¸°í³­"); HT[24].add_term("insecure", "a.ºÒ¾ÈÇÑ, È®½ÅÀÌ ¾È °¡´Â");
-		 * HT[24].add_term("investor", "n.ÅõÀÚ°¡"); HT[24].add_term("justify", "v.Á¤´çÈ­ÇÏ´Ù");
-		 * HT[24].add_term("legacy", "n.À¯»ê, À¯¹°"); HT[24].add_term("lucrative",
-		 * "a.¼öÀÍ¼º ÀÖ´Â, µ·¹úÀÌ°¡ µÇ´Â"); HT[24].add_term("manipulation", "n.Á¶ÀÛ, ½ÃÀå Á¶ÀÛ");
-		 * HT[24].add_term("nearly", "ad.°ÅÀÇ, ´ë·«"); HT[24].add_term("on behalf of",
-		 * "phr.~À» ´ë½ÅÇØ¼­"); HT[24].add_term("outlook", "n.Àü¸Á");
-		 * HT[24].add_term("outweigh", "v.(°¡Ä¡, Áß¿ä¼ºÀÌ)~º¸´Ù Å©´Ù"); HT[24].add_term("pitfall",
-		 * "n.»ı°¢Ä¡ ¸øÇÑ À§Çè, Àå¾Ö"); HT[24].add_term("plummet", "v.Æø¶ôÇÏ´Ù");
-		 * HT[24].add_term("portfolio", "n.Æ÷Æ®Æú¸®¿À, ÅõÀÚ ÀÚ»ê ±¸¼º");
-		 * HT[24].add_term("possible", "a.°¡´ÉÇÑ, ÀÖÀ½Á÷ÇÑ"); HT[24].add_term("prevalent",
-		 * "a.³Î¸® ÆÛÁø, À¯ÇàÇÏ°í ÀÖ´Â"); HT[24].add_term("property", "n.Àç»ê");
-		 * HT[24].add_term("rapid", "a.ºü¸¥, ½Å¼ÓÇÑ"); HT[24].add_term("shareholder",
-		 * "n.ÁÖÁÖ"); HT[24].add_term("solely", "ad.ÀüÀûÀ¸·Î"); HT[24].add_term("somewhat",
-		 * "ad.´Ù¼Ò, ¾ó¸¶°£"); HT[24].add_term("speculation", "n.ÃßÃø");
-		 * HT[24].add_term("stability", "n.¾ÈÁ¤, ¾ÈÁ¤¼º"); HT[24].add_term("unbiased",
-		 * "a.¼±ÀÔ°ß ¾ø´Â, Æí°ß ¾ø´Â"); HT[24].add_term("unprecedented", "a.Àü·Ê ¾ø´Â");
-		 * HT[24].add_term("unwillingness", "n.³»Å°Áö ¾Ê¾Æ ÇÔ"); HT[24].add_term("yield",
-		 * "v.(ÀÌÀ±À»)°¡Á®¿À´Ù");
+		 * HT[24].add_term("bond", "n.ì±„ê¶Œ"); HT[24].add_term("cautiously", "ad.ì¡°ì‹¬ìŠ¤ëŸ½ê²Œ");
+		 * HT[24].add_term("confusion", "n.í˜¼ë€"); HT[24].add_term("consent", "n.ë™ì˜");
+		 * HT[24].add_term("consider", "v.ê³ ë ¤í•˜ë‹¤"); HT[24].add_term("controversy",
+		 * "n.ë…¼ë€"); HT[24].add_term("depreciation", "n.ê°€ì¹˜ í•˜ë½, í™”íì˜ êµ¬ë§¤ë ¥ ì €í•˜");
+		 * HT[24].add_term("devastate", "v.í™©íì‹œí‚¤ë‹¤"); HT[24].add_term("dividend",
+		 * "n.ë°°ë‹¹ê¸ˆ"); HT[24].add_term("entrepreneur", "n.ì‚¬ì—…ê°€");
+		 * HT[24].add_term("eventually", "ad.ê²°êµ­, ë§ˆì¹¨ë‚´"); HT[24].add_term("foreseeable",
+		 * "a.ì˜ˆê²¬í•  ìˆ˜ ìˆëŠ”"); HT[24].add_term("increasing", "a.ì¦ê°€í•˜ëŠ”");
+		 * HT[24].add_term("inherently", "ad.ë³¸ì§ˆì ìœ¼ë¡œ"); HT[24].add_term("innate",
+		 * "a.íƒ€ê³ ë‚œ"); HT[24].add_term("insecure", "a.ë¶ˆì•ˆí•œ, í™•ì‹ ì´ ì•ˆ ê°€ëŠ”");
+		 * HT[24].add_term("investor", "n.íˆ¬ìê°€"); HT[24].add_term("justify", "v.ì •ë‹¹í™”í•˜ë‹¤");
+		 * HT[24].add_term("legacy", "n.ìœ ì‚°, ìœ ë¬¼"); HT[24].add_term("lucrative",
+		 * "a.ìˆ˜ìµì„± ìˆëŠ”, ëˆë²Œì´ê°€ ë˜ëŠ”"); HT[24].add_term("manipulation", "n.ì¡°ì‘, ì‹œì¥ ì¡°ì‘");
+		 * HT[24].add_term("nearly", "ad.ê±°ì˜, ëŒ€ëµ"); HT[24].add_term("on behalf of",
+		 * "phr.~ì„ ëŒ€ì‹ í•´ì„œ"); HT[24].add_term("outlook", "n.ì „ë§");
+		 * HT[24].add_term("outweigh", "v.(ê°€ì¹˜, ì¤‘ìš”ì„±ì´)~ë³´ë‹¤ í¬ë‹¤"); HT[24].add_term("pitfall",
+		 * "n.ìƒê°ì¹˜ ëª»í•œ ìœ„í—˜, ì¥ì• "); HT[24].add_term("plummet", "v.í­ë½í•˜ë‹¤");
+		 * HT[24].add_term("portfolio", "n.í¬íŠ¸í´ë¦¬ì˜¤, íˆ¬ì ìì‚° êµ¬ì„±");
+		 * HT[24].add_term("possible", "a.ê°€ëŠ¥í•œ, ìˆìŒì§í•œ"); HT[24].add_term("prevalent",
+		 * "a.ë„ë¦¬ í¼ì§„, ìœ í–‰í•˜ê³  ìˆëŠ”"); HT[24].add_term("property", "n.ì¬ì‚°");
+		 * HT[24].add_term("rapid", "a.ë¹ ë¥¸, ì‹ ì†í•œ"); HT[24].add_term("shareholder",
+		 * "n.ì£¼ì£¼"); HT[24].add_term("solely", "ad.ì „ì ìœ¼ë¡œ"); HT[24].add_term("somewhat",
+		 * "ad.ë‹¤ì†Œ, ì–¼ë§ˆê°„"); HT[24].add_term("speculation", "n.ì¶”ì¸¡");
+		 * HT[24].add_term("stability", "n.ì•ˆì •, ì•ˆì •ì„±"); HT[24].add_term("unbiased",
+		 * "a.ì„ ì…ê²¬ ì—†ëŠ”, í¸ê²¬ ì—†ëŠ”"); HT[24].add_term("unprecedented", "a.ì „ë¡€ ì—†ëŠ”");
+		 * HT[24].add_term("unwillingness", "n.ë‚´í‚¤ì§€ ì•Šì•„ í•¨"); HT[24].add_term("yield",
+		 * "v.(ì´ìœ¤ì„)ê°€ì ¸ì˜¤ë‹¤");
 		 */
     }
 }

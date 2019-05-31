@@ -1,4 +1,4 @@
-package ¹®Á¦ÀºÇà.Term.vo;
+ï»¿package ë¬¸ì œì€í–‰.Term.vo;
 
 public class TermVo {
     private String word;

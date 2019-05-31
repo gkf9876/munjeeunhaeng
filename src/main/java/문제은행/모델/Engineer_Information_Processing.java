@@ -1,246 +1,246 @@
-package ¹®Á¦ÀºÇà.¸ðµ¨;
+ï»¿package ë¬¸ì œì€í–‰.ëª¨ë¸;
 
-import ¹®Á¦ÀºÇà.¸ðµ¨.Question_bank.Keyword;
+import ë¬¸ì œì€í–‰.ëª¨ë¸.Question_bank.Keyword;
 
 class Engineer_Information_Processing extends Subject
 {
     public Engineer_Information_Processing(String name, Keyword engineerInformationProcessing)
     {
     	super(name, engineerInformationProcessing);
-        this.CT = new Concept[7];                     //ÇàÀº Ã©ÅÍ, ¿­Àº ¼½¼Ç
-        CT[1] = new Concept("µ¥ÀÌÅÍº£ÀÌ½º - µ¥ÀÌÅÍº£ÀÌ½º °³³ä");
-        CT[2] = new Concept("µ¥ÀÌÅÍº£ÀÌ½º - µ¥ÀÌÅÍ ¸ðµ¨ ¹× µ¥ÀÌÅÍº£ÀÌ½º ¼³°è");
-        CT[3] = new Concept("µ¥ÀÌÅÍº£ÀÌ½º - °ü°èÇü µ¥ÀÌÅÍº£ÀÌ½º");
-        CT[4] = new Concept("µ¥ÀÌÅÍº£ÀÌ½º - µ¥ÀÌÅÍº£ÀÌ½º °í±Þ ±â¹ý");
-        CT[5] = new Concept("µ¥ÀÌÅÍº£ÀÌ½º - ÀÚ·á ±¸Á¶ÀÇ ±âº»");
-        CT[6] = new Concept("ÀüÀÚ°è»ê±â");
+        this.CT = new Concept[7];                     //í–‰ì€ ì±•í„°, ì—´ì€ ì„¹ì…˜
+        CT[1] = new Concept("ë°ì´í„°ë² ì´ìŠ¤ - ë°ì´í„°ë² ì´ìŠ¤ ê°œë…");
+        CT[2] = new Concept("ë°ì´í„°ë² ì´ìŠ¤ - ë°ì´í„° ëª¨ë¸ ë° ë°ì´í„°ë² ì´ìŠ¤ ì„¤ê³„");
+        CT[3] = new Concept("ë°ì´í„°ë² ì´ìŠ¤ - ê´€ê³„í˜• ë°ì´í„°ë² ì´ìŠ¤");
+        CT[4] = new Concept("ë°ì´í„°ë² ì´ìŠ¤ - ë°ì´í„°ë² ì´ìŠ¤ ê³ ê¸‰ ê¸°ë²•");
+        CT[5] = new Concept("ë°ì´í„°ë² ì´ìŠ¤ - ìžë£Œ êµ¬ì¡°ì˜ ê¸°ë³¸");
+        CT[6] = new Concept("ì „ìžê³„ì‚°ê¸°");
 
 		/*
-		 * CT[1].add_concept("Á¤º¸ ½Ã½ºÅÛ(IS : Information System)",
-		 * "ÇÊ¿äÇÑ ÀÚ·á¸¦ ¼öÁý, ºÐ¹èÇÏ¿© ÀúÀåÇß´Ù°¡ ÇÊ¿ä·Î ÇÒ ¶§ ÀúÀåµÈ ÀÚ·á¸¦ Ã³¸®ÇÏ¿© ÀÇ»ç °áÁ¤¿¡ ÇÊ¿äÇÑ Á¤º¸¸¦ Á¦°øÇÏ´Â ½Ã½ºÅÛÀ» ÀÇ¹ÌÇÑ´Ù."
-		 * ); CT[1].add_concept("ÀÚ·áÀÇ ÀÇ¹Ì",
-		 * "- ÀÚ·á¶õ Çö½Ç ¼¼°è¿¡¼­ ¾î¶² ÃøÁ¤À» ÅëÇØ ¾òÀº ´Ü¼øÇÑ °ªÀÌ´Ù\r\n- Çö½Ç ¼¼°è¿¡ ´ëÇÑ °üÂûÀ» ÅëÇØ¼­ ¾òÀº »ç½ÇÀÌ´Ù.\r\nÃ³¸®µÇÁö ¾ÊÀº µ¥ÀÌÅÍÀÌ´Ù."
-		 * ); CT[1].add_concept("Á¤º¸ÀÇ ÀÇ¹Ì",
-		 * "- ÀÚ·á¸¦ Ã³¸®ÇÏ¿© ¾òÀº °ªÀÌ´Ù.\r\n- ÀÚ·á¿¡ ´ëÇÑ ºÐ¼®À» ÅëÇØ ¾òÀº Áö½ÄÀÌ´Ù.");
-		 * CT[1].add_concept("ÀÚ·á¸¦ Ã³¸®ÇÏ¿© Á¤º¸¸¦ ¾ò¾î³»´Â °úÁ¤",
-		 * "ÀÚ·á(Data) -> Ã³¸®(Processing) -> Á¤º¸(Information).\r\nÁ¦¾î(Control) -> ÀÚ·á(Data), Á¤º¸(Information).\r\nÁ¤º¸(Information) -> ÇÇµå¹é(Feed Back)"
-		 * ); CT[1].add_concept("ÀÏ°ý Ã³¸® ½Ã½ºÅÛ(Batch Processing System)",
-		 * "¹ß»ýµÇ´Â ÀÚ·á¸¦ ¼öÁýÇØ¼­ ºÐ·ùÇØ ³õ¾Ò´Ù°¡ À¯»çÇÑ Æ®·£Àè¼ÇµéÀ» ÇÑ µ¥ ¸ð¾Æ ÀÏÁ¤ÇÑ ½ÃÁ¡¿¡ ÀÏ°ýÀûÀ¸·Î Ã³¸®ÇÏ´Â ¹æ½ÄÀÇ ½Ã½ºÅÛÀ» ÀÇ¹ÌÇÑ´Ù."
-		 * ); CT[1].add_concept("ÀÏ°ý Ã³¸® ½Ã½ºÅÛ(Batch Processing System)ÀÇ Æ¯Â¡",
-		 * "- ½Ã½ºÅÛ Áß½ÉÀÇ ÀÚ·á Ã³¸® ¹æ¹ýÀÌ´Ù.\r\n- Å×ÀÌÇÁ¿Í °°Àº ¼øÂ÷ Á¢±Ù ¹æ¹ýÀ» »ç¿ëÇÏ´Â ¾÷¹«¿¡ ÀûÇÕÇÏ´Ù.\r\n- ´ÜÀ§ ½Ã°£´ç Ã³¸®ÇÏ´Â ÀÛ¾÷¼ö°¡ ¸¹À¸¹Ç·Î ½Ã½ºÅÛ ¼º´ÉÀº ³ô´Ù.\r\n- Æ®·£Àè¼Ç´ç Ã³¸® ºñ¿ëÀÌ Àû´Ù.\r\n- »çÀü ÀÛ¾÷ ¹× °á°ú°¡ ³ª¿Ã ¶§±îÁö ¸¹Àº ½Ã°£ÀÌ ÇÊ¿äÇÏ´Ù.\r\n- ¿¹ : ÀüÈ­ ¿ä±Ý, ±Þ¿© °è»ê, ¼¼¹« Ã³¸®, ¿¬¸» °á»ê µî ¼øÂ÷ Á¢±Ù ¹æ¹ýÀÇ ¾÷¹« ÇüÅÂ¿¡ ÀûÇÕÇÏ´Ù."
-		 * ); CT[1].add_concept("¿Â¶óÀÎ ½Ç½Ã°£ Ã³¸® ½Ã½ºÅÛ(On-Line Real Time Processing System)",
-		 * "µ¥ÀÌÅÍ°¡ ¹ß»ýÇÏ°Ô µÇ¸é µ¥ÀÌÅÍ¸¦ Áï½Ã ÄÄÇ»ÅÍ¿¡ Àü´ÞÇÏ¿© Ã³¸®ÇÏ´Â ¹æ½ÄÀÇ ½Ã½ºÅÛÀ» ÀÇ¹ÌÇÑ´Ù.");
-		 * CT[1].add_concept("¿Â¶óÀÎ ½Ç½Ã°£ Ã³¸® ½Ã½ºÅÛ(On-Line Real Time Processing System)ÀÇ Æ¯Â¡",
-		 * "- »ç¿ëÀÚ Áß½É Ã³¸® ¹æ½ÄÀÌ´Ù.\r\n- ¿À·ù ¼öÁ¤ÀÌ ½±´Ù.\r\n- ±¸Ãà ºñ¿ëÀÌ ¸¹ÀÌ µé°í ±¸Á¶°¡ º¹ÀâÇÏ´Ù.\r\n- ÀÀ´ä ½Ã°£¿¡ ´ëÇÑ Á¦¾à ¿ä¼Ò°¡ ¸¹´Ù.\r\n- ÀÛ¾÷·®ÀÌ ¸¹Áö ¾ÊÀº °æ¿ì ½Ã½ºÅÛ »ç¿ë È¿À²ÀÌ ¶³¾îÁö°Ô µÈ´Ù.\r\n- Æ®·£Àè¼Ç´ç Ã³¸® ºñ¿ëÀÌ ³ô´Ù.\r\n- À¯Áöº¸¼ö³ª È¸º¹ÀÌ º¹ÀâÇÏ´Ù.\r\n- ¿¹ : ÁÂ¼® ¿¹¾à, ÀºÇà ÀÔÃâ±Ý ¾÷¹«, ¿ìÁÖ¼± ¿îÇàÀÌ³ª ·¹ÀÌ´õ ÃßÀû±â, ÀüÈ­ ±³È¯ ÀåÄ¡ÀÇ Á¦¾î µî ½Ç½Ã°£ Ã³¸® ¾÷¹« ÇüÅÂ¿¡ ÀûÇÕÇÏ´Ù."
-		 * ); CT[1].add_concept("ºÐ»ê Ã³¸® ½Ã½ºÅÛ(Distributed Processing System)",
-		 * "´Ù¾çÇÑ Áö¿ª Ã³¸®¸¦ À§ÇØ¼­ Áö¸®ÀûÀ¸·Î ºÐ»êµÇ¾î ÀÖ´Â Ã³¸®±â¸¦ Åë½Å ³×Æ®¿öÅ©·Î ¿¬°áÇÏ¿©, ³í¸®ÀûÀ¸·Î ÇÏ³ªÀÇ ½Ã½ºÅÛÀ» »ç¿ëÇÏ´Â °ÍÃ³·³ ¿î¿µÇÏ´Â ¹æ½ÄÀÌ´Ù. Áö¿ª¿¡¼­ Ã³¸®ÇÏÁö ¸øÇÏ´Â °ÍÀº Áß¾Ó ÄÄÇ»ÅÍ¿¡¼­ Ã³¸®ÇÑ´Ù."
-		 * ); CT[1].add_concept("ºÐ»ê Ã³¸® ½Ã½ºÅÛ(Distributed Processing System)ÀÇ Æ¯Â¡",
-		 * "- Áö¸®ÀûÀ¸·Î ºÐ»êµÇ¾î ÀÖ´Â ¾÷¹«¸¦ È¿°úÀûÀ¸·Î Ã³¸®ÇÒ ¼ö ÀÖ´Ù.\r\n- ½Ã½ºÅÛ¿¡ ´ëÇÑ Àå¾Ö ¹ß»ý ½Ã ´Ù¸¥ Ã³¸®±â·Î ½Å·Ú¼ºÀ» ÁõÁøÇÒ ¼ö ÀÖ´Ù.\r\n- °¢ Áö¿ªÀÇ Æ¯»ö¿¡ ¸Â´Â ÀÚ¿øÀ» ÀÌ¿ëÇÏ¿© ÇÏµå¿þ¾î³ª ¼ÒÇÁÆ®¿þ¾î¸¦ ±¸ÃàÇÒ ¼ö ÀÖÀ¸¹Ç·Î ÀûÀÀ¼º, À¶Åë¼º µîÀÌ ¶Ù¾î³ª´Ù.\r\n´Ù¾çÇÑ ÀÚ¿ø¿¡ µû¸¥ ±¸Ãà ºñ¿ëÀÌ Áõ°¡µÈ´Ù.\r\nÅë½Å¸Á¿¡ µû¸¥ Á¦¾à»çÇ×ÀÌ ÀÖ´Ù."
-		 * ); CT[1].add_concept("Æ®·£Àè¼Ç(Transaction)", "ÇÏ³ªÀÇ ³í¸®Àû ±â´ÉÀ» ¼öÇàÇÏ±â À§ÇÑ ÀÛ¾÷ÀÇ ´ÜÀ§ÀÌ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍ¿þ¾î ÇÏ¿ì½º(DataWare House)",
-		 * "»ç¿ëÀÚÀÇ ÀÇ»ç °áÁ¤¿¡ µµ¿òÀ» ÁÖ±â À§ÇÏ¿© ´Ù¾çÇÑ ¿î¿µ ½Ã½ºÅÛ¿¡¼­ ÃßÃâ, º¯È¯, ÅëÇÕ, ¿ä¾àµÈ µ¥ÀÌÅÍº£ÀÌ½º¸¦ ¸»ÇÑ´Ù. ¿ø½Ã µ¥ÀÌÅÍ °èÃþ, µ¥ÀÌÅÍ¿þ¾î ÇÏ¿ì½º °èÃþ, Å¬¶óÀÌ¾ðÆ® °èÃþÀ¸·Î ±¸¼ºµÇ¸ç µ¥ÀÌÅÍÀÇ ÃßÃâ, ÀúÀå, Á¶È¸ µîÀÇ È°µ¿À» ÇÑ´Ù."
+		 * CT[1].add_concept("ì •ë³´ ì‹œìŠ¤í…œ(IS : Information System)",
+		 * "í•„ìš”í•œ ìžë£Œë¥¼ ìˆ˜ì§‘, ë¶„ë°°í•˜ì—¬ ì €ìž¥í–ˆë‹¤ê°€ í•„ìš”ë¡œ í•  ë•Œ ì €ìž¥ëœ ìžë£Œë¥¼ ì²˜ë¦¬í•˜ì—¬ ì˜ì‚¬ ê²°ì •ì— í•„ìš”í•œ ì •ë³´ë¥¼ ì œê³µí•˜ëŠ” ì‹œìŠ¤í…œì„ ì˜ë¯¸í•œë‹¤."
+		 * ); CT[1].add_concept("ìžë£Œì˜ ì˜ë¯¸",
+		 * "- ìžë£Œëž€ í˜„ì‹¤ ì„¸ê³„ì—ì„œ ì–´ë–¤ ì¸¡ì •ì„ í†µí•´ ì–»ì€ ë‹¨ìˆœí•œ ê°’ì´ë‹¤\r\n- í˜„ì‹¤ ì„¸ê³„ì— ëŒ€í•œ ê´€ì°°ì„ í†µí•´ì„œ ì–»ì€ ì‚¬ì‹¤ì´ë‹¤.\r\nì²˜ë¦¬ë˜ì§€ ì•Šì€ ë°ì´í„°ì´ë‹¤."
+		 * ); CT[1].add_concept("ì •ë³´ì˜ ì˜ë¯¸",
+		 * "- ìžë£Œë¥¼ ì²˜ë¦¬í•˜ì—¬ ì–»ì€ ê°’ì´ë‹¤.\r\n- ìžë£Œì— ëŒ€í•œ ë¶„ì„ì„ í†µí•´ ì–»ì€ ì§€ì‹ì´ë‹¤.");
+		 * CT[1].add_concept("ìžë£Œë¥¼ ì²˜ë¦¬í•˜ì—¬ ì •ë³´ë¥¼ ì–»ì–´ë‚´ëŠ” ê³¼ì •",
+		 * "ìžë£Œ(Data) -> ì²˜ë¦¬(Processing) -> ì •ë³´(Information).\r\nì œì–´(Control) -> ìžë£Œ(Data), ì •ë³´(Information).\r\nì •ë³´(Information) -> í”¼ë“œë°±(Feed Back)"
+		 * ); CT[1].add_concept("ì¼ê´„ ì²˜ë¦¬ ì‹œìŠ¤í…œ(Batch Processing System)",
+		 * "ë°œìƒë˜ëŠ” ìžë£Œë¥¼ ìˆ˜ì§‘í•´ì„œ ë¶„ë¥˜í•´ ë†“ì•˜ë‹¤ê°€ ìœ ì‚¬í•œ íŠ¸ëžœìž­ì…˜ë“¤ì„ í•œ ë° ëª¨ì•„ ì¼ì •í•œ ì‹œì ì— ì¼ê´„ì ìœ¼ë¡œ ì²˜ë¦¬í•˜ëŠ” ë°©ì‹ì˜ ì‹œìŠ¤í…œì„ ì˜ë¯¸í•œë‹¤."
+		 * ); CT[1].add_concept("ì¼ê´„ ì²˜ë¦¬ ì‹œìŠ¤í…œ(Batch Processing System)ì˜ íŠ¹ì§•",
+		 * "- ì‹œìŠ¤í…œ ì¤‘ì‹¬ì˜ ìžë£Œ ì²˜ë¦¬ ë°©ë²•ì´ë‹¤.\r\n- í…Œì´í”„ì™€ ê°™ì€ ìˆœì°¨ ì ‘ê·¼ ë°©ë²•ì„ ì‚¬ìš©í•˜ëŠ” ì—…ë¬´ì— ì í•©í•˜ë‹¤.\r\n- ë‹¨ìœ„ ì‹œê°„ë‹¹ ì²˜ë¦¬í•˜ëŠ” ìž‘ì—…ìˆ˜ê°€ ë§Žìœ¼ë¯€ë¡œ ì‹œìŠ¤í…œ ì„±ëŠ¥ì€ ë†’ë‹¤.\r\n- íŠ¸ëžœìž­ì…˜ë‹¹ ì²˜ë¦¬ ë¹„ìš©ì´ ì ë‹¤.\r\n- ì‚¬ì „ ìž‘ì—… ë° ê²°ê³¼ê°€ ë‚˜ì˜¬ ë•Œê¹Œì§€ ë§Žì€ ì‹œê°„ì´ í•„ìš”í•˜ë‹¤.\r\n- ì˜ˆ : ì „í™” ìš”ê¸ˆ, ê¸‰ì—¬ ê³„ì‚°, ì„¸ë¬´ ì²˜ë¦¬, ì—°ë§ ê²°ì‚° ë“± ìˆœì°¨ ì ‘ê·¼ ë°©ë²•ì˜ ì—…ë¬´ í˜•íƒœì— ì í•©í•˜ë‹¤."
+		 * ); CT[1].add_concept("ì˜¨ë¼ì¸ ì‹¤ì‹œê°„ ì²˜ë¦¬ ì‹œìŠ¤í…œ(On-Line Real Time Processing System)",
+		 * "ë°ì´í„°ê°€ ë°œìƒí•˜ê²Œ ë˜ë©´ ë°ì´í„°ë¥¼ ì¦‰ì‹œ ì»´í“¨í„°ì— ì „ë‹¬í•˜ì—¬ ì²˜ë¦¬í•˜ëŠ” ë°©ì‹ì˜ ì‹œìŠ¤í…œì„ ì˜ë¯¸í•œë‹¤.");
+		 * CT[1].add_concept("ì˜¨ë¼ì¸ ì‹¤ì‹œê°„ ì²˜ë¦¬ ì‹œìŠ¤í…œ(On-Line Real Time Processing System)ì˜ íŠ¹ì§•",
+		 * "- ì‚¬ìš©ìž ì¤‘ì‹¬ ì²˜ë¦¬ ë°©ì‹ì´ë‹¤.\r\n- ì˜¤ë¥˜ ìˆ˜ì •ì´ ì‰½ë‹¤.\r\n- êµ¬ì¶• ë¹„ìš©ì´ ë§Žì´ ë“¤ê³  êµ¬ì¡°ê°€ ë³µìž¡í•˜ë‹¤.\r\n- ì‘ë‹µ ì‹œê°„ì— ëŒ€í•œ ì œì•½ ìš”ì†Œê°€ ë§Žë‹¤.\r\n- ìž‘ì—…ëŸ‰ì´ ë§Žì§€ ì•Šì€ ê²½ìš° ì‹œìŠ¤í…œ ì‚¬ìš© íš¨ìœ¨ì´ ë–¨ì–´ì§€ê²Œ ëœë‹¤.\r\n- íŠ¸ëžœìž­ì…˜ë‹¹ ì²˜ë¦¬ ë¹„ìš©ì´ ë†’ë‹¤.\r\n- ìœ ì§€ë³´ìˆ˜ë‚˜ íšŒë³µì´ ë³µìž¡í•˜ë‹¤.\r\n- ì˜ˆ : ì¢Œì„ ì˜ˆì•½, ì€í–‰ ìž…ì¶œê¸ˆ ì—…ë¬´, ìš°ì£¼ì„  ìš´í–‰ì´ë‚˜ ë ˆì´ë” ì¶”ì ê¸°, ì „í™” êµí™˜ ìž¥ì¹˜ì˜ ì œì–´ ë“± ì‹¤ì‹œê°„ ì²˜ë¦¬ ì—…ë¬´ í˜•íƒœì— ì í•©í•˜ë‹¤."
+		 * ); CT[1].add_concept("ë¶„ì‚° ì²˜ë¦¬ ì‹œìŠ¤í…œ(Distributed Processing System)",
+		 * "ë‹¤ì–‘í•œ ì§€ì—­ ì²˜ë¦¬ë¥¼ ìœ„í•´ì„œ ì§€ë¦¬ì ìœ¼ë¡œ ë¶„ì‚°ë˜ì–´ ìžˆëŠ” ì²˜ë¦¬ê¸°ë¥¼ í†µì‹  ë„¤íŠ¸ì›Œí¬ë¡œ ì—°ê²°í•˜ì—¬, ë…¼ë¦¬ì ìœ¼ë¡œ í•˜ë‚˜ì˜ ì‹œìŠ¤í…œì„ ì‚¬ìš©í•˜ëŠ” ê²ƒì²˜ëŸ¼ ìš´ì˜í•˜ëŠ” ë°©ì‹ì´ë‹¤. ì§€ì—­ì—ì„œ ì²˜ë¦¬í•˜ì§€ ëª»í•˜ëŠ” ê²ƒì€ ì¤‘ì•™ ì»´í“¨í„°ì—ì„œ ì²˜ë¦¬í•œë‹¤."
+		 * ); CT[1].add_concept("ë¶„ì‚° ì²˜ë¦¬ ì‹œìŠ¤í…œ(Distributed Processing System)ì˜ íŠ¹ì§•",
+		 * "- ì§€ë¦¬ì ìœ¼ë¡œ ë¶„ì‚°ë˜ì–´ ìžˆëŠ” ì—…ë¬´ë¥¼ íš¨ê³¼ì ìœ¼ë¡œ ì²˜ë¦¬í•  ìˆ˜ ìžˆë‹¤.\r\n- ì‹œìŠ¤í…œì— ëŒ€í•œ ìž¥ì•  ë°œìƒ ì‹œ ë‹¤ë¥¸ ì²˜ë¦¬ê¸°ë¡œ ì‹ ë¢°ì„±ì„ ì¦ì§„í•  ìˆ˜ ìžˆë‹¤.\r\n- ê° ì§€ì—­ì˜ íŠ¹ìƒ‰ì— ë§žëŠ” ìžì›ì„ ì´ìš©í•˜ì—¬ í•˜ë“œì›¨ì–´ë‚˜ ì†Œí”„íŠ¸ì›¨ì–´ë¥¼ êµ¬ì¶•í•  ìˆ˜ ìžˆìœ¼ë¯€ë¡œ ì ì‘ì„±, ìœµí†µì„± ë“±ì´ ë›°ì–´ë‚˜ë‹¤.\r\në‹¤ì–‘í•œ ìžì›ì— ë”°ë¥¸ êµ¬ì¶• ë¹„ìš©ì´ ì¦ê°€ëœë‹¤.\r\ní†µì‹ ë§ì— ë”°ë¥¸ ì œì•½ì‚¬í•­ì´ ìžˆë‹¤."
+		 * ); CT[1].add_concept("íŠ¸ëžœìž­ì…˜(Transaction)", "í•˜ë‚˜ì˜ ë…¼ë¦¬ì  ê¸°ëŠ¥ì„ ìˆ˜í–‰í•˜ê¸° ìœ„í•œ ìž‘ì—…ì˜ ë‹¨ìœ„ì´ë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ì›¨ì–´ í•˜ìš°ìŠ¤(DataWare House)",
+		 * "ì‚¬ìš©ìžì˜ ì˜ì‚¬ ê²°ì •ì— ë„ì›€ì„ ì£¼ê¸° ìœ„í•˜ì—¬ ë‹¤ì–‘í•œ ìš´ì˜ ì‹œìŠ¤í…œì—ì„œ ì¶”ì¶œ, ë³€í™˜, í†µí•©, ìš”ì•½ëœ ë°ì´í„°ë² ì´ìŠ¤ë¥¼ ë§í•œë‹¤. ì›ì‹œ ë°ì´í„° ê³„ì¸µ, ë°ì´í„°ì›¨ì–´ í•˜ìš°ìŠ¤ ê³„ì¸µ, í´ë¼ì´ì–¸íŠ¸ ê³„ì¸µìœ¼ë¡œ êµ¬ì„±ë˜ë©° ë°ì´í„°ì˜ ì¶”ì¶œ, ì €ìž¥, ì¡°íšŒ ë“±ì˜ í™œë™ì„ í•œë‹¤."
 		 * );
 		 * 
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º(DB : DataBase)ÀÇ Á¤ÀÇ",
-		 * "ÀÀ¿ë ½Ã½ºÅÛµéÀÌ µ¥ÀÌÅÍ¸¦ °øÀ¯ÇÒ ¼ö ÀÖµµ·Ï ¿î¿µ¿¡ ÇÊ¿äÇÑ ¸ðµç µ¥ÀÌÅÍ¸¦ ÅëÇÕÇÏ¿© ÄÄÇ»ÅÍ¿¡ ÀúÀåÇÑ µ¥ÀÌÅÍ¸¦ ÀÇ¹ÌÇÑ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ °ø¿ë µ¥ÀÌÅÍ(Shared Data)",
-		 * "´Ù¾çÇÑ »ç¿ëÀÚµéÀÌ ÇÊ¿äÇÑ Á¤º¸¸¦ °øµ¿À¸·Î ÀÌ¿ëÇÒ ¸ñÀûÀ¸·Î ¸¸µé¾îÁø ÀÚ·áÀÌ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ ¿î¿µ µ¥ÀÌÅÍ(Operational Data)",
-		 * "ÇÑ Á¶Á÷Ã¼°¡ À¯ÁöµÇ°í ¿î¿µµÇ´Â µ¥ ÇÊ¿äÇÑ ¸ðµç °³Ã¼µ¥ÀÌÅÍ¿Í °ü°è µ¥ÀÌÅÍÀÇ ÁýÇÕÀÌ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ ÅëÇÕ µ¥ÀÌÅÍ(Integrated Data)",
-		 * "µ¥ÀÌÅÍ Áý´Ü¿¡¼­ ÀÚ·áÀÇ Áßº¹ÀÌ³ª ±º´õ´õ±â¸¦ Á¦°ÅÇÏ¿© ÃÖÀûÈ­½ÃÅ² µ¥ÀÌÅÍÀÇ ÁýÇÕÀÌ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ ÀúÀå µ¥ÀÌÅÍ(Stored Data)",
-		 * "ÄÄÇ»ÅÍ ½Ã½ºÅÛÀÌ Á¢±Ù °¡´ÉÇÑ ÀúÀå ¸ÅÃ¼¿¡ ÀúÀåµÈ µ¥ÀÌÅÍÀÇ ÁýÇÕÀÌ´Ù."); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ Æ¯Â¡ 6°¡Áö",
-		 * "- µ¥ÀÌÅÍ Áßº¹ÀÇ ÃÖ¼ÒÈ­(Redun Dancy Minimize)\r\n- °è¼ÓÀûÀÎ º¯È­(Continuous Evolution)\r\n- ½Ç½Ã°£ Á¢±Ù(Real Time Accessibility)\r\n- µ¿½Ã °øÀ¯(Concurrent Sharing)\r\n- ³»¿ë¿¡ ÀÇÇÑ Á¢±Ù(Content Reference)\r\n- ¶Ù¾î³­ ÀÚ·á °£ ¿¬°è¼º(Superb Data Combination)"
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ µîÀå¹è°æ",
-		 * "- ÃÖ½ÅÀÇ Á¤È®ÇÑ Á¤º¸¸¦ ½Å¼ÓÇÏ°Ô ÀÌ¿ëÇÒ ÇÊ¿ä°¡ »ý°å´Ù.\r\n- ¸¹Àº ¾çÀÇ ÀÚ·á¿Í Á¤º¸¸¦ °£¼ÒÈ­ÇÒ ÇÊ¿ä¼ºÀÌ ´ëµÎµÇ¾ú´Ù.\r\n- ¿©·¯ »ç¿ëÀÚ°¡ µ¥ÀÌÅÍ¸¦ °øÀ¯ÇØ¾ß ÇÒ ÇÊ¿ä°¡ »ý°å´Ù.\r\n- Çö½Ç ¼¼°è¸¦ ºü¸£°Ô ¹Ý¿µÇÏ±â À§ÇØ »ðÀÔ, »èÁ¦, °»½Å µîÀ» ÅëÇØ¼­ ÇöÀçÀÇ µ¥ÀÌÅÍ¸¦ µ¿ÀûÀ¸·Î À¯ÁöÇÏ°í ½Í¾ú´Ù.\r\n- µ¥ÀÌÅÍÀÇ °¡¿ë¼º Áõ´ë¸¦ À§ÇØ Áßº¹À» ÃÖ´ëÇÑ ¹èÁ¦ÇÏ°í ½Í¾ú´Ù.\r\n- ¹°¸®ÀûÀÎ ÁÖ¼Ò°¡ ¾Æ´Ñ µ¥ÀÌÅÍ °ª¿¡ ÀÇÇÑ Á÷Á¢ÀûÀÎ °Ë»öÀ» ¼öÇàÇÏ°í ½Í¾ú´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ±¸¼º ¿ä¼Ò 3°¡Áö",
-		 * "¼Ó¼º(Attribute), °³Ã¼(Entity), °ü°è(Relationship)");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ ¼Ó¼º(Attribute)",
-		 * "- µ¥ÀÌÅÍº£ÀÌ½º¸¦ ±¸ÃàÇÏ´Â °¡Àå ÀÛÀº ³í¸®Àû ´ÜÀ§·Î ÆÄÀÏ ½Ã½ºÅÛÀÇ ÇÊµå °³³ä¿¡ ÇØ´çÇÑ´Ù.\r\n- ÀÚÃ¼¸¸À¸·Î´Â Á¤º¸¸¦ Ç¥ÇöÇÒ ¼ö ¾ø°í Á¤º¸¸¦ Ç¥ÇöÇÏ´Â ´ÜÀ§ÀÎ °³Ã¼³ª °ü°èÀÇ Æ¯¼ºÀ» ¼³¸íÇÏ´Â µµ±¸ÀÇ ÀÇ¹Ì·Î »ç¿ëµÈ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ °³Ã¼(Entity)",
-		 * "- Á¤º¸¸¦ ³ªÅ¸³»´Â ´«¸®Àû ´ÜÀ§·Î¼­ ÆÄÀÏ ½Ã½ºÅÛÀÇ ·¹ÄÚµå¿¡ ÇØ´çÇÑ´Ù.\r\n- °³Ã¼´Â ÇÏ³ª ÀÌ»óÀÇ ¼Ó¼ºÀ» Á¶ÇÕÇÏ¿© ±¸¼ºµÈ´Ù.\r\n- Çö½Ç ¼¼°èÀÇ Ç¥Çö ´ÜÀ§ ¿ªÇÒÀ» ÇÏ°Ô µÈ´Ù.\r\n- °³Ã¼´Â ´Üµ¶À¸·Î Á¸ÀçÇÒ ¼ö ÀÖ´Ù.\r\n- ¸ðµç °³Ã¼´Â ±¸º° °¡´ÉÇÏ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ °³Ã¼ Å¸ÀÔ(Entity Type)",
-		 * "°³Ã¼ ½ºÅ°¸¶(Entity Schema)¶ó°íµµ ÇÏ¸ç °³Ã¼ ÀÌ¸§°ú ÀÌ °³Ã¼ÀÇ ¼Ó¼ºµé·Î ±¸¼ºÇÏ¿© ¸¸µç ³í¸®ÀûÀÎ Á¤ÀÇ, Áï ¼º°è¿¡ ÇØ´çÇÏ´Â °³³äÀÌ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ °³Ã¼ ¾îÄ¿·±½º(Entity Occurrence)",
-		 * "°³Ã¼ ÀÎ½ºÅÏ½º(Entity Instance)¶ó°íµµ ÇÏ¸ç °³Ã¼ Å¸ÀÔÀÇ ¿¬»ê¿¡ ÀÇÇØ ½ÇÁ¦ÀûÀÎ °³Ã¼ °ªÀÌ µé¾î°¡ ÀÖ´Â »óÅÂ¸¦ ÀÇ¹ÌÇÑ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ °³Ã¼ ÁýÇÕ(Entity Set)",
-		 * "°³Ã¼ ¾îÄ¿·±½ºµéÀÇ ÁýÇÕÀ» °³Ã¼ ÁýÇÕÀÌ¶ó°í ÇÑ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ ¼Ó¼º °ü°è(Attribute Relationship)",
-		 * "°³Ã¼¸¦ ±â¼úÇÏ±â À§ÇØ ±× °³Ã¼°¡ °¡Áö°í ÀÖ´Â ¼ºÁúÀÌ³ª Æ¯Â¡À» ÆÄ¾ÇÇÏ¿© ¼Ó¼ºÀ¸·Î ±¸¼ºÇÑ ÈÄ ¼Ó¼º°ú ¼Ó¼º »çÀÌÀÇ °ü°è¸¦ °¡Áö°í °³Ã¼¸¦ ±â¼úÇÏ°Ô µÇ´Âµ¥ ÀÌ°ÍÀ» ¼Ó¼º °ü°è ¶Ç´Â °³Ã¼³» °ü°è(Intra-Entity Relationship)¶ó°í ÇÑ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ °³Ã¼ °ü°è(Entity Relationship)",
-		 * "°³Ã¼¿Í °³Ã¼ »çÀÌÀÇ °ü°è¸¦ ÀÇ¹ÌÇÏ´Â °ÍÀ¸·Î °³Ã¼ °£ °ü°è(Inter-Entity Relationship)¶ó°íµµ ÇÑ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ³í¸®Àû ±¸Á¶",
-		 * "»ç¿ëÀÚ³ª ÀÀ¿ë ÇÁ·Î±×·¡¸Ó°¡ µ¥ÀÌÅÍº£ÀÌ½º¸¦ ¹Ù¶óº¸´Â °üÁ¡¿¡¼­ µ¥ÀÌÅÍ ¹èÄ¡ ÇüÅÂ¸¦ ÀÇ¹ÌÇÏ´Â °ÍÀ¸·Î ³í¸®Àû ·¹ÄÚµå¸¦ °¡Áö°í »ç¿ëÀÚ³ª ÀÀ¿ë ÇÁ·Î±×·¡¸ÓÀÇ »ó»ó¿¡ µû¶ó ³í¸®ÀûÀ¸·Î Àü°³ÇÑ ¸ð¾çÀ» ÀÇ¹ÌÇÑ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ¹°¸®Àû ±¸Á¶",
-		 * "µ¥ÀÌÅÍ°¡ ½ÇÁ¦ÀûÀÎ ¹°¸®Àû ÀúÀå ÀåÄ¡¿¡ ¹èÄ¡µÇ¾î ÀÖ´Â ÇüÅÂ¸¦ ÀÇ¹ÌÇÏ´Â °ÍÀ¸·Î ÀúÀå ·¹ÄÚµå¸¦ ÀÌ¿ëÇÏ¿© ½ÇÁ¦ ¹°¸®Àû ÀúÀå ÀåÄ¡ À§¿¡ Àü°³ÇÑ ¸ð¾çÀ» ÀÇ¹ÌÇÑ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ 3´Ü°è", "¿ÜºÎ ´Ü°è -> °³³ä ´Ü°è -> ³»ºÎ ´Ü°è");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ¿ÜºÎ ´Ü°è",
-		 * "»ç¿ëÀÚÀÇ °üÁ¡¿¡¼­ µ¥ÀÌÅÍº£ÀÌ½º¸¦ ¹Ù¶óº¸´Â °üÁ¡ÀÌ´Ù. Áï »ç¿ëÀÚ°¡ ½±°Ô Á¢±ÙÇÏ¿© µ¥ÀÌÅÍ¸¦ »ç¿ëÇÒ ¼ö ÀÖµµ·Ï ¿©·¯ °³ÀÇ ¿ÜºÎ ½ºÅ°¸¶°¡ ¸¶·ÃµÇ¾î ÀÖ´Â ´Ü°èÀÌ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ °³³ä ´Ü°è",
-		 * "»ç¿ëÀÚ¿Í ¹°¸®ÀûÀÎ µ¥ÀÌÅÍº£ÀÌ½º »çÀÌÀÇ ´Ü°è·Î¼­ µ¥ÀÌÅÍº£ÀÌ½º ÀüÃ¼ÀÇ Á¤º¸¸¦ Ç¥ÇöÇÏ´Â ´Ü°èÀÌ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ³»ºÎ ´Ü°è",
-		 * "½ÇÁ¦ÀûÀ¸·Î µ¥ÀÌÅÍº£ÀÌ½º°¡ ÀúÀåµÇ´Â ÀúÀå ÀåÄ¡¿¡ ´ëÇÑ ¹°¸®Àû ÇüÅÂ¸¦ Ç¥ÇöÇÏ´Â ´Ü°è·Î¼­ ÇÏ³ªÀÇ ³»ºÎ ½ºÅ°¸¶¸¦ °®°Ô µÇ´Â ´Ü°èÀÌ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ÀÀ¿ë ÀÎÅÍÆäÀÌ½º(»ç»ó(Mapping))",
-		 * "¿ÜºÎ ½ºÅ°¸¶¿Í °³³ä ½ºÅ°¸¶ °£ÀÇ »ç»ó °ü°è¸¦ ³ªÅ¸³»´Â ÀÎÅÍÆäÀÌ½ºÀÌ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ÀúÀå ÀÎÅÍÆäÀÌ½º(»ç»ó(Mapping))",
-		 * "°³³ä ½ºÅ°¸¶¿Í ³»ºÎ ½ºÅ°¸¶ °£ÀÇ »ç»ó °ü°è¸¦ ³ªÅ¸³»´Â ÀÎÅÍÆäÀÌ½ºÀÌ´Ù."); CT[1].add_concept("½ºÅ°¸¶ÀÇ °³³ä",
-		 * "- µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ÀüÃ¼ÀûÀÎ ³í¸®Àû ¼³°è¸¦ ÀÇ¹ÌÇÏ´Â °ÍÀ¸·Î µ¥ÀÌÅÍ °´Ã¼, ÀÌµéÀÇ ¼ºÁú, ÀÌµé °£ÀÇ °ü°è, µ¥ÀÌÅÍ °ü°èµéÀÌ °®´Â Á¦¾à Á¶°Ç¿¡ °üÇÑ Á¤ÀÇ¸¦ ÃÑÄªÇÏ´Â °³³äÀÌ´Ù.\r\n- ½Ã°£¿¡ µû¶ó ºÒº¯ÀÇ Æ¯¼ºÀ» °®´Â´Ù.\r\n- ½ºÅ°¸¶´Â µ¥ÀÌÅÍÀÇ ±¸Á¶Àû Æ¯¼ºÀ» ÀÇ¹ÌÇÏ¸ç ÀÎ½ºÅÏ½º(Instance)¿¡ ÀÇÇØ ±ÔÁ¤µÈ´Ù"
-		 * ); CT[1].add_concept("½ºÅ°¸¶ÀÇ 3Ãþ ±¸Á¶",
-		 * "¿ÜºÎ ½ºÅ°¸¶(External Schema), °³³ä ½ºÅ°¸¶(Conceptual Schema), ³»ºÎ ½ºÅ°¸¶(Internal Schema)"
-		 * ); CT[1].add_concept("¿ÜºÎ ½ºÅ°¸¶(External Schema)",
-		 * "- °¢°¢ÀÇ »ç¿ëÀÚ ±×·ìÀÌ ¿øÇÏ´Â ÇüÅÂÀÇ ³í¸®Àû ±¸Á¶¸¦ Á¤ÀÇÇÑ´Ù.\r\n- Á¶Á÷ ÀüÃ¼°¡ ¾Æ´Ï¶ó ÀÏºÎºÐÀ» Á¤ÀÇÇÑ´Ù\r\n- ¿ÜºÎ ½ºÅ°¸¶´Â °¢°¢ÀÇ »ç¿ëÀÚ ±×·ìÀ» À§ÇØ¼­ ¸¸µé¾îÁ®¾ß ÇÏ¹Ç·Î ¿©·¯ °³°¡ Á¸ÀçÇÏ°Ô µÈ´Ù.\r\n- ÀÀ¿ë ÇÁ·Î±×·¡¸Ó³ª »ç¿ëÀÚµéÀÌ °¡Àå °ü½ÉÀ» °®´Â ºÎºÐÀÌ´Ù.\r\n- ÀÀ¿ë ÇÁ·Î±×·¡¸Ó³ª »ç¿ëÀÚ¿Í °ü·ÃµÈ °³Ã¼\r\n- ÀÀ¿ë ÇÁ·Î±×·¡¸Ó³ª »ç¿ëÀÚ¿Í °ü·ÃµÈ °³Ã¼µéÀÇ °ü°è ¹× Á¦¾à Á¶°Ç"
-		 * ); CT[1].add_concept("°³³ä ½ºÅ°¸¶(Conceptual Schema)",
-		 * "- ¸ðµç ÀÀ¿ë ½Ã½ºÅÛ°ú »ç¿ëÀÚµéÀÌ ÇÊ¿ä·Î ÇÏ´Â µ¥ÀÌÅÍ¸¦ ÅëÇÕÇÑ Á¶Á÷ ÀüÃ¼ÀÇ µ¥ÀÌÅÍº£ÀÌ½º ±¸Á¶¸¦ ³í¸®ÀûÀ¸·Î Á¤ÀÇÇÏ´Â °³³äÀ¸·Î ÇÏ³ª¸¸ Á¸ÀçÇÑ´Ù.\r\n- ¹ü ±â°üÀû ÀÔÀå¿¡¼­ µ¥ÀÌÅÍº£ÀÌ½º ÀüÃ¼¸¦ Á¤ÀÇÇÑ °ÍÀÌ´Ù.\r\n- ÇÑ ±â°ü ÀüÃ¼¿¡¼­ ÇÊ¿ä·Î ÇÏ´Â ¸ðµç °³Ã¼\r\n- ¸ðµç °³Ã¼µéÀÇ °ü°è\r\n- À¯ÁöÇØ¾ß µÉ Á¦¾à »çÇ×\r\n- µ¥ÀÌÅÍº£ÀÌ½ºÀÇ Á¢±Ù ±ÇÇÑ, º¸¾È, ¹«°á¼º ±ÔÄ¢"
-		 * ); CT[1].add_concept("³»ºÎ ½ºÅ°¸¶(Internal Schema)",
-		 * "- ÀüÃ¼ µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ¹°¸®Àû ÀúÀå ÇüÅÂ¸¦ ±â¼úÇÏ´Â °³³äÀÌ´Ù.\r\n- °³³ä ½ºÅ°¸¶ÀÇ ¹°¸®Àû ÀúÀå ÇüÅÂ¸¦ Á¤ÀÇÇÏ´Â °³³äÀ¸·Î ÇÏ³ª¸¸ Á¸ÀçÇÑ´Ù.\r\n- ÀúÀåµÉ ³»ºÎ ·¹ÄÚµå(ÀúÀå ·¹ÄÚµå)ÀÇ Çü½Ä\r\n- ÀÎµ¦½º(Index)ÀÇ À¯¹«\r\n- ÀúÀå µ¥ÀÌÅÍ Ç×¸ñÀÇ Ç¥Çö ¹æ¹ý\r\n- ³»ºÎ ·¹ÄÚµåÀÇ ¹°¸®Àû ¼ø¼­"
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ³í¸®Àû µ¥ÀÌÅÍÀÇ µ¶¸³¼º",
-		 * "µ¥ÀÌÅÍÀÇ ³í¸® ±¸Á¶¸¦ º¯°æÇÒ ÇÊ¿ä¼ºÀÌ ÀÖÀ» ¶§ ±âÁ¸ ÇÁ·Î±×·¥Àº ±×°ÍÀ» »ç¿ëÇÏ´Â ÀÀ¿ë ÇÁ·Î±×·¥µµ º¯°æÇØ¾ß ÇßÁö¸¸ µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­´Â »ç¿ëÀÚÀÇ µ¥ÀÌÅÍ ¿¬»êÀ» Áö¿øÇÏ´Â ÀÀ¿ë ÇÁ·Î±×·¥ÀÇ ¼öÁ¤ ¾øÀÌ ³í¸®Àû µ¥ÀÌÅÍ ½ºÅ°¸¶(Schema)¸¦ º¯°æÇÒ ¼ö ÀÖ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ¹°¸®Àû µ¥ÀÌÅÍÀÇ µ¶¸³¼º",
-		 * "¹°¸®Àû ÀúÀå ÀåÄ¡¸¦ ¹Ù±¸¾î¾ß ÇÏ´Â °æ¿ì ¹°¸®Àû ±¸Á¶ÀÇ º¯°æÀÌ ÇÊ¿äÇÏ´Ù. ÀÌ·± °æ¿ì ÀÌ µ¥ÀÌÅÍº£ÀÌ½º¸¦ »ç¿ëÇÏ´Â ¸ðµç ÀÀ¿ë ÇÁ·Î±×·¥ÀÇ º¯°æ ¾øÀÌ ¹°¸®Àû µ¥ÀÌÅÍ ±¸Á¶¸¦ º¯°æÇÒ ¼ö ÀÖ´Ù."
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤(DB : DataBase)ì˜ ì •ì˜",
+		 * "ì‘ìš© ì‹œìŠ¤í…œë“¤ì´ ë°ì´í„°ë¥¼ ê³µìœ í•  ìˆ˜ ìžˆë„ë¡ ìš´ì˜ì— í•„ìš”í•œ ëª¨ë“  ë°ì´í„°ë¥¼ í†µí•©í•˜ì—¬ ì»´í“¨í„°ì— ì €ìž¥í•œ ë°ì´í„°ë¥¼ ì˜ë¯¸í•œë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ê³µìš© ë°ì´í„°(Shared Data)",
+		 * "ë‹¤ì–‘í•œ ì‚¬ìš©ìžë“¤ì´ í•„ìš”í•œ ì •ë³´ë¥¼ ê³µë™ìœ¼ë¡œ ì´ìš©í•  ëª©ì ìœ¼ë¡œ ë§Œë“¤ì–´ì§„ ìžë£Œì´ë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ìš´ì˜ ë°ì´í„°(Operational Data)",
+		 * "í•œ ì¡°ì§ì²´ê°€ ìœ ì§€ë˜ê³  ìš´ì˜ë˜ëŠ” ë° í•„ìš”í•œ ëª¨ë“  ê°œì²´ë°ì´í„°ì™€ ê´€ê³„ ë°ì´í„°ì˜ ì§‘í•©ì´ë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ í†µí•© ë°ì´í„°(Integrated Data)",
+		 * "ë°ì´í„° ì§‘ë‹¨ì—ì„œ ìžë£Œì˜ ì¤‘ë³µì´ë‚˜ êµ°ë”ë”ê¸°ë¥¼ ì œê±°í•˜ì—¬ ìµœì í™”ì‹œí‚¨ ë°ì´í„°ì˜ ì§‘í•©ì´ë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ì €ìž¥ ë°ì´í„°(Stored Data)",
+		 * "ì»´í“¨í„° ì‹œìŠ¤í…œì´ ì ‘ê·¼ ê°€ëŠ¥í•œ ì €ìž¥ ë§¤ì²´ì— ì €ìž¥ëœ ë°ì´í„°ì˜ ì§‘í•©ì´ë‹¤."); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ íŠ¹ì§• 6ê°€ì§€",
+		 * "- ë°ì´í„° ì¤‘ë³µì˜ ìµœì†Œí™”(Redun Dancy Minimize)\r\n- ê³„ì†ì ì¸ ë³€í™”(Continuous Evolution)\r\n- ì‹¤ì‹œê°„ ì ‘ê·¼(Real Time Accessibility)\r\n- ë™ì‹œ ê³µìœ (Concurrent Sharing)\r\n- ë‚´ìš©ì— ì˜í•œ ì ‘ê·¼(Content Reference)\r\n- ë›°ì–´ë‚œ ìžë£Œ ê°„ ì—°ê³„ì„±(Superb Data Combination)"
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ ë“±ìž¥ë°°ê²½",
+		 * "- ìµœì‹ ì˜ ì •í™•í•œ ì •ë³´ë¥¼ ì‹ ì†í•˜ê²Œ ì´ìš©í•  í•„ìš”ê°€ ìƒê²¼ë‹¤.\r\n- ë§Žì€ ì–‘ì˜ ìžë£Œì™€ ì •ë³´ë¥¼ ê°„ì†Œí™”í•  í•„ìš”ì„±ì´ ëŒ€ë‘ë˜ì—ˆë‹¤.\r\n- ì—¬ëŸ¬ ì‚¬ìš©ìžê°€ ë°ì´í„°ë¥¼ ê³µìœ í•´ì•¼ í•  í•„ìš”ê°€ ìƒê²¼ë‹¤.\r\n- í˜„ì‹¤ ì„¸ê³„ë¥¼ ë¹ ë¥´ê²Œ ë°˜ì˜í•˜ê¸° ìœ„í•´ ì‚½ìž…, ì‚­ì œ, ê°±ì‹  ë“±ì„ í†µí•´ì„œ í˜„ìž¬ì˜ ë°ì´í„°ë¥¼ ë™ì ìœ¼ë¡œ ìœ ì§€í•˜ê³  ì‹¶ì—ˆë‹¤.\r\n- ë°ì´í„°ì˜ ê°€ìš©ì„± ì¦ëŒ€ë¥¼ ìœ„í•´ ì¤‘ë³µì„ ìµœëŒ€í•œ ë°°ì œí•˜ê³  ì‹¶ì—ˆë‹¤.\r\n- ë¬¼ë¦¬ì ì¸ ì£¼ì†Œê°€ ì•„ë‹Œ ë°ì´í„° ê°’ì— ì˜í•œ ì§ì ‘ì ì¸ ê²€ìƒ‰ì„ ìˆ˜í–‰í•˜ê³  ì‹¶ì—ˆë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ êµ¬ì„± ìš”ì†Œ 3ê°€ì§€",
+		 * "ì†ì„±(Attribute), ê°œì²´(Entity), ê´€ê³„(Relationship)");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ì†ì„±(Attribute)",
+		 * "- ë°ì´í„°ë² ì´ìŠ¤ë¥¼ êµ¬ì¶•í•˜ëŠ” ê°€ìž¥ ìž‘ì€ ë…¼ë¦¬ì  ë‹¨ìœ„ë¡œ íŒŒì¼ ì‹œìŠ¤í…œì˜ í•„ë“œ ê°œë…ì— í•´ë‹¹í•œë‹¤.\r\n- ìžì²´ë§Œìœ¼ë¡œëŠ” ì •ë³´ë¥¼ í‘œí˜„í•  ìˆ˜ ì—†ê³  ì •ë³´ë¥¼ í‘œí˜„í•˜ëŠ” ë‹¨ìœ„ì¸ ê°œì²´ë‚˜ ê´€ê³„ì˜ íŠ¹ì„±ì„ ì„¤ëª…í•˜ëŠ” ë„êµ¬ì˜ ì˜ë¯¸ë¡œ ì‚¬ìš©ëœë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ê°œì²´(Entity)",
+		 * "- ì •ë³´ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ëˆˆë¦¬ì  ë‹¨ìœ„ë¡œì„œ íŒŒì¼ ì‹œìŠ¤í…œì˜ ë ˆì½”ë“œì— í•´ë‹¹í•œë‹¤.\r\n- ê°œì²´ëŠ” í•˜ë‚˜ ì´ìƒì˜ ì†ì„±ì„ ì¡°í•©í•˜ì—¬ êµ¬ì„±ëœë‹¤.\r\n- í˜„ì‹¤ ì„¸ê³„ì˜ í‘œí˜„ ë‹¨ìœ„ ì—­í• ì„ í•˜ê²Œ ëœë‹¤.\r\n- ê°œì²´ëŠ” ë‹¨ë…ìœ¼ë¡œ ì¡´ìž¬í•  ìˆ˜ ìžˆë‹¤.\r\n- ëª¨ë“  ê°œì²´ëŠ” êµ¬ë³„ ê°€ëŠ¥í•˜ë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ê°œì²´ íƒ€ìž…(Entity Type)",
+		 * "ê°œì²´ ìŠ¤í‚¤ë§ˆ(Entity Schema)ë¼ê³ ë„ í•˜ë©° ê°œì²´ ì´ë¦„ê³¼ ì´ ê°œì²´ì˜ ì†ì„±ë“¤ë¡œ êµ¬ì„±í•˜ì—¬ ë§Œë“  ë…¼ë¦¬ì ì¸ ì •ì˜, ì¦‰ ì„±ê³„ì— í•´ë‹¹í•˜ëŠ” ê°œë…ì´ë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ê°œì²´ ì–´ì»¤ëŸ°ìŠ¤(Entity Occurrence)",
+		 * "ê°œì²´ ì¸ìŠ¤í„´ìŠ¤(Entity Instance)ë¼ê³ ë„ í•˜ë©° ê°œì²´ íƒ€ìž…ì˜ ì—°ì‚°ì— ì˜í•´ ì‹¤ì œì ì¸ ê°œì²´ ê°’ì´ ë“¤ì–´ê°€ ìžˆëŠ” ìƒíƒœë¥¼ ì˜ë¯¸í•œë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ê°œì²´ ì§‘í•©(Entity Set)",
+		 * "ê°œì²´ ì–´ì»¤ëŸ°ìŠ¤ë“¤ì˜ ì§‘í•©ì„ ê°œì²´ ì§‘í•©ì´ë¼ê³  í•œë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ì†ì„± ê´€ê³„(Attribute Relationship)",
+		 * "ê°œì²´ë¥¼ ê¸°ìˆ í•˜ê¸° ìœ„í•´ ê·¸ ê°œì²´ê°€ ê°€ì§€ê³  ìžˆëŠ” ì„±ì§ˆì´ë‚˜ íŠ¹ì§•ì„ íŒŒì•…í•˜ì—¬ ì†ì„±ìœ¼ë¡œ êµ¬ì„±í•œ í›„ ì†ì„±ê³¼ ì†ì„± ì‚¬ì´ì˜ ê´€ê³„ë¥¼ ê°€ì§€ê³  ê°œì²´ë¥¼ ê¸°ìˆ í•˜ê²Œ ë˜ëŠ”ë° ì´ê²ƒì„ ì†ì„± ê´€ê³„ ë˜ëŠ” ê°œì²´ë‚´ ê´€ê³„(Intra-Entity Relationship)ë¼ê³  í•œë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ê°œì²´ ê´€ê³„(Entity Relationship)",
+		 * "ê°œì²´ì™€ ê°œì²´ ì‚¬ì´ì˜ ê´€ê³„ë¥¼ ì˜ë¯¸í•˜ëŠ” ê²ƒìœ¼ë¡œ ê°œì²´ ê°„ ê´€ê³„(Inter-Entity Relationship)ë¼ê³ ë„ í•œë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ ë…¼ë¦¬ì  êµ¬ì¡°",
+		 * "ì‚¬ìš©ìžë‚˜ ì‘ìš© í”„ë¡œê·¸ëž˜ë¨¸ê°€ ë°ì´í„°ë² ì´ìŠ¤ë¥¼ ë°”ë¼ë³´ëŠ” ê´€ì ì—ì„œ ë°ì´í„° ë°°ì¹˜ í˜•íƒœë¥¼ ì˜ë¯¸í•˜ëŠ” ê²ƒìœ¼ë¡œ ë…¼ë¦¬ì  ë ˆì½”ë“œë¥¼ ê°€ì§€ê³  ì‚¬ìš©ìžë‚˜ ì‘ìš© í”„ë¡œê·¸ëž˜ë¨¸ì˜ ìƒìƒì— ë”°ë¼ ë…¼ë¦¬ì ìœ¼ë¡œ ì „ê°œí•œ ëª¨ì–‘ì„ ì˜ë¯¸í•œë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ ë¬¼ë¦¬ì  êµ¬ì¡°",
+		 * "ë°ì´í„°ê°€ ì‹¤ì œì ì¸ ë¬¼ë¦¬ì  ì €ìž¥ ìž¥ì¹˜ì— ë°°ì¹˜ë˜ì–´ ìžˆëŠ” í˜•íƒœë¥¼ ì˜ë¯¸í•˜ëŠ” ê²ƒìœ¼ë¡œ ì €ìž¥ ë ˆì½”ë“œë¥¼ ì´ìš©í•˜ì—¬ ì‹¤ì œ ë¬¼ë¦¬ì  ì €ìž¥ ìž¥ì¹˜ ìœ„ì— ì „ê°œí•œ ëª¨ì–‘ì„ ì˜ë¯¸í•œë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ 3ë‹¨ê³„", "ì™¸ë¶€ ë‹¨ê³„ -> ê°œë… ë‹¨ê³„ -> ë‚´ë¶€ ë‹¨ê³„");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ ì™¸ë¶€ ë‹¨ê³„",
+		 * "ì‚¬ìš©ìžì˜ ê´€ì ì—ì„œ ë°ì´í„°ë² ì´ìŠ¤ë¥¼ ë°”ë¼ë³´ëŠ” ê´€ì ì´ë‹¤. ì¦‰ ì‚¬ìš©ìžê°€ ì‰½ê²Œ ì ‘ê·¼í•˜ì—¬ ë°ì´í„°ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆë„ë¡ ì—¬ëŸ¬ ê°œì˜ ì™¸ë¶€ ìŠ¤í‚¤ë§ˆê°€ ë§ˆë ¨ë˜ì–´ ìžˆëŠ” ë‹¨ê³„ì´ë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ ê°œë… ë‹¨ê³„",
+		 * "ì‚¬ìš©ìžì™€ ë¬¼ë¦¬ì ì¸ ë°ì´í„°ë² ì´ìŠ¤ ì‚¬ì´ì˜ ë‹¨ê³„ë¡œì„œ ë°ì´í„°ë² ì´ìŠ¤ ì „ì²´ì˜ ì •ë³´ë¥¼ í‘œí˜„í•˜ëŠ” ë‹¨ê³„ì´ë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ ë‚´ë¶€ ë‹¨ê³„",
+		 * "ì‹¤ì œì ìœ¼ë¡œ ë°ì´í„°ë² ì´ìŠ¤ê°€ ì €ìž¥ë˜ëŠ” ì €ìž¥ ìž¥ì¹˜ì— ëŒ€í•œ ë¬¼ë¦¬ì  í˜•íƒœë¥¼ í‘œí˜„í•˜ëŠ” ë‹¨ê³„ë¡œì„œ í•˜ë‚˜ì˜ ë‚´ë¶€ ìŠ¤í‚¤ë§ˆë¥¼ ê°–ê²Œ ë˜ëŠ” ë‹¨ê³„ì´ë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ ì‘ìš© ì¸í„°íŽ˜ì´ìŠ¤(ì‚¬ìƒ(Mapping))",
+		 * "ì™¸ë¶€ ìŠ¤í‚¤ë§ˆì™€ ê°œë… ìŠ¤í‚¤ë§ˆ ê°„ì˜ ì‚¬ìƒ ê´€ê³„ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ì¸í„°íŽ˜ì´ìŠ¤ì´ë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ ì €ìž¥ ì¸í„°íŽ˜ì´ìŠ¤(ì‚¬ìƒ(Mapping))",
+		 * "ê°œë… ìŠ¤í‚¤ë§ˆì™€ ë‚´ë¶€ ìŠ¤í‚¤ë§ˆ ê°„ì˜ ì‚¬ìƒ ê´€ê³„ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ì¸í„°íŽ˜ì´ìŠ¤ì´ë‹¤."); CT[1].add_concept("ìŠ¤í‚¤ë§ˆì˜ ê°œë…",
+		 * "- ë°ì´í„°ë² ì´ìŠ¤ì˜ ì „ì²´ì ì¸ ë…¼ë¦¬ì  ì„¤ê³„ë¥¼ ì˜ë¯¸í•˜ëŠ” ê²ƒìœ¼ë¡œ ë°ì´í„° ê°ì²´, ì´ë“¤ì˜ ì„±ì§ˆ, ì´ë“¤ ê°„ì˜ ê´€ê³„, ë°ì´í„° ê´€ê³„ë“¤ì´ ê°–ëŠ” ì œì•½ ì¡°ê±´ì— ê´€í•œ ì •ì˜ë¥¼ ì´ì¹­í•˜ëŠ” ê°œë…ì´ë‹¤.\r\n- ì‹œê°„ì— ë”°ë¼ ë¶ˆë³€ì˜ íŠ¹ì„±ì„ ê°–ëŠ”ë‹¤.\r\n- ìŠ¤í‚¤ë§ˆëŠ” ë°ì´í„°ì˜ êµ¬ì¡°ì  íŠ¹ì„±ì„ ì˜ë¯¸í•˜ë©° ì¸ìŠ¤í„´ìŠ¤(Instance)ì— ì˜í•´ ê·œì •ëœë‹¤"
+		 * ); CT[1].add_concept("ìŠ¤í‚¤ë§ˆì˜ 3ì¸µ êµ¬ì¡°",
+		 * "ì™¸ë¶€ ìŠ¤í‚¤ë§ˆ(External Schema), ê°œë… ìŠ¤í‚¤ë§ˆ(Conceptual Schema), ë‚´ë¶€ ìŠ¤í‚¤ë§ˆ(Internal Schema)"
+		 * ); CT[1].add_concept("ì™¸ë¶€ ìŠ¤í‚¤ë§ˆ(External Schema)",
+		 * "- ê°ê°ì˜ ì‚¬ìš©ìž ê·¸ë£¹ì´ ì›í•˜ëŠ” í˜•íƒœì˜ ë…¼ë¦¬ì  êµ¬ì¡°ë¥¼ ì •ì˜í•œë‹¤.\r\n- ì¡°ì§ ì „ì²´ê°€ ì•„ë‹ˆë¼ ì¼ë¶€ë¶„ì„ ì •ì˜í•œë‹¤\r\n- ì™¸ë¶€ ìŠ¤í‚¤ë§ˆëŠ” ê°ê°ì˜ ì‚¬ìš©ìž ê·¸ë£¹ì„ ìœ„í•´ì„œ ë§Œë“¤ì–´ì ¸ì•¼ í•˜ë¯€ë¡œ ì—¬ëŸ¬ ê°œê°€ ì¡´ìž¬í•˜ê²Œ ëœë‹¤.\r\n- ì‘ìš© í”„ë¡œê·¸ëž˜ë¨¸ë‚˜ ì‚¬ìš©ìžë“¤ì´ ê°€ìž¥ ê´€ì‹¬ì„ ê°–ëŠ” ë¶€ë¶„ì´ë‹¤.\r\n- ì‘ìš© í”„ë¡œê·¸ëž˜ë¨¸ë‚˜ ì‚¬ìš©ìžì™€ ê´€ë ¨ëœ ê°œì²´\r\n- ì‘ìš© í”„ë¡œê·¸ëž˜ë¨¸ë‚˜ ì‚¬ìš©ìžì™€ ê´€ë ¨ëœ ê°œì²´ë“¤ì˜ ê´€ê³„ ë° ì œì•½ ì¡°ê±´"
+		 * ); CT[1].add_concept("ê°œë… ìŠ¤í‚¤ë§ˆ(Conceptual Schema)",
+		 * "- ëª¨ë“  ì‘ìš© ì‹œìŠ¤í…œê³¼ ì‚¬ìš©ìžë“¤ì´ í•„ìš”ë¡œ í•˜ëŠ” ë°ì´í„°ë¥¼ í†µí•©í•œ ì¡°ì§ ì „ì²´ì˜ ë°ì´í„°ë² ì´ìŠ¤ êµ¬ì¡°ë¥¼ ë…¼ë¦¬ì ìœ¼ë¡œ ì •ì˜í•˜ëŠ” ê°œë…ìœ¼ë¡œ í•˜ë‚˜ë§Œ ì¡´ìž¬í•œë‹¤.\r\n- ë²” ê¸°ê´€ì  ìž…ìž¥ì—ì„œ ë°ì´í„°ë² ì´ìŠ¤ ì „ì²´ë¥¼ ì •ì˜í•œ ê²ƒì´ë‹¤.\r\n- í•œ ê¸°ê´€ ì „ì²´ì—ì„œ í•„ìš”ë¡œ í•˜ëŠ” ëª¨ë“  ê°œì²´\r\n- ëª¨ë“  ê°œì²´ë“¤ì˜ ê´€ê³„\r\n- ìœ ì§€í•´ì•¼ ë  ì œì•½ ì‚¬í•­\r\n- ë°ì´í„°ë² ì´ìŠ¤ì˜ ì ‘ê·¼ ê¶Œí•œ, ë³´ì•ˆ, ë¬´ê²°ì„± ê·œì¹™"
+		 * ); CT[1].add_concept("ë‚´ë¶€ ìŠ¤í‚¤ë§ˆ(Internal Schema)",
+		 * "- ì „ì²´ ë°ì´í„°ë² ì´ìŠ¤ì˜ ë¬¼ë¦¬ì  ì €ìž¥ í˜•íƒœë¥¼ ê¸°ìˆ í•˜ëŠ” ê°œë…ì´ë‹¤.\r\n- ê°œë… ìŠ¤í‚¤ë§ˆì˜ ë¬¼ë¦¬ì  ì €ìž¥ í˜•íƒœë¥¼ ì •ì˜í•˜ëŠ” ê°œë…ìœ¼ë¡œ í•˜ë‚˜ë§Œ ì¡´ìž¬í•œë‹¤.\r\n- ì €ìž¥ë  ë‚´ë¶€ ë ˆì½”ë“œ(ì €ìž¥ ë ˆì½”ë“œ)ì˜ í˜•ì‹\r\n- ì¸ë±ìŠ¤(Index)ì˜ ìœ ë¬´\r\n- ì €ìž¥ ë°ì´í„° í•­ëª©ì˜ í‘œí˜„ ë°©ë²•\r\n- ë‚´ë¶€ ë ˆì½”ë“œì˜ ë¬¼ë¦¬ì  ìˆœì„œ"
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ ë…¼ë¦¬ì  ë°ì´í„°ì˜ ë…ë¦½ì„±",
+		 * "ë°ì´í„°ì˜ ë…¼ë¦¬ êµ¬ì¡°ë¥¼ ë³€ê²½í•  í•„ìš”ì„±ì´ ìžˆì„ ë•Œ ê¸°ì¡´ í”„ë¡œê·¸ëž¨ì€ ê·¸ê²ƒì„ ì‚¬ìš©í•˜ëŠ” ì‘ìš© í”„ë¡œê·¸ëž¨ë„ ë³€ê²½í•´ì•¼ í–ˆì§€ë§Œ ë°ì´í„°ë² ì´ìŠ¤ì—ì„œëŠ” ì‚¬ìš©ìžì˜ ë°ì´í„° ì—°ì‚°ì„ ì§€ì›í•˜ëŠ” ì‘ìš© í”„ë¡œê·¸ëž¨ì˜ ìˆ˜ì • ì—†ì´ ë…¼ë¦¬ì  ë°ì´í„° ìŠ¤í‚¤ë§ˆ(Schema)ë¥¼ ë³€ê²½í•  ìˆ˜ ìžˆë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ì˜ ë¬¼ë¦¬ì  ë°ì´í„°ì˜ ë…ë¦½ì„±",
+		 * "ë¬¼ë¦¬ì  ì €ìž¥ ìž¥ì¹˜ë¥¼ ë°”êµ¬ì–´ì•¼ í•˜ëŠ” ê²½ìš° ë¬¼ë¦¬ì  êµ¬ì¡°ì˜ ë³€ê²½ì´ í•„ìš”í•˜ë‹¤. ì´ëŸ° ê²½ìš° ì´ ë°ì´í„°ë² ì´ìŠ¤ë¥¼ ì‚¬ìš©í•˜ëŠ” ëª¨ë“  ì‘ìš© í”„ë¡œê·¸ëž¨ì˜ ë³€ê²½ ì—†ì´ ë¬¼ë¦¬ì  ë°ì´í„° êµ¬ì¡°ë¥¼ ë³€ê²½í•  ìˆ˜ ìžˆë‹¤."
 		 * );
 		 * 
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛ(DBMS : DataBase Management System)",
-		 * "µ¥ÀÌÅÍ Áý´Ü°ú µ¥ÀÌÅÍ¸¦ °ü¸®ÇÏ´Â ÇÁ·Î±×·¥ÀÇ ÁýÇÕÃ¼·Î¼­ ¿î¿µÃ¼Á¦ À§¿¡¼­ ÀÛµ¿µÇ¸ç, µ¥ÀÌÅÍº£ÀÌ½ºÀÇ »ý¼º°ú Á¶ÀÛÀ» ´ã´çÇÏ´Â ¼ÒÇÁÆ®¿þ¾î ±×·ìÀ¸·Î ¼ÒÇÁÆ®¿þ¾î ½Ã½ºÅÛ¿¡ ÇØ´çÇÑ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛ¿¡¼­ ÁúÀÇ Ã³¸®±â(Query Process)",
-		 * "»ç¿ëÀÚ°¡ ¿äÃ»ÇÑ ÁúÀÇ¾î¸¦ µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ÇÁ·Î±×·¥µéÀÌ ÀÌÇØÇÒ ¼ö ÀÖ´Â ÇÏÀ§ ·¹º§ÀÇ ¸í·É¾î ÇüÅÂ·Î º¯È¯ÇÏ´Â Ã³¸®±âÀÌ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛ¿¡¼­ ¿¹ºñ ÄÄÆÄÀÏ·¯(Precompiler)",
-		 * "ÀÀ¿ë ÇÁ·Î±×·¥¿¡ »ðÀÔµÇ¾î ÀÖ´Â µ¥ÀÌÅÍ Á¶ÀÛ¾î(DML)¸¦ ÃßÃâÇÏ´Â Ã³¸®±â¸¦ ÀÇ¹ÌÇÑ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛ¿¡¼­ DML ÄÄÆÄÀÏ·¯(DML Compiler)",
-		 * "¿¹ºñ ÄÄÆÄÀÏ·¯¿¡ ÀÇÇØ ÃßÃâµÈ DMLÀ» ¸ñÀû ÄÚµå·Î º¯È¯ÇÏ´Â Ã³¸®±âÀÌ´Ù."); CT[1].
-		 * add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛ¿¡¼­ ·±Å¸ÀÓ µ¥ÀÌÅÍº£ÀÌ½º Ã³¸®±â(Run Time Database Processor)",
-		 * "º´·ÄÀûÀ¸·Î µ¥ÀÌÅÍº£ÀÌ½º Á¢±ÙÀ» ½ÇÇà½ÃÅ°´Â ÇÁ·Î¼¼¼­ÀÌ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛ¿¡¼­ ÀúÀå µ¥ÀÌÅÍ °ü¸®±â(Stored Data Manager)",
-		 * "µð½ºÅ©¿¡ ÀÖ´Â ÆÄÀÏ°ú µ¥ÀÌÅÍ »çÀüÀ» °ü¸®ÇÑ´Ù."); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛÀÇ ÇÊ¼ö ±â´É 3°¡Áö",
-		 * "µ¥ÀÌÅÍ Á¤ÀÇ ±â´É(Definition Facility), µ¥ÀÌÅÍ Á¶ÀÛ ±â´É(Manipulation Facility), µ¥ÀÌÅÍ Á¦¾î ±â´É(Control Facility)"
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛÀÇ µ¥ÀÌÅÍ Á¤ÀÇ ±â´É(Definition Facility)",
-		 * "- µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ³í¸®Àû ±¸Á¶ ¹× ¹°¸®Àû ±¸Á¶¸¦ Á¤ÀÇÇÏ´Â ±â´ÉÀÌ´Ù.\r\n- µ¥ÀÌÅÍº£ÀÌ½º¿Í ÀÀ¿ë ÇÁ·Î±×·¥ÀÌ ¼­·Î ÀÎÅÍÆäÀÌ½º ÇÒ ¼ö ÀÖ´Â ¹æ¹ýÀ» Á¦°øÇÏ´Â ±â´ÉÀÌ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛÀÇ Á¤ÀÇ ±â´ÉÀÌ °®Ãß¾î¾ß ÇÒ ¿ä°Ç",
-		 * "- µ¥ÀÌÅÍÀÇ ³í¸®Àû ±¸Á¶¸¦ Á¤ÀÇÇÒ ¼ö ÀÖ¾î¾ß ÇÑ´Ù.\r\n- µ¥ÀÌÅÍÀÇ ¹°¸®Àû ±¸Á¶¸¦ Á¤ÀÇÇÒ ¼ö ÀÖ¾î¾ß ÇÑ´Ù.\r\n- ¹°¸®Àû ±¸Á¶¿Í ³í¸®Àû ±¸Á¶ »çÀÌÀÇ Á¢¼Ó »ç»ó(Mapping)À» Á¤ÀÇÇÒ ¼ö ÀÖ¾î¾ß ÇÑ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛÀÇ µ¥ÀÌÅÍ Á¶ÀÛ ±â´É(Manipulation Facility)",
-		 * "- »ç¿ëÀÚ·Î ÇÏ¿©±Ý µ¥ÀÌÅÍ¸¦ Ã³¸®ÇÒ ¼ö ÀÖ°Ô ÇÏ´Â µµ±¸·Î¼­ »ç¿ëÀÚ(ÀÀ¿ë ÇÁ·Î±×·¥)¿Í µ¥ÀÌÅÍº£ÀÌ½º »çÀÌÀÇ ÀÎÅÍÆäÀÌ½º ¼ö´ÜÀ» Á¦°øÇÏ´Â ±â´ÉÀÌ´Ù.\r\n- µ¥ÀÌÅÍ °Ë»ö, »ðÀÔ, »èÁ¦, º¯°æ µîÀÇ ÀÛ¾÷À» ¼öÇàÇÑ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛÀÇ µ¥ÀÌÅÍ Á¶ÀÛ ±â´ÉÀÌ °®Ãß¾î¾ß ÇÒ ¿ä°Ç",
-		 * "- »ç¿ëÇÏ±â ½±°í ÀÚ¿¬¾î Çü½Ä¿¡ °¡±î¿ö¾ß ÇÏ¸ç ´Ü¼øÇØ¾ß ÇÑ´Ù.\r\n- Á¤È®ÇÏ°í ¸íÈ®ÇÏ°Ô ¸í½ÃÇÒ ¼ö ÀÖ¾î¾ß ÇÑ´Ù.\r\n- µ¥ÀÌÅÍÀÇ Á¢±Ù ¹æ¹ýÀÌ È¿À²ÀûÀÌ¾î¾ß ÇÑ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛÀÇ µ¥ÀÌÅÍ Á¦¾î±â´É(Control Facility)",
-		 * "µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ¹«°á¼º À¯Áö, º¸¾È ¹× ±ÇÇÑ Á¦¾î, ½Ã½ºÅÛ Àå¾Ö¿¡ ´ëºñÇÑ µ¥ÀÌÅÍ È¸º¹°ú º´ÇàÁ¦¾î µîÀ» ÇÏ±â À§ÇÑ ¾ð¾îÀÌ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛÀÇ Á¦¾î ±â´ÉÀÌ °®Ãß¾î¾ß ÇÒ ¿ä°Ç",
-		 * "µ¿½Ã¼º Á¦¾î(Concurrency Control) ±â´É, º¸¾È(Security)°ú ±ÇÇÑ(Authority) °Ë»ç ±â´É, ¹«°á¼º(Integrity) ¹× Á¦¾à Á¶°Ç À¯Áö ±â´É"
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛÀÇ ÀåÁ¡",
-		 * "- µ¥ÀÌÅÍÀÇ Áßº¹À» ÃÖ¼ÒÈ­½ÃÄÑ °ü¸®ÇÒ ¼ö ÀÖ´Ù.\r\n- µ¥ÀÌÅÍ¸¦ °øÀ¯ÇÒ ¼ö ÀÖ´Ù.\r\n- µ¥ÀÌÅÍ¸¦ Ç¥ÁØÈ­½ÃÄÑ °ü¸®ÇÒ ¼ö ÀÖ´Ù.\r\nµ¥ÀÌÅÍ º¸¾ÈÀ» À¯Áö½ÃÅ³ ¼ö ÀÖ´Ù.\r\n- µ¥ÀÌÅÍÀÇ ¹«°á¼ºÀ» À¯Áö½ÃÅ³ ¼ö ÀÖ´Ù.\r\n- ÅëÇÕÀû µ¥ÀÌÅÍ °ü¸®·Î ÀÏ°ü¼º À¯Áö°¡ ¿ëÀÌÇÏ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛÀÇ ´ÜÁ¡",
-		 * "- ±Ô¸ð°¡ ¹æ´ëÇÏ°í º¹ÀâÇÑ °ü¸® Ã¼°è¸¦ À¯ÁöÇØ¾ß ÇÏ¹Ç·Î ±¸ÃàÀÌ º¹ÀâÇÏ´Ù.\r\n- ±¸Ãà ºñ¿ëÀÌ ¸¹ÀÌ µç´Ù.\r\n- ¿¹ºñ¿Í È¸º¹ ÀýÂ÷ ¼ö¸³ÀÌ ¾î·Æ´Ù(µ¥ÀÌÅÍ ÆÄ±«¿¡ ´ëÇÑ È¸º¹ÀÌ ¾î·Æ´Ù).\r\n- ÇÑ ºÎºÐ¿¡ Àå¾Ö ¿äÀÎÀÌ »ý°åÀ» ¶§ ÀüÃ¼ ½Ã½ºÅÛ¿¡ ¿µÇâÀ» ÁÖ´Â Ãë¾à¼ºÀÌ ÀÖ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛ°ú ÆÄÀÏ ½Ã½ºÅÛÀÇ °¡Àå Å« Â÷ÀÌÁ¡",
-		 * "µ¥ÀÌÅÍÀÇ Á¾¼Ó ¹®Á¦¿Í µ¥ÀÌÅÍÀÇ Áßº¹ ¹®Á¦"); CT[1].add_concept("µ¥ÀÌÅÍÀÇ Á¾¼Ó¼º",
-		 * "- ³í¸®Àû µ¥ÀÌÅÍ ±¸Á¶¿Í ÀÀ¿ë ÇÁ·Î±×·¥ °£ÀÇ Á¾¼Ó °ü°è¸¦ ÀÇ¹ÌÇÑ´Ù.\r\n- µ¥ÀÌÅÍÀÇ ³í¸®Àû ±¸Á¶³ª Á¢±Ù ¹æ¹ýÀÌ º¯°æµÇ¸é ÀÀ¿ë ÇÁ·Î±×·¥µµ º¯°æÇØ¾ß µÈ´Ù´Â ¼ºÁúÀÌ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍÀÇ Áßº¹¼º", "°°Àº ³»¿ëÀÌ¶ó ÇÏ´õ¶óµµ ±¸Á¶°¡ ´Ù¸£¸é Áßº¹ ÀúÀå, °ü¸®µÇ¾î¾ß ÇÑ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍ Á¾¼Ó¼º¿¡ µû¸¥ ¹®Á¦Á¡",
-		 * "- »õ·Î¿î ÀÀ¿ëÀÇ °æ¿ì ¾×¼¼½º »óÀÇ ³­Á¡ÀÌ ¹ß»ýÇÑ´Ù.\r\n- µ¥ÀÌÅÍÀÇ °í¸³ÀÌ ¹ß»ýÇÑ´Ù.");
-		 * CT[1].add_concept("µ¥ÀÌÅÍÀÇ Áßº¹¼º¿¡ µû¸¥ ¹®Á¦Á¡",
-		 * "- µ¥ÀÌÅÍÀÇ ÀÏ°ü¼º À¯Áö°¡ ¾î·Æ´Ù.\r\n- µ¥ÀÌÅÍÀÇ ¹«°á¼º À¯Áö°¡ ¾î·Æ´Ù.\r\n- µ¥ÀÌÅÍ¿¡ ´ëÇÑ Áßº¹ ÀúÀåÀ¸·Î ±â¾ï Àå¼Ò°¡ ³¶ºñµÈ´Ù.\r\n- °°Àº µ¥ÀÌÅÍ¿¡ ´ëÇÑ °°Àº ¼öÁØÀÇ º¸¾È À¯Áö°¡ ¾î·Æ´Ù."
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œ(DBMS : DataBase Management System)",
+		 * "ë°ì´í„° ì§‘ë‹¨ê³¼ ë°ì´í„°ë¥¼ ê´€ë¦¬í•˜ëŠ” í”„ë¡œê·¸ëž¨ì˜ ì§‘í•©ì²´ë¡œì„œ ìš´ì˜ì²´ì œ ìœ„ì—ì„œ ìž‘ë™ë˜ë©°, ë°ì´í„°ë² ì´ìŠ¤ì˜ ìƒì„±ê³¼ ì¡°ìž‘ì„ ë‹´ë‹¹í•˜ëŠ” ì†Œí”„íŠ¸ì›¨ì–´ ê·¸ë£¹ìœ¼ë¡œ ì†Œí”„íŠ¸ì›¨ì–´ ì‹œìŠ¤í…œì— í•´ë‹¹í•œë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì—ì„œ ì§ˆì˜ ì²˜ë¦¬ê¸°(Query Process)",
+		 * "ì‚¬ìš©ìžê°€ ìš”ì²­í•œ ì§ˆì˜ì–´ë¥¼ ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ í”„ë¡œê·¸ëž¨ë“¤ì´ ì´í•´í•  ìˆ˜ ìžˆëŠ” í•˜ìœ„ ë ˆë²¨ì˜ ëª…ë ¹ì–´ í˜•íƒœë¡œ ë³€í™˜í•˜ëŠ” ì²˜ë¦¬ê¸°ì´ë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì—ì„œ ì˜ˆë¹„ ì»´íŒŒì¼ëŸ¬(Precompiler)",
+		 * "ì‘ìš© í”„ë¡œê·¸ëž¨ì— ì‚½ìž…ë˜ì–´ ìžˆëŠ” ë°ì´í„° ì¡°ìž‘ì–´(DML)ë¥¼ ì¶”ì¶œí•˜ëŠ” ì²˜ë¦¬ê¸°ë¥¼ ì˜ë¯¸í•œë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì—ì„œ DML ì»´íŒŒì¼ëŸ¬(DML Compiler)",
+		 * "ì˜ˆë¹„ ì»´íŒŒì¼ëŸ¬ì— ì˜í•´ ì¶”ì¶œëœ DMLì„ ëª©ì  ì½”ë“œë¡œ ë³€í™˜í•˜ëŠ” ì²˜ë¦¬ê¸°ì´ë‹¤."); CT[1].
+		 * add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì—ì„œ ëŸ°íƒ€ìž„ ë°ì´í„°ë² ì´ìŠ¤ ì²˜ë¦¬ê¸°(Run Time Database Processor)",
+		 * "ë³‘ë ¬ì ìœ¼ë¡œ ë°ì´í„°ë² ì´ìŠ¤ ì ‘ê·¼ì„ ì‹¤í–‰ì‹œí‚¤ëŠ” í”„ë¡œì„¸ì„œì´ë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì—ì„œ ì €ìž¥ ë°ì´í„° ê´€ë¦¬ê¸°(Stored Data Manager)",
+		 * "ë””ìŠ¤í¬ì— ìžˆëŠ” íŒŒì¼ê³¼ ë°ì´í„° ì‚¬ì „ì„ ê´€ë¦¬í•œë‹¤."); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì˜ í•„ìˆ˜ ê¸°ëŠ¥ 3ê°€ì§€",
+		 * "ë°ì´í„° ì •ì˜ ê¸°ëŠ¥(Definition Facility), ë°ì´í„° ì¡°ìž‘ ê¸°ëŠ¥(Manipulation Facility), ë°ì´í„° ì œì–´ ê¸°ëŠ¥(Control Facility)"
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì˜ ë°ì´í„° ì •ì˜ ê¸°ëŠ¥(Definition Facility)",
+		 * "- ë°ì´í„°ë² ì´ìŠ¤ì˜ ë…¼ë¦¬ì  êµ¬ì¡° ë° ë¬¼ë¦¬ì  êµ¬ì¡°ë¥¼ ì •ì˜í•˜ëŠ” ê¸°ëŠ¥ì´ë‹¤.\r\n- ë°ì´í„°ë² ì´ìŠ¤ì™€ ì‘ìš© í”„ë¡œê·¸ëž¨ì´ ì„œë¡œ ì¸í„°íŽ˜ì´ìŠ¤ í•  ìˆ˜ ìžˆëŠ” ë°©ë²•ì„ ì œê³µí•˜ëŠ” ê¸°ëŠ¥ì´ë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì˜ ì •ì˜ ê¸°ëŠ¥ì´ ê°–ì¶”ì–´ì•¼ í•  ìš”ê±´",
+		 * "- ë°ì´í„°ì˜ ë…¼ë¦¬ì  êµ¬ì¡°ë¥¼ ì •ì˜í•  ìˆ˜ ìžˆì–´ì•¼ í•œë‹¤.\r\n- ë°ì´í„°ì˜ ë¬¼ë¦¬ì  êµ¬ì¡°ë¥¼ ì •ì˜í•  ìˆ˜ ìžˆì–´ì•¼ í•œë‹¤.\r\n- ë¬¼ë¦¬ì  êµ¬ì¡°ì™€ ë…¼ë¦¬ì  êµ¬ì¡° ì‚¬ì´ì˜ ì ‘ì† ì‚¬ìƒ(Mapping)ì„ ì •ì˜í•  ìˆ˜ ìžˆì–´ì•¼ í•œë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì˜ ë°ì´í„° ì¡°ìž‘ ê¸°ëŠ¥(Manipulation Facility)",
+		 * "- ì‚¬ìš©ìžë¡œ í•˜ì—¬ê¸ˆ ë°ì´í„°ë¥¼ ì²˜ë¦¬í•  ìˆ˜ ìžˆê²Œ í•˜ëŠ” ë„êµ¬ë¡œì„œ ì‚¬ìš©ìž(ì‘ìš© í”„ë¡œê·¸ëž¨)ì™€ ë°ì´í„°ë² ì´ìŠ¤ ì‚¬ì´ì˜ ì¸í„°íŽ˜ì´ìŠ¤ ìˆ˜ë‹¨ì„ ì œê³µí•˜ëŠ” ê¸°ëŠ¥ì´ë‹¤.\r\n- ë°ì´í„° ê²€ìƒ‰, ì‚½ìž…, ì‚­ì œ, ë³€ê²½ ë“±ì˜ ìž‘ì—…ì„ ìˆ˜í–‰í•œë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì˜ ë°ì´í„° ì¡°ìž‘ ê¸°ëŠ¥ì´ ê°–ì¶”ì–´ì•¼ í•  ìš”ê±´",
+		 * "- ì‚¬ìš©í•˜ê¸° ì‰½ê³  ìžì—°ì–´ í˜•ì‹ì— ê°€ê¹Œì›Œì•¼ í•˜ë©° ë‹¨ìˆœí•´ì•¼ í•œë‹¤.\r\n- ì •í™•í•˜ê³  ëª…í™•í•˜ê²Œ ëª…ì‹œí•  ìˆ˜ ìžˆì–´ì•¼ í•œë‹¤.\r\n- ë°ì´í„°ì˜ ì ‘ê·¼ ë°©ë²•ì´ íš¨ìœ¨ì ì´ì–´ì•¼ í•œë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì˜ ë°ì´í„° ì œì–´ê¸°ëŠ¥(Control Facility)",
+		 * "ë°ì´í„°ë² ì´ìŠ¤ì˜ ë¬´ê²°ì„± ìœ ì§€, ë³´ì•ˆ ë° ê¶Œí•œ ì œì–´, ì‹œìŠ¤í…œ ìž¥ì• ì— ëŒ€ë¹„í•œ ë°ì´í„° íšŒë³µê³¼ ë³‘í–‰ì œì–´ ë“±ì„ í•˜ê¸° ìœ„í•œ ì–¸ì–´ì´ë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì˜ ì œì–´ ê¸°ëŠ¥ì´ ê°–ì¶”ì–´ì•¼ í•  ìš”ê±´",
+		 * "ë™ì‹œì„± ì œì–´(Concurrency Control) ê¸°ëŠ¥, ë³´ì•ˆ(Security)ê³¼ ê¶Œí•œ(Authority) ê²€ì‚¬ ê¸°ëŠ¥, ë¬´ê²°ì„±(Integrity) ë° ì œì•½ ì¡°ê±´ ìœ ì§€ ê¸°ëŠ¥"
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì˜ ìž¥ì ",
+		 * "- ë°ì´í„°ì˜ ì¤‘ë³µì„ ìµœì†Œí™”ì‹œì¼œ ê´€ë¦¬í•  ìˆ˜ ìžˆë‹¤.\r\n- ë°ì´í„°ë¥¼ ê³µìœ í•  ìˆ˜ ìžˆë‹¤.\r\n- ë°ì´í„°ë¥¼ í‘œì¤€í™”ì‹œì¼œ ê´€ë¦¬í•  ìˆ˜ ìžˆë‹¤.\r\në°ì´í„° ë³´ì•ˆì„ ìœ ì§€ì‹œí‚¬ ìˆ˜ ìžˆë‹¤.\r\n- ë°ì´í„°ì˜ ë¬´ê²°ì„±ì„ ìœ ì§€ì‹œí‚¬ ìˆ˜ ìžˆë‹¤.\r\n- í†µí•©ì  ë°ì´í„° ê´€ë¦¬ë¡œ ì¼ê´€ì„± ìœ ì§€ê°€ ìš©ì´í•˜ë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œì˜ ë‹¨ì ",
+		 * "- ê·œëª¨ê°€ ë°©ëŒ€í•˜ê³  ë³µìž¡í•œ ê´€ë¦¬ ì²´ê³„ë¥¼ ìœ ì§€í•´ì•¼ í•˜ë¯€ë¡œ êµ¬ì¶•ì´ ë³µìž¡í•˜ë‹¤.\r\n- êµ¬ì¶• ë¹„ìš©ì´ ë§Žì´ ë“ ë‹¤.\r\n- ì˜ˆë¹„ì™€ íšŒë³µ ì ˆì°¨ ìˆ˜ë¦½ì´ ì–´ë µë‹¤(ë°ì´í„° íŒŒê´´ì— ëŒ€í•œ íšŒë³µì´ ì–´ë µë‹¤).\r\n- í•œ ë¶€ë¶„ì— ìž¥ì•  ìš”ì¸ì´ ìƒê²¼ì„ ë•Œ ì „ì²´ ì‹œìŠ¤í…œì— ì˜í–¥ì„ ì£¼ëŠ” ì·¨ì•½ì„±ì´ ìžˆë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œê³¼ íŒŒì¼ ì‹œìŠ¤í…œì˜ ê°€ìž¥ í° ì°¨ì´ì ",
+		 * "ë°ì´í„°ì˜ ì¢…ì† ë¬¸ì œì™€ ë°ì´í„°ì˜ ì¤‘ë³µ ë¬¸ì œ"); CT[1].add_concept("ë°ì´í„°ì˜ ì¢…ì†ì„±",
+		 * "- ë…¼ë¦¬ì  ë°ì´í„° êµ¬ì¡°ì™€ ì‘ìš© í”„ë¡œê·¸ëž¨ ê°„ì˜ ì¢…ì† ê´€ê³„ë¥¼ ì˜ë¯¸í•œë‹¤.\r\n- ë°ì´í„°ì˜ ë…¼ë¦¬ì  êµ¬ì¡°ë‚˜ ì ‘ê·¼ ë°©ë²•ì´ ë³€ê²½ë˜ë©´ ì‘ìš© í”„ë¡œê·¸ëž¨ë„ ë³€ê²½í•´ì•¼ ëœë‹¤ëŠ” ì„±ì§ˆì´ë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ì˜ ì¤‘ë³µì„±", "ê°™ì€ ë‚´ìš©ì´ë¼ í•˜ë”ë¼ë„ êµ¬ì¡°ê°€ ë‹¤ë¥´ë©´ ì¤‘ë³µ ì €ìž¥, ê´€ë¦¬ë˜ì–´ì•¼ í•œë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„° ì¢…ì†ì„±ì— ë”°ë¥¸ ë¬¸ì œì ",
+		 * "- ìƒˆë¡œìš´ ì‘ìš©ì˜ ê²½ìš° ì•¡ì„¸ìŠ¤ ìƒì˜ ë‚œì ì´ ë°œìƒí•œë‹¤.\r\n- ë°ì´í„°ì˜ ê³ ë¦½ì´ ë°œìƒí•œë‹¤.");
+		 * CT[1].add_concept("ë°ì´í„°ì˜ ì¤‘ë³µì„±ì— ë”°ë¥¸ ë¬¸ì œì ",
+		 * "- ë°ì´í„°ì˜ ì¼ê´€ì„± ìœ ì§€ê°€ ì–´ë µë‹¤.\r\n- ë°ì´í„°ì˜ ë¬´ê²°ì„± ìœ ì§€ê°€ ì–´ë µë‹¤.\r\n- ë°ì´í„°ì— ëŒ€í•œ ì¤‘ë³µ ì €ìž¥ìœ¼ë¡œ ê¸°ì–µ ìž¥ì†Œê°€ ë‚­ë¹„ëœë‹¤.\r\n- ê°™ì€ ë°ì´í„°ì— ëŒ€í•œ ê°™ì€ ìˆ˜ì¤€ì˜ ë³´ì•ˆ ìœ ì§€ê°€ ì–´ë µë‹¤."
 		 * );
 		 * 
-		 * CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º ½Ã½ºÅÛ(DBS : Database System)",
-		 * "¹ß»ýµÇ´Â µ¥ÀÌÅÍ¸¦ µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ À¯Áö °ü¸®ÇÏ´Ù°¡ ÇÊ¿äÇÑ ½ÃÁ¡¿¡¼­ ±× µ¥ÀÌÅÍ¸¦ Á¶ÀÛ, º¯°æ, È¹µæÇÏ¿© ¾î¶² ¸ñÀû¿¡ ÀÌ¿ëÇÏ´Â ½Ã½ºÅÛÀ» ÀÇ¹ÌÇÑ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º ¾ð¾î(DBL)",
-		 * "- µ¥ÀÌÅÍº£ÀÌ½º ¾ð¾î´Â µ¥ÀÌÅÍº£ÀÌ½º °ü¸® ½Ã½ºÅÛ°ú »ç¿ëÀÚ °£ÀÇ Åë½Å ¼ö´ÜÀÌ´Ù.\r\n- µ¥ÀÌÅÍ ¾ð¾î´Â »ç¿ëÀÚ°¡ ¿øÇÏ´Â ¾î¶² °´Ã¼µµ µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ ÃßÃâÇÒ ¼ö ÀÖ°í Ã³¸®ÇÒ ¼ö ÀÖÀ¸¸ç ¾î¶² °ü°èµµ Ç¥ÇöÇÒ ¼ö ÀÖ´Â ¾ð¾îÀÇ ¿ÏÀü¼º(Completeness of Data Language)À» °®Ãß°í ÀÖ¾î¾ß ÇÑ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍ Á¤ÀÇ¾î(DDL : Data Definition Language)",
-		 * "- µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ±¸Á¶¸¦ »ý¼ºÇÏ°Å³ª ¼öÁ¤, »èÁ¦ÇÏ±â À§ÇÏ¿© »ç¿ëµÇ´Â ¾ð¾îÀÌ´Ù.\r\n- µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ½ºÅ°¸¶¸¦ Á¤ÀÇÇÏ´Â ¾ð¾îÀÌ´Ù.\r\n- µ¥ÀÌÅÍ Á¤ÀÇ¾î·Î ÀÛ¼ºµÈ ¸í·É¾î¸¦ ÇØµ¶ÇÑ °á°ú´Â ¸ÞÅ¸ µ¥ÀÌÅÍ ÇüÅÂ·Î µ¥ÀÌÅÍ »çÀüÀÌ¶ó´Â Æ¯º°ÇÑ ÆÄÀÏ¿¡ ±â·ÏµÈ´Ù.\r\n- µ¥ÀÌÅÍº£ÀÌ½º ½Ã½ºÅÛÀÌ Á¤È®ÇÏ°Ô 3´Ü°è¸¦ Áö¿øÇÏ´Â ½Ã½ºÅÛÀÌ¶ó¸é ¿ÜºÎ ½ºÅ°¸¶ Á¤ÀÇ¾î, °³³ä ½ºÅ°¸¶ Á¤ÀÇ¾î, ³»ºÎ ½ºÅ°¸¶ Á¤ÀÇ¾î°¡ µû·Îµû·Î Á¸ÀçÇÏ°Ô µÈ´Ù."
-		 * ); CT[1].add_concept("DDLÀÇ ±â´É",
-		 * "- ³í¸®Àû, ¹°¸®Àû µ¥ÀÌÅÍÀÇ ±¸Á¶¸¦ Á¤ÀÇÇÑ´Ù.\r\n- ³í¸®Àû, ¹°¸®Àû µ¥ÀÌÅÍ ±¸Á¶ °£ÀÇ »ç»ó °ü°è¸¦ Á¤ÀÇÇÑ´Ù.\r\n- µ¥ÀÌÅÍÀÇ ¹°¸®ÀûÀÎ ¼ø¼­¸¦ Á¤ÀÇÇÑ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍ Á¶ÀÛ¾î(DML : Data Manipulation Languuage)",
-		 * "- ±¸ÃàµÈ µ¥ÀÌÅÍ¸¦ ¾×¼¼½ºÇÏ°Å³ª Á¶ÀÛÇÏµµ·Ï ÇÏ´Â ¾ð¾îÀÌ´Ù.\r\n- µ¥ÀÌÅÍº£ÀÌ½º¿¡ Á¢±ÙÇØ¼­ °Ë»öÇÏ°í, »ðÀÔÇÏ°í, »èÁ¦ÇÏ°í, °»½ÅÇÒ ¼ö ÀÖµµ·Ï Áö¿øÇÏ´Â ¾ð¾îÀÌ´Ù.\r\n- »ç¿ëÀÚ(ÀÀ¿ë ÇÁ·Î±×·¥)¿Í DBMS »çÀÌÀÇ ÀÎÅÍÆäÀÌ½º¸¦ Á¦°øÇÏ´Â ¾ð¾îÀÌ´Ù."
-		 * ); CT[1].add_concept("ÀýÂ÷Àû µ¥ÀÌÅÍ Á¶ÀÛ¾î(Procedural)",
-		 * "¾î¶² µ¥ÀÌÅÍ°¡ ÇÊ¿äÇÒ ¶§ »ç¿ëÀÚ°¡ ÇÊ¿äÇÑ µ¥ÀÌÅÍ¸¦ ¾î¶»°Ô ±¸ÇÏ´ÂÁö ÀýÂ÷¿¡ ¸Â°Ô ±¸Ã¼ÀûÀ¸·Î ¸í½ÃÇÏ´Â ¾ð¾îÀÌ´Ù.");
-		 * CT[1].add_concept("ºñÀýÂ÷Àû µ¥ÀÌÅÍ Á¶ÀÛ¾î(Non-Procedural)",
-		 * "¾î¶² µ¥ÀÌÅÍ°¡ ÇÊ¿äÇÑÁö¸¦ ¸í½ÃÇÏ¸ç ÁúÀÇ¾î(QL : Query Language)°¡ ¿©±â¿¡ ¼ÓÇÑ´Ù. ÀÌ Á¶ÀÛ¾î´Â ¹è¿ì±â ½±°í »ç¿ëÇÏ±â ½±Áö¸¸ µ¥ÀÌÅÍ¸¦ ±¸ÇÏ´Â ÀýÂ÷°¡ ¸í½ÃµÇ¾î ÀÖÁö ¾Ê±â ¶§¹®¿¡ È¿À²ÀûÀÎ Ã³¸® ¸é¿¡¼­´Â ÀýÂ÷Àû ¾ð¾î¿¡ ºñÇØ ¶³¾îÁö¹Ç·Î ÃÖÀûÈ­ ±â¹ý¿¡ ÀÇÇØ¼­ ÄÚµåÀÇ È¿À²¼ºÀ» ±âÇÏ¿©¾ß ÇÑ´Ù."
-		 * ); CT[1].add_concept("ÁúÀÇ¾î(QL : Query Language)",
-		 * "¸¶Áö¸· »ç¿ëÀÚ(End User)°¡ ´ëÈ­½ÄÀ¸·Î »ç¿ëÇÏ´Â ¾ð¾î·Î µ¶ÀÚÀûÀÌ°í »óÈ£ ÀÛ¿ë ÇüÅÂ·Î ÅÍ¹Ì³Î¿¡¼­ µ¥ÀÌÅÍº£ÀÌ½º¸¦ ÁÖ·Î °Ë»öÇÏ±â À§ÇØ »ç¿ëµÇ´Â µ¶¸³ ¾ð¾îÀÌ´Ù. ÀÌ ¾ð¾î´Â ÁÖ·Î °Ë»öÀ» À§ÇØ °í¾ÈµÇ¾úÁö¸¸ °Ë»ö¿¡ ´ëÇÑ ÇÑÁ¤µÈ ÀÇ¹Ì·Î »ç¿ëµÇ±âº¸´Ù´Â °»½Å, »ðÀÔ, »èÁ¦»Ó ¾Æ´Ï¶ó µ¥ÀÌÅÍ Á¤ÀÇ µîÀÇ ±¤¹üÀ§ÇÑ ±â´ÉÀ» °¡Áö°í ÀÖ´Ù."
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍ Á¦¾î¾î(DCL : Data Control Language)",
-		 * "µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ¿©·¯ »ç¿ëÀÚ°¡ µ¥ÀÌÅÍ¸¦ °ø¿ëÇÏ°í, ¹«°á¼ºÀ» À¯Áö½ÃÅ°¸é¼­ »ç¿ëÇÒ ¼ö ÀÖµµ·Ï ³»ºÎÀûÀ¸·Î ¿©·¯ °¡Áö ±ÔÁ¤ÀÌ³ª Á¦¾à Á¶°Ç µîÀ» ±â¼úÇÏ±â À§ÇØ »ç¿ëµÇ´Â ¾ð¾î. º¸¾È, ¹«°á¼º, È¸º¹, º´Çà¼öÇà µîÀÇ ¿ªÇÒÀ» ¼öÇà"
-		 * ); CT[1].add_concept("µ¥ÀÌÅÍº£ÀÌ½º °ü¸®ÀÚ(Database Administrator : DBA)",
-		 * "µ¥ÀÌÅÍº£ÀÌ½º ½Ã½ºÅÛ µµÀÔÀÇ ÁÖµÈ ÀÌÀ¯´Â µ¥ÀÌÅÍ °ü¸®¸¦ Áß¾Ó ÅëÁ¦½ÄÀ¸·Î ÇÏ¿© µ¥ÀÌÅÍÀÇ ÀÏ°ü¼ºÀ» À¯ÁöÇÏ´Â µ¥ ¸ñÀûÀÌ ÀÖ´Ù. µ¥ÀÌÅÍº£ÀÌ½º °ü¸®ÀÚ´Â ÀÌ·¯ÇÑ Áß¾Ó ÅëÁ¦¸¦ À§ÇÏ¿© µ¥ÀÌÅÍº£ÀÌ½ºÀÇ »ý¼º°ú ¸ðµç °ü¸® ¹× ¿î¿µ¿¡ ´ëÇÑ Ã¥ÀÓ°ú ±ÇÇÑÀ» °¡Áö°í ÀÖ´Â »ç¶÷ ¶Ç´Â Áý´ÜÀ» ¸»ÇÑ´Ù."
-		 * ); CT[1].add_concept("DBAÀÇ µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ¼³°è¿Í ¿î¿µ Ãø¸é¿¡¼­ÀÇ ¿ªÇÒ",
-		 * "- µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ±¸¼º ¿ä¼Ò¸¦ °áÁ¤ÇÑ´Ù.\r\n- ¿¹ºñ¿Í È¸º¹ ÀýÂ÷¸¦ ¸¶·ÃÇÑ´Ù.\r\n- µ¥ÀÌÅÍ »çÀüÀÇ ÀÛ¼º°ú ¹«°á¼º Á¦¾àÁ¶°ÇÀ» ÁöÁ¤ÇÑ´Ù.\r\n- ½ºÅ°¸¶¸¦ Á¤ÀÇÇÑ´Ù.\r\n- ÀúÀå ±¸Á¶¿Í Á¢±Ù ¹æ¹ýÀ» ¼³Á¤ÇÑ´Ù.\r\n- º¸¾È Á¤Ã¥ÀÇ ¼ö¸³°ú µ¥ÀÌÅÍ À¯È¿¼º °Ë»ç ¹æ¹ýÀ» ¼ö¸³ÇÑ´Ù.\r\n- ¿ä±¸»çÇ×ÀÇ º¯È­¿¡ µû¶ó µ¥ÀÌÅÍº£ÀÌ½º¸¦ Àç±¸¼ºÇÑ´Ù."
-		 * ); CT[1].add_concept("DBAÀÇ ÇàÁ¤ °ü¸® Ãø¸é¿¡¼­ÀÇ ¿ªÇÒ",
-		 * "- DBA´Â µ¥ÀÌÅÍÀÇ Ç¥Çö°ú ½Ã½ºÅÛ ¹®¼­È­ÀÇ Ç¥ÁØÈ­¸¦ ±âÇÑ´Ù.\r\n- »ç¿ëÀÚÀÇ ¿ä±¸¿Í ºÒÆòÀ» ÇØ¼ÒÇÑ´Ù.");
-		 * CT[1].add_concept("DBAÀÇ ½Ã½ºÅÛ °ü¸® Ãø¸é¿¡¼­ÀÇ ¿ªÇÒ",
-		 * "- ¿î¿µ ½ºÄÉÁÙÀ» ÀÛ¼ºÇÏ°í, ½Ã½ºÅÛÀÇ ¼º´ÉÀ» °¨½Ã °¨µ¶ÇÏ¸ç ÇÊ¿ä¿¡ µû¶ó ¼º´ÉÀ» °³¼±½ÃÅ²´Ù.\r\n- ÄÄÇ»ÅÍ ¼³Ä¡ ÀåºñÀÇ ¼±ÅÃ°ú »ç¿ëÀÚ¿ÍÀÇ ´ëÈ­¸¦ ÅëÇØ °³¼±Á¡À» ¸ð»öÇÑ´Ù."
-		 * ); CT[1].add_concept("ÀÀ¿ë ÇÁ·Î±×·¡¸Ó(Application Programmer)",
-		 * "µ¥ÀÌÅÍº£ÀÌ½º Á¶ÀÛ¾î(DML)¸¦ È£½ºÆ® ¾ð¾î(C, COBOL µî)¿¡ Æ÷ÇÔÇÏ¿© ÀÏ¹Ý »ç¿ëÀÚ¿¡ ´ëÇÑ ÀÎÅÍÆäÀÌ½º¸¦ Á¦°øÇÒ ¸ñÀûÀ¸·Î µ¥ÀÌÅÍº£ÀÌ½º¿¡ Á¢±ÙÇÏ´Â »ç¿ëÀÚ¸¦ ÀÇ¹ÌÇÑ´Ù."
-		 * ); CT[1].add_concept("ÀÏ¹Ý »ç¿ëÀÚ(End User)",
-		 * "ÅÍ¹Ì³ÎÀ» ÅëÇØ ÀÀ¿ë ÇÁ·Î±×·¥ÀÌ³ª ÁúÀÇ¾î¸¦ °¡Áö°í µ¥ÀÌÅÍº£ÀÌ½º¿¡ ÀÖ´Â ÀÚ¿øÀ» È°¿ëÇÒ ¸ñÀûÀ¸·Î Á¢±ÙÇÏ´Â »ç¿ëÀÚ¸¦ ÀÇ¹ÌÇÑ´Ù.");
+		 * CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ì‹œìŠ¤í…œ(DBS : Database System)",
+		 * "ë°œìƒë˜ëŠ” ë°ì´í„°ë¥¼ ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ìœ ì§€ ê´€ë¦¬í•˜ë‹¤ê°€ í•„ìš”í•œ ì‹œì ì—ì„œ ê·¸ ë°ì´í„°ë¥¼ ì¡°ìž‘, ë³€ê²½, íšë“í•˜ì—¬ ì–´ë–¤ ëª©ì ì— ì´ìš©í•˜ëŠ” ì‹œìŠ¤í…œì„ ì˜ë¯¸í•œë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ì–¸ì–´(DBL)",
+		 * "- ë°ì´í„°ë² ì´ìŠ¤ ì–¸ì–´ëŠ” ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ ì‹œìŠ¤í…œê³¼ ì‚¬ìš©ìž ê°„ì˜ í†µì‹  ìˆ˜ë‹¨ì´ë‹¤.\r\n- ë°ì´í„° ì–¸ì–´ëŠ” ì‚¬ìš©ìžê°€ ì›í•˜ëŠ” ì–´ë–¤ ê°ì²´ë„ ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ì¶”ì¶œí•  ìˆ˜ ìžˆê³  ì²˜ë¦¬í•  ìˆ˜ ìžˆìœ¼ë©° ì–´ë–¤ ê´€ê³„ë„ í‘œí˜„í•  ìˆ˜ ìžˆëŠ” ì–¸ì–´ì˜ ì™„ì „ì„±(Completeness of Data Language)ì„ ê°–ì¶”ê³  ìžˆì–´ì•¼ í•œë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„° ì •ì˜ì–´(DDL : Data Definition Language)",
+		 * "- ë°ì´í„°ë² ì´ìŠ¤ì˜ êµ¬ì¡°ë¥¼ ìƒì„±í•˜ê±°ë‚˜ ìˆ˜ì •, ì‚­ì œí•˜ê¸° ìœ„í•˜ì—¬ ì‚¬ìš©ë˜ëŠ” ì–¸ì–´ì´ë‹¤.\r\n- ë°ì´í„°ë² ì´ìŠ¤ì˜ ìŠ¤í‚¤ë§ˆë¥¼ ì •ì˜í•˜ëŠ” ì–¸ì–´ì´ë‹¤.\r\n- ë°ì´í„° ì •ì˜ì–´ë¡œ ìž‘ì„±ëœ ëª…ë ¹ì–´ë¥¼ í•´ë…í•œ ê²°ê³¼ëŠ” ë©”íƒ€ ë°ì´í„° í˜•íƒœë¡œ ë°ì´í„° ì‚¬ì „ì´ë¼ëŠ” íŠ¹ë³„í•œ íŒŒì¼ì— ê¸°ë¡ëœë‹¤.\r\n- ë°ì´í„°ë² ì´ìŠ¤ ì‹œìŠ¤í…œì´ ì •í™•í•˜ê²Œ 3ë‹¨ê³„ë¥¼ ì§€ì›í•˜ëŠ” ì‹œìŠ¤í…œì´ë¼ë©´ ì™¸ë¶€ ìŠ¤í‚¤ë§ˆ ì •ì˜ì–´, ê°œë… ìŠ¤í‚¤ë§ˆ ì •ì˜ì–´, ë‚´ë¶€ ìŠ¤í‚¤ë§ˆ ì •ì˜ì–´ê°€ ë”°ë¡œë”°ë¡œ ì¡´ìž¬í•˜ê²Œ ëœë‹¤."
+		 * ); CT[1].add_concept("DDLì˜ ê¸°ëŠ¥",
+		 * "- ë…¼ë¦¬ì , ë¬¼ë¦¬ì  ë°ì´í„°ì˜ êµ¬ì¡°ë¥¼ ì •ì˜í•œë‹¤.\r\n- ë…¼ë¦¬ì , ë¬¼ë¦¬ì  ë°ì´í„° êµ¬ì¡° ê°„ì˜ ì‚¬ìƒ ê´€ê³„ë¥¼ ì •ì˜í•œë‹¤.\r\n- ë°ì´í„°ì˜ ë¬¼ë¦¬ì ì¸ ìˆœì„œë¥¼ ì •ì˜í•œë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„° ì¡°ìž‘ì–´(DML : Data Manipulation Languuage)",
+		 * "- êµ¬ì¶•ëœ ë°ì´í„°ë¥¼ ì•¡ì„¸ìŠ¤í•˜ê±°ë‚˜ ì¡°ìž‘í•˜ë„ë¡ í•˜ëŠ” ì–¸ì–´ì´ë‹¤.\r\n- ë°ì´í„°ë² ì´ìŠ¤ì— ì ‘ê·¼í•´ì„œ ê²€ìƒ‰í•˜ê³ , ì‚½ìž…í•˜ê³ , ì‚­ì œí•˜ê³ , ê°±ì‹ í•  ìˆ˜ ìžˆë„ë¡ ì§€ì›í•˜ëŠ” ì–¸ì–´ì´ë‹¤.\r\n- ì‚¬ìš©ìž(ì‘ìš© í”„ë¡œê·¸ëž¨)ì™€ DBMS ì‚¬ì´ì˜ ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ ì œê³µí•˜ëŠ” ì–¸ì–´ì´ë‹¤."
+		 * ); CT[1].add_concept("ì ˆì°¨ì  ë°ì´í„° ì¡°ìž‘ì–´(Procedural)",
+		 * "ì–´ë–¤ ë°ì´í„°ê°€ í•„ìš”í•  ë•Œ ì‚¬ìš©ìžê°€ í•„ìš”í•œ ë°ì´í„°ë¥¼ ì–´ë–»ê²Œ êµ¬í•˜ëŠ”ì§€ ì ˆì°¨ì— ë§žê²Œ êµ¬ì²´ì ìœ¼ë¡œ ëª…ì‹œí•˜ëŠ” ì–¸ì–´ì´ë‹¤.");
+		 * CT[1].add_concept("ë¹„ì ˆì°¨ì  ë°ì´í„° ì¡°ìž‘ì–´(Non-Procedural)",
+		 * "ì–´ë–¤ ë°ì´í„°ê°€ í•„ìš”í•œì§€ë¥¼ ëª…ì‹œí•˜ë©° ì§ˆì˜ì–´(QL : Query Language)ê°€ ì—¬ê¸°ì— ì†í•œë‹¤. ì´ ì¡°ìž‘ì–´ëŠ” ë°°ìš°ê¸° ì‰½ê³  ì‚¬ìš©í•˜ê¸° ì‰½ì§€ë§Œ ë°ì´í„°ë¥¼ êµ¬í•˜ëŠ” ì ˆì°¨ê°€ ëª…ì‹œë˜ì–´ ìžˆì§€ ì•Šê¸° ë•Œë¬¸ì— íš¨ìœ¨ì ì¸ ì²˜ë¦¬ ë©´ì—ì„œëŠ” ì ˆì°¨ì  ì–¸ì–´ì— ë¹„í•´ ë–¨ì–´ì§€ë¯€ë¡œ ìµœì í™” ê¸°ë²•ì— ì˜í•´ì„œ ì½”ë“œì˜ íš¨ìœ¨ì„±ì„ ê¸°í•˜ì—¬ì•¼ í•œë‹¤."
+		 * ); CT[1].add_concept("ì§ˆì˜ì–´(QL : Query Language)",
+		 * "ë§ˆì§€ë§‰ ì‚¬ìš©ìž(End User)ê°€ ëŒ€í™”ì‹ìœ¼ë¡œ ì‚¬ìš©í•˜ëŠ” ì–¸ì–´ë¡œ ë…ìžì ì´ê³  ìƒí˜¸ ìž‘ìš© í˜•íƒœë¡œ í„°ë¯¸ë„ì—ì„œ ë°ì´í„°ë² ì´ìŠ¤ë¥¼ ì£¼ë¡œ ê²€ìƒ‰í•˜ê¸° ìœ„í•´ ì‚¬ìš©ë˜ëŠ” ë…ë¦½ ì–¸ì–´ì´ë‹¤. ì´ ì–¸ì–´ëŠ” ì£¼ë¡œ ê²€ìƒ‰ì„ ìœ„í•´ ê³ ì•ˆë˜ì—ˆì§€ë§Œ ê²€ìƒ‰ì— ëŒ€í•œ í•œì •ëœ ì˜ë¯¸ë¡œ ì‚¬ìš©ë˜ê¸°ë³´ë‹¤ëŠ” ê°±ì‹ , ì‚½ìž…, ì‚­ì œë¿ ì•„ë‹ˆë¼ ë°ì´í„° ì •ì˜ ë“±ì˜ ê´‘ë²”ìœ„í•œ ê¸°ëŠ¥ì„ ê°€ì§€ê³  ìžˆë‹¤."
+		 * ); CT[1].add_concept("ë°ì´í„° ì œì–´ì–´(DCL : Data Control Language)",
+		 * "ë°ì´í„°ë² ì´ìŠ¤ì˜ ì—¬ëŸ¬ ì‚¬ìš©ìžê°€ ë°ì´í„°ë¥¼ ê³µìš©í•˜ê³ , ë¬´ê²°ì„±ì„ ìœ ì§€ì‹œí‚¤ë©´ì„œ ì‚¬ìš©í•  ìˆ˜ ìžˆë„ë¡ ë‚´ë¶€ì ìœ¼ë¡œ ì—¬ëŸ¬ ê°€ì§€ ê·œì •ì´ë‚˜ ì œì•½ ì¡°ê±´ ë“±ì„ ê¸°ìˆ í•˜ê¸° ìœ„í•´ ì‚¬ìš©ë˜ëŠ” ì–¸ì–´. ë³´ì•ˆ, ë¬´ê²°ì„±, íšŒë³µ, ë³‘í–‰ìˆ˜í–‰ ë“±ì˜ ì—­í• ì„ ìˆ˜í–‰"
+		 * ); CT[1].add_concept("ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ìž(Database Administrator : DBA)",
+		 * "ë°ì´í„°ë² ì´ìŠ¤ ì‹œìŠ¤í…œ ë„ìž…ì˜ ì£¼ëœ ì´ìœ ëŠ” ë°ì´í„° ê´€ë¦¬ë¥¼ ì¤‘ì•™ í†µì œì‹ìœ¼ë¡œ í•˜ì—¬ ë°ì´í„°ì˜ ì¼ê´€ì„±ì„ ìœ ì§€í•˜ëŠ” ë° ëª©ì ì´ ìžˆë‹¤. ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ìžëŠ” ì´ëŸ¬í•œ ì¤‘ì•™ í†µì œë¥¼ ìœ„í•˜ì—¬ ë°ì´í„°ë² ì´ìŠ¤ì˜ ìƒì„±ê³¼ ëª¨ë“  ê´€ë¦¬ ë° ìš´ì˜ì— ëŒ€í•œ ì±…ìž„ê³¼ ê¶Œí•œì„ ê°€ì§€ê³  ìžˆëŠ” ì‚¬ëžŒ ë˜ëŠ” ì§‘ë‹¨ì„ ë§í•œë‹¤."
+		 * ); CT[1].add_concept("DBAì˜ ë°ì´í„°ë² ì´ìŠ¤ì˜ ì„¤ê³„ì™€ ìš´ì˜ ì¸¡ë©´ì—ì„œì˜ ì—­í• ",
+		 * "- ë°ì´í„°ë² ì´ìŠ¤ì˜ êµ¬ì„± ìš”ì†Œë¥¼ ê²°ì •í•œë‹¤.\r\n- ì˜ˆë¹„ì™€ íšŒë³µ ì ˆì°¨ë¥¼ ë§ˆë ¨í•œë‹¤.\r\n- ë°ì´í„° ì‚¬ì „ì˜ ìž‘ì„±ê³¼ ë¬´ê²°ì„± ì œì•½ì¡°ê±´ì„ ì§€ì •í•œë‹¤.\r\n- ìŠ¤í‚¤ë§ˆë¥¼ ì •ì˜í•œë‹¤.\r\n- ì €ìž¥ êµ¬ì¡°ì™€ ì ‘ê·¼ ë°©ë²•ì„ ì„¤ì •í•œë‹¤.\r\n- ë³´ì•ˆ ì •ì±…ì˜ ìˆ˜ë¦½ê³¼ ë°ì´í„° ìœ íš¨ì„± ê²€ì‚¬ ë°©ë²•ì„ ìˆ˜ë¦½í•œë‹¤.\r\n- ìš”êµ¬ì‚¬í•­ì˜ ë³€í™”ì— ë”°ë¼ ë°ì´í„°ë² ì´ìŠ¤ë¥¼ ìž¬êµ¬ì„±í•œë‹¤."
+		 * ); CT[1].add_concept("DBAì˜ í–‰ì • ê´€ë¦¬ ì¸¡ë©´ì—ì„œì˜ ì—­í• ",
+		 * "- DBAëŠ” ë°ì´í„°ì˜ í‘œí˜„ê³¼ ì‹œìŠ¤í…œ ë¬¸ì„œí™”ì˜ í‘œì¤€í™”ë¥¼ ê¸°í•œë‹¤.\r\n- ì‚¬ìš©ìžì˜ ìš”êµ¬ì™€ ë¶ˆí‰ì„ í•´ì†Œí•œë‹¤.");
+		 * CT[1].add_concept("DBAì˜ ì‹œìŠ¤í…œ ê´€ë¦¬ ì¸¡ë©´ì—ì„œì˜ ì—­í• ",
+		 * "- ìš´ì˜ ìŠ¤ì¼€ì¤„ì„ ìž‘ì„±í•˜ê³ , ì‹œìŠ¤í…œì˜ ì„±ëŠ¥ì„ ê°ì‹œ ê°ë…í•˜ë©° í•„ìš”ì— ë”°ë¼ ì„±ëŠ¥ì„ ê°œì„ ì‹œí‚¨ë‹¤.\r\n- ì»´í“¨í„° ì„¤ì¹˜ ìž¥ë¹„ì˜ ì„ íƒê³¼ ì‚¬ìš©ìžì™€ì˜ ëŒ€í™”ë¥¼ í†µí•´ ê°œì„ ì ì„ ëª¨ìƒ‰í•œë‹¤."
+		 * ); CT[1].add_concept("ì‘ìš© í”„ë¡œê·¸ëž˜ë¨¸(Application Programmer)",
+		 * "ë°ì´í„°ë² ì´ìŠ¤ ì¡°ìž‘ì–´(DML)ë¥¼ í˜¸ìŠ¤íŠ¸ ì–¸ì–´(C, COBOL ë“±)ì— í¬í•¨í•˜ì—¬ ì¼ë°˜ ì‚¬ìš©ìžì— ëŒ€í•œ ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ ì œê³µí•  ëª©ì ìœ¼ë¡œ ë°ì´í„°ë² ì´ìŠ¤ì— ì ‘ê·¼í•˜ëŠ” ì‚¬ìš©ìžë¥¼ ì˜ë¯¸í•œë‹¤."
+		 * ); CT[1].add_concept("ì¼ë°˜ ì‚¬ìš©ìž(End User)",
+		 * "í„°ë¯¸ë„ì„ í†µí•´ ì‘ìš© í”„ë¡œê·¸ëž¨ì´ë‚˜ ì§ˆì˜ì–´ë¥¼ ê°€ì§€ê³  ë°ì´í„°ë² ì´ìŠ¤ì— ìžˆëŠ” ìžì›ì„ í™œìš©í•  ëª©ì ìœ¼ë¡œ ì ‘ê·¼í•˜ëŠ” ì‚¬ìš©ìžë¥¼ ì˜ë¯¸í•œë‹¤.");
 		 * 
-		 * CT[2].add_concept("µ¥ÀÌÅÍ ¸ðµ¨¸µ(Data Modeling)",
-		 * "Çö½Ç ½Ã°è¿¡ Á¸ÀçÇÏ´Â °³Ã¼¸¦ Ã£¾Æ³»¼­ ±× °³Ã¼¿¡ ´ëÇÑ Æ¯¼º°ú Æ¯Â¡À» ÆÄ¾ÇÇÏ¿© Æ¯¼ºÈ­¸¦ ½ÃÅ°°í, ±× °³Ã¼µé »çÀÌÀÇ °ü°è¼ºÀ» ÆÄ¾ÇÇØ¼­ ¾î¶² ±¸Á¶¿¡¼­ ¾î¶² ¿¬»êÀÌ °¡Àå ÀûÇÕÇÒ °ÍÀÎ°¡¸¦ ±¸Ã¼È­½ÃÄÑ ³ª°¡´Â °úÁ¤À» ÀÇ¹ÌÇÑ´Ù."
-		 * ); CT[2].add_concept("µ¥ÀÌÅÍ ¸ðµ¨¸µ °úÁ¤",
-		 * "°³Ã¼ Á¤ÀÇ -> ½Äº°ÀÚ Á¤ÀÇ -> »ó¼¼È­ -> ÅëÇÕ -> °ËÁõ\r\n\r\n- °³Ã¼ Á¤ÀÇ : Çö½Ç ¼¼°è¿¡¼­ °³Ã¼¸¦ Ã£¾Æ³»¾î Á¤ÀÇÇÏ´Â ´Ü°èÀÌ´Ù.\r\n- ½Äº°ÀÚ Á¤ÀÇ : °¢°¢ÀÇ °³Ã¼¸¦ ½Äº°ÇÏ±â À§ÇØ Æ¯¼ºÈ­ÇÏ´Â ´Ü°èÀÌ´Ù.\r- »ó¼¼È­ : °¢°¢ÀÇ °³Ã¼¸¦ ±¸Ã¼È­ÇÏ´Â ´Ü°èÀÌ´Ù.\r\n- ÅëÇÕ : °³Ã¼¿Í °³Ã¼ »çÀÌÀÇ °ü·Ã¼ºÀ» ÆÄ¾ÇÇÏ¿© ÀüÃ¼¸¦ ÅëÇÕÇÏ´Â ´Ü°èÀÌ´Ù.\r\n- °ËÁõ : ½ÇÁ¦ ¸Â´ÂÁö¸¦ °ËÁõÇÏ´Â ´Ü°èÀÌ´Ù."
-		 * ); CT[2].add_concept("Á¤º¸ ¸ðµ¨¸µ(Information Modeling)",
-		 * "Çö½Ç ¼¼°è¿¡¼­ °³Ã¼ ¿ä¼Ò¸¦ Ã£¾Æ Ãß»óÈ­½ÃÄÑ °³Ã¼ Å¸ÀÔÀ» ¸¸µç ´ÙÀ½, ÀÌ °³Ã¼ Å¸ÀÔ°ú °³Ã¼ Å¸ÀÔÀÇ °ü·Ã¼ºÀ» °¡Áö°í Çö½Ç ¼¼°è¿¡ ÀÖ´Â ±×´ë·Î »ç¶÷ÀÌ ÀÌÇØÇÒ ¼ö ÀÖ´Â ÇüÅÂÀÇ Á¤º¸±¸Á¶(Information Structure)·Î ¸¸µé¾î °¡´Â °úÁ¤À» ÀÇ¹ÌÇÑ´Ù."
-		 * ); CT[2].add_concept("µ¥ÀÌÅÍ ¸ðµ¨¸µ(Data Modeling)",
-		 * "Á¤º¸ ¸ðµ¨¸µ °úÁ¤¿¡¼­ »ý¼ºµÈ Á¤º¸ ±¸Á¶¸¦ ÄÄÇ»ÅÍ°¡ ÀÌÇØÇÒ ¼ö ÀÖ´Â ÇüÅÂÀÇ ³í¸®Àû ±¸Á¶(µ¥ÀÌÅÍ ±¸Á¶)·Î ¸¸µé¾î °¡´Â °úÁ¤À» ÀÇ¹ÌÇÑ´Ù.");
-		 * CT[2].add_concept("¸ðµ¨¸µ 3´Ü°è",
-		 * "Çö½Ç´Ü°è, °³³äÀû ´Ü°è, ³í¸®Àû ´Ü°è\r\n\r\n- Çö½Ç ´Ü°è : º¯È¯µÇ´Â Çö½Ç¼¼°è¿¡¼­ »ç¶÷ÀÌ °¨ÁöÇÒ ¼ö ÀÖ´Â ½ÇÃ¼(Reality)¸¦ °¡Áö°í ±×´ë·Î ±¸¼ºµÇ´Â ´Ü°è¸¦ ÀÇ¹ÌÇÑ´Ù.\r\n- °³³äÀû ´Ü°è : Çö½Ç ¼¼°è¸¦ Ãß»óÈ­(Æ¯¼ºÈ­)½ÃÄÑ °³Ã¼ Å¸ÀÔÀ» Ç¥ÇöÇÏ°í ±× °³Ã¼ Å¸ÀÔµé »çÀÌ¿¡ ¾î¶² °ü°è°¡ ÀÖÀ¸¸ç, ¾î¶² ´ëÀÀ °ü°è¸¦ °¡Áö°í ÀÖ´ÂÁö ÆÄ¾ÇÇÏ¿© »ç¶÷ÀÌ ÀÌÇØÇÒ ¼ö ÀÖ´Â ÇüÅÂÀÇ Ãß»óÀû °³³äÀ¸·Î Ç¥ÇöÇÏ´Â ´Ü°èÀÌ´Ù.\r\n- ³í¸®Àû ´Ü°è : °³³äÀû ´Ü°è¿¡¼­ ÆÄ¾ÇµÈ °³Ã¼¸¦ ¾î¶² ±¸Á¶·Î ÄÄÇ»ÅÍ¿¡ ±â¾ï½ÃÅ°°í, ±× °³Ã¼µé »çÀÌÀÇ °ü°è¼ºÀ» ÆÄ¾ÇÇÏ¿© ¾î¶°ÇÑ ¸ðµ¨ÀÌ ÀûÇÕÇÏ¸ç, °³Ã¼ÀÇ ¼Ó¼ºµéÀº ¾î¶² µµ¸ÞÀÎÀ» Àû¿ëÇÒ °ÍÀÎ°¡, ÀÌ °³Ã¼µéÀº ¾î¶² Á¦¾à »çÇ×ÀÌ µû¸£´Â°¡, ¶ÇÇÑ ¾î¶² ¿¬»ê¿¡ ÀÇÇØ¼­ Á¤º¸¸¦ ÀÌ¿ëÇÒ °ÍÀÎ°¡¸¦ Àü¹ÝÀûÀ¸·Î ÆÄ¾ÇÇÏ¿© ±¸¼ºÇÏ´Â ´Ü°èÀÌ´Ù."
-		 * ); CT[2].add_concept("µ¥ÀÌÅÍ ¸ðµ¨¸µ¿¡¼­ Ãß»óÈ­ ¹æ¹ý",
-		 * "- ÀÏ¹ÝÈ­(Generalization) : ¿©·¯ °³Ã¼µéÀÇ °øÅëÁ¡À» Ã£¾Æ ´õ Æ÷°ýÀûÀÌ°í ÀÏ¹ÝÀûÀÎ °³³äÀÇ °³Ã¼·Î ¸¸µé¾î °¡´Â °úÁ¤À¸·Î »óÇâ½Ä °³³äÀÌ´Ù.\r\n- Áý´ÜÈ­(Aggregation) : ¿©·¯ ¾îÆ®¸®ºäÆ®¸¦ Áý´ÜÈ­ÇØ¼­ ÇÏ³ªÀÇ °³Ã¼¸¦ ±¸¼ºÇÏ´Â °æ¿ì ¶Ç´Â ¾î¶² °³Ã¼ ÀÎ½ºÅÏ½º¸¦ Áý´ÜÈ­ÇÏ¿© °³Ã¼ ÁýÇÕÀ» ¸¸µé¾î °¡´Â °úÁ¤À¸·Î IS-PART-OF °ü°è¶ó°íµµ ÇÑ´Ù.\r\n- ¼¼ºÐÈ­(Specialization) : ÀÏ¹ÝÀûÀÎ °³³äÀÇ °³Ã¼¸¦ Á» ´õ ¼¼ºÐÈ­ÇÏ¿© ±¸Ã¼ÀûÀÎ °³Ã¼¸¦ ¸¸µé¾î °¡´Â °úÁ¤À¸·Î ÇÏÇâ½Ä ¼³°è °³³äÀÌ´Ù.\r\n- ¿¬°üÈ­(Association) : ¿©·¯ °³ÀÇ °³Ã¼µé·ÎºÎÅÍ ¿¬°üµÇ´Â °³³äÀ» °£Ãß·Á »óÀ§ ·¹º§ÀÇ °³Ã¼·Î Ãß»óÈ­ÇÏ´Â °³³äÀ¸·Î IS-ASSOCIATED-WITH¶ó°í ÇÑ´Ù."
-		 * ); CT[2].add_concept("µ¥ÀÌÅÍ ¸ðµ¨ÀÇ °³³ä",
-		 * "Çö½Ç ¼¼°è¸¦ µ¥ÀÌÅÍº£ÀÌ½º¿¡ Ç¥ÇöÇÏ´Â Áß°£ °úÁ¤, Áï µ¥ÀÌÅÍº£ÀÌ½º ¼³°è °úÁ¤¿¡¼­ µ¥ÀÌÅÍÀÇ ±¸Á¶¸¦ Ç¥ÇöÇÏ±â À§ÇØ »ç¿ëµÇ´Â µµ±¸ÀÌ´Ù.");
-		 * CT[2].add_concept("°³³äÀû µ¥ÀÌÅÍ ¸ðµ¨(Conceptual Data Model, High-Level Data Model)",
-		 * "¼Ó¼ºµé·Î ±â¼úµÈ °³Ã¼ Å¸ÀÔ°ú ÀÌ °³Ã¼ Å¸ÀÔµé °£ÀÇ °ü°è¸¦ ÀÌ¿ëÇÏ¿© Çö½Ç ¼¼°è¸¦ Ç¥ÇöÇÏ´Â ¹æ¹ýÀÌ´Ù.");
-		 * CT[2].add_concept("³í¸®Àû µ¥ÀÌÅÍ ¸ðµ¨(Logical Data Model)",
-		 * "ÇÊµå·Î ±â¼úµÈ µ¥ÀÌÅÍ Å¸ÀÔµé °£ÀÇ °ü°è¸¦ ÀÌ¿ëÇÏ¿© Çö½Ç ¼¼°è¸¦ Ç¥ÇöÇÏ´Â ¹æ¹ýÀÌ´Ù.");
+		 * CT[2].add_concept("ë°ì´í„° ëª¨ë¸ë§(Data Modeling)",
+		 * "í˜„ì‹¤ ì‹œê³„ì— ì¡´ìž¬í•˜ëŠ” ê°œì²´ë¥¼ ì°¾ì•„ë‚´ì„œ ê·¸ ê°œì²´ì— ëŒ€í•œ íŠ¹ì„±ê³¼ íŠ¹ì§•ì„ íŒŒì•…í•˜ì—¬ íŠ¹ì„±í™”ë¥¼ ì‹œí‚¤ê³ , ê·¸ ê°œì²´ë“¤ ì‚¬ì´ì˜ ê´€ê³„ì„±ì„ íŒŒì•…í•´ì„œ ì–´ë–¤ êµ¬ì¡°ì—ì„œ ì–´ë–¤ ì—°ì‚°ì´ ê°€ìž¥ ì í•©í•  ê²ƒì¸ê°€ë¥¼ êµ¬ì²´í™”ì‹œì¼œ ë‚˜ê°€ëŠ” ê³¼ì •ì„ ì˜ë¯¸í•œë‹¤."
+		 * ); CT[2].add_concept("ë°ì´í„° ëª¨ë¸ë§ ê³¼ì •",
+		 * "ê°œì²´ ì •ì˜ -> ì‹ë³„ìž ì •ì˜ -> ìƒì„¸í™” -> í†µí•© -> ê²€ì¦\r\n\r\n- ê°œì²´ ì •ì˜ : í˜„ì‹¤ ì„¸ê³„ì—ì„œ ê°œì²´ë¥¼ ì°¾ì•„ë‚´ì–´ ì •ì˜í•˜ëŠ” ë‹¨ê³„ì´ë‹¤.\r\n- ì‹ë³„ìž ì •ì˜ : ê°ê°ì˜ ê°œì²´ë¥¼ ì‹ë³„í•˜ê¸° ìœ„í•´ íŠ¹ì„±í™”í•˜ëŠ” ë‹¨ê³„ì´ë‹¤.\r- ìƒì„¸í™” : ê°ê°ì˜ ê°œì²´ë¥¼ êµ¬ì²´í™”í•˜ëŠ” ë‹¨ê³„ì´ë‹¤.\r\n- í†µí•© : ê°œì²´ì™€ ê°œì²´ ì‚¬ì´ì˜ ê´€ë ¨ì„±ì„ íŒŒì•…í•˜ì—¬ ì „ì²´ë¥¼ í†µí•©í•˜ëŠ” ë‹¨ê³„ì´ë‹¤.\r\n- ê²€ì¦ : ì‹¤ì œ ë§žëŠ”ì§€ë¥¼ ê²€ì¦í•˜ëŠ” ë‹¨ê³„ì´ë‹¤."
+		 * ); CT[2].add_concept("ì •ë³´ ëª¨ë¸ë§(Information Modeling)",
+		 * "í˜„ì‹¤ ì„¸ê³„ì—ì„œ ê°œì²´ ìš”ì†Œë¥¼ ì°¾ì•„ ì¶”ìƒí™”ì‹œì¼œ ê°œì²´ íƒ€ìž…ì„ ë§Œë“  ë‹¤ìŒ, ì´ ê°œì²´ íƒ€ìž…ê³¼ ê°œì²´ íƒ€ìž…ì˜ ê´€ë ¨ì„±ì„ ê°€ì§€ê³  í˜„ì‹¤ ì„¸ê³„ì— ìžˆëŠ” ê·¸ëŒ€ë¡œ ì‚¬ëžŒì´ ì´í•´í•  ìˆ˜ ìžˆëŠ” í˜•íƒœì˜ ì •ë³´êµ¬ì¡°(Information Structure)ë¡œ ë§Œë“¤ì–´ ê°€ëŠ” ê³¼ì •ì„ ì˜ë¯¸í•œë‹¤."
+		 * ); CT[2].add_concept("ë°ì´í„° ëª¨ë¸ë§(Data Modeling)",
+		 * "ì •ë³´ ëª¨ë¸ë§ ê³¼ì •ì—ì„œ ìƒì„±ëœ ì •ë³´ êµ¬ì¡°ë¥¼ ì»´í“¨í„°ê°€ ì´í•´í•  ìˆ˜ ìžˆëŠ” í˜•íƒœì˜ ë…¼ë¦¬ì  êµ¬ì¡°(ë°ì´í„° êµ¬ì¡°)ë¡œ ë§Œë“¤ì–´ ê°€ëŠ” ê³¼ì •ì„ ì˜ë¯¸í•œë‹¤.");
+		 * CT[2].add_concept("ëª¨ë¸ë§ 3ë‹¨ê³„",
+		 * "í˜„ì‹¤ë‹¨ê³„, ê°œë…ì  ë‹¨ê³„, ë…¼ë¦¬ì  ë‹¨ê³„\r\n\r\n- í˜„ì‹¤ ë‹¨ê³„ : ë³€í™˜ë˜ëŠ” í˜„ì‹¤ì„¸ê³„ì—ì„œ ì‚¬ëžŒì´ ê°ì§€í•  ìˆ˜ ìžˆëŠ” ì‹¤ì²´(Reality)ë¥¼ ê°€ì§€ê³  ê·¸ëŒ€ë¡œ êµ¬ì„±ë˜ëŠ” ë‹¨ê³„ë¥¼ ì˜ë¯¸í•œë‹¤.\r\n- ê°œë…ì  ë‹¨ê³„ : í˜„ì‹¤ ì„¸ê³„ë¥¼ ì¶”ìƒí™”(íŠ¹ì„±í™”)ì‹œì¼œ ê°œì²´ íƒ€ìž…ì„ í‘œí˜„í•˜ê³  ê·¸ ê°œì²´ íƒ€ìž…ë“¤ ì‚¬ì´ì— ì–´ë–¤ ê´€ê³„ê°€ ìžˆìœ¼ë©°, ì–´ë–¤ ëŒ€ì‘ ê´€ê³„ë¥¼ ê°€ì§€ê³  ìžˆëŠ”ì§€ íŒŒì•…í•˜ì—¬ ì‚¬ëžŒì´ ì´í•´í•  ìˆ˜ ìžˆëŠ” í˜•íƒœì˜ ì¶”ìƒì  ê°œë…ìœ¼ë¡œ í‘œí˜„í•˜ëŠ” ë‹¨ê³„ì´ë‹¤.\r\n- ë…¼ë¦¬ì  ë‹¨ê³„ : ê°œë…ì  ë‹¨ê³„ì—ì„œ íŒŒì•…ëœ ê°œì²´ë¥¼ ì–´ë–¤ êµ¬ì¡°ë¡œ ì»´í“¨í„°ì— ê¸°ì–µì‹œí‚¤ê³ , ê·¸ ê°œì²´ë“¤ ì‚¬ì´ì˜ ê´€ê³„ì„±ì„ íŒŒì•…í•˜ì—¬ ì–´ë– í•œ ëª¨ë¸ì´ ì í•©í•˜ë©°, ê°œì²´ì˜ ì†ì„±ë“¤ì€ ì–´ë–¤ ë„ë©”ì¸ì„ ì ìš©í•  ê²ƒì¸ê°€, ì´ ê°œì²´ë“¤ì€ ì–´ë–¤ ì œì•½ ì‚¬í•­ì´ ë”°ë¥´ëŠ”ê°€, ë˜í•œ ì–´ë–¤ ì—°ì‚°ì— ì˜í•´ì„œ ì •ë³´ë¥¼ ì´ìš©í•  ê²ƒì¸ê°€ë¥¼ ì „ë°˜ì ìœ¼ë¡œ íŒŒì•…í•˜ì—¬ êµ¬ì„±í•˜ëŠ” ë‹¨ê³„ì´ë‹¤."
+		 * ); CT[2].add_concept("ë°ì´í„° ëª¨ë¸ë§ì—ì„œ ì¶”ìƒí™” ë°©ë²•",
+		 * "- ì¼ë°˜í™”(Generalization) : ì—¬ëŸ¬ ê°œì²´ë“¤ì˜ ê³µí†µì ì„ ì°¾ì•„ ë” í¬ê´„ì ì´ê³  ì¼ë°˜ì ì¸ ê°œë…ì˜ ê°œì²´ë¡œ ë§Œë“¤ì–´ ê°€ëŠ” ê³¼ì •ìœ¼ë¡œ ìƒí–¥ì‹ ê°œë…ì´ë‹¤.\r\n- ì§‘ë‹¨í™”(Aggregation) : ì—¬ëŸ¬ ì–´íŠ¸ë¦¬ë·°íŠ¸ë¥¼ ì§‘ë‹¨í™”í•´ì„œ í•˜ë‚˜ì˜ ê°œì²´ë¥¼ êµ¬ì„±í•˜ëŠ” ê²½ìš° ë˜ëŠ” ì–´ë–¤ ê°œì²´ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì§‘ë‹¨í™”í•˜ì—¬ ê°œì²´ ì§‘í•©ì„ ë§Œë“¤ì–´ ê°€ëŠ” ê³¼ì •ìœ¼ë¡œ IS-PART-OF ê´€ê³„ë¼ê³ ë„ í•œë‹¤.\r\n- ì„¸ë¶„í™”(Specialization) : ì¼ë°˜ì ì¸ ê°œë…ì˜ ê°œì²´ë¥¼ ì¢€ ë” ì„¸ë¶„í™”í•˜ì—¬ êµ¬ì²´ì ì¸ ê°œì²´ë¥¼ ë§Œë“¤ì–´ ê°€ëŠ” ê³¼ì •ìœ¼ë¡œ í•˜í–¥ì‹ ì„¤ê³„ ê°œë…ì´ë‹¤.\r\n- ì—°ê´€í™”(Association) : ì—¬ëŸ¬ ê°œì˜ ê°œì²´ë“¤ë¡œë¶€í„° ì—°ê´€ë˜ëŠ” ê°œë…ì„ ê°„ì¶”ë ¤ ìƒìœ„ ë ˆë²¨ì˜ ê°œì²´ë¡œ ì¶”ìƒí™”í•˜ëŠ” ê°œë…ìœ¼ë¡œ IS-ASSOCIATED-WITHë¼ê³  í•œë‹¤."
+		 * ); CT[2].add_concept("ë°ì´í„° ëª¨ë¸ì˜ ê°œë…",
+		 * "í˜„ì‹¤ ì„¸ê³„ë¥¼ ë°ì´í„°ë² ì´ìŠ¤ì— í‘œí˜„í•˜ëŠ” ì¤‘ê°„ ê³¼ì •, ì¦‰ ë°ì´í„°ë² ì´ìŠ¤ ì„¤ê³„ ê³¼ì •ì—ì„œ ë°ì´í„°ì˜ êµ¬ì¡°ë¥¼ í‘œí˜„í•˜ê¸° ìœ„í•´ ì‚¬ìš©ë˜ëŠ” ë„êµ¬ì´ë‹¤.");
+		 * CT[2].add_concept("ê°œë…ì  ë°ì´í„° ëª¨ë¸(Conceptual Data Model, High-Level Data Model)",
+		 * "ì†ì„±ë“¤ë¡œ ê¸°ìˆ ëœ ê°œì²´ íƒ€ìž…ê³¼ ì´ ê°œì²´ íƒ€ìž…ë“¤ ê°„ì˜ ê´€ê³„ë¥¼ ì´ìš©í•˜ì—¬ í˜„ì‹¤ ì„¸ê³„ë¥¼ í‘œí˜„í•˜ëŠ” ë°©ë²•ì´ë‹¤.");
+		 * CT[2].add_concept("ë…¼ë¦¬ì  ë°ì´í„° ëª¨ë¸(Logical Data Model)",
+		 * "í•„ë“œë¡œ ê¸°ìˆ ëœ ë°ì´í„° íƒ€ìž…ë“¤ ê°„ì˜ ê´€ê³„ë¥¼ ì´ìš©í•˜ì—¬ í˜„ì‹¤ ì„¸ê³„ë¥¼ í‘œí˜„í•˜ëŠ” ë°©ë²•ì´ë‹¤.");
 		 * 
-		 * CT[6].add_concept("Á¶ÇÕ ³í¸® È¸·Î(Combinational Logic Circuit)",
-		 * "³í¸® °ÔÀÌÆ®ÀÇ Á¶ÇÕÀ¸·Î ¸¸µé¾îÁö´Â È¸·Î·Î ÀÔ·Â¿¡ ÀÇÇØ¼­¸¸ Ãâ·ÂÀÌ °áÁ¤µÇ´Â È¸·Î¸¦ ÀÇ¹ÌÇÑ´Ù.\r\nÇöÀçÀÇ ÀÔ·Â º¯È­¿¡ ÀÇÇØ¼­¸¸ Ãâ·ÂÀÌ °áÁ¤µÇ´Â È¸·ÎÀÌ´Ù."
-		 * ); CT[6].add_concept("¹Ý°¡»ê±â(Half Adder)",
-		 * "2°³ÀÇ 2Áø ÀÔ·Â º¯¼ö A¿Í B¸¦ ´õÇÑ ÇÕ S¿Í ÀÚ¸® ¿Ã¸² ¼ö C¸¦ ¾ò´Â È¸·ÎÀÌ´Ù.\r\nÇÏ³ªÀÇ AND °ÔÀÌÆ®¿Í XOR°ÔÀÌÆ®¸¦ Á¶ÇÕÇØ¼­ ¸¸µé¾îÁø´Ù."
-		 * ); CT[6].add_concept("¹Ý°¨»ê±â(Half Subtracter)",
-		 * "2°³ÀÇ 2Áø ÀÔ·Â º¯¼ö X¿¡¼­ Y¸¦ »« Â÷ D¿Í ºô·Á¿Â ¼ö(ÀÚ¸® ³»¸² ¼ö)B¸¦ ¾ò´Â È¸·ÎÀÌ´Ù.\r\nÇÏ³ªÀÇ NOT °ÔÀÌÆ® ¹× AND°ÔÀÌÆ®¿Í XOR°ÔÀÌÆ®¸¦ Á¶ÇÕÇØ¼­ ¸¸µé¾îÁø´Ù."
-		 * ); CT[6].add_concept("Àü°¡»ê±â(Full Adder)",
-		 * "2Áø¼ö °¡»êÀ» ¿ÏÀüÈ÷ ÇÏ±â À§ÇÏ¿© ¾Æ·¡ ÀÚ¸®·ÎºÎÅÍ ÀÚ¸® ¿Ã¸²µÈ ¼öµµ °í·ÁÇÏ¿© 3°³ÀÇ 2Áø¼ö¸¦ ´õÇÒ ¼ö ÀÖ°Ô ¸¸µç È¸·ÎÀÌ´Ù.\r\n¹Ý°¡»ê±â 2°³¿Í OR°ÔÀÌÆ® 1°³¸¦ ¿¬°áÇÏ¿© ±¸¼ºÇÑ´Ù."
-		 * ); CT[6].add_concept("Àü°¨»ê±â(Full Subtracter)",
-		 * "2Áø¼ö °¨»êÀ» ¿ÏÀüÈ÷ ÇÏ±â À§ÇÏ¿© ¾Æ·¡ ÀÚ¸®·Î ºÎÅÍ ÀÚ¸® ³»¸²¼öµµ °í·ÁÇÏ¿© 3°³ÀÇ 2Áø¼ö¸¦ °¨»êÇÒ ¼ö ÀÖ°Ô ¸¸µç È¸·ÎÀÌ´Ù.\r\n¹Ý°¨»ê±â 2°³¿Í OR°ÔÀÌÆ® 1°³¸¦ ¿¬°áÇÏ¿© ±¸¼ºÇÑ´Ù"
-		 * ); CT[6].add_concept("º´·Ä °¡»ê±â(Parallel Adder)",
-		 * "¿©·¯ ºñÆ®¸¦ °¡»êÇÏ±â À§ÇÑ È¸·ÎÀÌ´Ù.\r\n¹Ý°¡»ê±â ¶Ç´Â Àü°¡»ê±â¸¦ ¿©·¯ °³ ÇÕÃÄ¼­ ¸¸µé¾îÁø´Ù.\r\nnºñÆ® º´·Ä °¡»ê±â¸¦ ¸¸µé±â À§ÇØ¼­´Â Àü°¡»ê±â¸¦ °¡Áö°í ¸¸µé °æ¿ì Àü°¡»ê±â n°³°¡ ÇÊ¿äÇÏ°í, ¹Ý°¡»ê±â¸¦ °¡Áö°í ¸¸µå´Â °æ¿ì´Â (2n-1)°³ÀÇ ¹Ý°¡»ê±â¿Í (n-1)°³ÀÇ OR°ÔÀÌÆ®°¡ ÇÊ¿äÇÏ´Ù."
-		 * ); CT[6].add_concept("µðÄÚ´õ(Decoder)",
-		 * "µðÄÚ´õ´Â ÄÄÇ»ÅÍ ³»ºÎ¿¡¼­ 2Áø¼ö·Î ÄÚµåÈ­µÈ µ¥ÀÌÅÍ¸¦ ÇØµ¶ÇÏ¿© ´ëÀÀµÇ´Â ÇÑ °³ÀÇ ½ÅÈ£·Î ¹Ù²Ù¾î ÁÖ±â ¶§¹®¿¡ ÇØµ¶±â¶ó ÇÑ´Ù.\r\nn°³ÀÇ ÀÔ·ÂÀ¸·Î ÃÖ´ë 2^n°³ÀÇ Ãâ·ÂÀ» ¾òÀ» ¼ö ÀÖ´Ù.\r\nAND°ÔÀÌÆ®·Î ¸¸µé¾î Áø´Ù"
-		 * ); CT[6].add_concept("ÀÎÄÚ´õ(Encoder)",
-		 * "ÀÔ·Â Á¤º¸¸¦ ¿©·¯ ÀÚ¸®ÀÇ 2Áø¼ö·Î ÄÚµåÈ­ÇÏ¿© Àü´ÞÇÏ´Â È¸·ÎÀÌ´Ù.\r\nÇØµ¶±â(Decoder)¿Í Á¤¹Ý´ëÀÇ µ¿ÀÛÀ» ³ªÅ¸³½´Ù");
-		 * CT[6].add_concept("¸ÖÆ¼ÇÃ·º¼­(Multiplexor)",
-		 * "2^n°³ÀÇ ÀÔ·Â¼±¿¡¼­ n°³ÀÇ ¼±ÅÃ¼±À» °¡Áö°í ÇÏ³ªÀÇ Ãâ·ÂÀ» ¾òµµ·Ï ±¸¼ºµÈ´Ù.\r\n¿©·¯ °³ÀÇ ÀÔ·Â È¸¼±ÀÌ µé¾î°¡¼­ ÇÏ³ªÀÇ Æ¯Á¤ È¸¼±À» ¼±ÅÃÇÏµµ·Ï ÇÏ¹Ç·Î ¼±ÅÃ±â¶ó°íµµ ÇÑ´Ù.\r\n°øÅëÀûÀÎ ¹ö½º(Bus)¶óÀÎÀ» ±¸¼ºÇÏ´Âµ¥ ¸¹ÀÌ »ç¿ëÇÑ´Ù."
-		 * ); CT[6].add_concept("µð¸ÖÆ¼ÇÃ·º¼­(Demultiplexor)",
-		 * "ÇÏ³ªÀÇ ÀÔ·Â Á¤º¸¸¦ n°³ÀÇ ¼±ÅÃ¼±À» °¡Áö°í 2^n°³ÀÇ Ãâ·ÂÀ» ¾òµµ·Ï ±¸¼ºµÈ´Ù.\r\nÁß¾Ó Ã³¸® ÀåÄ¡¿¡¼­ ¾î¶² ³»¿ëÀ» Æ¯Á¤ ÀåÄ¡·Î Ãâ·Â½ÃÅ³ ¶§ ¸¹ÀÌ »ç¿ëµÈ´Ù"
-		 * ); CT[6].add_concept("ºñ±³±â(Comparator)",
-		 * "³í¸®ÀûÀ¸·Î µÎ ¼ö¸¦ ºñ±³ÇÑ´Ù¸é '°°´Ù'¿Í '°°Áö ¾Ê´Ù'¸¸ ÆÇº°ÇÏ¸é µÇ¹Ç·Î µÎ ¼ö A¿Í B¸¦ Exclusive NOR°ÔÀÌÆ®·Î ¿¬°áÇÏ¿© 1ÀÌ ¾ò¾îÁö¸é '°°´Ù'°í ÆÇº°ÇÒ ¼ö ÀÖ´Ù.\r\nnºñÆ® ³í¸® ºñ±³±â¸¦ ¸¸µé±â À§ÇØ¼­´Â Exclusive NOR°ÔÀÌÆ® n°³°¡ ÇÊ¿äÇÏ´Ù"
-		 * ); CT[6].add_concept("3-»óÅÂ ¹öÆÛ(Tri-state Buffer)",
-		 * "¼¼ °¡Áö »óÅÂ Áß 1ÀÇ »óÅÂ´Â Àü±âÀûÀ¸·Î ÇÏÀÌ ·¹º§(H)ÀÌ°í, 0ÀÇ »óÅÂ´Â ·Î¿ì ·¹º§(L)ÀÌ¸ç, ¶Ç ÇÏ³ªÀÇ »óÅÂ´Â °í ÀÓÇÇ´ø½º(È¸·Î°¡ ²÷¾îÁø »óÅÂ)»óÅÂ¸¦ ¸»ÇÑ´Ù. 3-»óÅÂ ¹öÆÛ È¸·Î´Â ÀÎ¿¡ÀÌºí(1) ¶Ç´Â µð½º¿¡ÀÌºí(0)´ÜÀÚ¿¡ ÀÇÇÏ¿© µ¥ÀÌÅÍÀÇ Àü¼Û ¹æÇâÀ» ÇÏµå¿þ¾îÀûÀ¸·Î Á¦¾îÇÏ´Âµ¥ »ç¿ëÇÏ°Ô µÈ´Ù."
-		 * ); CT[6].add_concept("¼ø¼­ ³í¸® È¸·Î(Sequential Logic Circuit)",
-		 * "ÀÔ·Â°ú ³»ºÎ »óÅÂÀÇ Á¶ÇÕ¿¡ ÀÇÇØ Ãâ·ÂÀÌ °áÁ¤µÇ´Â È¸·ÎÀÌ´Ù.\r\nÇÃ¸³ÇÃ·ÓÀÌ³ª ·¹Áö½ºÅÍ ÀåÄ¡·Î ±¸¼ºµÇ´Â È¸·ÎÀÌ´Ù.\r\n±â¾ï ´É·ÂÀ» °¡Áö°í ÀÖ´Â È¸·ÎÀÌ´Ù."
-		 * ); CT[6].add_concept("ÇÃ¸³ÇÃ·Ó(Flip-Flop)",
-		 * "ÇÃ¸³ÇÃ·ÓÀº ¼ø¼­ ³í¸® È¸·Î¸¦ ±¸¼ºÇÏ´Â ±âº» ±â¾ï ¼ÒÀÚ·Î 1ºñÆ®¸¦ ±â¾ïÇÒ ¼ö ÀÖ´Â 2Áø CellÀ» ÀÇ¹ÌÇÑ´Ù.\r\nÇÃ¸³ÇÃ·ÓÀº 1ºñÆ® ±â¾ï ¼ÒÀÚÀÌ´Ù.\r\nÇÃ¸³ÇÃ·ÓÀÇ ÀúÀå »óÅÂ¸¦ ¹Ù²Ù¾î¼­ È¸·ÎÀÇ ±â´ÉÀ» º¯°æÇÒ ¼ö ÀÖ´Ù."
-		 * ); CT[6].add_concept("RS ÇÃ¸³ÇÃ·Ó",
-		 * "º¸Åë NAND°ÔÀÌÆ®¸¦ ÀÌ¿ëÇØ¼­ ±¸¼ºÇÑ´Ù.\r\nSET(S)´ÜÀÚ¿Í RESET(R)´ÜÀÚ¸¦ °®°Ô µÈ´Ù.\r\nSET(S)´ÜÀÚ¿Í RESET(R)´ÜÀÚ°¡ ¸ðµÎ 1ÀÎ °æ¿ì´Â Çã¿ëµÇÁö ¾Ê´Â´Ù."
-		 * ); CT[6].add_concept("JK ÇÃ¸³ÇÃ·Ó",
-		 * "JKÇÃ¸³ÇÃ·ÓÀº RSÇÃ¸³ÇÃ·Ó¿¡¼­ S¿Í RÀÌ °¢°¢ 1ÀÏ ¶§ Çã¿ëµÇÁö ¾Ê´Â °ÍÀ» º¸¿ÏÇØ¼­ ÀÌ°ÍÀÌ Çã¿ëµÇµµ·Ï °í¾ÈµÈ ÇÃ¸³ÇÃ·ÓÀÌ´Ù.\r\nRSÇÃ¸³ÇÃ·ÓÀÇ ³»ºÎ »óÅÂ¿Í ÀÔ·Â »óÅÂ¸¦ AND°ÔÀÌÆ®·Î Ã³¸®ÇÏ¿© ÀÔ·ÂÇÏ´Â ÇÃ¸³ÇÃ·ÓÀÌ´Ù."
-		 * ); CT[6].add_concept("D ÇÃ¸³ÇÃ·Ó",
-		 * "RS³ª JKÇÃ¸³ÇÃ·Ó¿¡¼­ ¼­·Î ¹èÅ¸ÀûÀÎ °æ¿ì¸¸ ÀÌ¿ëµÇµµ·Ï °í¾ÈµÈ ÇÃ¸³ÇÃ·ÓÀÌ´Ù. Áï, S°¡ 0ÀÌ¸é RÀº 1ÀÌ µÇ°í, S°¡ 1ÀÌ¸é RÀº 0ÀÌ µÇµµ·Ï °í¾ÈµÈ ÇÃ¸³ÇÃ·ÓÀÌ´Ù.\r\nD ÇÃ¸³ÇÃ·ÓÀº 1ºñÆ® Áö¿¬ ¼ÒÀÚ·Î »ç¿ëµÈ´Ù."
-		 * ); CT[6].add_concept("T ÇÃ¸³ÇÃ·Ó",
-		 * "TÇÃ¸³ÇÃ·ÓÀº JKÇÃ¸³ÇÃ·Ó¿¡¼­ J, K°¡ °°Àº °ªÀÌ ÀÔ·ÂµÉ ‹š¸¸ ÀÌ¿ëÇÒ ¼ö ÀÖµµ·Ï °í¾ÈµÈ ÇÃ¸³ÇÃ·ÓÀÌ´Ù. Áï, J°¡ 0ÀÌ¸é Kµµ 0ÀÌ µÇ°í J°¡ 1ÀÌ¸é Kµµ 1ÀÌ µÇµµ·Ï °í¾ÈµÈ ÇÃ¸³ÇÃ·ÓÀÌ´Ù.\r\nÅä±Û(Toggle)±â´ÉÀ» ÀÌ¿ëÇÏ°íÀÚ ÇÒ ¶§ »ç¿ëµÈ´Ù."
-		 * ); CT[6].add_concept("¸¶½ºÅÍ ½½·¡ÀÌºê(Master-Slave) ÇÃ¸³ÇÃ·Ó",
-		 * "Race Çö»óÀ» ÇØ°áÇÏ±â À§ÇØ¼­ °í¾ÈµÈ ÇÃ¸³ÇÃ·ÓÀÌ´Ù.\r\nÇÏ³ªÀÇ ÇÃ¸³ÇÃ·ÓÀÌ ÁÖÀÎ ¿ªÇÒÀ» ÇÏ°í, ´Ù¸¥ ÇÏ³ªÀÇ ÇÃ¸³ÇÃ·ÓÀÌ Á¾¼ÓµÇ¾î µ¿ÀÛÇÏµµ·Ï µÎ °³ ÀÌ»óÀÇ ÇÃ¸³ÇÃ·Ó È¸·Î¸¦ °áÇÕÇÑ °ÍÀÌ´Ù.\r\nÁÖÁ¾ ÇÃ¸³ÇÃ·Ó¿¡¼­ ¾ÕÀÇ °ÍÀ» ÁÖ ÇÃ¸³ÇÃ·Ó, µÚÀÇ °ÍÀ» Á¾ ÇÃ¸³ÇÃ·ÓÀÌ¶ó ÇÏ¸ç ÁÖ ÇÃ¸³ÇÃ·ÓÀº ½Ã°£ ÆÞ½º°¡ »ó½ÂÇÒ ¶§ µ¿ÀÛÇÏ°í, Á¾ ÇÃ¸³ÇÃ·ÓÀº ½Ã°£ ÆÞ½º°¡ ÇÏ°­ÇÒ ¶§ µ¿ÀÛÇÑ´Ù."
-		 * ); CT[6].add_concept("Race Çö»ó",
-		 * "Ãâ·ÂÀÌ ÀÔ·Â¿¡ FeedbackµÇ¾î ÇÃ¸³ÇÃ·ÓÀÇ ³»ºÎ »óÅÂ°¡ º¯È­µÇµµ·Ï ÇÏ¸é Ãâ·Â »óÅÂ°¡ º¯ÇÒ ¶§ ÀÔ·Âµµ º¯ÇÏ°Ô µÇ¹Ç·Î ¿Àµ¿ÀÛÀÌ ¹ß»ýÇÏ°Ô µÈ´Ù. ÀÌ·¯ÇÑ Çö»óÀ» RaceÇö»óÀÌ¶ó ÇÑ´Ù."
-		 * ); CT[6].add_concept("Ä«¿îÅÍ(Counter)",
-		 * "Ä«¿îÅÍ(Counter)´Â ½Ã°£ ÆÞ½ºÀÇ ¼ö¸¦ Ä«¿îÆ®ÇÏ°Å³ª Á¦¾î ÀåÄ¡¿¡¼­ °¢Á¾ È¸·ÎÀÇ µ¿ÀÛÀ» Á¦¾îÇÏ´Âµ¥ »ç¿ëÇÑ´Ù.");
-		 * CT[6].add_concept("·¹Áö½ºÅÍ(Register)",
-		 * "·¹Áö½ºÅÍ´Â ¿¬»ê¿¡ »ç¿ëµÉ µ¥ÀÌÅÍ°¡ ´ë±âÇÏ°Å³ª ¿¬»êµÈ °á°ú µ¥ÀÌÅÍ°¡ ÀÓ½ÃÀûÀ¸·Î ´ë±âÇÑ´Ù.");
-		 * CT[6].add_concept("¸®ÇÃ Ä«¿îÅÍ(Ripple Counter)",
-		 * "°¡Àå ±âº»ÀÌ µÇ´Â ºñµ¿±âÇü Ä«¿îÅÍ(Asynchronous Counter)ÀÌ´Ù.");
-		 * CT[6].add_concept("¸ðµå Ä«¿îÅÍ(MOD Counter)",
-		 * "¸®ÇÃ Ä«¿îÆ®´Â ÇÃ¸³ÇÃ·ÓÀÇ ¼ö¸¦ nÀÌ¶ó ÇÑ´Ù¸é 2^n°³±îÁöÀÇ µ¶¸³µÈ ¼ö ÀüºÎ¸¦ Ç¥ÇöÇÏÁö¸¸ MODÄ«¿îÅÍ´Â ÀÓÀÇÀÇ ¼ö·Î ³ª´« ³ª¸ÓÁö¸¸ Ç¥ÇöÇÒ ¼ö ÀÖµµ·Ï °³¼±ÇÑ Ä«¿îÅÍÀÌ´Ù."
-		 * ); CT[6].add_concept("½ÃÇÁÆ® ·¹Áö½ºÅÍ(Shift Register)",
-		 * "ÇöÀç ·¹Áö½ºÅÍ¿¡ ÀÖ´Â ³»¿ëÀ» ¿ÞÂÊÀÌ³ª ¿À¸¥ÂÊÀÇ ¿¬°áµÈ ÇÃ¸³ÇÃ·ÓÀ¸·Î 1ºñÆ®¾¿ ÀÌµ¿½ÃÄÑ ¹Ð¾î³»±â¿Í °°Àº µ¿ÀÛÀ» ¼öÇàÇÏ´Â ·¹Áö½ºÅÍÀÌ´Ù.");
-		 * CT[6].add_concept("º´·Ä ½ÃÇÁÆ® ·¹Áö½ºÅÍ(Parallel Shift Register)",
-		 * "n°³ÀÇ ºñÆ®·Î ±¸¼ºµÈ ·¹Áö½ºÅÍÀÇ ³»¿ëÀ» ¿¬°áµÈ ´Ù¸¥ ·¹Áö½ºÅÍ·Î ÇÑ ¹ø¿¡ ÀÌµ¿½ÃÅ³ ¼ö ÀÖ´Â ·¹Áö½ºÅÍÀÌ´Ù.");
+		 * CT[6].add_concept("ì¡°í•© ë…¼ë¦¬ íšŒë¡œ(Combinational Logic Circuit)",
+		 * "ë…¼ë¦¬ ê²Œì´íŠ¸ì˜ ì¡°í•©ìœ¼ë¡œ ë§Œë“¤ì–´ì§€ëŠ” íšŒë¡œë¡œ ìž…ë ¥ì— ì˜í•´ì„œë§Œ ì¶œë ¥ì´ ê²°ì •ë˜ëŠ” íšŒë¡œë¥¼ ì˜ë¯¸í•œë‹¤.\r\ní˜„ìž¬ì˜ ìž…ë ¥ ë³€í™”ì— ì˜í•´ì„œë§Œ ì¶œë ¥ì´ ê²°ì •ë˜ëŠ” íšŒë¡œì´ë‹¤."
+		 * ); CT[6].add_concept("ë°˜ê°€ì‚°ê¸°(Half Adder)",
+		 * "2ê°œì˜ 2ì§„ ìž…ë ¥ ë³€ìˆ˜ Aì™€ Bë¥¼ ë”í•œ í•© Sì™€ ìžë¦¬ ì˜¬ë¦¼ ìˆ˜ Cë¥¼ ì–»ëŠ” íšŒë¡œì´ë‹¤.\r\ní•˜ë‚˜ì˜ AND ê²Œì´íŠ¸ì™€ XORê²Œì´íŠ¸ë¥¼ ì¡°í•©í•´ì„œ ë§Œë“¤ì–´ì§„ë‹¤."
+		 * ); CT[6].add_concept("ë°˜ê°ì‚°ê¸°(Half Subtracter)",
+		 * "2ê°œì˜ 2ì§„ ìž…ë ¥ ë³€ìˆ˜ Xì—ì„œ Yë¥¼ ëº€ ì°¨ Dì™€ ë¹Œë ¤ì˜¨ ìˆ˜(ìžë¦¬ ë‚´ë¦¼ ìˆ˜)Bë¥¼ ì–»ëŠ” íšŒë¡œì´ë‹¤.\r\ní•˜ë‚˜ì˜ NOT ê²Œì´íŠ¸ ë° ANDê²Œì´íŠ¸ì™€ XORê²Œì´íŠ¸ë¥¼ ì¡°í•©í•´ì„œ ë§Œë“¤ì–´ì§„ë‹¤."
+		 * ); CT[6].add_concept("ì „ê°€ì‚°ê¸°(Full Adder)",
+		 * "2ì§„ìˆ˜ ê°€ì‚°ì„ ì™„ì „ížˆ í•˜ê¸° ìœ„í•˜ì—¬ ì•„ëž˜ ìžë¦¬ë¡œë¶€í„° ìžë¦¬ ì˜¬ë¦¼ëœ ìˆ˜ë„ ê³ ë ¤í•˜ì—¬ 3ê°œì˜ 2ì§„ìˆ˜ë¥¼ ë”í•  ìˆ˜ ìžˆê²Œ ë§Œë“  íšŒë¡œì´ë‹¤.\r\në°˜ê°€ì‚°ê¸° 2ê°œì™€ ORê²Œì´íŠ¸ 1ê°œë¥¼ ì—°ê²°í•˜ì—¬ êµ¬ì„±í•œë‹¤."
+		 * ); CT[6].add_concept("ì „ê°ì‚°ê¸°(Full Subtracter)",
+		 * "2ì§„ìˆ˜ ê°ì‚°ì„ ì™„ì „ížˆ í•˜ê¸° ìœ„í•˜ì—¬ ì•„ëž˜ ìžë¦¬ë¡œ ë¶€í„° ìžë¦¬ ë‚´ë¦¼ìˆ˜ë„ ê³ ë ¤í•˜ì—¬ 3ê°œì˜ 2ì§„ìˆ˜ë¥¼ ê°ì‚°í•  ìˆ˜ ìžˆê²Œ ë§Œë“  íšŒë¡œì´ë‹¤.\r\në°˜ê°ì‚°ê¸° 2ê°œì™€ ORê²Œì´íŠ¸ 1ê°œë¥¼ ì—°ê²°í•˜ì—¬ êµ¬ì„±í•œë‹¤"
+		 * ); CT[6].add_concept("ë³‘ë ¬ ê°€ì‚°ê¸°(Parallel Adder)",
+		 * "ì—¬ëŸ¬ ë¹„íŠ¸ë¥¼ ê°€ì‚°í•˜ê¸° ìœ„í•œ íšŒë¡œì´ë‹¤.\r\në°˜ê°€ì‚°ê¸° ë˜ëŠ” ì „ê°€ì‚°ê¸°ë¥¼ ì—¬ëŸ¬ ê°œ í•©ì³ì„œ ë§Œë“¤ì–´ì§„ë‹¤.\r\nnë¹„íŠ¸ ë³‘ë ¬ ê°€ì‚°ê¸°ë¥¼ ë§Œë“¤ê¸° ìœ„í•´ì„œëŠ” ì „ê°€ì‚°ê¸°ë¥¼ ê°€ì§€ê³  ë§Œë“¤ ê²½ìš° ì „ê°€ì‚°ê¸° nê°œê°€ í•„ìš”í•˜ê³ , ë°˜ê°€ì‚°ê¸°ë¥¼ ê°€ì§€ê³  ë§Œë“œëŠ” ê²½ìš°ëŠ” (2n-1)ê°œì˜ ë°˜ê°€ì‚°ê¸°ì™€ (n-1)ê°œì˜ ORê²Œì´íŠ¸ê°€ í•„ìš”í•˜ë‹¤."
+		 * ); CT[6].add_concept("ë””ì½”ë”(Decoder)",
+		 * "ë””ì½”ë”ëŠ” ì»´í“¨í„° ë‚´ë¶€ì—ì„œ 2ì§„ìˆ˜ë¡œ ì½”ë“œí™”ëœ ë°ì´í„°ë¥¼ í•´ë…í•˜ì—¬ ëŒ€ì‘ë˜ëŠ” í•œ ê°œì˜ ì‹ í˜¸ë¡œ ë°”ê¾¸ì–´ ì£¼ê¸° ë•Œë¬¸ì— í•´ë…ê¸°ë¼ í•œë‹¤.\r\nnê°œì˜ ìž…ë ¥ìœ¼ë¡œ ìµœëŒ€ 2^nê°œì˜ ì¶œë ¥ì„ ì–»ì„ ìˆ˜ ìžˆë‹¤.\r\nANDê²Œì´íŠ¸ë¡œ ë§Œë“¤ì–´ ì§„ë‹¤"
+		 * ); CT[6].add_concept("ì¸ì½”ë”(Encoder)",
+		 * "ìž…ë ¥ ì •ë³´ë¥¼ ì—¬ëŸ¬ ìžë¦¬ì˜ 2ì§„ìˆ˜ë¡œ ì½”ë“œí™”í•˜ì—¬ ì „ë‹¬í•˜ëŠ” íšŒë¡œì´ë‹¤.\r\ní•´ë…ê¸°(Decoder)ì™€ ì •ë°˜ëŒ€ì˜ ë™ìž‘ì„ ë‚˜íƒ€ë‚¸ë‹¤");
+		 * CT[6].add_concept("ë©€í‹°í”Œë ‰ì„œ(Multiplexor)",
+		 * "2^nê°œì˜ ìž…ë ¥ì„ ì—ì„œ nê°œì˜ ì„ íƒì„ ì„ ê°€ì§€ê³  í•˜ë‚˜ì˜ ì¶œë ¥ì„ ì–»ë„ë¡ êµ¬ì„±ëœë‹¤.\r\nì—¬ëŸ¬ ê°œì˜ ìž…ë ¥ íšŒì„ ì´ ë“¤ì–´ê°€ì„œ í•˜ë‚˜ì˜ íŠ¹ì • íšŒì„ ì„ ì„ íƒí•˜ë„ë¡ í•˜ë¯€ë¡œ ì„ íƒê¸°ë¼ê³ ë„ í•œë‹¤.\r\nê³µí†µì ì¸ ë²„ìŠ¤(Bus)ë¼ì¸ì„ êµ¬ì„±í•˜ëŠ”ë° ë§Žì´ ì‚¬ìš©í•œë‹¤."
+		 * ); CT[6].add_concept("ë””ë©€í‹°í”Œë ‰ì„œ(Demultiplexor)",
+		 * "í•˜ë‚˜ì˜ ìž…ë ¥ ì •ë³´ë¥¼ nê°œì˜ ì„ íƒì„ ì„ ê°€ì§€ê³  2^nê°œì˜ ì¶œë ¥ì„ ì–»ë„ë¡ êµ¬ì„±ëœë‹¤.\r\nì¤‘ì•™ ì²˜ë¦¬ ìž¥ì¹˜ì—ì„œ ì–´ë–¤ ë‚´ìš©ì„ íŠ¹ì • ìž¥ì¹˜ë¡œ ì¶œë ¥ì‹œí‚¬ ë•Œ ë§Žì´ ì‚¬ìš©ëœë‹¤"
+		 * ); CT[6].add_concept("ë¹„êµê¸°(Comparator)",
+		 * "ë…¼ë¦¬ì ìœ¼ë¡œ ë‘ ìˆ˜ë¥¼ ë¹„êµí•œë‹¤ë©´ 'ê°™ë‹¤'ì™€ 'ê°™ì§€ ì•Šë‹¤'ë§Œ íŒë³„í•˜ë©´ ë˜ë¯€ë¡œ ë‘ ìˆ˜ Aì™€ Bë¥¼ Exclusive NORê²Œì´íŠ¸ë¡œ ì—°ê²°í•˜ì—¬ 1ì´ ì–»ì–´ì§€ë©´ 'ê°™ë‹¤'ê³  íŒë³„í•  ìˆ˜ ìžˆë‹¤.\r\nnë¹„íŠ¸ ë…¼ë¦¬ ë¹„êµê¸°ë¥¼ ë§Œë“¤ê¸° ìœ„í•´ì„œëŠ” Exclusive NORê²Œì´íŠ¸ nê°œê°€ í•„ìš”í•˜ë‹¤"
+		 * ); CT[6].add_concept("3-ìƒíƒœ ë²„í¼(Tri-state Buffer)",
+		 * "ì„¸ ê°€ì§€ ìƒíƒœ ì¤‘ 1ì˜ ìƒíƒœëŠ” ì „ê¸°ì ìœ¼ë¡œ í•˜ì´ ë ˆë²¨(H)ì´ê³ , 0ì˜ ìƒíƒœëŠ” ë¡œìš° ë ˆë²¨(L)ì´ë©°, ë˜ í•˜ë‚˜ì˜ ìƒíƒœëŠ” ê³  ìž„í”¼ë˜ìŠ¤(íšŒë¡œê°€ ëŠì–´ì§„ ìƒíƒœ)ìƒíƒœë¥¼ ë§í•œë‹¤. 3-ìƒíƒœ ë²„í¼ íšŒë¡œëŠ” ì¸ì—ì´ë¸”(1) ë˜ëŠ” ë””ìŠ¤ì—ì´ë¸”(0)ë‹¨ìžì— ì˜í•˜ì—¬ ë°ì´í„°ì˜ ì „ì†¡ ë°©í–¥ì„ í•˜ë“œì›¨ì–´ì ìœ¼ë¡œ ì œì–´í•˜ëŠ”ë° ì‚¬ìš©í•˜ê²Œ ëœë‹¤."
+		 * ); CT[6].add_concept("ìˆœì„œ ë…¼ë¦¬ íšŒë¡œ(Sequential Logic Circuit)",
+		 * "ìž…ë ¥ê³¼ ë‚´ë¶€ ìƒíƒœì˜ ì¡°í•©ì— ì˜í•´ ì¶œë ¥ì´ ê²°ì •ë˜ëŠ” íšŒë¡œì´ë‹¤.\r\ní”Œë¦½í”Œë¡­ì´ë‚˜ ë ˆì§€ìŠ¤í„° ìž¥ì¹˜ë¡œ êµ¬ì„±ë˜ëŠ” íšŒë¡œì´ë‹¤.\r\nê¸°ì–µ ëŠ¥ë ¥ì„ ê°€ì§€ê³  ìžˆëŠ” íšŒë¡œì´ë‹¤."
+		 * ); CT[6].add_concept("í”Œë¦½í”Œë¡­(Flip-Flop)",
+		 * "í”Œë¦½í”Œë¡­ì€ ìˆœì„œ ë…¼ë¦¬ íšŒë¡œë¥¼ êµ¬ì„±í•˜ëŠ” ê¸°ë³¸ ê¸°ì–µ ì†Œìžë¡œ 1ë¹„íŠ¸ë¥¼ ê¸°ì–µí•  ìˆ˜ ìžˆëŠ” 2ì§„ Cellì„ ì˜ë¯¸í•œë‹¤.\r\ní”Œë¦½í”Œë¡­ì€ 1ë¹„íŠ¸ ê¸°ì–µ ì†Œìžì´ë‹¤.\r\ní”Œë¦½í”Œë¡­ì˜ ì €ìž¥ ìƒíƒœë¥¼ ë°”ê¾¸ì–´ì„œ íšŒë¡œì˜ ê¸°ëŠ¥ì„ ë³€ê²½í•  ìˆ˜ ìžˆë‹¤."
+		 * ); CT[6].add_concept("RS í”Œë¦½í”Œë¡­",
+		 * "ë³´í†µ NANDê²Œì´íŠ¸ë¥¼ ì´ìš©í•´ì„œ êµ¬ì„±í•œë‹¤.\r\nSET(S)ë‹¨ìžì™€ RESET(R)ë‹¨ìžë¥¼ ê°–ê²Œ ëœë‹¤.\r\nSET(S)ë‹¨ìžì™€ RESET(R)ë‹¨ìžê°€ ëª¨ë‘ 1ì¸ ê²½ìš°ëŠ” í—ˆìš©ë˜ì§€ ì•ŠëŠ”ë‹¤."
+		 * ); CT[6].add_concept("JK í”Œë¦½í”Œë¡­",
+		 * "JKí”Œë¦½í”Œë¡­ì€ RSí”Œë¦½í”Œë¡­ì—ì„œ Sì™€ Rì´ ê°ê° 1ì¼ ë•Œ í—ˆìš©ë˜ì§€ ì•ŠëŠ” ê²ƒì„ ë³´ì™„í•´ì„œ ì´ê²ƒì´ í—ˆìš©ë˜ë„ë¡ ê³ ì•ˆëœ í”Œë¦½í”Œë¡­ì´ë‹¤.\r\nRSí”Œë¦½í”Œë¡­ì˜ ë‚´ë¶€ ìƒíƒœì™€ ìž…ë ¥ ìƒíƒœë¥¼ ANDê²Œì´íŠ¸ë¡œ ì²˜ë¦¬í•˜ì—¬ ìž…ë ¥í•˜ëŠ” í”Œë¦½í”Œë¡­ì´ë‹¤."
+		 * ); CT[6].add_concept("D í”Œë¦½í”Œë¡­",
+		 * "RSë‚˜ JKí”Œë¦½í”Œë¡­ì—ì„œ ì„œë¡œ ë°°íƒ€ì ì¸ ê²½ìš°ë§Œ ì´ìš©ë˜ë„ë¡ ê³ ì•ˆëœ í”Œë¦½í”Œë¡­ì´ë‹¤. ì¦‰, Sê°€ 0ì´ë©´ Rì€ 1ì´ ë˜ê³ , Sê°€ 1ì´ë©´ Rì€ 0ì´ ë˜ë„ë¡ ê³ ì•ˆëœ í”Œë¦½í”Œë¡­ì´ë‹¤.\r\nD í”Œë¦½í”Œë¡­ì€ 1ë¹„íŠ¸ ì§€ì—° ì†Œìžë¡œ ì‚¬ìš©ëœë‹¤."
+		 * ); CT[6].add_concept("T í”Œë¦½í”Œë¡­",
+		 * "Tí”Œë¦½í”Œë¡­ì€ JKí”Œë¦½í”Œë¡­ì—ì„œ J, Kê°€ ê°™ì€ ê°’ì´ ìž…ë ¥ë  ë–„ë§Œ ì´ìš©í•  ìˆ˜ ìžˆë„ë¡ ê³ ì•ˆëœ í”Œë¦½í”Œë¡­ì´ë‹¤. ì¦‰, Jê°€ 0ì´ë©´ Kë„ 0ì´ ë˜ê³  Jê°€ 1ì´ë©´ Kë„ 1ì´ ë˜ë„ë¡ ê³ ì•ˆëœ í”Œë¦½í”Œë¡­ì´ë‹¤.\r\ní† ê¸€(Toggle)ê¸°ëŠ¥ì„ ì´ìš©í•˜ê³ ìž í•  ë•Œ ì‚¬ìš©ëœë‹¤."
+		 * ); CT[6].add_concept("ë§ˆìŠ¤í„° ìŠ¬ëž˜ì´ë¸Œ(Master-Slave) í”Œë¦½í”Œë¡­",
+		 * "Race í˜„ìƒì„ í•´ê²°í•˜ê¸° ìœ„í•´ì„œ ê³ ì•ˆëœ í”Œë¦½í”Œë¡­ì´ë‹¤.\r\ní•˜ë‚˜ì˜ í”Œë¦½í”Œë¡­ì´ ì£¼ì¸ ì—­í• ì„ í•˜ê³ , ë‹¤ë¥¸ í•˜ë‚˜ì˜ í”Œë¦½í”Œë¡­ì´ ì¢…ì†ë˜ì–´ ë™ìž‘í•˜ë„ë¡ ë‘ ê°œ ì´ìƒì˜ í”Œë¦½í”Œë¡­ íšŒë¡œë¥¼ ê²°í•©í•œ ê²ƒì´ë‹¤.\r\nì£¼ì¢… í”Œë¦½í”Œë¡­ì—ì„œ ì•žì˜ ê²ƒì„ ì£¼ í”Œë¦½í”Œë¡­, ë’¤ì˜ ê²ƒì„ ì¢… í”Œë¦½í”Œë¡­ì´ë¼ í•˜ë©° ì£¼ í”Œë¦½í”Œë¡­ì€ ì‹œê°„ íŽ„ìŠ¤ê°€ ìƒìŠ¹í•  ë•Œ ë™ìž‘í•˜ê³ , ì¢… í”Œë¦½í”Œë¡­ì€ ì‹œê°„ íŽ„ìŠ¤ê°€ í•˜ê°•í•  ë•Œ ë™ìž‘í•œë‹¤."
+		 * ); CT[6].add_concept("Race í˜„ìƒ",
+		 * "ì¶œë ¥ì´ ìž…ë ¥ì— Feedbackë˜ì–´ í”Œë¦½í”Œë¡­ì˜ ë‚´ë¶€ ìƒíƒœê°€ ë³€í™”ë˜ë„ë¡ í•˜ë©´ ì¶œë ¥ ìƒíƒœê°€ ë³€í•  ë•Œ ìž…ë ¥ë„ ë³€í•˜ê²Œ ë˜ë¯€ë¡œ ì˜¤ë™ìž‘ì´ ë°œìƒí•˜ê²Œ ëœë‹¤. ì´ëŸ¬í•œ í˜„ìƒì„ Raceí˜„ìƒì´ë¼ í•œë‹¤."
+		 * ); CT[6].add_concept("ì¹´ìš´í„°(Counter)",
+		 * "ì¹´ìš´í„°(Counter)ëŠ” ì‹œê°„ íŽ„ìŠ¤ì˜ ìˆ˜ë¥¼ ì¹´ìš´íŠ¸í•˜ê±°ë‚˜ ì œì–´ ìž¥ì¹˜ì—ì„œ ê°ì¢… íšŒë¡œì˜ ë™ìž‘ì„ ì œì–´í•˜ëŠ”ë° ì‚¬ìš©í•œë‹¤.");
+		 * CT[6].add_concept("ë ˆì§€ìŠ¤í„°(Register)",
+		 * "ë ˆì§€ìŠ¤í„°ëŠ” ì—°ì‚°ì— ì‚¬ìš©ë  ë°ì´í„°ê°€ ëŒ€ê¸°í•˜ê±°ë‚˜ ì—°ì‚°ëœ ê²°ê³¼ ë°ì´í„°ê°€ ìž„ì‹œì ìœ¼ë¡œ ëŒ€ê¸°í•œë‹¤.");
+		 * CT[6].add_concept("ë¦¬í”Œ ì¹´ìš´í„°(Ripple Counter)",
+		 * "ê°€ìž¥ ê¸°ë³¸ì´ ë˜ëŠ” ë¹„ë™ê¸°í˜• ì¹´ìš´í„°(Asynchronous Counter)ì´ë‹¤.");
+		 * CT[6].add_concept("ëª¨ë“œ ì¹´ìš´í„°(MOD Counter)",
+		 * "ë¦¬í”Œ ì¹´ìš´íŠ¸ëŠ” í”Œë¦½í”Œë¡­ì˜ ìˆ˜ë¥¼ nì´ë¼ í•œë‹¤ë©´ 2^nê°œê¹Œì§€ì˜ ë…ë¦½ëœ ìˆ˜ ì „ë¶€ë¥¼ í‘œí˜„í•˜ì§€ë§Œ MODì¹´ìš´í„°ëŠ” ìž„ì˜ì˜ ìˆ˜ë¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€ë§Œ í‘œí˜„í•  ìˆ˜ ìžˆë„ë¡ ê°œì„ í•œ ì¹´ìš´í„°ì´ë‹¤."
+		 * ); CT[6].add_concept("ì‹œí”„íŠ¸ ë ˆì§€ìŠ¤í„°(Shift Register)",
+		 * "í˜„ìž¬ ë ˆì§€ìŠ¤í„°ì— ìžˆëŠ” ë‚´ìš©ì„ ì™¼ìª½ì´ë‚˜ ì˜¤ë¥¸ìª½ì˜ ì—°ê²°ëœ í”Œë¦½í”Œë¡­ìœ¼ë¡œ 1ë¹„íŠ¸ì”© ì´ë™ì‹œì¼œ ë°€ì–´ë‚´ê¸°ì™€ ê°™ì€ ë™ìž‘ì„ ìˆ˜í–‰í•˜ëŠ” ë ˆì§€ìŠ¤í„°ì´ë‹¤.");
+		 * CT[6].add_concept("ë³‘ë ¬ ì‹œí”„íŠ¸ ë ˆì§€ìŠ¤í„°(Parallel Shift Register)",
+		 * "nê°œì˜ ë¹„íŠ¸ë¡œ êµ¬ì„±ëœ ë ˆì§€ìŠ¤í„°ì˜ ë‚´ìš©ì„ ì—°ê²°ëœ ë‹¤ë¥¸ ë ˆì§€ìŠ¤í„°ë¡œ í•œ ë²ˆì— ì´ë™ì‹œí‚¬ ìˆ˜ ìžˆëŠ” ë ˆì§€ìŠ¤í„°ì´ë‹¤.");
 		 */
     }
 }

@@ -1,6 +1,6 @@
-package ¹®Á¦ÀºÇà;
+ï»¿package ë¬¸ì œì€í–‰;
 
-import ¹®Á¦ÀºÇà.¸ğµ¨.Question_bank;
+import ë¬¸ì œì€í–‰.ëª¨ë¸.Question_bank;
 
 class Controller
 {
@@ -16,7 +16,7 @@ class Controller
     public Controller()
     {
         pb = new Question_bank();
-        count = 0;                                                                //ÇöÀç ¹®Á¦¸¦ ¸î¹ø±îÁö Ç®¾ú³ª
+        count = 0;                                                                //í˜„ì¬ ë¬¸ì œë¥¼ ëª‡ë²ˆê¹Œì§€ í’€ì—ˆë‚˜
     }
 
     public boolean stringCompare(String long_str, String short_str)
@@ -38,20 +38,20 @@ class Controller
 
     public String Answer_input(String type, String str)
     {
-        String imsi = "ÀÔ·Â ¿À·ù";
+        String imsi = "ì…ë ¥ ì˜¤ë¥˜";
 
         if (count < pb.count)
         {
-            //´ä ÀÔ·ÂºÎºĞ
+            //ë‹µ ì…ë ¥ë¶€ë¶„
             input[count++] = str;
-            imsi = "ÀÔ·Â : " + str + "\r\n";
+            imsi = "ì…ë ¥ : " + str + "\r\n";
             imsi += "\r\n";
 
 
-            //°³³äÀÇ °æ¿ì ´ä ÀÔ·ÂÇÏÀÚ¸¶ÀÚ ¹®Á¦¿Í ´äÀ» º¸¿©ÁØ´Ù.
+            //ê°œë…ì˜ ê²½ìš° ë‹µ ì…ë ¥í•˜ìë§ˆì ë¬¸ì œì™€ ë‹µì„ ë³´ì—¬ì¤€ë‹¤.
             if (type == "CONCEPT")
             {
-                imsi += String.format("´ä : %s\r\n", pb.answer[count - 1]);
+                imsi += String.format("ë‹µ : %s\r\n", pb.answer[count - 1]);
                 imsi += "\r\n";
             }
 
@@ -59,12 +59,12 @@ class Controller
         }
 
         return imsi;
-    }                       //»ç¿ëÀÚ·ÎºÎÅÍ ´äÀ» ÀÔ·Â¹Ş´Â ÇÔ¼ö
+    }                       //ì‚¬ìš©ìë¡œë¶€í„° ë‹µì„ ì…ë ¥ë°›ëŠ” í•¨ìˆ˜
 
     public String set_question(String type)
     {
-        String imsi = "¹®Á¦ ³»±â ¿À·ù";
-        //ÃâÁ¦ ºÎºĞ
+        String imsi = "ë¬¸ì œ ë‚´ê¸° ì˜¤ë¥˜";
+        //ì¶œì œ ë¶€ë¶„
         if (count < pb.count)
         {
             switch (type)
@@ -88,12 +88,12 @@ class Controller
         }
 
         return imsi;
-    }                                   //¹®Á¦ ³»±â
+    }                                   //ë¬¸ì œ ë‚´ê¸°
 
     public String solve_start(String type, String subject, String chapter, String form)
     {
-        String imsi = "¹®Á¦ ÃâÁ¦ ¿À·ù";
-        ¹®Á¦ÀºÇà.¸ğµ¨.Subject SJ;
+        String imsi = "ë¬¸ì œ ì¶œì œ ì˜¤ë¥˜";
+        ë¬¸ì œì€í–‰.ëª¨ë¸.Subject SJ;
         count = 0;
 
         switch (subject)
@@ -277,11 +277,11 @@ class Controller
         }
 
         return imsi;
-    }   //¹®Á¦ ÃâÁ¦
+    }   //ë¬¸ì œ ì¶œì œ
 
     public String marking(String type)
     {
-        String imsi = "Ã¤Á¡ ¿À·ù";
+        String imsi = "ì±„ì  ì˜¤ë¥˜";
 
         switch (type)
         {
@@ -298,18 +298,18 @@ class Controller
                     }
                 }
 
-                imsi = String.format("¸ÂÀº°¹¼ö : %d\r\n\r\n", right_cnt);
+                imsi = String.format("ë§ì€ê°¯ìˆ˜ : %d\r\n\r\n", right_cnt);
                 
                 for (int i = 0; i < right_cnt; i++)
                 {
-                    imsi += String.format("%s %s \nÀÔ·ÂÇÑ ´ä : %s\r\n\r\n", pb.question[right_answer[i]], pb.answer[right_answer[i]], input[right_answer[i]]);
+                    imsi += String.format("%s %s \nì…ë ¥í•œ ë‹µ : %s\r\n\r\n", pb.question[right_answer[i]], pb.answer[right_answer[i]], input[right_answer[i]]);
                 }
 
                 imsi += "\r\n\r\n";
-                imsi += String.format("Æ²¸°°¹¼ö : %d\r\n\r\n", wrong_cnt);
+                imsi += String.format("í‹€ë¦°ê°¯ìˆ˜ : %d\r\n\r\n", wrong_cnt);
                 for (int i = 0; i < wrong_cnt; i++)
                 {
-                    imsi += String.format("%s %s \nÀÔ·ÂÇÑ ´ä : %s\r\n\r\n", pb.question[wrong_answer[i]], pb.answer[wrong_answer[i]], input[wrong_answer[i]]);
+                    imsi += String.format("%s %s \nì…ë ¥í•œ ë‹µ : %s\r\n\r\n", pb.question[wrong_answer[i]], pb.answer[wrong_answer[i]], input[wrong_answer[i]]);
                 }
 
                 break;
@@ -321,5 +321,5 @@ class Controller
         count = 0;
 
         return imsi;
-    }                           //Ã¤Á¡
+    }                           //ì±„ì 
 }
