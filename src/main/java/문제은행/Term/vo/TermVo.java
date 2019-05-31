@@ -7,6 +7,13 @@ public class TermVo {
     private String grammarQuestion;
     private String grammarAnswer;
     
+    public TermVo() {
+    	
+    }
+    public TermVo(String word, String translate) {
+    	this.word = word;
+    	this.translate = translate;
+    }
 	public String getWord() {
 		return word;
 	}

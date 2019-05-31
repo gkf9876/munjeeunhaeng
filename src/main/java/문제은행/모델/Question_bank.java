@@ -84,15 +84,15 @@ public class Question_bank
                             break;
                     }
 
-                    question = new String[tr.count];
-                    answer = new String[tr.count];
+                    question = new String[tr.getCount()];
+                    answer = new String[tr.getCount()];
 
-                    int[] ran = new int[tr.count];
+                    int[] ran = new int[tr.getCount()];
 
-                    for (int i = 0; i < tr.count; i++)
+                    for (int i = 0; i < tr.getCount(); i++)
                     {
                         int cnt = 0;
-                        ran[i] = rd.nextInt(tr.count);
+                        ran[i] = rd.nextInt(tr.getCount());
 
                         for (int j = 0; j < i; j++)
                             if (ran[j] == ran[i])
@@ -105,7 +105,7 @@ public class Question_bank
                     switch (form)
                     {
                         case WORDTOTRANSLATE:
-                            for (int i = 0; i < tr.count; i++)
+                            for (int i = 0; i < tr.getCount(); i++)
                             {
                                 question[i] = String.format(tr.termList.get(ran[i]).getWord());
                                 answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
@@ -113,7 +113,7 @@ public class Question_bank
                             }
                             break;
                         case TRANSLATETOWORD:
-                            for (int i = 0; i < tr.count; i++)
+                            for (int i = 0; i < tr.getCount(); i++)
                             {
                                 question[i] = String.format(tr.termList.get(ran[i]).getTranslate());
                                 answer[i] = String.format(tr.termList.get(ran[i]).getWord());
@@ -121,7 +121,7 @@ public class Question_bank
                             }
                             break;
                         case RANDOM:
-                            for(int i=0; i<tr.count; i++)
+                            for(int i=0; i<tr.getCount(); i++)
                             {
                                 if((int)(Math.random() % 2) == 1)
                                 {
@@ -137,7 +137,7 @@ public class Question_bank
                             }
                             break;
                         case EXAMPLE_SENTENCE:
-                            for (int i = 0; i < tr.count; i++)
+                            for (int i = 0; i < tr.getCount(); i++)
                             {
                                 question[i] = "\n 예문 : " + String.format(tr.termList.get(ran[i]).getExercise()) + "\r\n" + " 단어 : " + String.format(tr.termList.get(ran[i]).getWord());
                                 answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
@@ -146,7 +146,7 @@ public class Question_bank
                             break;
                         case GRAMMAR:
                             int k = 0;
-                            for (int i = 0; i < tr.count; i++)
+                            for (int i = 0; i < tr.getCount(); i++)
                             {
                                 if (tr.termList.get(ran[i]).getGrammarQuestion() != null)
                                 {
@@ -253,7 +253,7 @@ public class Question_bank
                             tr = new Term("voca");
 
                             for (int i = start_chapter; i < end_chapter; i++)
-                                tr.add_term(((English_voca)sj[0]).HT[i]);
+                                tr.setTermList(((English_voca)sj[0]).HT[i].getTermList());
 
                             this.name = String.format(tr.name);
                             break;
@@ -261,7 +261,7 @@ public class Question_bank
                             tr = new Term("voca");
 
                             for (int i = start_chapter; i < end_chapter; i++)
-                                tr.add_term(((Power_Electronics)sj[2]).HT[i]);
+                                tr.setTermList(((Power_Electronics)sj[2]).HT[i].getTermList());
 
                             this.name = String.format(tr.name);
                             break;
@@ -269,8 +269,8 @@ public class Question_bank
                             tr = new Term("voca");
 
                             for (int i = start_chapter; i < end_chapter; i++)
-                                tr.add_term(((Jappan_voca)sj[0]).HT[i]);
-
+                                tr.setTermList(((Jappan_voca)sj[0]).HT[i].getTermList());
+                            
                             this.name = String.format(tr.name);
                             break;
                         default:
@@ -278,15 +278,15 @@ public class Question_bank
                             break;
                     }
 
-                    question = new String[tr.count];
-                    answer = new String[tr.count];
+                    question = new String[tr.getCount()];
+                    answer = new String[tr.getCount()];
 
-                    int[] ran = new int[tr.count];
+                    int[] ran = new int[tr.getCount()];
 
-                    for (int i = 0; i < tr.count; i++)
+                    for (int i = 0; i < tr.getCount(); i++)
                     {
                         int cnt = 0;
-                        ran[i] = rd.nextInt(tr.count);
+                        ran[i] = rd.nextInt(tr.getCount());
 
                         for (int j = 0; j < i; j++)
                             if (ran[j] == ran[i])
@@ -299,7 +299,7 @@ public class Question_bank
                     switch (form)
                     {
                         case WORDTOTRANSLATE:
-                            for (int i = 0; i < tr.count; i++)
+                            for (int i = 0; i < tr.getCount(); i++)
                             {
                                 question[i] = String.format(tr.termList.get(ran[i]).getWord());
                                 answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
@@ -307,7 +307,7 @@ public class Question_bank
                             }
                             break;
                         case TRANSLATETOWORD:
-                            for (int i = 0; i < tr.count; i++)
+                            for (int i = 0; i < tr.getCount(); i++)
                             {
                                 question[i] = String.format(tr.termList.get(ran[i]).getTranslate());
                                 answer[i] = String.format(tr.termList.get(ran[i]).getWord());
@@ -315,7 +315,7 @@ public class Question_bank
                             }
                             break;
                         case RANDOM:
-                            for(int i=0; i<tr.count; i++)
+                            for(int i=0; i<tr.getCount(); i++)
                             {
                                 if(rd.nextInt(2) == 1)
                                 {
@@ -332,7 +332,7 @@ public class Question_bank
                             break;
                         case EXAMPLE_SENTENCE:
                             int j = 0;
-                            for (int i = 0; i < tr.count; i++)
+                            for (int i = 0; i < tr.getCount(); i++)
                             {
                                 if (tr.termList.get(ran[i]).getExercise() != null)
                                 {
@@ -342,11 +342,11 @@ public class Question_bank
                                 }
                             }
 
-                            tr.count = j;
+                            tr.setCount(j);
                             break;
                         case GRAMMAR:
                             int k = 0;
-                            for (int i = 0; i < tr.count; i++)
+                            for (int i = 0; i < tr.getCount(); i++)
                             {
                                 if (tr.termList.get(ran[i]).getGrammarQuestion() != null)
                                 {
@@ -356,7 +356,7 @@ public class Question_bank
                                 }
                             }
 
-                            tr.count = k;
+                            tr.setCount(k);
                             break;
                     }
                 }
@@ -371,7 +371,7 @@ public class Question_bank
                             tr = new Concept("정보처리");
 
                             for (int i = start_chapter; i < end_chapter; i++)
-                                tr.add_concept(((Engineer_Information_Processing)sj[1]).CT[i]);
+                                tr.setConceptList(((Engineer_Information_Processing)sj[1]).CT[i].getConceptList());
 
                             this.name = String.format(tr.name);
                             break;
@@ -379,21 +379,21 @@ public class Question_bank
                             tr = new Concept("정보처리");
 
                             for (int i = start_chapter; i < end_chapter; i++)
-                                tr.add_concept(((Engineer_Information_Processing)sj[1]).CT[i]);
+                                tr.setConceptList(((Engineer_Information_Processing)sj[1]).CT[i].getConceptList());
 
                             this.name = String.format(tr.name);
                             break;
                     }
 
-                    question = new String[tr.count];
-                    answer = new String[tr.count];
+                    question = new String[tr.getCount()];
+                    answer = new String[tr.getCount()];
 
-                    int[] ran = new int[tr.count];
+                    int[] ran = new int[tr.getCount()];
 
-                    for (int i = 0; i < tr.count; i++)
+                    for (int i = 0; i < tr.getCount(); i++)
                     {
                         int cnt = 0;
-                        ran[i] = rd.nextInt(tr.count);
+                        ran[i] = rd.nextInt(tr.getCount());
 
                         for (int j = 0; j < i; j++)
                             if (ran[j] == ran[i])
@@ -406,7 +406,7 @@ public class Question_bank
                     switch (form)
                     {
                         case INTERPRET:
-                            for (int i = 0; i < tr.count; i++)
+                            for (int i = 0; i < tr.getCount(); i++)
                             {
                                 question[i] = String.format(tr.conceptList.get(ran[i]).getWord());
                                 answer[i] = String.format(tr.conceptList.get(ran[i]).getInterpret());
@@ -414,7 +414,7 @@ public class Question_bank
                             }
                             break;
                         case INFERENCE:
-                            for (int i = 0; i < tr.count; i++)
+                            for (int i = 0; i < tr.getCount(); i++)
                             {
                                 question[i] = String.format(tr.conceptList.get(ran[i]).getInterpret());
                                 answer[i] = String.format(tr.conceptList.get(ran[i]).getWord());
@@ -422,7 +422,7 @@ public class Question_bank
                             }
                             break;
                         case RANDOM:
-                            for (int i = 0; i < tr.count; i++)
+                            for (int i = 0; i < tr.getCount(); i++)
                             {
                                 if (rd.nextInt(2) == 1)
                                 {
