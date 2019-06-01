@@ -1,6 +1,7 @@
 ﻿package 문제은행.Term.vo;
 
 public class TermVo {
+	private int idx;
     private String word;
     private String translate;
     private String exercise;
@@ -14,6 +15,12 @@ public class TermVo {
     	this.word = word;
     	this.translate = translate;
     }
+	public int getIdx() {
+		return idx;
+	}
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
 	public String getWord() {
 		return word;
 	}
