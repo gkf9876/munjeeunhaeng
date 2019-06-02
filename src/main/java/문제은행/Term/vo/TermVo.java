@@ -7,6 +7,8 @@ public class TermVo {
     private String exercise;
     private String grammarQuestion;
     private String grammarAnswer;
+    private String type;
+    private String chapter;
     
     public TermVo() {
     	
@@ -50,5 +52,17 @@ public class TermVo {
 	}
 	public void setGrammarAnswer(String grammarAnswer) {
 		this.grammarAnswer = grammarAnswer;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getChapter() {
+		return chapter;
+	}
+	public void setChapter(String chapter) {
+		this.chapter = chapter;
 	}
 }

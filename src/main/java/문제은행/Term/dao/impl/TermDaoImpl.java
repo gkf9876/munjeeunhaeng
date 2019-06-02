@@ -35,7 +35,7 @@ public class TermDaoImpl implements TermDao{
 	};
 	
 	public void add(final TermVo termVo){
-		this.jdbcTemplate.update("INSERT INTO TERM(WORD, TRANSLATE, EXCERCISE, GRAMMAR_QUESTION, GRAMMAR_ANSWER) VALUES(?, ?, ?, ?, ?)"
+		this.jdbcTemplate.update("INSERT INTO TERM(WORD, TRANSLATE, EXERCISE, GRAMMAR_QUESTION, GRAMMAR_ANSWER) VALUES(?, ?, ?, ?, ?)"
 				, termVo.getWord(), termVo.getTranslate(), termVo.getExercise(), termVo.getGrammarQuestion(), termVo.getGrammarAnswer());
 	}
 	

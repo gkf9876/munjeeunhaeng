@@ -2,6 +2,7 @@
 
 import java.awt.Button;
 import java.awt.Choice;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
@@ -9,11 +10,19 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import 문제은행.AppContext.AppContext;
+import 문제은행.Term.dao.TermDao;
+import 문제은행.Term.vo.TermVo;
 import 문제은행.모델.Question_bank;
 
 public class Test
@@ -25,9 +34,54 @@ public class Test
 		Controller con = new Controller();
 		
 		JFrame f = new JFrame("문제은행");
-		f.setSize(550, 600);
+		f.setSize(550, 620);
 		f.setLayout(null);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JMenuBar mb = new JMenuBar(); 
+		JMenu screenMenu = new JMenu("메뉴");
+		
+		JMenuItem item = new JMenuItem("단어추가");
+		JDialog dialog = new JDialog(f, "단어추가");
+		dialog.setLayout(new FlowLayout());
+		JTextField dialogWord = new JTextField(10);
+		dialog.add(dialogWord);
+		JTextField dialogTranslate = new JTextField(10);
+		dialog.add(dialogTranslate);
+		JTextField dialogType = new JTextField(10);
+		dialog.add(dialogType);
+		JTextField dialogChapter = new JTextField(10);
+		dialog.add(dialogChapter);
+		JButton dialogOkButton = new JButton("OK");
+		dialogOkButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+		        AppContext context = new AppContext();
+		        TermDao termDao = context.termDao();
+		        TermVo termVo = new TermVo();
+		        termVo.setWord(dialogWord.getText().trim());
+		        termVo.setTranslate(dialogWord.getText().trim());
+		        termVo.setExercise("");
+		        termVo.setGrammarQuestion("");
+		        termVo.setGrammarAnswer("");
+		        termVo.setType(dialogType.getText().trim());
+		        termVo.setChapter(dialogChapter.getText().trim());
+		        termDao.add(termVo);
+			}
+		});
+		
+		dialog.add(dialogOkButton);
+		
+		item.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dialog.setSize(300, 200);
+				dialog.setVisible(true);
+			}
+		}); // 메뉴아이템에 Action 리스너 설정screenMenu.add(item);
+		
+		screenMenu.add(item);
+		mb.add(screenMenu);
+		f.setJMenuBar(mb);
 		
 		Label typeName = new Label("타입");
 		typeName.setSize(40, 40);
