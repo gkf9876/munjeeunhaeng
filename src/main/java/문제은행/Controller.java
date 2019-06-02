@@ -161,7 +161,7 @@ class Controller
 
                         for (int i = 1; i < SJ.HT.length; i++)
                         {
-                            if (SJ.HT[i].name == chapter)
+                            if (SJ.HT[i].name.equals(chapter))
                             {
                                 num = i;
                                 break;

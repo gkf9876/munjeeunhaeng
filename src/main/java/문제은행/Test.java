@@ -108,7 +108,7 @@ public class Test
 		Choice chapter = new Choice();
 		chapter.setSize(100, 40);
 		chapter.setLocation(80, 100);
-		for(int i=0; i<con.pb.getSj()[0].HT.length; i++)
+		for(int i=0; i<con.pb.getSj()[3].HT.length; i++)
 		{
 			chapter.add(String.format("%d", i+1));
 		}
