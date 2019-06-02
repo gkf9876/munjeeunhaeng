@@ -6,12 +6,10 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import 문제은행.SqlService.SqlService;
 import 문제은행.Term.dao.TermDao;
 import 문제은행.Term.vo.TermVo;
 
@@ -19,10 +17,6 @@ import 문제은행.Term.vo.TermVo;
 public class TermDaoImpl implements TermDao{
 	private JdbcTemplate jdbcTemplate;
 	
-	@Autowired
-	private SqlService sqlService;
-	
-	@Autowired
 	public void setDataSource(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
@@ -30,40 +24,41 @@ public class TermDaoImpl implements TermDao{
 	private RowMapper<TermVo> termVoMapper = new RowMapper<TermVo>() {
 		public TermVo mapRow(ResultSet rs, int rowNum) throws SQLException {
 			TermVo termVo = new TermVo();
-			termVo.setIdx(rs.getInt("idx"));
-			termVo.setWord("word");
-			termVo.setTranslate("translate");
-			termVo.setExercise("exercise");
-			termVo.setGrammarQuestion("grammarQuestion");
-			termVo.setGrammarAnswer("grammarAnswer");
+			termVo.setIdx(rs.getInt("IDX"));
+			termVo.setWord(rs.getString("WORD"));
+			termVo.setTranslate(rs.getString("TRANSLATE"));
+			termVo.setExercise(rs.getString("EXERCISE"));
+			termVo.setGrammarQuestion(rs.getString("GRAMMAR_QUESTION"));
+			termVo.setGrammarAnswer(rs.getString("GRAMMAR_ANSWER"));
 			return termVo;
 		}
 	};
 	
 	public void add(final TermVo termVo){
-		this.jdbcTemplate.update(this.sqlService.getSql("termVoAdd"), 
-				termVo.getIdx(), termVo.getWord(), termVo.getTranslate(), termVo.getExercise(), termVo.getGrammarQuestion(), termVo.getGrammarAnswer());
+		this.jdbcTemplate.update("INSERT INTO TERM(WORD, TRANSLATE, EXCERCISE, GRAMMAR_QUESTION, GRAMMAR_ANSWER) VALUES(?, ?, ?, ?, ?)"
+				, termVo.getWord(), termVo.getTranslate(), termVo.getExercise(), termVo.getGrammarQuestion(), termVo.getGrammarAnswer());
 	}
 	
-	public TermVo get(String id){
-		return this.jdbcTemplate.queryForObject(this.sqlService.getSql("termVoGet"), 
-				new Object[] {id}, this.termVoMapper);
+	public TermVo get(String idx){
+		return this.jdbcTemplate.queryForObject("SELECT * FROM TERM WHERE IDX = ?", 
+				new Object[] {idx}, this.termVoMapper);
 	}
 	
 	public void deleteAll(){
-		this.jdbcTemplate.update(this.sqlService.getSql("termVoDeleteAll"));
+		this.jdbcTemplate.update("DELETE FROM TERM");
 	}
 	
 	public int getCount() {
-		return this.jdbcTemplate.queryForObject(this.sqlService.getSql("termVoGetCount"), Integer.class);
+		return this.jdbcTemplate.queryForObject("SELECT COUND(*) FROM TERM", Integer.class);
 	}
 	
-	public List<TermVo> getAll(){
-		return this.jdbcTemplate.query(this.sqlService.getSql("termVoGetAll"), this.termVoMapper);
+	public List<TermVo> getAll(String type, String chapter){
+		return this.jdbcTemplate.query("SELECT * FROM TERM WHERE TYPE = ? AND CHAPTER = ? ORDER BY IDX", new Object[] {type, chapter}, this.termVoMapper);
 	}
 
+	@Override
 	public void update(TermVo termVo) {
-		this.jdbcTemplate.update(this.sqlService.getSql("termVoUpdate"),
-				termVo.getWord(), termVo.getTranslate(), termVo.getExercise(), termVo.getGrammarQuestion(), termVo.getGrammarAnswer(), termVo.getIdx());
+		// TODO Auto-generated method stub
+		
 	}
 }
