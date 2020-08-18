@@ -11,17 +11,5 @@ class Jappan_voca extends Subject
     public Jappan_voca(String name, Keyword code)
     {
     	super(name, code);
-        AppContext context = new AppContext();
-        termDao = context.termDao();
-        
-        this.HT = new Term[4];
-        HT[1] = new Term("1");
-        HT[1].setTermList(termDao.getAll("JAPAN_VOCA", "1"));
-
-        HT[2] = new Term("2");
-        HT[2].setTermList(termDao.getAll("JAPAN_VOCA", "2"));
-
-        HT[3] = new Term("3");
-        HT[3].setTermList(termDao.getAll("JAPAN_VOCA", "3"));
     }
 }

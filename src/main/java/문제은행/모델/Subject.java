@@ -7,9 +7,6 @@ public class Subject
 	public String name;
     public Keyword code;
 
-    public Term[] HT;
-    public Concept[] CT;
-
     public Subject(String name, Keyword code2)
     {
         this.name = name;

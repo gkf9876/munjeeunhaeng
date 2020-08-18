@@ -1,4 +1,4 @@
-﻿package 문제은행;
+package 문제은행;
 
 import java.awt.Button;
 import java.awt.Choice;
@@ -13,6 +13,7 @@ import java.awt.event.ItemListener;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -27,7 +28,7 @@ import 문제은행.모델.Question_bank;
 
 public class Test
 {
-    public static int count = 0;                      //개념 문제 낼때 사용.
+	public static int count = 0;					  //개념 문제 낼때 사용.
 	
 	public static void main(String[] args)
 	{
@@ -55,17 +56,17 @@ public class Test
 		dialogOkButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-		        AppContext context = new AppContext();
-		        TermDao termDao = context.termDao();
-		        TermVo termVo = new TermVo();
-		        termVo.setWord(dialogWord.getText().trim());
-		        termVo.setTranslate(dialogWord.getText().trim());
-		        termVo.setExercise("");
-		        termVo.setGrammarQuestion("");
-		        termVo.setGrammarAnswer("");
-		        termVo.setType(dialogType.getText().trim());
-		        termVo.setChapter(dialogChapter.getText().trim());
-		        termDao.add(termVo);
+				AppContext context = new AppContext();
+				TermDao termDao = context.termDao();
+				TermVo termVo = new TermVo();
+				termVo.setWord(dialogWord.getText().trim());
+				termVo.setTranslate(dialogWord.getText().trim());
+				termVo.setExercise("");
+				termVo.setGrammarQuestion("");
+				termVo.setGrammarAnswer("");
+				termVo.setType(dialogType.getText().trim());
+				termVo.setChapter(dialogChapter.getText().trim());
+				termDao.add(termVo);
 			}
 		});
 		
@@ -83,7 +84,7 @@ public class Test
 		mb.add(screenMenu);
 		f.setJMenuBar(mb);
 		
-		Label typeName = new Label("타입");
+		JLabel typeName = new JLabel("타입");
 		typeName.setSize(40, 40);
 		typeName.setLocation(20, 20);
 		Choice type = new Choice();
@@ -92,7 +93,7 @@ public class Test
 		type.add("TERM");
 		type.add("CONCEPT");
 		
-		Label subjectName = new Label("과목");
+		JLabel subjectName = new JLabel("과목");
 		subjectName.setSize(40, 40);
 		subjectName.setLocation(20, 60);
 		Choice subject = new Choice();
@@ -102,37 +103,37 @@ public class Test
 		subject.add("ENGLISH_VOCA");
 		subject.add("POWER_ELECTRONICS");
 		
-		Label chapterName = new Label("챕터");
+		JLabel chapterName = new JLabel("챕터");
 		chapterName.setSize(40, 40);
 		chapterName.setLocation(20, 100);
 		Choice chapter = new Choice();
 		chapter.setSize(100, 40);
 		chapter.setLocation(80, 100);
-		for(int i=0; i<con.pb.getSj()[3].HT.length; i++)
+		for(int i=0; i<10; i++)
 		{
 			chapter.add(String.format("%d", i+1));
 		}
 		chapter.add("all");
 		
-		Label formName = new Label("유형");
+		JLabel formName = new JLabel("유형");
 		formName.setSize(40, 40);
 		formName.setLocation(20, 140);
 		Choice form = new Choice();
 		form.setSize(100, 40);
 		form.setLocation(80, 140);
-        form.add("WORDTOTRANSLATE");
-        form.add("TRANSLATETOWORD");
-        form.add("RANDOM");
-        form.add("EXAMPLE_SENTENCE");
-        form.add("GRAMMAR");
+		form.add("WORDTOTRANSLATE");
+		form.add("TRANSLATETOWORD");
+		form.add("RANDOM");
+		form.add("EXAMPLE_SENTENCE");
+		form.add("GRAMMAR");
 		
 		
-		Button solve = new Button("문제풀기");
+		JButton solve = new JButton("문제풀기");
 		solve.setSize(100, 40);
 		solve.setLocation(200,  140);
 		f.add(solve);
 		
-		Button marking = new Button("채점");
+		JButton marking = new JButton("채점");
 		marking.setSize(100, 40);
 		marking.setLocation(320,  140);
 		f.add(marking);
@@ -151,9 +152,9 @@ public class Test
 		question.setLocation(20, 180);
 		question.setLineWrap(true);
 
-	    Font font = new Font("arian", Font.PLAIN, 20);
-	    question.setFont(font);
-	    
+		Font font = new Font("arian", Font.PLAIN, 20);
+		question.setFont(font);
+		
 		JScrollPane scrollPane = new JScrollPane(question, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setSize(500, 300);
 		scrollPane.setLocation(20, 180);
@@ -164,7 +165,7 @@ public class Test
 		input.setLocation(20, 500);
 		f.add(input);
 		
-		Button input_button = new Button("입력");
+		JButton input_button = new JButton("입력");
 		input_button.setSize(100, 40);
 		input_button.setLocation(420,  500);
 		f.add(input_button);
@@ -174,33 +175,33 @@ public class Test
 			public void itemStateChanged(ItemEvent e)
 			{
 				switch (e.getItem().toString())
-	            {
-	                case "TERM":
-	                    subject.removeAll();
-	                    subject.add("ENGLISH_VOCA");
-	                    subject.add("POWER_ELECTRONICS");
-	                    subject.add("JAPAN_VOCA");
+				{
+					case "TERM":
+						subject.removeAll();
+						subject.add("ENGLISH_VOCA");
+						subject.add("POWER_ELECTRONICS");
+						subject.add("JAPAN_VOCA");
 
-	                    form.removeAll();
-	                    form.add("WORDTOTRANSLATE");
-	                    form.add("TRANSLATETOWORD");
-	                    form.add("RANDOM");
-	                    form.add("EXAMPLE_SENTENCE");
-	                    form.add("GRAMMAR");
-	                    break;
-	                case "CONCEPT":
-	                    subject.removeAll();
-	                    subject.add("ENGINEER_INFORMATION_PROCESSING");
+						form.removeAll();
+						form.add("WORDTOTRANSLATE");
+						form.add("TRANSLATETOWORD");
+						form.add("RANDOM");
+						form.add("EXAMPLE_SENTENCE");
+						form.add("GRAMMAR");
+						break;
+					case "CONCEPT":
+						subject.removeAll();
+						subject.add("ENGINEER_INFORMATION_PROCESSING");
 
-	                    form.removeAll();
-	                    form.add("INTERPRET");
-	                    form.add("INFERENCE");
-	                    form.add("RANDOM");
-	                    break;
-	            }
+						form.removeAll();
+						form.add("INTERPRET");
+						form.add("INFERENCE");
+						form.add("RANDOM");
+						break;
+				}
 				
-	            question.setText("");
-	            input.setText("");
+				question.setText("");
+				input.setText("");
 			}
 		});
 		
@@ -209,38 +210,38 @@ public class Test
 					public void itemStateChanged(ItemEvent e)
 					{
 						switch (e.getItem().toString())
-			            {
-			                case "ENGLISH_VOCA":
-			                    chapter.removeAll();
-			                    for(int i=1; i< (con.pb.getSubject(Question_bank.Keyword.ENGLISH_VOCA)).HT.length; i++)
-			                        chapter.add((con.pb.getSubject(Question_bank.Keyword.ENGLISH_VOCA)).HT[i].name);
+						{
+							case "ENGLISH_VOCA":
+								chapter.removeAll();
+								for(int i=1; i< 10; i++)
+									chapter.add(Integer.toString(i));
 			
-			                    chapter.add("all");
-			                    break;
-			                case "ENGINEER_INFORMATION_PROCESSING":
-			                    chapter.removeAll();
-			                    for (int i = 1; i < (con.pb.getSubject(Question_bank.Keyword.ENGINEER_INFORMATION_PROCESSING)).CT.length; i++)
-			                        chapter.add((con.pb.getSubject(Question_bank.Keyword.ENGINEER_INFORMATION_PROCESSING)).CT[i].name);
+								chapter.add("all");
+								break;
+							case "ENGINEER_INFORMATION_PROCESSING":
+								chapter.removeAll();
+								for (int i = 1; i < 10; i++)
+									chapter.add(Integer.toString(i));
 			
-			                    chapter.add("all");
-			                    break;
-			                case "POWER_ELECTRONICS":
-			                	chapter.removeAll();
-			                	for(int i=1; i<(con.pb.getSubject(Question_bank.Keyword.POWER_ELECTRONICS)).HT.length; i++)
-			                		chapter.add((con.pb.getSubject(Question_bank.Keyword.POWER_ELECTRONICS)).HT[i].name);
-			                	
-			                	chapter.add("all");
-			                	break;
-			                case "JAPAN_VOCA":
-			                	chapter.removeAll();
-			                	for(int i=1; i<(con.pb.getSubject(Question_bank.Keyword.JAPAN_VOCA)).HT.length; i++)
-			                		chapter.add((con.pb.getSubject(Question_bank.Keyword.JAPAN_VOCA)).HT[i].name);
-			                	
-			                	chapter.add("all");
-			                	break;
-			            }
+								chapter.add("all");
+								break;
+							case "POWER_ELECTRONICS":
+								chapter.removeAll();
+								for(int i=1; i<10; i++)
+									chapter.add(Integer.toString(i));
+								
+								chapter.add("all");
+								break;
+							case "JAPAN_VOCA":
+								chapter.removeAll();
+								for(int i=1; i<10; i++)
+									chapter.add(Integer.toString(i));
+								
+								chapter.add("all");
+								break;
+						}
 						question.setText("");
-			            input.setText("");
+						input.setText("");
 					}
 				});
 		
@@ -249,8 +250,8 @@ public class Test
 					public void actionPerformed(ActionEvent e)
 					{
 						question.setText("");
-			            
-			            question.append(con.solve_start(type.getSelectedItem(), subject.getSelectedItem(), chapter.getSelectedItem(), form.getSelectedItem()));
+						
+						question.append(con.solve_start(type.getSelectedItem(), subject.getSelectedItem(), chapter.getSelectedItem(), form.getSelectedItem()));
 					}
 				});
 		marking.addActionListener(new ActionListener()
@@ -259,7 +260,7 @@ public class Test
 					{
 						question.setText("");
 
-			            question.append(con.marking(type.getSelectedItem()));
+						question.append(con.marking(type.getSelectedItem()));
 					}
 				});
 		input_button.addActionListener(new ActionListener()
@@ -267,26 +268,26 @@ public class Test
 					public void actionPerformed(ActionEvent e)
 					{
 						if (type.getSelectedItem() == "TERM")
-			            {
-			                question.append(con.Answer_input(type.getSelectedItem(), input.getText()));
-			                question.append(con.set_question(type.getSelectedItem()));
-			            }
-			            else
-			            {
-			                //개념문제에 맞게 답을 적으면 바로 답이 맞는지 확인할 수 있게 했다.
-			                if (count == 0)
-			                {
-			                    question.append(con.Answer_input(type.getSelectedItem(), input.getText()));
-			                    count++;
-			                }
-			                else
-			                {
-			                	question.setText("");
-			                    question.append(con.set_question(type.getSelectedItem()));
-			                    //count = 0;
-			                }
-			            }
-			            
+						{
+							question.append(con.Answer_input(type.getSelectedItem(), input.getText()));
+							question.append(con.set_question(type.getSelectedItem()));
+						}
+						else
+						{
+							//개념문제에 맞게 답을 적으면 바로 답이 맞는지 확인할 수 있게 했다.
+							if (count == 0)
+							{
+								question.append(con.Answer_input(type.getSelectedItem(), input.getText()));
+								count++;
+							}
+							else
+							{
+								question.setText("");
+								question.append(con.set_question(type.getSelectedItem()));
+								//count = 0;
+							}
+						}
+						
 						input.setText("");
 					}
 				});
@@ -296,26 +297,26 @@ public class Test
 					public void actionPerformed(ActionEvent e)
 					{
 						if (type.getSelectedItem() == "TERM")
-			            {
-			                question.append(con.Answer_input(type.getSelectedItem(), input.getText()));
-			                question.append(con.set_question(type.getSelectedItem()));
-			            }
-			            else
-			            {
-			                //개념문제에 맞게 답을 적으면 바로 답이 맞는지 확인할 수 있게 했다.
-			                if (count == 0)
-			                {
-			                    question.append(con.Answer_input(type.getSelectedItem(), input.getText()));
-			                    count++;
-			                }
-			                else
-			                {
-			                	question.setText("");
-			                    question.append(con.set_question(type.getSelectedItem()));
-			                    count = 0;
-			                }
-			            }
-			            
+						{
+							question.append(con.Answer_input(type.getSelectedItem(), input.getText()));
+							question.append(con.set_question(type.getSelectedItem()));
+						}
+						else
+						{
+							//개념문제에 맞게 답을 적으면 바로 답이 맞는지 확인할 수 있게 했다.
+							if (count == 0)
+							{
+								question.append(con.Answer_input(type.getSelectedItem(), input.getText()));
+								count++;
+							}
+							else
+							{
+								question.setText("");
+								question.append(con.set_question(type.getSelectedItem()));
+								count = 0;
+							}
+						}
+						
 						input.setText("");
 					}
 				});

@@ -1,445 +1,439 @@
 ﻿package 문제은행.모델;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
+import 문제은행.AppContext.AppContext;
+import 문제은행.Concept.dao.ConceptDao;
+import 문제은행.Concept.vo.ConceptVo;
+import 문제은행.Term.dao.TermDao;
+import 문제은행.Term.vo.TermVo;
 
 public class Question_bank
 {
 	private Subject[] sj;
-    private Random rd;
+	private Random rd;
 
-    public String name;
-    public Subject[] getSj() {
+	public String name;
+	public Subject[] getSj() {
 		return sj;
 	}
 
 	public String[] question;
-    public String[] answer;
-    public int count;                                                               //문제 갯수.
+	public String[] answer;
+	public int count;															   //문제 갯수.
 
-    public enum Keyword
-    {
-        WORDTOTRANSLATE, TRANSLATETOWORD, RANDOM, GRAMMAR, EXAMPLE_SENTENCE,        //용어 유형 키워드
-        INTERPRET, INFERENCE,                                                       //개념 유형 키워드
-        TERM, CONCEPT,
-        ENGLISH_VOCA, POWER_ELECTRONICS, JAPAN_VOCA,                                                              //용어 과목 키워드
-        ENGINEER_INFORMATION_PROCESSING                                             //개념 과목 키워드
-    }
+	TermDao termDao;
+	ConceptDao conceptDao;
+	
+	public enum Keyword
+	{
+		WORDTOTRANSLATE, TRANSLATETOWORD, RANDOM, GRAMMAR, EXAMPLE_SENTENCE,		//용어 유형 키워드
+		INTERPRET, INFERENCE,													   //개념 유형 키워드
+		TERM, CONCEPT,
+		ENGLISH_VOCA, POWER_ELECTRONICS, JAPAN_VOCA,															  //용어 과목 키워드
+		ENGINEER_INFORMATION_PROCESSING,											 //개념 과목 키워드
+		PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT
+	}
 
-    public Question_bank()
-    {
-        sj = new Subject[4];
-        sj[0] = new English_voca("해커스", Keyword.ENGLISH_VOCA);
-        sj[1] = new Engineer_Information_Processing("정보처리기사", Keyword.ENGINEER_INFORMATION_PROCESSING);
-        sj[2] = new Power_Electronics("전력전자공학", Keyword.POWER_ELECTRONICS);
-        sj[3] = new Jappan_voca("일본어 공부", Keyword.JAPAN_VOCA);
-        count = 0;
-        rd = new Random();
-    }
+	public Question_bank()
+	{
+		AppContext context = new AppContext();
+		termDao = context.termDao();
+		conceptDao = context.conceptDao();
+		
+		sj = new Subject[5];
+		sj[0] = new English_voca("해커스", Keyword.ENGLISH_VOCA);
+		sj[1] = new Engineer_Information_Processing("정보처리기사", Keyword.ENGINEER_INFORMATION_PROCESSING);
+		sj[2] = new Power_Electronics("전력전자공학", Keyword.POWER_ELECTRONICS);
+		sj[3] = new Jappan_voca("일본어 공부", Keyword.JAPAN_VOCA);
+		sj[4] = new ProfessionalEngineerInformationManagement("정보관리기술사", Keyword.PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT);
+		count = 0;
+		rd = new Random();
+	}
 
-    public Subject getSubject(Keyword code)
-    {
-        for(int i=0; i<sj.length; i++)
-        {
-            if((Keyword)sj[i].code == code)
-            {
-                return sj[i];
-            }
-        }
+	public Subject getSubject(Keyword code)
+	{
+		for(int i=0; i<sj.length; i++)
+		{
+			if((Keyword)sj[i].code == code)
+			{
+				return sj[i];
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    public void set_chapter_exam(Keyword type, Keyword subject, int chapter, Keyword form)
-    {
-        for (int i=0; i<this.count; i++)
-        {
-            question[i] = null;
-            answer[i] = null;
-        }
+	public void set_chapter_exam(Keyword type, Keyword subject, int chapter, Keyword form)
+	{
+		for (int i=0; i<this.count; i++)
+		{
+			question[i] = null;
+			answer[i] = null;
+		}
 
-        this.count = 0;
+		this.count = 0;
 
-        switch (type)
-        {
-            case TERM:
-                {
-                    Term tr;
+		switch (type)
+		{
+			case TERM:
+				{
+					List<TermVo> list;
 
-                    switch (subject)
-                    {
-                        case ENGLISH_VOCA:
-                            tr = ((English_voca)getSubject(Keyword.ENGLISH_VOCA)).HT[chapter];
-                            this.name = String.format(tr.name);
-                            break;
-                        case POWER_ELECTRONICS:
-                        	tr = getSubject(Keyword.POWER_ELECTRONICS).HT[chapter];
-                        	this.name = String.format(tr.name);
-                        	break;
-                        case JAPAN_VOCA:
-                        	tr = getSubject(Keyword.JAPAN_VOCA).HT[chapter];
-                        	this.name = String.format(tr.name);
-                        	break;
-                        default:
-                            tr = null;
-                            break;
-                    }
+					switch (subject)
+					{
+						case ENGLISH_VOCA:
+							list = termDao.getAll("ENGLISH_VOCA", chapter);
+							break;
+						case POWER_ELECTRONICS:
+							list = termDao.getAll("POWER_ELECTRONICS", chapter);
+							break;
+						case JAPAN_VOCA:
+							list = termDao.getAll("JAPAN_VOCA", chapter);
+							break;
+						default:
+							list = new ArrayList<TermVo>();
+							break;
+					}
 
-                    question = new String[tr.getCount()];
-                    answer = new String[tr.getCount()];
+					question = new String[list.size()];
+					answer = new String[list.size()];
 
-                    int[] ran = new int[tr.getCount()];
+					int[] ran = new int[list.size()];
 
-                    for (int i = 0; i < tr.getCount(); i++)
-                    {
-                        int cnt = 0;
-                        ran[i] = rd.nextInt(tr.getCount());
+					for (int i = 0; i < list.size(); i++)
+					{
+						int cnt = 0;
+						ran[i] = rd.nextInt(list.size());
 
-                        for (int j = 0; j < i; j++)
-                            if (ran[j] == ran[i])
-                                cnt++;
+						for (int j = 0; j < i; j++)
+							if (ran[j] == ran[i])
+								cnt++;
 
-                        if (cnt != 0)
-                            i--;
-                    }
+						if (cnt != 0)
+							i--;
+					}
 
-                    switch (form)
-                    {
-                        case WORDTOTRANSLATE:
-                            for (int i = 0; i < tr.getCount(); i++)
-                            {
-                                question[i] = String.format(tr.termList.get(ran[i]).getWord());
-                                answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
-                                count++;
-                            }
-                            break;
-                        case TRANSLATETOWORD:
-                            for (int i = 0; i < tr.getCount(); i++)
-                            {
-                                question[i] = String.format(tr.termList.get(ran[i]).getTranslate());
-                                answer[i] = String.format(tr.termList.get(ran[i]).getWord());
-                                count++;
-                            }
-                            break;
-                        case RANDOM:
-                            for(int i=0; i<tr.getCount(); i++)
-                            {
-                                if((int)(Math.random() % 2) == 1)
-                                {
-                                    question[i] = String.format(tr.termList.get(ran[i]).getWord());
-                                    answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
-                                }
-                                else
-                                {
-                                    question[i] = String.format(tr.termList.get(ran[i]).getTranslate());
-                                    answer[i] = String.format(tr.termList.get(ran[i]).getWord());
-                                }
-                                count++;
-                            }
-                            break;
-                        case EXAMPLE_SENTENCE:
-                            for (int i = 0; i < tr.getCount(); i++)
-                            {
-                                question[i] = "\n 예문 : " + String.format(tr.termList.get(ran[i]).getExercise()) + "\r\n" + " 단어 : " + String.format(tr.termList.get(ran[i]).getWord());
-                                answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
-                                count++;
-                            }
-                            break;
-                        case GRAMMAR:
-                            int k = 0;
-                            for (int i = 0; i < tr.getCount(); i++)
-                            {
-                                if (tr.termList.get(ran[i]).getGrammarQuestion() != null)
-                                {
-                                    question[k] = String.format(tr.termList.get(ran[i]).getGrammarQuestion());
-                                    answer[k++] = String.format(tr.termList.get(ran[i]).getGrammarAnswer());
-                                    count++;
-                                }
-                            }
-                            break;
-                    }
-                }
-                break;
-            case CONCEPT:
-                {
-                    Concept cc;
+					switch (form)
+					{
+						case WORDTOTRANSLATE:
+							for (int i = 0; i < list.size(); i++)
+							{
+								question[i] = String.format(list.get(ran[i]).getWord());
+								answer[i] = String.format(list.get(ran[i]).getTranslate());
+								count++;
+							}
+							break;
+						case TRANSLATETOWORD:
+							for (int i = 0; i < list.size(); i++)
+							{
+								question[i] = String.format(list.get(ran[i]).getTranslate());
+								answer[i] = String.format(list.get(ran[i]).getWord());
+								count++;
+							}
+							break;
+						case RANDOM:
+							for(int i=0; i<list.size(); i++)
+							{
+								if((int)(Math.random() % 2) == 1)
+								{
+									question[i] = String.format(list.get(ran[i]).getWord());
+									answer[i] = String.format(list.get(ran[i]).getTranslate());
+								}
+								else
+								{
+									question[i] = String.format(list.get(ran[i]).getTranslate());
+									answer[i] = String.format(list.get(ran[i]).getWord());
+								}
+								count++;
+							}
+							break;
+						case EXAMPLE_SENTENCE:
+							for (int i = 0; i < list.size(); i++)
+							{
+								question[i] = "\n 예문 : " + String.format(list.get(ran[i]).getExercise()) + "\r\n" + " 단어 : " + String.format(list.get(ran[i]).getWord());
+								answer[i] = String.format(list.get(ran[i]).getTranslate());
+								count++;
+							}
+							break;
+						case GRAMMAR:
+							int k = 0;
+							for (int i = 0; i < list.size(); i++)
+							{
+								if (list.get(ran[i]).getGrammarQuestion() != null)
+								{
+									question[k] = String.format(list.get(ran[i]).getGrammarQuestion());
+									answer[k++] = String.format(list.get(ran[i]).getGrammarAnswer());
+									count++;
+								}
+							}
+							break;
+					}
+				}
+				break;
+			case CONCEPT:
+				{
+					List<ConceptVo> list;
 
-                    switch (subject)
-                    {
-                        case ENGINEER_INFORMATION_PROCESSING:
-                            cc = ((Engineer_Information_Processing)getSubject(Keyword.ENGINEER_INFORMATION_PROCESSING)).CT[chapter];
-                            this.name = String.format(cc.name);
-                            break;
-                        default:
-                            cc = new Concept("");
-                            break;
-                    }
+					switch (subject)
+					{
+						case ENGINEER_INFORMATION_PROCESSING:
+							list = conceptDao.getAll("ENGINEER_INFORMATION_PROCESSING", chapter);
+							break;
+						default:
+							list = new ArrayList<ConceptVo>();
+							break;
+					}
 
-                    question = new String[cc.count];
-                    answer = new String[cc.count];
+					question = new String[list.size()];
+					answer = new String[list.size()];
 
-                    int[] ran = new int[cc.count];
+					int[] ran = new int[list.size()];
 
-                    for (int i = 0; i < cc.count; i++)
-                    {
-                        int cnt = 0;
-                        ran[i] = rd.nextInt(cc.count);
+					for (int i = 0; i < list.size(); i++)
+					{
+						int cnt = 0;
+						ran[i] = rd.nextInt(list.size());
 
-                        for (int j = 0; j < i; j++)
-                            if (ran[j] == ran[i])
-                                cnt++;
+						for (int j = 0; j < i; j++)
+							if (ran[j] == ran[i])
+								cnt++;
 
-                        if (cnt != 0)
-                            i--;
-                    }
+						if (cnt != 0)
+							i--;
+					}
 
-                    switch (form)
-                    {
-                        case INTERPRET:                                 //용어를 해석
-                            for (int i = 0; i < cc.count; i++)
-                            {
-                                question[i] = String.format(cc.conceptList.get(ran[i]).getWord());
-                                answer[i] = String.format(cc.conceptList.get(ran[i]).getInterpret());
-                                count++;
-                            }
-                            break;
-                        case INFERENCE:                                 //개념에 대한 용어 유추
-                            for (int i = 0; i < cc.count; i++)
-                            {
-                                question[i] = String.format(cc.conceptList.get(ran[i]).getWord());
-                                answer[i] = String.format(cc.conceptList.get(ran[i]).getInterpret());
-                                count++;
-                            }
-                            break;
-                        case RANDOM:
-                            for (int i = 0; i < cc.count; i++)
-                            {
-                                if (rd.nextInt(2) == 1)
-                                {
-                                    question[i] = String.format(cc.conceptList.get(ran[i]).getWord());
-                                    answer[i] = String.format(cc.conceptList.get(ran[i]).getInterpret());
-                                }
-                                else
-                                {
-                                    question[i] = String.format(cc.conceptList.get(ran[i]).getInterpret());
-                                    answer[i] = String.format(cc.conceptList.get(ran[i]).getWord());
-                                }
-                                count++;
-                            }
-                            break;
-                    }
-                }
-                break;
-        }
-    }
+					switch (form)
+					{
+						case INTERPRET:								 //용어를 해석
+							for (int i = 0; i < list.size(); i++)
+							{
+								question[i] = String.format(list.get(ran[i]).getWord());
+								answer[i] = String.format(list.get(ran[i]).getInterpret());
+								count++;
+							}
+							break;
+						case INFERENCE:								 //개념에 대한 용어 유추
+							for (int i = 0; i < list.size(); i++)
+							{
+								question[i] = String.format(list.get(ran[i]).getWord());
+								answer[i] = String.format(list.get(ran[i]).getInterpret());
+								count++;
+							}
+							break;
+						case RANDOM:
+							for (int i = 0; i < list.size(); i++)
+							{
+								if (rd.nextInt(2) == 1)
+								{
+									question[i] = String.format(list.get(ran[i]).getWord());
+									answer[i] = String.format(list.get(ran[i]).getInterpret());
+								}
+								else
+								{
+									question[i] = String.format(list.get(ran[i]).getInterpret());
+									answer[i] = String.format(list.get(ran[i]).getWord());
+								}
+								count++;
+							}
+							break;
+					}
+				}
+				break;
+		}
+	}
 
-    public void set_chapter_range_exam(Keyword type, Keyword subject, int start_chapter, int end_chapter, Keyword form)
-    {
-        for (int i = 0; i < this.count; i++)
-        {
-            question[i] = null;
-            answer[i] = null;
-        }
-        this.count = 0;
+	public void set_chapter_range_exam(Keyword type, Keyword subject, int start_chapter, int end_chapter, Keyword form)
+	{
+		for (int i = 0; i < this.count; i++)
+		{
+			question[i] = null;
+			answer[i] = null;
+		}
+		this.count = 0;
 
-        switch (type)
-        {
-            case TERM:
-                {
-                    Term tr;
+		switch (type)
+		{
+			case TERM:
+				{
+					List<TermVo> list = new ArrayList<TermVo>();
 
-                    switch (subject)
-                    {
-                        case ENGLISH_VOCA:
-                            tr = new Term("voca");
+					switch (subject)
+					{
+						case ENGLISH_VOCA:
+							for (int i = start_chapter; i < end_chapter; i++) {
+								list.addAll(termDao.getAll("ENGLISH_VOCA", i));
+							}
+							break;
+						case POWER_ELECTRONICS:
+							for (int i = start_chapter; i < end_chapter; i++) {
+								list.addAll(termDao.getAll("POWER_ELECTRONICS", i));
+							}
+							break;
+						case JAPAN_VOCA:
+							for (int i = start_chapter; i < end_chapter; i++) {
+								list.addAll(termDao.getAll("JAPAN_VOCA", i));
+							}
+							break;
+						default:
+							list = new ArrayList<TermVo>();
+							break;
+					}
 
-                            for (int i = start_chapter; i < end_chapter; i++)
-                                tr.setTermList(((English_voca)sj[0]).HT[i].getTermList());
+					question = new String[list.size()];
+					answer = new String[list.size()];
 
-                            this.name = String.format(tr.name);
-                            break;
-                        case POWER_ELECTRONICS:
-                            tr = new Term("voca");
+					int[] ran = new int[list.size()];
 
-                            for (int i = start_chapter; i < end_chapter; i++)
-                                tr.setTermList(((Power_Electronics)sj[2]).HT[i].getTermList());
+					for (int i = 0; i < list.size(); i++)
+					{
+						int cnt = 0;
+						ran[i] = rd.nextInt(list.size());
 
-                            this.name = String.format(tr.name);
-                            break;
-                        case JAPAN_VOCA:
-                            tr = new Term("voca");
+						for (int j = 0; j < i; j++)
+							if (ran[j] == ran[i])
+								cnt++;
 
-                            for (int i = start_chapter; i < end_chapter; i++)
-                                tr.setTermList(((Jappan_voca)sj[0]).HT[i].getTermList());
-                            
-                            this.name = String.format(tr.name);
-                            break;
-                        default:
-                            tr = new Term("");
-                            break;
-                    }
+						if (cnt != 0)
+							i--;
+					}
 
-                    question = new String[tr.getCount()];
-                    answer = new String[tr.getCount()];
+					switch (form)
+					{
+						case WORDTOTRANSLATE:
+							for (int i = 0; i < list.size(); i++)
+							{
+								question[i] = String.format(list.get(ran[i]).getWord());
+								answer[i] = String.format(list.get(ran[i]).getTranslate());
+								count++;
+							}
+							break;
+						case TRANSLATETOWORD:
+							for (int i = 0; i < list.size(); i++)
+							{
+								question[i] = String.format(list.get(ran[i]).getTranslate());
+								answer[i] = String.format(list.get(ran[i]).getWord());
+								count++;
+							}
+							break;
+						case RANDOM:
+							for(int i=0; i<list.size(); i++)
+							{
+								if(rd.nextInt(2) == 1)
+								{
+									question[i] = String.format(list.get(ran[i]).getWord());
+									answer[i] = String.format(list.get(ran[i]).getTranslate());
+								}
+								else
+								{
+									question[i] = String.format(list.get(ran[i]).getTranslate());
+									answer[i] = String.format(list.get(ran[i]).getWord());
+								}
+								count++;
+							}
+							break;
+						case EXAMPLE_SENTENCE:
+							int j = 0;
+							for (int i = 0; i < list.size(); i++)
+							{
+								if (list.get(ran[i]).getExercise() != null)
+								{
+									question[j] = "\n 예문 : " + String.format(list.get(ran[i]).getExercise()) + "\r\n" + " 단어 : " + String.format(list.get(ran[i]).getWord());
+									answer[j++] = String.format(list.get(ran[i]).getTranslate());
+									count++;
+								}
+							}
+							break;
+						case GRAMMAR:
+							int k = 0;
+							for (int i = 0; i < list.size(); i++)
+							{
+								if (list.get(ran[i]).getGrammarQuestion() != null)
+								{
+									question[k] = String.format(list.get(ran[i]).getGrammarQuestion());
+									answer[k++] = String.format(list.get(ran[i]).getGrammarAnswer());
+									count++;
+								}
+							}
+							break;
+					}
+				}
+				break;
+			case CONCEPT:
+				{
+					List<ConceptVo> list = new ArrayList<ConceptVo>();
 
-                    int[] ran = new int[tr.getCount()];
+					switch (subject)
+					{
+						case ENGINEER_INFORMATION_PROCESSING:
+							for (int i = start_chapter; i < end_chapter; i++) {
+								list.addAll(conceptDao.getAll("ENGINEER_INFORMATION_PROCESSING", i));
+							}
+							break;
+						default:
+							for (int i = start_chapter; i < end_chapter; i++) {
+								list.addAll(conceptDao.getAll("ENGINEER_INFORMATION_PROCESSING", i));
+							}
+							break;
+					}
 
-                    for (int i = 0; i < tr.getCount(); i++)
-                    {
-                        int cnt = 0;
-                        ran[i] = rd.nextInt(tr.getCount());
+					question = new String[list.size()];
+					answer = new String[list.size()];
 
-                        for (int j = 0; j < i; j++)
-                            if (ran[j] == ran[i])
-                                cnt++;
+					int[] ran = new int[list.size()];
 
-                        if (cnt != 0)
-                            i--;
-                    }
+					for (int i = 0; i < list.size(); i++)
+					{
+						int cnt = 0;
+						ran[i] = rd.nextInt(list.size());
 
-                    switch (form)
-                    {
-                        case WORDTOTRANSLATE:
-                            for (int i = 0; i < tr.getCount(); i++)
-                            {
-                                question[i] = String.format(tr.termList.get(ran[i]).getWord());
-                                answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
-                                count++;
-                            }
-                            break;
-                        case TRANSLATETOWORD:
-                            for (int i = 0; i < tr.getCount(); i++)
-                            {
-                                question[i] = String.format(tr.termList.get(ran[i]).getTranslate());
-                                answer[i] = String.format(tr.termList.get(ran[i]).getWord());
-                                count++;
-                            }
-                            break;
-                        case RANDOM:
-                            for(int i=0; i<tr.getCount(); i++)
-                            {
-                                if(rd.nextInt(2) == 1)
-                                {
-                                    question[i] = String.format(tr.termList.get(ran[i]).getWord());
-                                    answer[i] = String.format(tr.termList.get(ran[i]).getTranslate());
-                                }
-                                else
-                                {
-                                    question[i] = String.format(tr.termList.get(ran[i]).getTranslate());
-                                    answer[i] = String.format(tr.termList.get(ran[i]).getWord());
-                                }
-                                count++;
-                            }
-                            break;
-                        case EXAMPLE_SENTENCE:
-                            int j = 0;
-                            for (int i = 0; i < tr.getCount(); i++)
-                            {
-                                if (tr.termList.get(ran[i]).getExercise() != null)
-                                {
-                                    question[j] = "\n 예문 : " + String.format(tr.termList.get(ran[i]).getExercise()) + "\r\n" + " 단어 : " + String.format(tr.termList.get(ran[i]).getWord());
-                                    answer[j++] = String.format(tr.termList.get(ran[i]).getTranslate());
-                                    count++;
-                                }
-                            }
+						for (int j = 0; j < i; j++)
+							if (ran[j] == ran[i])
+								cnt++;
 
-                            tr.setCount(j);
-                            break;
-                        case GRAMMAR:
-                            int k = 0;
-                            for (int i = 0; i < tr.getCount(); i++)
-                            {
-                                if (tr.termList.get(ran[i]).getGrammarQuestion() != null)
-                                {
-                                    question[k] = String.format(tr.termList.get(ran[i]).getGrammarQuestion());
-                                    answer[k++] = String.format(tr.termList.get(ran[i]).getGrammarAnswer());
-                                    count++;
-                                }
-                            }
+						if (cnt != 0)
+							i--;
+					}
 
-                            tr.setCount(k);
-                            break;
-                    }
-                }
-                break;
-            case CONCEPT:
-                {
-                    Concept tr;
-
-                    switch (subject)
-                    {
-                        case ENGINEER_INFORMATION_PROCESSING:
-                            tr = new Concept("정보처리");
-
-                            for (int i = start_chapter; i < end_chapter; i++)
-                                tr.setConceptList(((Engineer_Information_Processing)sj[1]).CT[i].getConceptList());
-
-                            this.name = String.format(tr.name);
-                            break;
-                        default:
-                            tr = new Concept("정보처리");
-
-                            for (int i = start_chapter; i < end_chapter; i++)
-                                tr.setConceptList(((Engineer_Information_Processing)sj[1]).CT[i].getConceptList());
-
-                            this.name = String.format(tr.name);
-                            break;
-                    }
-
-                    question = new String[tr.getCount()];
-                    answer = new String[tr.getCount()];
-
-                    int[] ran = new int[tr.getCount()];
-
-                    for (int i = 0; i < tr.getCount(); i++)
-                    {
-                        int cnt = 0;
-                        ran[i] = rd.nextInt(tr.getCount());
-
-                        for (int j = 0; j < i; j++)
-                            if (ran[j] == ran[i])
-                                cnt++;
-
-                        if (cnt != 0)
-                            i--;
-                    }
-
-                    switch (form)
-                    {
-                        case INTERPRET:
-                            for (int i = 0; i < tr.getCount(); i++)
-                            {
-                                question[i] = String.format(tr.conceptList.get(ran[i]).getWord());
-                                answer[i] = String.format(tr.conceptList.get(ran[i]).getInterpret());
-                                count++;
-                            }
-                            break;
-                        case INFERENCE:
-                            for (int i = 0; i < tr.getCount(); i++)
-                            {
-                                question[i] = String.format(tr.conceptList.get(ran[i]).getInterpret());
-                                answer[i] = String.format(tr.conceptList.get(ran[i]).getWord());
-                                count++;
-                            }
-                            break;
-                        case RANDOM:
-                            for (int i = 0; i < tr.getCount(); i++)
-                            {
-                                if (rd.nextInt(2) == 1)
-                                {
-                                    question[i] = String.format(tr.conceptList.get(ran[i]).getWord());
-                                    answer[i] = String.format(tr.conceptList.get(ran[i]).getInterpret());
-                                }
-                                else
-                                {
-                                    question[i] = String.format(tr.conceptList.get(ran[i]).getInterpret());
-                                    answer[i] = String.format(tr.conceptList.get(ran[i]).getWord());
-                                }
-                                count++;
-                            }
-                            break;
-                    }
-                }
-                break;
-        }
-    }
+					switch (form)
+					{
+						case INTERPRET:
+							for (int i = 0; i < list.size(); i++)
+							{
+								question[i] = String.format(list.get(ran[i]).getWord());
+								answer[i] = String.format(list.get(ran[i]).getInterpret());
+								count++;
+							}
+							break;
+						case INFERENCE:
+							for (int i = 0; i < list.size(); i++)
+							{
+								question[i] = String.format(list.get(ran[i]).getInterpret());
+								answer[i] = String.format(list.get(ran[i]).getWord());
+								count++;
+							}
+							break;
+						case RANDOM:
+							for (int i = 0; i < list.size(); i++)
+							{
+								if (rd.nextInt(2) == 1)
+								{
+									question[i] = String.format(list.get(ran[i]).getWord());
+									answer[i] = String.format(list.get(ran[i]).getInterpret());
+								}
+								else
+								{
+									question[i] = String.format(list.get(ran[i]).getInterpret());
+									answer[i] = String.format(list.get(ran[i]).getWord());
+								}
+								count++;
+							}
+							break;
+					}
+				}
+				break;
+		}
+	}
 }

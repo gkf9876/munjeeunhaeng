@@ -7,9 +7,6 @@ public class Power_Electronics extends Subject
     public Power_Electronics(String name, Keyword code)
     {
     	super(name, code);
-        this.HT = new Term[2];
-
-        HT[1] = new Term("중간고사");
 
 		/*
 		 * HT[1].add_term("φ/i 는 뭐?", "인덕턴스 L");

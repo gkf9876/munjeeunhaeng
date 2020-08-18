@@ -52,7 +52,7 @@ public class TermDaoImpl implements TermDao{
 		return this.jdbcTemplate.queryForObject("SELECT COUND(*) FROM TERM", Integer.class);
 	}
 	
-	public List<TermVo> getAll(String type, String chapter){
+	public List<TermVo> getAll(String type, int chapter){
 		return this.jdbcTemplate.query("SELECT * FROM TERM WHERE TYPE = ? AND CHAPTER = ? ORDER BY IDX", new Object[] {type, chapter}, this.termVoMapper);
 	}
 

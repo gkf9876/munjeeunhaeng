@@ -7,13 +7,6 @@ class Engineer_Information_Processing extends Subject
     public Engineer_Information_Processing(String name, Keyword engineerInformationProcessing)
     {
     	super(name, engineerInformationProcessing);
-        this.CT = new Concept[7];                     //행은 챕터, 열은 섹션
-        CT[1] = new Concept("데이터베이스 - 데이터베이스 개념");
-        CT[2] = new Concept("데이터베이스 - 데이터 모델 및 데이터베이스 설계");
-        CT[3] = new Concept("데이터베이스 - 관계형 데이터베이스");
-        CT[4] = new Concept("데이터베이스 - 데이터베이스 고급 기법");
-        CT[5] = new Concept("데이터베이스 - 자료 구조의 기본");
-        CT[6] = new Concept("전자계산기");
 
 		/*
 		 * CT[1].add_concept("정보 시스템(IS : Information System)",

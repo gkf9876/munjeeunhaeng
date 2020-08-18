@@ -7,31 +7,6 @@ class English_voca extends Subject
     public English_voca(String name, Keyword code)
     {
     	super(name, code);
-        this.HT = new Term[25];
-        HT[1] = new Term("1");
-        HT[2] = new Term("2");
-        HT[3] = new Term("3");
-        HT[4] = new Term("4");
-        HT[5] = new Term("5");
-        HT[6] = new Term("6");
-        HT[7] = new Term("7");
-        HT[8] = new Term("8");
-        HT[9] = new Term("9");
-        HT[10] = new Term("10");
-        HT[11] = new Term("11");
-        HT[12] = new Term("12");
-        HT[13] = new Term("13");
-        HT[14] = new Term("14");
-        HT[15] = new Term("15");
-        HT[16] = new Term("16");
-        HT[17] = new Term("17");
-        HT[18] = new Term("18");
-        HT[19] = new Term("19");
-        HT[20] = new Term("20");
-        HT[21] = new Term("21");
-        HT[22] = new Term("22");
-        HT[23] = new Term("23");
-        HT[24] = new Term("24");
 
 		/*
 		 * HT[1].add_term("applicant", "n.지원자, 신청자",
