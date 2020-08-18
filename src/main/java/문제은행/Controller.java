@@ -108,6 +108,9 @@ class Controller
 			case "JAPAN_VOCA":
 				SJ = pb.getSj().get("JAPAN_VOCA");
 				break;
+			case "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT":
+				SJ = pb.getSj().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT");
+				break;
 			default:
 				SJ = null;
 				break;

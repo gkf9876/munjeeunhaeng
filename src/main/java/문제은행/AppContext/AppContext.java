@@ -32,7 +32,7 @@ public class AppContext {
 	
 	public ConceptDao conceptDao() {
 		ConceptDaoImpl conceptDao = new ConceptDaoImpl();
-		//conceptDao.setDataSource(this.dataSource());
+		conceptDao.setDataSource(this.dataSource());
 		return conceptDao;
 	}
 }

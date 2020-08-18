@@ -192,6 +192,7 @@ public class Test
 					case "CONCEPT":
 						subject.removeAll();
 						subject.add("ENGINEER_INFORMATION_PROCESSING");
+						subject.add("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT");
 
 						form.removeAll();
 						form.add("INTERPRET");

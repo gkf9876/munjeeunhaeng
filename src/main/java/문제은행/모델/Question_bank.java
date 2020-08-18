@@ -145,12 +145,15 @@ public class Question_bank
 				break;
 			case CONCEPT:
 				{
-					List<ConceptVo> list;
+					List<ConceptVo> list = new ArrayList<ConceptVo>();
 
 					switch (subject)
 					{
 						case ENGINEER_INFORMATION_PROCESSING:
 							list = conceptDao.getAll("ENGINEER_INFORMATION_PROCESSING", chapter);
+							break;
+						case PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT:
+							list = conceptDao.getAll("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", chapter);
 							break;
 						default:
 							list = new ArrayList<ConceptVo>();
@@ -319,6 +322,11 @@ public class Question_bank
 						case ENGINEER_INFORMATION_PROCESSING:
 							for (int i = start_chapter; i < end_chapter; i++) {
 								list.addAll(conceptDao.getAll("ENGINEER_INFORMATION_PROCESSING", Integer.toString(i)));
+							}
+							break;
+						case PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT:
+							for (int i = start_chapter; i < end_chapter; i++) {
+								list.addAll(conceptDao.getAll("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", Integer.toString(i)));
 							}
 							break;
 						default:
