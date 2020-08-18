@@ -109,9 +109,9 @@ public class Test
 		Choice chapter = new Choice();
 		chapter.setSize(100, 40);
 		chapter.setLocation(80, 100);
-		for(int i=0; i<10; i++)
+		for(int i=0; i<con.pb.getSj().get("JAPAN_VOCA").chapterList.size(); i++)
 		{
-			chapter.add(String.format("%d", i+1));
+			chapter.add(con.pb.getSj().get("JAPAN_VOCA").chapterList.get(i));
 		}
 		chapter.add("all");
 		
@@ -213,30 +213,26 @@ public class Test
 						{
 							case "ENGLISH_VOCA":
 								chapter.removeAll();
-								for(int i=1; i< 10; i++)
-									chapter.add(Integer.toString(i));
-			
+								for(int i=0; i<con.pb.getSj().get("ENGLISH_VOCA").chapterList.size(); i++)
+									chapter.add(con.pb.getSj().get("ENGLISH_VOCA").chapterList.get(i));
 								chapter.add("all");
 								break;
 							case "ENGINEER_INFORMATION_PROCESSING":
 								chapter.removeAll();
-								for (int i = 1; i < 10; i++)
-									chapter.add(Integer.toString(i));
-			
+								for(int i=0; i<con.pb.getSj().get("ENGINEER_INFORMATION_PROCESSING").chapterList.size(); i++)
+									chapter.add(con.pb.getSj().get("ENGINEER_INFORMATION_PROCESSING").chapterList.get(i));
 								chapter.add("all");
 								break;
 							case "POWER_ELECTRONICS":
 								chapter.removeAll();
-								for(int i=1; i<10; i++)
-									chapter.add(Integer.toString(i));
-								
+								for(int i=0; i<con.pb.getSj().get("POWER_ELECTRONICS").chapterList.size(); i++)
+									chapter.add(con.pb.getSj().get("POWER_ELECTRONICS").chapterList.get(i));
 								chapter.add("all");
 								break;
 							case "JAPAN_VOCA":
 								chapter.removeAll();
-								for(int i=1; i<10; i++)
-									chapter.add(Integer.toString(i));
-								
+								for(int i=0; i<con.pb.getSj().get("JAPAN_VOCA").chapterList.size(); i++)
+									chapter.add(con.pb.getSj().get("JAPAN_VOCA").chapterList.get(i));
 								chapter.add("all");
 								break;
 						}

@@ -49,10 +49,10 @@ public class TermDaoImpl implements TermDao{
 	}
 	
 	public int getCount() {
-		return this.jdbcTemplate.queryForObject("SELECT COUND(*) FROM TERM", Integer.class);
+		return this.jdbcTemplate.queryForObject("SELECT COUNT(*) FROM TERM", Integer.class);
 	}
 	
-	public List<TermVo> getAll(String type, int chapter){
+	public List<TermVo> getAll(String type, String chapter){
 		return this.jdbcTemplate.query("SELECT * FROM TERM WHERE TYPE = ? AND CHAPTER = ? ORDER BY IDX", new Object[] {type, chapter}, this.termVoMapper);
 	}
 
@@ -60,5 +60,14 @@ public class TermDaoImpl implements TermDao{
 	public void update(TermVo termVo) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<String> selectChapterList(String type){
+		return this.jdbcTemplate.query("SELECT CHAPTER FROM TERM WHERE TYPE = ? GROUP BY CHAPTER ORDER BY CHAPTER ASC", new Object[] {type}, new RowMapper<String>(){
+			public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+				return rs.getString(1);
+			}
+		});
 	}
 }

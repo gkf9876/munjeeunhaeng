@@ -9,6 +9,7 @@ public interface ConceptDao {
 	public ConceptVo get(String id);
 	public void deleteAll();
 	public int getCount();
-	public List<ConceptVo> getAll(String type, int chapter);
+	public List<ConceptVo> getAll(String type, String chapter);
 	public void update(ConceptVo conceptVo);
+	public List<String> selectChapterList(String type);
 }

@@ -1,12 +1,14 @@
 ﻿package 문제은행.모델;
 
+import java.util.List;
+
 import 문제은행.모델.Question_bank.Keyword;
 
 public class Power_Electronics extends Subject
 {
-    public Power_Electronics(String name, Keyword code)
+    public Power_Electronics(String name, Keyword code, List<String> chapterList)
     {
-    	super(name, code);
+    	super(name, code, chapterList);
 
 		/*
 		 * HT[1].add_term("φ/i 는 뭐?", "인덕턴스 L");

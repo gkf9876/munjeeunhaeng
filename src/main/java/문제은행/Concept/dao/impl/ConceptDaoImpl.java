@@ -21,7 +21,7 @@ public class ConceptDaoImpl implements ConceptDao{
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
-	private RowMapper<ConceptVo> ConceptVoMapper = new RowMapper<ConceptVo>() {
+	private RowMapper<ConceptVo> conceptVoMapper = new RowMapper<ConceptVo>() {
 		public ConceptVo mapRow(ResultSet rs, int rowNum) throws SQLException {
 			ConceptVo conceptVo = new ConceptVo();
 			conceptVo.setIdx(rs.getInt("IDX"));
@@ -40,7 +40,7 @@ public class ConceptDaoImpl implements ConceptDao{
 	
 	public ConceptVo get(String idx){
 		return this.jdbcTemplate.queryForObject("SELECT * FROM CONCEPT WHERE IDX = ?", 
-				new Object[] {idx}, this.ConceptVoMapper);
+				new Object[] {idx}, this.conceptVoMapper);
 	}
 	
 	public void deleteAll(){
@@ -48,16 +48,25 @@ public class ConceptDaoImpl implements ConceptDao{
 	}
 	
 	public int getCount() {
-		return this.jdbcTemplate.queryForObject("SELECT COUND(*) FROM CONCEPT", Integer.class);
+		return this.jdbcTemplate.queryForObject("SELECT COUNT(*) FROM CONCEPT", Integer.class);
 	}
 	
-	public List<ConceptVo> getAll(String type, int chapter){
-		return this.jdbcTemplate.query("SELECT * FROM CONCEPT WHERE TYPE = ? AND CHAPTER = ? ORDER BY IDX", new Object[] {type, chapter}, this.ConceptVoMapper);
+	public List<ConceptVo> getAll(String type, String chapter){
+		return this.jdbcTemplate.query("SELECT * FROM CONCEPT WHERE TYPE = ? AND CHAPTER = ? ORDER BY IDX", new Object[] {type, chapter}, this.conceptVoMapper);
 	}
 
 	@Override
 	public void update(ConceptVo conceptVo) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public List<String> selectChapterList(String type){
+		return this.jdbcTemplate.query("SELECT CHAPTER FROM CONCEPT WHERE TYPE = ? GROUP BY CHAPTER ORDER BY CHAPTER ASC", new Object[] {type}, new RowMapper<String>(){
+			public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+				return rs.getString(1);
+			}
+		});
 	}
 }

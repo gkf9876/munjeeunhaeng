@@ -40,7 +40,7 @@ class Controller
 	{
 		String imsi = "입력 오류";
 
-		if (count < pb.count)
+		if (count < pb.question.size())
 		{
 			//답 입력부분
 			input[count++] = str;
@@ -51,7 +51,7 @@ class Controller
 			//개념의 경우 답 입력하자마자 문제와 답을 보여준다.
 			if (type == "CONCEPT")
 			{
-				imsi += String.format("답 : %s\r\n", pb.answer[count - 1]);
+				imsi += String.format("답 : %s\r\n", pb.answer.get(count - 1));
 				imsi += "\r\n";
 			}
 
@@ -65,22 +65,17 @@ class Controller
 	{
 		String imsi = "문제 내기 오류";
 		//출제 부분
-		if (count < pb.count)
+		if (count < pb.question.size())
 		{
 			switch (type)
 			{
 				case "TERM":
-
-					if (pb.question[count] != "")
-						imsi = String.format("(%d/%d) %s : \r\n", count + 1, pb.count, pb.question[count]);
-
+					if (pb.question.get(count) != "")
+						imsi = String.format("(%d/%d) %s : \r\n", count + 1, pb.question.size(), pb.question.get(count));
 					break;
 				case "CONCEPT":
-
-					if (pb.question[count] != "")
-						imsi = String.format("(%d/%d) %s : \r\n", count + 1, pb.count, pb.question[count]);
-
-
+					if (pb.question.get(count) != "")
+						imsi = String.format("(%d/%d) %s : \r\n", count + 1, pb.question.get(count), pb.question.get(count));
 					break;
 				default:
 					break;
@@ -95,20 +90,23 @@ class Controller
 		String imsi = "문제 출제 오류";
 		문제은행.모델.Subject SJ;
 		count = 0;
-
+		
+		pb.question.clear();
+		pb.answer.clear();
+		
 		switch (subject)
 		{
 			case "ENGLISH_VOCA":
-				SJ = pb.getSubject(Question_bank.Keyword.ENGLISH_VOCA);
+				SJ = pb.getSj().get("ENGLISH_VOCA");
 				break;
 			case "ENGINEER_INFORMATION_PROCESSING":
-				SJ = pb.getSubject(Question_bank.Keyword.ENGINEER_INFORMATION_PROCESSING);
+				SJ = pb.getSj().get("ENGINEER_INFORMATION_PROCESSING");
 				break;
 			case "POWER_ELECTRONICS":
-				SJ = pb.getSubject(Question_bank.Keyword.POWER_ELECTRONICS);
+				SJ = pb.getSj().get("POWER_ELECTRONICS");
 				break;
 			case "JAPAN_VOCA":
-				SJ = pb.getSubject(Question_bank.Keyword.JAPAN_VOCA);
+				SJ = pb.getSj().get("JAPAN_VOCA");
 				break;
 			default:
 				SJ = null;
@@ -143,66 +141,52 @@ class Controller
 								break;
 						}
 
-						input = new String[pb.count];
-						right_answer = new int[pb.count];
-						wrong_answer = new int[pb.count];
+						input = new String[pb.question.size()];
+						right_answer = new int[pb.question.size()];
+						wrong_answer = new int[pb.question.size()];
 						right_cnt = 0;
 						wrong_cnt = 0;
 
-						if (pb.question[0] != "")
-							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.count, pb.question[0]);
-
+						if (pb.question.size() > 0 && pb.question.get(0) != "")
+							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
 						break;
-					//case null:
-					  //  break;
 					default:
-
-						int num = 1;
-
 						switch (form)
 						{
 							case "WORDTOTRANSLATE":
-								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, num, Question_bank.Keyword.WORDTOTRANSLATE);
+								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, chapter, Question_bank.Keyword.WORDTOTRANSLATE);
 								break;
 							case "TRANSLATETOWORD":
-								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, num, Question_bank.Keyword.TRANSLATETOWORD);
+								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, chapter, Question_bank.Keyword.TRANSLATETOWORD);
 								break;
 							case "RANDOM":
-								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, num, Question_bank.Keyword.RANDOM);
+								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, chapter, Question_bank.Keyword.RANDOM);
 								break;
 							case "EXAMPLE_SENTENCE":
-								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, num, Question_bank.Keyword.EXAMPLE_SENTENCE);
+								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, chapter, Question_bank.Keyword.EXAMPLE_SENTENCE);
 								break;
 							case "GRAMMAR":
-								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, num, Question_bank.Keyword.GRAMMAR);
+								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, chapter, Question_bank.Keyword.GRAMMAR);
 								break;
 							default:
 								break;
 						}
 
-						input = new String[pb.count];
-						right_answer = new int[pb.count];
-						wrong_answer = new int[pb.count];
+						input = new String[pb.question.size()];
+						right_answer = new int[pb.question.size()];
+						wrong_answer = new int[pb.question.size()];
 						right_cnt = 0;
 						wrong_cnt = 0;
 
-						if (pb.question[0] != "")
-							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.count, pb.question[0]);
-
-
+						if (pb.question.size() > 0 && pb.question.get(0) != "")
+							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
 						break;
 				}
-
-
 				break;
 			case "CONCEPT":
-
-
 				switch (chapter)
 				{
 					case "all":
-
-
 						switch (form)
 						{
 							case "INTERPRET":
@@ -219,39 +203,32 @@ class Controller
 								break;
 						}
 
-						input = new String[pb.count];
+						input = new String[pb.question.size()];
 
-						if (pb.question[0] != "")
-							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.count, pb.question[0]);
-
+						if (pb.question.size() > 0 && pb.question.get(0) != "")
+							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
 						break;
-				  //  case null:
-				  //	  break;
 					default:
-
-						int num = 1;
-
 						switch (form)
 						{
 							case "INTERPRET":
-								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, num, Question_bank.Keyword.INTERPRET);
+								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, chapter, Question_bank.Keyword.INTERPRET);
 								break;
 							case "INFERENCE":
-								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, num, Question_bank.Keyword.INFERENCE);
+								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, chapter, Question_bank.Keyword.INFERENCE);
 								break;
 							case "RANDOM":
-								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, num, Question_bank.Keyword.RANDOM);
+								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, chapter, Question_bank.Keyword.RANDOM);
 								break;
 							default:
-								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, num, Question_bank.Keyword.INTERPRET);
+								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, chapter, Question_bank.Keyword.INTERPRET);
 								break;
 						}
 
-						input = new String[pb.count];
+						input = new String[pb.question.size()];
 
-						if (pb.question[0] != "")
-							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.count, pb.question[0]);
-
+						if (pb.question.size() > 0 && pb.question.get(0) != "")
+							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
 						break;
 				}
 
@@ -270,7 +247,7 @@ class Controller
 			case "TERM":
 				for (int i = 0; i < input.length; i++)
 				{
-					if (stringCompare(pb.answer[i], input[i]))
+					if (stringCompare(pb.answer.get(i), input[i]))
 					{
 						right_answer[right_cnt++] = i;
 					}
@@ -284,19 +261,18 @@ class Controller
 				
 				for (int i = 0; i < right_cnt; i++)
 				{
-					imsi += String.format("%s %s \n입력한 답 : %s\r\n\r\n", pb.question[right_answer[i]], pb.answer[right_answer[i]], input[right_answer[i]]);
+					imsi += String.format("%s %s \n입력한 답 : %s\r\n\r\n", pb.question.get(right_answer[i]), pb.answer.get(right_answer[i]), input[right_answer[i]]);
 				}
 
 				imsi += "\r\n\r\n";
 				imsi += String.format("틀린갯수 : %d\r\n\r\n", wrong_cnt);
 				for (int i = 0; i < wrong_cnt; i++)
 				{
-					imsi += String.format("%s %s \n입력한 답 : %s\r\n\r\n", pb.question[wrong_answer[i]], pb.answer[wrong_answer[i]], input[wrong_answer[i]]);
+					imsi += String.format("%s %s \n입력한 답 : %s\r\n\r\n", pb.question.get(wrong_answer[i]), pb.answer.get(wrong_answer[i]), input[wrong_answer[i]]);
 				}
 
 				break;
 			case "CONCEPT":
-
 				break;
 		}
 
