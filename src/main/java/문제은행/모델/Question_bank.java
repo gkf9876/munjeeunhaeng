@@ -49,7 +49,7 @@ public class Question_bank
 		sj.put("ENGINEER_INFORMATION_PROCESSING", new Engineer_Information_Processing("정보처리기사", Keyword.ENGINEER_INFORMATION_PROCESSING, termDao.selectChapterList("ENGINEER_INFORMATION_PROCESSING")));
 		sj.put("POWER_ELECTRONICS", new Power_Electronics("전력전자공학", Keyword.POWER_ELECTRONICS, termDao.selectChapterList("POWER_ELECTRONICS")));
 		sj.put("JAPAN_VOCA", new Jappan_voca("일본어 공부", Keyword.JAPAN_VOCA, termDao.selectChapterList("JAPAN_VOCA")));
-		sj.put("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", new ProfessionalEngineerInformationManagement("정보관리기술사", Keyword.PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT, termDao.selectChapterList("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT")));
+		sj.put("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", new ProfessionalEngineerInformationManagement("정보관리기술사", Keyword.PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT, conceptDao.selectChapterList("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT")));
 		rd = new Random();
 	}
 
