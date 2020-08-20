@@ -51,7 +51,8 @@ class Controller
 			//개념의 경우 답 입력하자마자 문제와 답을 보여준다.
 			if (type == "CONCEPT")
 			{
-				imsi += String.format("답 : %s\r\n", pb.answer.get(count - 1));
+				String answer = pb.answer.get(count - 1).replace("\\r\\n", "\r\n");
+				imsi += ("답 : " + answer + "\r\n");
 				imsi += "\r\n";
 			}
 
