@@ -15,8 +15,11 @@ class Controller
 
 	public Controller()
 	{
-		pb = new Question_bank();
 		count = 0;																//현재 문제를 몇번까지 풀었나
+	}
+	
+	public void setQuestionBank(Question_bank questionBank) {
+		this.pb = questionBank;
 	}
 
 	public boolean stringCompare(String long_str, String short_str)

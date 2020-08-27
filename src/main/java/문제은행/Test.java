@@ -1,10 +1,6 @@
 package 문제은행;
 
-import java.awt.Button;
-import java.awt.Choice;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -12,7 +8,6 @@ import java.awt.event.ItemListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -23,9 +18,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import 문제은행.AppContext.AppContext;
-import 문제은행.Term.dao.TermDao;
-import 문제은행.Term.vo.TermVo;
-import 문제은행.모델.Question_bank;
 
 public class Test
 {
@@ -33,7 +25,9 @@ public class Test
 	
 	public static void main(String[] args)
 	{
+		AppContext appContext = new AppContext();
 		Controller con = new Controller();
+		con.setQuestionBank(appContext.questionBank());
 		
 		JFrame f = new JFrame("문제은행");
 		f.setSize(550, 620);
@@ -42,46 +36,31 @@ public class Test
 		JMenuBar mb = new JMenuBar(); 
 		JMenu screenMenu = new JMenu("메뉴");
 		
-		JMenuItem item = new JMenuItem("단어추가");
-		JDialog dialog = new JDialog(f, "단어추가");
-		dialog.setLayout(new FlowLayout());
-		JTextField dialogWord = new JTextField(10);
-		dialog.add(dialogWord);
-		JTextField dialogTranslate = new JTextField(10);
-		dialog.add(dialogTranslate);
-		JTextField dialogType = new JTextField(10);
-		dialog.add(dialogType);
-		JTextField dialogChapter = new JTextField(10);
-		dialog.add(dialogChapter);
-		JButton dialogOkButton = new JButton("OK");
-		dialogOkButton.addActionListener(new ActionListener() {
+		JMenuItem item1 = new JMenuItem("단어추가");
+		TermCU dialog1 = new TermCU(f, appContext, "단어추가");
+		
+		item1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				AppContext context = new AppContext();
-				TermDao termDao = context.termDao();
-				TermVo termVo = new TermVo();
-				termVo.setWord(dialogWord.getText().trim());
-				termVo.setTranslate(dialogWord.getText().trim());
-				termVo.setExercise("");
-				termVo.setGrammarQuestion("");
-				termVo.setGrammarAnswer("");
-				termVo.setType(dialogType.getText().trim());
-				termVo.setChapter(dialogChapter.getText().trim());
-				termDao.add(termVo);
-			}
-		});
-		
-		dialog.add(dialogOkButton);
-		
-		item.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dialog.setSize(300, 200);
-				dialog.setVisible(true);
+				dialog1.setSize(300, 200);
+				dialog1.setVisible(true);
 			}
 		}); // 메뉴아이템에 Action 리스너 설정screenMenu.add(item);
 		
-		screenMenu.add(item);
+		screenMenu.add(item1);
+
+		JMenuItem item2 = new JMenuItem("개념추가");
+		ConceptCU dialog2 = new ConceptCU(f, appContext, "개념추가");
+		
+		item2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dialog2.setSize(500, 200);
+				dialog2.setVisible(true);
+			}
+		}); // 메뉴아이템에 Action 리스너 설정screenMenu.add(item);
+		
+		screenMenu.add(item2);
 		mb.add(screenMenu);
 		f.setJMenuBar(mb);
 		

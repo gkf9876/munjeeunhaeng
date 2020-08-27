@@ -40,10 +40,17 @@ public class Question_bank
 
 	public Question_bank()
 	{
-		AppContext context = new AppContext();
-		termDao = context.termDao();
-		conceptDao = context.conceptDao();
-		
+	}
+	
+	public void setTermDao(TermDao termDao) {
+		this.termDao = termDao;
+	}
+	
+	public void setConceptDao(ConceptDao conceptDao) {
+		this.conceptDao = conceptDao;
+	}
+	
+	public void getData() {
 		sj = new HashMap<String, Subject>();
 		sj.put("ENGLISH_VOCA", new English_voca("해커스", Keyword.ENGLISH_VOCA, termDao.selectChapterList("ENGLISH_VOCA")));
 		sj.put("ENGINEER_INFORMATION_PROCESSING", new Engineer_Information_Processing("정보처리기사", Keyword.ENGINEER_INFORMATION_PROCESSING, termDao.selectChapterList("ENGINEER_INFORMATION_PROCESSING")));
