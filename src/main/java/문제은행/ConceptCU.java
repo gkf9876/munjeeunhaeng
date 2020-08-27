@@ -1,6 +1,6 @@
 package 문제은행;
 
-import java.awt.FlowLayout;
+import java.awt.FileDialog;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,11 +17,20 @@ import 문제은행.Concept.dao.ConceptDao;
 import 문제은행.Concept.vo.ConceptVo;
 import 문제은행.모델.Question_bank;
 
-public class ConceptCU extends JDialog{
+public class ConceptCU extends JDialog implements ActionListener{
+	private ConceptDao conceptDao;
 	private Question_bank questionBank;
 	
+	private JLabel questionFileName;
+	private JLabel answerFileName;
+
+	private JButton questionFileButton;
+	private JButton answerFileButton;
+	private JButton dialogOkButton;
+	
 	public ConceptCU(Frame frame, AppContext appContext, String name) {
-		questionBank = appContext.questionBank();
+		this.conceptDao = appContext.conceptDao();
+		this.questionBank = appContext.questionBank();
 		this.setLayout(null);
 		
 		JLabel subjectName = new JLabel("과목");
@@ -68,17 +77,66 @@ public class ConceptCU extends JDialog{
 						}
 					}
 				});
+
+		JLabel questionName = new JLabel("문제파일");
+		questionName.setSize(100, 40);
+		questionName.setLocation(20, 90);
+
+		questionFileName = new JLabel("");
+		questionFileName.setSize(250, 40);
+		questionFileName.setLocation(80, 90);
 		
-		JButton dialogOkButton = new JButton("OK");
-		dialogOkButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ConceptDao conceptDao = appContext.conceptDao();
-				ConceptVo conceptVo = new ConceptVo();
-				conceptDao.add(conceptVo);
-			}
-		});
+		questionFileButton = new JButton("찾아보기");
+		questionFileButton.setSize(100, 20);
+		questionFileButton.setLocation(350, 100);
+		questionFileButton.addActionListener(this);
+		
+		this.add(questionFileButton);
+		this.add(questionName);
+		this.add(questionFileName);
+
+		JLabel answerName = new JLabel("답안파일");
+		answerName.setSize(100, 40);
+		answerName.setLocation(20, 130);
+
+		answerFileName = new JLabel("");
+		answerFileName.setSize(250, 40);
+		answerFileName.setLocation(80, 130);
+		
+		answerFileButton = new JButton("찾아보기");
+		answerFileButton.setSize(100, 20);
+		answerFileButton.setLocation(350, 140);
+		answerFileButton.addActionListener(this);
+		
+		this.add(answerFileButton);
+		this.add(answerName);
+		this.add(answerFileName);
+		
+		dialogOkButton = new JButton("OK");
+		dialogOkButton.setSize(100, 20);
+		dialogOkButton.setLocation(350, 200);
+		dialogOkButton.addActionListener(this);
 		
 		this.add(dialogOkButton);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == questionFileButton) {
+			FileDialog dlg = new FileDialog(this, "FileDialog", FileDialog.LOAD);
+			dlg.setSize(300, 200);
+			dlg.show();
+			
+			questionFileName.setText(dlg.getDirectory() + dlg.getFile());
+		}else if(e.getSource() == answerFileButton) {
+			FileDialog dlg = new FileDialog(this, "FileDialog", FileDialog.LOAD);
+			dlg.setSize(300, 200);
+			dlg.show();
+			
+			answerFileName.setText(dlg.getDirectory() + dlg.getFile());
+		}else if(e.getSource() == dialogOkButton) {
+			ConceptVo conceptVo = new ConceptVo();
+			conceptDao.add(conceptVo);
+		}
 	}
 }
