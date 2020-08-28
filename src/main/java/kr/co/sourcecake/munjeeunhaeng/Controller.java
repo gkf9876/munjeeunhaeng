@@ -1,6 +1,6 @@
-﻿package 문제은행;
+﻿package kr.co.sourcecake.munjeeunhaeng;
 
-import 문제은행.model.QuestionBank;
+import kr.co.sourcecake.munjeeunhaeng.model.QuestionBank;
 
 class Controller
 {
@@ -92,7 +92,7 @@ class Controller
 	public String termSolveStart(String subject, String chapter, String form)
 	{
 		String imsi = "문제 출제 오류";
-		문제은행.model.Subject SJ;
+		kr.co.sourcecake.munjeeunhaeng.model.Subject SJ;
 		count = 0;
 		
 		pb.question.clear();
@@ -151,19 +151,19 @@ class Controller
 				switch (form)
 				{
 					case "WORDTOTRANSLATE":
-						pb.set_chapter_exam("TERM", SJ.getSubject(), chapter, "WORDTOTRANSLATE");
+						pb.setChapterExam("TERM", SJ.getSubject(), chapter, "WORDTOTRANSLATE");
 						break;
 					case "TRANSLATETOWORD":
-						pb.set_chapter_exam("TERM", SJ.getSubject(), chapter, "TRANSLATETOWORD");
+						pb.setChapterExam("TERM", SJ.getSubject(), chapter, "TRANSLATETOWORD");
 						break;
 					case "RANDOM":
-						pb.set_chapter_exam("TERM", SJ.getSubject(), chapter, "RANDOM");
+						pb.setChapterExam("TERM", SJ.getSubject(), chapter, "RANDOM");
 						break;
 					case "EXAMPLE_SENTENCE":
-						pb.set_chapter_exam("TERM", SJ.getSubject(), chapter, "EXAMPLE_SENTENCE");
+						pb.setChapterExam("TERM", SJ.getSubject(), chapter, "EXAMPLE_SENTENCE");
 						break;
 					case "GRAMMAR":
-						pb.set_chapter_exam("TERM", SJ.getSubject(), chapter, "GRAMMAR");
+						pb.setChapterExam("TERM", SJ.getSubject(), chapter, "GRAMMAR");
 						break;
 					default:
 						break;
@@ -186,7 +186,7 @@ class Controller
 	public String conceptSolveStart(String subject, String chapter, String form)
 	{
 		String imsi = "문제 출제 오류";
-		문제은행.model.Subject SJ;
+		kr.co.sourcecake.munjeeunhaeng.model.Subject SJ;
 		count = 0;
 		
 		pb.question.clear();
@@ -233,16 +233,16 @@ class Controller
 				switch (form)
 				{
 					case "INTERPRET":
-						pb.set_chapter_exam("CONCEPT", SJ.getSubject(), chapter, "INTERPRET");
+						pb.setChapterExam("CONCEPT", SJ.getSubject(), chapter, "INTERPRET");
 						break;
 					case "INFERENCE":
-						pb.set_chapter_exam("CONCEPT", SJ.getSubject(), chapter, "INFERENCE");
+						pb.setChapterExam("CONCEPT", SJ.getSubject(), chapter, "INFERENCE");
 						break;
 					case "RANDOM":
-						pb.set_chapter_exam("CONCEPT", SJ.getSubject(), chapter, "RANDOM");
+						pb.setChapterExam("CONCEPT", SJ.getSubject(), chapter, "RANDOM");
 						break;
 					default:
-						pb.set_chapter_exam("CONCEPT", SJ.getSubject(), chapter, "INTERPRET");
+						pb.setChapterExam("CONCEPT", SJ.getSubject(), chapter, "INTERPRET");
 						break;
 				}
 

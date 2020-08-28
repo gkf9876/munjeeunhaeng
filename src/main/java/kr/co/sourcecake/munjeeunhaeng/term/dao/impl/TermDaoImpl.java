@@ -1,4 +1,4 @@
-package 문제은행.Term.dao.impl;
+package kr.co.sourcecake.munjeeunhaeng.term.dao.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,8 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import 문제은행.Term.dao.TermDao;
-import 문제은행.Term.vo.TermVo;
+import kr.co.sourcecake.munjeeunhaeng.term.dao.TermDao;
+import kr.co.sourcecake.munjeeunhaeng.term.vo.TermVo;
 
 @Repository
 public class TermDaoImpl implements TermDao{

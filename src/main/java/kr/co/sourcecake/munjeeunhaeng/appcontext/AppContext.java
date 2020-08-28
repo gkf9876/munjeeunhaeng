@@ -1,14 +1,14 @@
-﻿package 문제은행.AppContext;
+﻿package kr.co.sourcecake.munjeeunhaeng.appcontext;
 
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
-import 문제은행.Concept.dao.ConceptDao;
-import 문제은행.Concept.dao.impl.ConceptDaoImpl;
-import 문제은행.Term.dao.TermDao;
-import 문제은행.Term.dao.impl.TermDaoImpl;
-import 문제은행.model.QuestionBank;
+import kr.co.sourcecake.munjeeunhaeng.concept.dao.ConceptDao;
+import kr.co.sourcecake.munjeeunhaeng.concept.dao.impl.ConceptDaoImpl;
+import kr.co.sourcecake.munjeeunhaeng.model.QuestionBank;
+import kr.co.sourcecake.munjeeunhaeng.term.dao.TermDao;
+import kr.co.sourcecake.munjeeunhaeng.term.dao.impl.TermDaoImpl;
 
 public class AppContext {
 	private DataSource dataSource = null;

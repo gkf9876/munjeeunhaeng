@@ -1,6 +1,6 @@
-﻿package 문제은행.model;
+﻿package kr.co.sourcecake.munjeeunhaeng.model;
 
-import 문제은행.Term.vo.TermVo;
+import kr.co.sourcecake.munjeeunhaeng.term.vo.TermVo;
 
 public class PowerElectronics extends Subject<TermVo>
 {

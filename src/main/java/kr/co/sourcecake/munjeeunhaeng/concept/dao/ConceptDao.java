@@ -1,8 +1,8 @@
-﻿package 문제은행.Concept.dao;
+﻿package kr.co.sourcecake.munjeeunhaeng.concept.dao;
 
 import java.util.List;
 
-import 문제은행.Concept.vo.ConceptVo;
+import kr.co.sourcecake.munjeeunhaeng.concept.vo.ConceptVo;
 
 public interface ConceptDao {
 	public void add(final ConceptVo conceptVo);

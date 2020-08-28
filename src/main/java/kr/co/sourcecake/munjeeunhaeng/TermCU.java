@@ -1,4 +1,4 @@
-package 문제은행;
+package kr.co.sourcecake.munjeeunhaeng;
 
 import java.awt.FlowLayout;
 import java.awt.Frame;
@@ -9,12 +9,12 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JTextField;
 
-import 문제은행.AppContext.AppContext;
-import 문제은행.Concept.dao.ConceptDao;
-import 문제은행.Concept.vo.ConceptVo;
-import 문제은행.Term.dao.TermDao;
-import 문제은행.Term.vo.TermVo;
-import 문제은행.model.QuestionBank;
+import kr.co.sourcecake.munjeeunhaeng.appcontext.AppContext;
+import kr.co.sourcecake.munjeeunhaeng.concept.dao.ConceptDao;
+import kr.co.sourcecake.munjeeunhaeng.concept.vo.ConceptVo;
+import kr.co.sourcecake.munjeeunhaeng.model.QuestionBank;
+import kr.co.sourcecake.munjeeunhaeng.term.dao.TermDao;
+import kr.co.sourcecake.munjeeunhaeng.term.vo.TermVo;
 
 public class TermCU extends JDialog{
 	private QuestionBank questionBank;

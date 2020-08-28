@@ -1,8 +1,8 @@
-﻿package 문제은행.Term.dao;
+﻿package kr.co.sourcecake.munjeeunhaeng.term.dao;
 
 import java.util.List;
 
-import 문제은행.Term.vo.TermVo;
+import kr.co.sourcecake.munjeeunhaeng.term.vo.TermVo;
 
 public interface TermDao {
 	public void add(final TermVo termVo);

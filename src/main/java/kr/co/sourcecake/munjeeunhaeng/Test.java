@@ -1,4 +1,4 @@
-package 문제은행;
+package kr.co.sourcecake.munjeeunhaeng;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -17,7 +17,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import 문제은행.AppContext.AppContext;
+import kr.co.sourcecake.munjeeunhaeng.appcontext.AppContext;
 
 public class Test
 {

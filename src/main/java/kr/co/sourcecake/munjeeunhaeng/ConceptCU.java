@@ -1,4 +1,4 @@
-package 문제은행;
+package kr.co.sourcecake.munjeeunhaeng;
 
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
@@ -21,10 +21,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import 문제은행.AppContext.AppContext;
-import 문제은행.Concept.dao.ConceptDao;
-import 문제은행.Concept.vo.ConceptVo;
-import 문제은행.model.QuestionBank;
+import kr.co.sourcecake.munjeeunhaeng.appcontext.AppContext;
+import kr.co.sourcecake.munjeeunhaeng.concept.dao.ConceptDao;
+import kr.co.sourcecake.munjeeunhaeng.concept.vo.ConceptVo;
+import kr.co.sourcecake.munjeeunhaeng.model.QuestionBank;
 
 public class ConceptCU extends JDialog implements ActionListener{
 	private ConceptDao conceptDao;

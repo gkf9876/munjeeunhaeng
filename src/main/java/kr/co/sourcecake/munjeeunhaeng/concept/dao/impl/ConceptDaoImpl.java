@@ -1,4 +1,4 @@
-package 문제은행.Concept.dao.impl;
+package kr.co.sourcecake.munjeeunhaeng.concept.dao.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,8 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import 문제은행.Concept.dao.ConceptDao;
-import 문제은행.Concept.vo.ConceptVo;
+import kr.co.sourcecake.munjeeunhaeng.concept.dao.ConceptDao;
+import kr.co.sourcecake.munjeeunhaeng.concept.vo.ConceptVo;
 
 @Repository
 public class ConceptDaoImpl implements ConceptDao{

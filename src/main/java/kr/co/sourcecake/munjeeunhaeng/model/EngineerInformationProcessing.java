@@ -1,6 +1,6 @@
-﻿package 문제은행.model;
+﻿package kr.co.sourcecake.munjeeunhaeng.model;
 
-import 문제은행.Concept.vo.ConceptVo;
+import kr.co.sourcecake.munjeeunhaeng.concept.vo.ConceptVo;
 
 class EngineerInformationProcessing extends Subject<ConceptVo>
 {

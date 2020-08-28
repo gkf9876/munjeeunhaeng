@@ -1,4 +1,4 @@
-﻿package 문제은행.Concept.vo;
+﻿package kr.co.sourcecake.munjeeunhaeng.concept.vo;
 
 public class ConceptVo {
 	private int idx;

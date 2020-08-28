@@ -1,4 +1,4 @@
-﻿package 문제은행.model;
+﻿package kr.co.sourcecake.munjeeunhaeng.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import 문제은행.AppContext.AppContext;
-import 문제은행.Concept.dao.ConceptDao;
-import 문제은행.Concept.vo.ConceptVo;
-import 문제은행.Term.dao.TermDao;
-import 문제은행.Term.vo.TermVo;
+import kr.co.sourcecake.munjeeunhaeng.appcontext.AppContext;
+import kr.co.sourcecake.munjeeunhaeng.concept.dao.ConceptDao;
+import kr.co.sourcecake.munjeeunhaeng.concept.vo.ConceptVo;
+import kr.co.sourcecake.munjeeunhaeng.term.dao.TermDao;
+import kr.co.sourcecake.munjeeunhaeng.term.vo.TermVo;
 
 public class QuestionBank
 {
@@ -94,157 +94,58 @@ public class QuestionBank
 		rd = new Random();
 	}
 
-	public void set_chapter_exam(String type, String subject, String chapter, String form)
+	public void setChapterExam(String type, String subject, String chapter, String form)
 	{
 		switch (type)
 		{
 			case "TERM":
 				{
-					List<TermVo> list = new ArrayList<TermVo>();
-
 					switch (subject)
 					{
 						case "ENGLISH_VOCA":
-							list = (List<TermVo>)this.map.get("ENGLISH_VOCA").getInfoMap().get(chapter);
 							break;
 						case "POWER_ELECTRONICS":
-							list = (List<TermVo>)this.map.get("POWER_ELECTRONICS").getInfoMap().get(chapter);
 							break;
 						case "JAPAN_VOCA":
-							list = (List<TermVo>)this.map.get("JAPAN_VOCA").getInfoMap().get(chapter);
 							break;
 						default:
 							break;
 					}
 
-					int[] ran = new int[list.size()];
-
-					for (int i = 0; i < list.size(); i++)
-					{
-						int cnt = 0;
-						ran[i] = rd.nextInt(list.size());
-
-						for (int j = 0; j < i; j++)
-							if (ran[j] == ran[i])
-								cnt++;
-
-						if (cnt != 0)
-							i--;
-					}
-
 					switch (form)
 					{
 						case "WORDTOTRANSLATE":
-							for (int i = 0; i < list.size(); i++)
-							{
-								question.add(String.format(list.get(ran[i]).getWord()));
-								answer.add(String.format(list.get(ran[i]).getTranslate()));
-							}
 							break;
 						case "TRANSLATETOWORD":
-							for (int i = 0; i < list.size(); i++)
-							{
-								question.add(String.format(list.get(ran[i]).getTranslate()));
-								answer.add(String.format(list.get(ran[i]).getWord()));
-							}
 							break;
 						case "RANDOM":
-							for(int i=0; i<list.size(); i++)
-							{
-								if((int)(Math.random() % 2) == 1)
-								{
-									question.add(String.format(list.get(ran[i]).getWord()));
-									answer.add(String.format(list.get(ran[i]).getTranslate()));
-								}
-								else
-								{
-									question.add(String.format(list.get(ran[i]).getTranslate()));
-									answer.add(String.format(list.get(ran[i]).getWord()));
-								}
-							}
 							break;
 						case "EXAMPLE_SENTENCE":
-							for (int i = 0; i < list.size(); i++)
-							{
-								question.add("\n 예문 : " + String.format(list.get(ran[i]).getExercise()) + "\r\n" + " 단어 : " + String.format(list.get(ran[i]).getWord()));
-								answer.add(String.format(list.get(ran[i]).getTranslate()));
-							}
 							break;
 						case "GRAMMAR":
-							for (int i = 0; i < list.size(); i++)
-							{
-								if (list.get(ran[i]).getGrammarQuestion() != null)
-								{
-									question.add(String.format(list.get(ran[i]).getGrammarQuestion()));
-									answer.add(String.format(list.get(ran[i]).getGrammarAnswer()));
-								}
-							}
 							break;
 					}
 				}
 				break;
 			case "CONCEPT":
 				{
-					List<ConceptVo> list = new ArrayList<ConceptVo>();
-
 					switch (subject)
 					{
 						case "ENGINEER_INFORMATION_PROCESSING":
-							list = (List<ConceptVo>)this.map.get("ENGINEER_INFORMATION_PROCESSING").getInfoMap().get(chapter);
 							break;
 						case "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT":
-							list = (List<ConceptVo>)this.map.get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").getInfoMap().get(chapter);
 							break;
 						default:
-							list = new ArrayList<ConceptVo>();
 							break;
 					}
-
-					int[] ran = new int[list.size()];
-
-					for (int i = 0; i < list.size(); i++)
-					{
-						int cnt = 0;
-						ran[i] = rd.nextInt(list.size());
-
-						for (int j = 0; j < i; j++)
-							if (ran[j] == ran[i])
-								cnt++;
-
-						if (cnt != 0)
-							i--;
-					}
-
+					
 					switch (form)
 					{
-						case "INTERPRET":								 //용어를 해석
-							for (int i = 0; i < list.size(); i++)
-							{
-								question.add(String.format(list.get(ran[i]).getWord()));
-								answer.add(String.format(list.get(ran[i]).getInterpret()));
-							}
+						case "INTERPRET":
 							break;
-						case "INFERENCE":								 //개념에 대한 용어 유추
-							for (int i = 0; i < list.size(); i++)
-							{
-								question.add(String.format(list.get(ran[i]).getWord()));
-								answer.add(String.format(list.get(ran[i]).getInterpret()));
-							}
+						case "INFERENCE":
 							break;
 						case "RANDOM":
-							for (int i = 0; i < list.size(); i++)
-							{
-								if (rd.nextInt(2) == 1)
-								{
-									question.add(String.format(list.get(ran[i]).getWord()));
-									answer.add(String.format(list.get(ran[i]).getInterpret()));
-								}
-								else
-								{
-									question.add(String.format(list.get(ran[i]).getInterpret()));
-									answer.add(String.format(list.get(ran[i]).getWord()));
-								}
-							}
 							break;
 					}
 				}
