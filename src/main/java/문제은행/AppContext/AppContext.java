@@ -8,14 +8,14 @@ import 문제은행.Concept.dao.ConceptDao;
 import 문제은행.Concept.dao.impl.ConceptDaoImpl;
 import 문제은행.Term.dao.TermDao;
 import 문제은행.Term.dao.impl.TermDaoImpl;
-import 문제은행.모델.Question_bank;
+import 문제은행.model.QuestionBank;
 
 public class AppContext {
 	private DataSource dataSource = null;
 	
 	private TermDao termDao = null;
 	private ConceptDao conceptDao = null;
-	private Question_bank questionBank = null;
+	private QuestionBank questionBank = null;
 	
 	public DataSource dataSource() {
 		if(dataSource == null) {
@@ -47,9 +47,9 @@ public class AppContext {
 		return this.conceptDao;
 	}
 	
-	public Question_bank questionBank() {
+	public QuestionBank questionBank() {
 		if(this.questionBank == null) {
-			Question_bank questionBank = new Question_bank();
+			QuestionBank questionBank = new QuestionBank();
 			questionBank.setTermDao(this.termDao());
 			questionBank.setConceptDao(this.conceptDao());
 			questionBank.getData();

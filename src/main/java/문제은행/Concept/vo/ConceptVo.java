@@ -4,8 +4,10 @@ public class ConceptVo {
 	private int idx;
 	private String word;
 	private String interpret;
-	private String type;
-	private int chapter;
+	private String subject;
+	private String chapter;
+	private String question;
+	private String answer;
 	
 	public int getIdx() {
 		return idx;
@@ -25,16 +27,28 @@ public class ConceptVo {
 	public void setInterpret(String interpret) {
 		this.interpret = interpret;
 	}
-	public String getType() {
-		return type;
+	public String getSubject() {
+		return subject;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
-	public int getChapter() {
+	public String getChapter() {
 		return chapter;
 	}
-	public void setChapter(int chapter) {
+	public void setChapter(String chapter) {
 		this.chapter = chapter;
+	}
+	public String getQuestion() {
+		return question;
+	}
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
 	}
 }

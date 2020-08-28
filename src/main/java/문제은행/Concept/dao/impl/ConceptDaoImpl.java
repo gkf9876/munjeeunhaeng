@@ -27,15 +27,17 @@ public class ConceptDaoImpl implements ConceptDao{
 			conceptVo.setIdx(rs.getInt("IDX"));
 			conceptVo.setWord(rs.getString("WORD"));
 			conceptVo.setInterpret(rs.getString("INTERPRET"));
-			conceptVo.setType(rs.getString("TYPE"));
-			conceptVo.setChapter(rs.getInt("CHAPTER"));
+			conceptVo.setSubject(rs.getString("SUBJECT"));
+			conceptVo.setChapter(rs.getString("CHAPTER"));
+			conceptVo.setQuestion(rs.getString("QUESTION"));
+			conceptVo.setAnswer(rs.getString("ANSWER"));
 			return conceptVo;
 		}
 	};
 	
-	public void add(final ConceptVo conceptVo){
-		this.jdbcTemplate.update("INSERT INTO CONCEPT(WORD, INTERPRET, TYPE, CHAPTER) VALUES(?, ?, ?, ?)"
-				, conceptVo.getWord(), conceptVo.getInterpret(), conceptVo.getType(), conceptVo.getChapter());
+	public void add(ConceptVo conceptVo){
+		this.jdbcTemplate.update("INSERT INTO CONCEPT(WORD, INTERPRET, SUBJECT, CHAPTER, QUESTION, ANSWER) VALUES(?, ?, ?, ?, ?, ?)"
+				, conceptVo.getWord(), conceptVo.getInterpret(), conceptVo.getSubject(), conceptVo.getChapter(), conceptVo.getQuestion(), conceptVo.getAnswer());
 	}
 	
 	public ConceptVo get(String idx){
@@ -51,8 +53,8 @@ public class ConceptDaoImpl implements ConceptDao{
 		return this.jdbcTemplate.queryForObject("SELECT COUNT(*) FROM CONCEPT", Integer.class);
 	}
 	
-	public List<ConceptVo> getAll(String type, String chapter){
-		return this.jdbcTemplate.query("SELECT * FROM CONCEPT WHERE TYPE = ? AND CHAPTER = ? ORDER BY IDX", new Object[] {type, chapter}, this.conceptVoMapper);
+	public List<ConceptVo> getAll(String subject){
+		return this.jdbcTemplate.query("SELECT * FROM CONCEPT WHERE SUBJECT = ? ORDER BY IDX", new Object[] {subject}, this.conceptVoMapper);
 	}
 
 	@Override
@@ -62,11 +64,16 @@ public class ConceptDaoImpl implements ConceptDao{
 	}
 	
 	@Override
-	public List<String> selectChapterList(String type){
-		return this.jdbcTemplate.query("SELECT CHAPTER FROM CONCEPT WHERE TYPE = ? GROUP BY CHAPTER ORDER BY CHAPTER ASC", new Object[] {type}, new RowMapper<String>(){
+	public List<String> selectChapterList(String subject){
+		return this.jdbcTemplate.query("SELECT CHAPTER FROM CONCEPT WHERE SUBJECT = ? GROUP BY CHAPTER ORDER BY CHAPTER ASC", new Object[] {subject}, new RowMapper<String>(){
 			public String mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return rs.getString(1);
 			}
 		});
+	}
+
+	@Override
+	public List<ConceptVo> getList(String subject, String chapter) {
+		return this.jdbcTemplate.query("SELECT * FROM CONCEPT WHERE SUBJECT = ? AND CHAPTER = ? ORDER BY IDX", new Object[] {subject, chapter}, this.conceptVoMapper);
 	}
 }

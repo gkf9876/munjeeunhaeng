@@ -1,4 +1,4 @@
-﻿package 문제은행.모델;
+﻿package 문제은행.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,14 +12,14 @@ import 문제은행.Concept.vo.ConceptVo;
 import 문제은행.Term.dao.TermDao;
 import 문제은행.Term.vo.TermVo;
 
-public class Question_bank
+public class QuestionBank
 {
-	private Map<String, Subject> sj;
+	private Map<String, Subject> map;
 	private Random rd;
 
 	public String name;
-	public Map<String, Subject> getSj() {
-		return sj;
+	public Map<String, Subject> getMap() {
+		return map;
 	}
 
 	public List<String> question = new ArrayList<String>();
@@ -27,19 +27,8 @@ public class Question_bank
 
 	TermDao termDao;
 	ConceptDao conceptDao;
-	
-	public enum Keyword
-	{
-		WORDTOTRANSLATE, TRANSLATETOWORD, RANDOM, GRAMMAR, EXAMPLE_SENTENCE,		//용어 유형 키워드
-		INTERPRET, INFERENCE,													   //개념 유형 키워드
-		TERM, CONCEPT,
-		ENGLISH_VOCA, POWER_ELECTRONICS, JAPAN_VOCA,															  //용어 과목 키워드
-		ENGINEER_INFORMATION_PROCESSING,											 //개념 과목 키워드
-		PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT
-	}
 
-	public Question_bank()
-	{
+	public QuestionBank(){
 	}
 	
 	public void setTermDao(TermDao termDao) {
@@ -51,36 +40,80 @@ public class Question_bank
 	}
 	
 	public void getData() {
-		sj = new HashMap<String, Subject>();
-		sj.put("ENGLISH_VOCA", new English_voca("해커스", Keyword.ENGLISH_VOCA, termDao.selectChapterList("ENGLISH_VOCA")));
-		sj.put("ENGINEER_INFORMATION_PROCESSING", new Engineer_Information_Processing("정보처리기사", Keyword.ENGINEER_INFORMATION_PROCESSING, termDao.selectChapterList("ENGINEER_INFORMATION_PROCESSING")));
-		sj.put("POWER_ELECTRONICS", new Power_Electronics("전력전자공학", Keyword.POWER_ELECTRONICS, termDao.selectChapterList("POWER_ELECTRONICS")));
-		sj.put("JAPAN_VOCA", new Jappan_voca("일본어 공부", Keyword.JAPAN_VOCA, termDao.selectChapterList("JAPAN_VOCA")));
-		sj.put("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", new ProfessionalEngineerInformationManagement("정보관리기술사", Keyword.PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT, conceptDao.selectChapterList("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT")));
+		map = new HashMap<String, Subject>();
+		
+		//해커스 단어 정보 불러오기
+		EnglishVoca englishVoca = new EnglishVoca("해커스", "ENGLISH_VOCA");
+		englishVoca.setChapterList(termDao.selectChapterList("ENGLISH_VOCA"));
+		Map<String, List<TermVo>> englishVocaMap = new HashMap<String, List<TermVo>>();
+		for(String chapter : englishVoca.getChapterList()) {
+			englishVocaMap.put(chapter, termDao.getList("ENGLISH_VOCA", chapter));
+		}
+		englishVoca.setInfoMap(englishVocaMap);
+		map.put("ENGLISH_VOCA", englishVoca);
+
+		//정보처리기사 개념 불러오기
+		EngineerInformationProcessing engineerInformationProcessing = new EngineerInformationProcessing("정보처리기사", "ENGINEER_INFORMATION_PROCESSING");
+		engineerInformationProcessing.setChapterList(conceptDao.selectChapterList("ENGINEER_INFORMATION_PROCESSING"));
+		Map<String, List<ConceptVo>> engineerInformationProcessingMap = new HashMap<String, List<ConceptVo>>();
+		for(String chapter : engineerInformationProcessing.getChapterList()) {
+			engineerInformationProcessingMap.put(chapter, conceptDao.getList("ENGINEER_INFORMATION_PROCESSING", chapter));
+		}
+		engineerInformationProcessing.setInfoMap(engineerInformationProcessingMap);
+		map.put("ENGINEER_INFORMATION_PROCESSING", engineerInformationProcessing);
+
+		//전력전자공학 정보 불러오기
+		PowerElectronics powerElectronics = new PowerElectronics("전력전자공학", "POWER_ELECTRONICS");
+		powerElectronics.setChapterList(termDao.selectChapterList("POWER_ELECTRONICS"));
+		Map<String, List<TermVo>> powerElectronicsMap = new HashMap<String, List<TermVo>>();
+		for(String chapter : powerElectronics.getChapterList()) {
+			powerElectronicsMap.put(chapter, termDao.getList("POWER_ELECTRONICS", chapter));
+		}
+		powerElectronics.setInfoMap(powerElectronicsMap);
+		map.put("POWER_ELECTRONICS", powerElectronics);
+
+		//일본어 공부 단어 정보 불러오기
+		JappanVoca jappanVoca = new JappanVoca("일본어 공부", "JAPAN_VOCA");
+		jappanVoca.setChapterList(termDao.selectChapterList("JAPAN_VOCA"));
+		Map<String, List<TermVo>> jappanVocaMap = new HashMap<String, List<TermVo>>();
+		for(String chapter : jappanVoca.getChapterList()) {
+			jappanVocaMap.put(chapter, termDao.getList("JAPAN_VOCA", chapter));
+		}
+		jappanVoca.setInfoMap(jappanVocaMap);
+		map.put("JAPAN_VOCA", jappanVoca);
+
+		//정보관리기술사 개념 정보 불러오기
+		ProfessionalEngineerInformationManagement professionalEngineerInformationManagement = new ProfessionalEngineerInformationManagement("정보관리기술사", "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT");
+		professionalEngineerInformationManagement.setChapterList(conceptDao.selectChapterList("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT"));
+		Map<String, List<ConceptVo>> professionalEngineerInformationManagementMap = new HashMap<String, List<ConceptVo>>();
+		for(String chapter : professionalEngineerInformationManagement.getChapterList()) {
+			professionalEngineerInformationManagementMap.put(chapter, conceptDao.getList("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", chapter));
+		}
+		professionalEngineerInformationManagement.setInfoMap(professionalEngineerInformationManagementMap);
+		map.put("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", professionalEngineerInformationManagement);
 		rd = new Random();
 	}
 
-	public void set_chapter_exam(Keyword type, Keyword subject, String chapter, Keyword form)
+	public void set_chapter_exam(String type, String subject, String chapter, String form)
 	{
 		switch (type)
 		{
-			case TERM:
+			case "TERM":
 				{
 					List<TermVo> list = new ArrayList<TermVo>();
 
 					switch (subject)
 					{
-						case ENGLISH_VOCA:
-							list = termDao.getAll("ENGLISH_VOCA", chapter);
+						case "ENGLISH_VOCA":
+							list = (List<TermVo>)this.map.get("ENGLISH_VOCA").getInfoMap().get(chapter);
 							break;
-						case POWER_ELECTRONICS:
-							list = termDao.getAll("POWER_ELECTRONICS", chapter);
+						case "POWER_ELECTRONICS":
+							list = (List<TermVo>)this.map.get("POWER_ELECTRONICS").getInfoMap().get(chapter);
 							break;
-						case JAPAN_VOCA:
-							list = termDao.getAll("JAPAN_VOCA", chapter);
+						case "JAPAN_VOCA":
+							list = (List<TermVo>)this.map.get("JAPAN_VOCA").getInfoMap().get(chapter);
 							break;
 						default:
-							list = new ArrayList<TermVo>();
 							break;
 					}
 
@@ -101,21 +134,21 @@ public class Question_bank
 
 					switch (form)
 					{
-						case WORDTOTRANSLATE:
+						case "WORDTOTRANSLATE":
 							for (int i = 0; i < list.size(); i++)
 							{
 								question.add(String.format(list.get(ran[i]).getWord()));
 								answer.add(String.format(list.get(ran[i]).getTranslate()));
 							}
 							break;
-						case TRANSLATETOWORD:
+						case "TRANSLATETOWORD":
 							for (int i = 0; i < list.size(); i++)
 							{
 								question.add(String.format(list.get(ran[i]).getTranslate()));
 								answer.add(String.format(list.get(ran[i]).getWord()));
 							}
 							break;
-						case RANDOM:
+						case "RANDOM":
 							for(int i=0; i<list.size(); i++)
 							{
 								if((int)(Math.random() % 2) == 1)
@@ -130,14 +163,14 @@ public class Question_bank
 								}
 							}
 							break;
-						case EXAMPLE_SENTENCE:
+						case "EXAMPLE_SENTENCE":
 							for (int i = 0; i < list.size(); i++)
 							{
 								question.add("\n 예문 : " + String.format(list.get(ran[i]).getExercise()) + "\r\n" + " 단어 : " + String.format(list.get(ran[i]).getWord()));
 								answer.add(String.format(list.get(ran[i]).getTranslate()));
 							}
 							break;
-						case GRAMMAR:
+						case "GRAMMAR":
 							for (int i = 0; i < list.size(); i++)
 							{
 								if (list.get(ran[i]).getGrammarQuestion() != null)
@@ -150,17 +183,17 @@ public class Question_bank
 					}
 				}
 				break;
-			case CONCEPT:
+			case "CONCEPT":
 				{
 					List<ConceptVo> list = new ArrayList<ConceptVo>();
 
 					switch (subject)
 					{
-						case ENGINEER_INFORMATION_PROCESSING:
-							list = conceptDao.getAll("ENGINEER_INFORMATION_PROCESSING", chapter);
+						case "ENGINEER_INFORMATION_PROCESSING":
+							list = (List<ConceptVo>)this.map.get("ENGINEER_INFORMATION_PROCESSING").getInfoMap().get(chapter);
 							break;
-						case PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT:
-							list = conceptDao.getAll("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", chapter);
+						case "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT":
+							list = (List<ConceptVo>)this.map.get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").getInfoMap().get(chapter);
 							break;
 						default:
 							list = new ArrayList<ConceptVo>();
@@ -184,21 +217,21 @@ public class Question_bank
 
 					switch (form)
 					{
-						case INTERPRET:								 //용어를 해석
+						case "INTERPRET":								 //용어를 해석
 							for (int i = 0; i < list.size(); i++)
 							{
 								question.add(String.format(list.get(ran[i]).getWord()));
 								answer.add(String.format(list.get(ran[i]).getInterpret()));
 							}
 							break;
-						case INFERENCE:								 //개념에 대한 용어 유추
+						case "INFERENCE":								 //개념에 대한 용어 유추
 							for (int i = 0; i < list.size(); i++)
 							{
 								question.add(String.format(list.get(ran[i]).getWord()));
 								answer.add(String.format(list.get(ran[i]).getInterpret()));
 							}
 							break;
-						case RANDOM:
+						case "RANDOM":
 							for (int i = 0; i < list.size(); i++)
 							{
 								if (rd.nextInt(2) == 1)
@@ -219,33 +252,32 @@ public class Question_bank
 		}
 	}
 
-	public void set_chapter_range_exam(Keyword type, Keyword subject, int start_chapter, int end_chapter, Keyword form)
+	public void set_chapter_range_exam(String type, String subject, int start_chapter, int end_chapter, String form)
 	{
 		switch (type)
 		{
-			case TERM:
+			case "TERM":
 				{
 					List<TermVo> list = new ArrayList<TermVo>();
 
 					switch (subject)
 					{
-						case ENGLISH_VOCA:
+						case "ENGLISH_VOCA":
 							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll(termDao.getAll("ENGLISH_VOCA", Integer.toString(i)));
+								list.addAll((List<TermVo>)this.map.get("ENGLISH_VOCA").getInfoMap().get(Integer.toString(i)));
 							}
 							break;
-						case POWER_ELECTRONICS:
+						case "POWER_ELECTRONICS":
 							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll(termDao.getAll("POWER_ELECTRONICS", Integer.toString(i)));
+								list.addAll((List<TermVo>)this.map.get("POWER_ELECTRONICS").getInfoMap().get(Integer.toString(i)));
 							}
 							break;
-						case JAPAN_VOCA:
+						case "JAPAN_VOCA":
 							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll(termDao.getAll("JAPAN_VOCA", Integer.toString(i)));
+								list.addAll((List<TermVo>)this.map.get("JAPAN_VOCA").getInfoMap().get(Integer.toString(i)));
 							}
 							break;
 						default:
-							list = new ArrayList<TermVo>();
 							break;
 					}
 
@@ -266,21 +298,21 @@ public class Question_bank
 
 					switch (form)
 					{
-						case WORDTOTRANSLATE:
+						case "WORDTOTRANSLATE":
 							for (int i = 0; i < list.size(); i++)
 							{
 								question.add(String.format(list.get(ran[i]).getWord()));
 								answer.add(String.format(list.get(ran[i]).getTranslate()));
 							}
 							break;
-						case TRANSLATETOWORD:
+						case "TRANSLATETOWORD":
 							for (int i = 0; i < list.size(); i++)
 							{
 								question.add(String.format(list.get(ran[i]).getTranslate()));
 								answer.add(String.format(list.get(ran[i]).getWord()));
 							}
 							break;
-						case RANDOM:
+						case "RANDOM":
 							for(int i=0; i<list.size(); i++)
 							{
 								if(rd.nextInt(2) == 1)
@@ -295,7 +327,7 @@ public class Question_bank
 								}
 							}
 							break;
-						case EXAMPLE_SENTENCE:
+						case "EXAMPLE_SENTENCE":
 							int j = 0;
 							for (int i = 0; i < list.size(); i++)
 							{
@@ -306,7 +338,7 @@ public class Question_bank
 								}
 							}
 							break;
-						case GRAMMAR:
+						case "GRAMMAR":
 							int k = 0;
 							for (int i = 0; i < list.size(); i++)
 							{
@@ -320,25 +352,25 @@ public class Question_bank
 					}
 				}
 				break;
-			case CONCEPT:
+			case "CONCEPT":
 				{
 					List<ConceptVo> list = new ArrayList<ConceptVo>();
 
 					switch (subject)
 					{
-						case ENGINEER_INFORMATION_PROCESSING:
+						case "ENGINEER_INFORMATION_PROCESSING":
 							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll(conceptDao.getAll("ENGINEER_INFORMATION_PROCESSING", Integer.toString(i)));
+								list.addAll((List<ConceptVo>)this.map.get("ENGINEER_INFORMATION_PROCESSING").getInfoMap().get(Integer.toString(i)));
 							}
 							break;
-						case PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT:
+						case "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT":
 							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll(conceptDao.getAll("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", Integer.toString(i)));
+								list.addAll((List<ConceptVo>)this.map.get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").getInfoMap().get(Integer.toString(i)));
 							}
 							break;
 						default:
 							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll(conceptDao.getAll("ENGINEER_INFORMATION_PROCESSING", Integer.toString(i)));
+								list.addAll((List<ConceptVo>)this.map.get("ENGINEER_INFORMATION_PROCESSING").getInfoMap().get(Integer.toString(i)));
 							}
 							break;
 					}
@@ -360,21 +392,21 @@ public class Question_bank
 
 					switch (form)
 					{
-						case INTERPRET:
+						case "INTERPRET":
 							for (int i = 0; i < list.size(); i++)
 							{
 								question.add(String.format(list.get(ran[i]).getWord()));
 								answer.add(String.format(list.get(ran[i]).getInterpret()));
 							}
 							break;
-						case INFERENCE:
+						case "INFERENCE":
 							for (int i = 0; i < list.size(); i++)
 							{
 								question.add(String.format(list.get(ran[i]).getInterpret()));
 								answer.add(String.format(list.get(ran[i]).getWord()));
 							}
 							break;
-						case RANDOM:
+						case "RANDOM":
 							for (int i = 0; i < list.size(); i++)
 							{
 								if (rd.nextInt(2) == 1)

@@ -1,10 +1,10 @@
 ﻿package 문제은행;
 
-import 문제은행.모델.Question_bank;
+import 문제은행.model.QuestionBank;
 
 class Controller
 {
-	public Question_bank pb;
+	public QuestionBank pb;
 	public String[] input;
 	public int[] right_answer;
 	public int[] wrong_answer;
@@ -18,7 +18,7 @@ class Controller
 		count = 0;																//현재 문제를 몇번까지 풀었나
 	}
 	
-	public void setQuestionBank(Question_bank questionBank) {
+	public void setQuestionBank(QuestionBank questionBank) {
 		this.pb = questionBank;
 	}
 
@@ -79,7 +79,7 @@ class Controller
 					break;
 				case "CONCEPT":
 					if (pb.question.get(count) != "")
-						imsi = String.format("(%d/%d) %s : \r\n", count + 1, pb.question.get(count), pb.question.get(count));
+						imsi = String.format("(%d/%d) %s : \r\n", count + 1, pb.question.size(), pb.question.get(count));
 					break;
 				default:
 					break;
@@ -89,10 +89,10 @@ class Controller
 		return imsi;
 	}								   //문제 내기
 
-	public String solve_start(String type, String subject, String chapter, String form)
+	public String termSolveStart(String subject, String chapter, String form)
 	{
 		String imsi = "문제 출제 오류";
-		문제은행.모델.Subject SJ;
+		문제은행.model.Subject SJ;
 		count = 0;
 		
 		pb.question.clear();
@@ -101,144 +101,155 @@ class Controller
 		switch (subject)
 		{
 			case "ENGLISH_VOCA":
-				SJ = pb.getSj().get("ENGLISH_VOCA");
-				break;
-			case "ENGINEER_INFORMATION_PROCESSING":
-				SJ = pb.getSj().get("ENGINEER_INFORMATION_PROCESSING");
+				SJ = pb.getMap().get("ENGLISH_VOCA");
 				break;
 			case "POWER_ELECTRONICS":
-				SJ = pb.getSj().get("POWER_ELECTRONICS");
+				SJ = pb.getMap().get("POWER_ELECTRONICS");
 				break;
 			case "JAPAN_VOCA":
-				SJ = pb.getSj().get("JAPAN_VOCA");
-				break;
-			case "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT":
-				SJ = pb.getSj().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT");
+				SJ = pb.getMap().get("JAPAN_VOCA");
 				break;
 			default:
 				SJ = null;
 				break;
 		}
-
-		switch (type)
+		
+		switch (chapter)
 		{
-			case "TERM":
-
-				switch (chapter)
+			case "all":
+				switch (form)
 				{
-					case "all":
-						switch (form)
-						{
-							case "WORDTOTRANSLATE":
-								pb.set_chapter_range_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, 1, 10, Question_bank.Keyword.WORDTOTRANSLATE);
-								break;
-							case "TRANSLATETOWORD":
-								pb.set_chapter_range_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, 1, 10, Question_bank.Keyword.TRANSLATETOWORD);
-								break;
-							case "RANDOM":
-								pb.set_chapter_range_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, 1, 10, Question_bank.Keyword.RANDOM);
-								break;
-							case "EXAMPLE_SENTENCE":
-								pb.set_chapter_range_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, 1, 10, Question_bank.Keyword.EXAMPLE_SENTENCE);
-								break;
-							case "GRAMMAR":
-								pb.set_chapter_range_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, 1, 10, Question_bank.Keyword.GRAMMAR);
-								break;
-							default:
-								break;
-						}
-
-						input = new String[pb.question.size()];
-						right_answer = new int[pb.question.size()];
-						wrong_answer = new int[pb.question.size()];
-						right_cnt = 0;
-						wrong_cnt = 0;
-
-						if (pb.question.size() > 0 && pb.question.get(0) != "")
-							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
+					case "WORDTOTRANSLATE":
+						pb.set_chapter_range_exam("TERM", SJ.getSubject(), 1, 10, "WORDTOTRANSLATE");
+						break;
+					case "TRANSLATETOWORD":
+						pb.set_chapter_range_exam("TERM", SJ.getSubject(), 1, 10, "TRANSLATETOWORD");
+						break;
+					case "RANDOM":
+						pb.set_chapter_range_exam("TERM", SJ.getSubject(), 1, 10, "RANDOM");
+						break;
+					case "EXAMPLE_SENTENCE":
+						pb.set_chapter_range_exam("TERM", SJ.getSubject(), 1, 10, "EXAMPLE_SENTENCE");
+						break;
+					case "GRAMMAR":
+						pb.set_chapter_range_exam("TERM", SJ.getSubject(), 1, 10, "GRAMMAR");
 						break;
 					default:
-						switch (form)
-						{
-							case "WORDTOTRANSLATE":
-								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, chapter, Question_bank.Keyword.WORDTOTRANSLATE);
-								break;
-							case "TRANSLATETOWORD":
-								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, chapter, Question_bank.Keyword.TRANSLATETOWORD);
-								break;
-							case "RANDOM":
-								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, chapter, Question_bank.Keyword.RANDOM);
-								break;
-							case "EXAMPLE_SENTENCE":
-								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, chapter, Question_bank.Keyword.EXAMPLE_SENTENCE);
-								break;
-							case "GRAMMAR":
-								pb.set_chapter_exam(Question_bank.Keyword.TERM, (Question_bank.Keyword)SJ.code, chapter, Question_bank.Keyword.GRAMMAR);
-								break;
-							default:
-								break;
-						}
-
-						input = new String[pb.question.size()];
-						right_answer = new int[pb.question.size()];
-						wrong_answer = new int[pb.question.size()];
-						right_cnt = 0;
-						wrong_cnt = 0;
-
-						if (pb.question.size() > 0 && pb.question.get(0) != "")
-							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
 						break;
 				}
+
+				input = new String[pb.question.size()];
+				right_answer = new int[pb.question.size()];
+				wrong_answer = new int[pb.question.size()];
+				right_cnt = 0;
+				wrong_cnt = 0;
+
+				if (pb.question.size() > 0 && pb.question.get(0) != "")
+					imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
 				break;
-			case "CONCEPT":
-				switch (chapter)
+			default:
+				switch (form)
 				{
-					case "all":
-						switch (form)
-						{
-							case "INTERPRET":
-								pb.set_chapter_range_exam(Question_bank.Keyword.CONCEPT, SJ.code, 1, 10, Question_bank.Keyword.INTERPRET);
-								break;
-							case "INFERENCE":
-								pb.set_chapter_range_exam(Question_bank.Keyword.CONCEPT, SJ.code, 1, 10, Question_bank.Keyword.INFERENCE);
-								break;
-							case "RANDOM":
-								pb.set_chapter_range_exam(Question_bank.Keyword.CONCEPT, SJ.code, 1, 10, Question_bank.Keyword.RANDOM);
-								break;
-							default:
-								pb.set_chapter_range_exam(Question_bank.Keyword.CONCEPT, SJ.code, 1, 10, Question_bank.Keyword.INTERPRET);
-								break;
-						}
-
-						input = new String[pb.question.size()];
-
-						if (pb.question.size() > 0 && pb.question.get(0) != "")
-							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
+					case "WORDTOTRANSLATE":
+						pb.set_chapter_exam("TERM", SJ.getSubject(), chapter, "WORDTOTRANSLATE");
+						break;
+					case "TRANSLATETOWORD":
+						pb.set_chapter_exam("TERM", SJ.getSubject(), chapter, "TRANSLATETOWORD");
+						break;
+					case "RANDOM":
+						pb.set_chapter_exam("TERM", SJ.getSubject(), chapter, "RANDOM");
+						break;
+					case "EXAMPLE_SENTENCE":
+						pb.set_chapter_exam("TERM", SJ.getSubject(), chapter, "EXAMPLE_SENTENCE");
+						break;
+					case "GRAMMAR":
+						pb.set_chapter_exam("TERM", SJ.getSubject(), chapter, "GRAMMAR");
 						break;
 					default:
-						switch (form)
-						{
-							case "INTERPRET":
-								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, chapter, Question_bank.Keyword.INTERPRET);
-								break;
-							case "INFERENCE":
-								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, chapter, Question_bank.Keyword.INFERENCE);
-								break;
-							case "RANDOM":
-								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, chapter, Question_bank.Keyword.RANDOM);
-								break;
-							default:
-								pb.set_chapter_exam(Question_bank.Keyword.CONCEPT, SJ.code, chapter, Question_bank.Keyword.INTERPRET);
-								break;
-						}
-
-						input = new String[pb.question.size()];
-
-						if (pb.question.size() > 0 && pb.question.get(0) != "")
-							imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
 						break;
 				}
 
+				input = new String[pb.question.size()];
+				right_answer = new int[pb.question.size()];
+				wrong_answer = new int[pb.question.size()];
+				right_cnt = 0;
+				wrong_cnt = 0;
+
+				if (pb.question.size() > 0 && pb.question.get(0) != "")
+					imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
+				break;
+		}
+
+		return imsi;
+	}   //문제 출제
+
+	public String conceptSolveStart(String subject, String chapter, String form)
+	{
+		String imsi = "문제 출제 오류";
+		문제은행.model.Subject SJ;
+		count = 0;
+		
+		pb.question.clear();
+		pb.answer.clear();
+		
+		switch (subject)
+		{
+			case "ENGINEER_INFORMATION_PROCESSING":
+				SJ = pb.getMap().get("ENGINEER_INFORMATION_PROCESSING");
+				break;
+			case "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT":
+				SJ = pb.getMap().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT");
+				break;
+			default:
+				SJ = null;
+				break;
+		}
+		
+		switch (chapter)
+		{
+			case "all":
+				switch (form)
+				{
+					case "INTERPRET":
+						pb.set_chapter_range_exam("CONCEPT", SJ.getSubject(), 1, 10, "INTERPRET");
+						break;
+					case "INFERENCE":
+						pb.set_chapter_range_exam("CONCEPT", SJ.getSubject(), 1, 10, "INFERENCE");
+						break;
+					case "RANDOM":
+						pb.set_chapter_range_exam("CONCEPT", SJ.getSubject(), 1, 10, "RANDOM");
+						break;
+					default:
+						pb.set_chapter_range_exam("CONCEPT", SJ.getSubject(), 1, 10, "INTERPRET");
+						break;
+				}
+
+				input = new String[pb.question.size()];
+
+				if (pb.question.size() > 0 && pb.question.get(0) != "")
+					imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
+				break;
+			default:
+				switch (form)
+				{
+					case "INTERPRET":
+						pb.set_chapter_exam("CONCEPT", SJ.getSubject(), chapter, "INTERPRET");
+						break;
+					case "INFERENCE":
+						pb.set_chapter_exam("CONCEPT", SJ.getSubject(), chapter, "INFERENCE");
+						break;
+					case "RANDOM":
+						pb.set_chapter_exam("CONCEPT", SJ.getSubject(), chapter, "RANDOM");
+						break;
+					default:
+						pb.set_chapter_exam("CONCEPT", SJ.getSubject(), chapter, "INTERPRET");
+						break;
+				}
+
+				input = new String[pb.question.size()];
+
+				if (pb.question.size() > 0 && pb.question.get(0) != "")
+					imsi = String.format("(%d/%d) %s : \r\n", 1, pb.question.size(), pb.question.get(0));
 				break;
 		}
 

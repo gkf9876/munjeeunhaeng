@@ -1,14 +1,12 @@
-﻿package 문제은행.모델;
+﻿package 문제은행.model;
 
-import java.util.List;
+import 문제은행.Concept.vo.ConceptVo;
 
-import 문제은행.모델.Question_bank.Keyword;
-
-class Engineer_Information_Processing extends Subject
+class EngineerInformationProcessing extends Subject<ConceptVo>
 {
-    public Engineer_Information_Processing(String name, Keyword engineerInformationProcessing, List<String> chapterList)
+    public EngineerInformationProcessing(String name, String subject)
     {
-    	super(name, engineerInformationProcessing, chapterList);
+    	super(name, subject);
 
 		/*
 		 * CT[1].add_concept("정보 시스템(IS : Information System)",

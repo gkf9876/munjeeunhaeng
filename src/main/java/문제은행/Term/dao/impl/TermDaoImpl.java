@@ -52,8 +52,8 @@ public class TermDaoImpl implements TermDao{
 		return this.jdbcTemplate.queryForObject("SELECT COUNT(*) FROM TERM", Integer.class);
 	}
 	
-	public List<TermVo> getAll(String type, String chapter){
-		return this.jdbcTemplate.query("SELECT * FROM TERM WHERE TYPE = ? AND CHAPTER = ? ORDER BY IDX", new Object[] {type, chapter}, this.termVoMapper);
+	public List<TermVo> getAll(String type){
+		return this.jdbcTemplate.query("SELECT * FROM TERM WHERE TYPE = ? ORDER BY IDX", new Object[] {type}, this.termVoMapper);
 	}
 
 	@Override
@@ -69,5 +69,10 @@ public class TermDaoImpl implements TermDao{
 				return rs.getString(1);
 			}
 		});
+	}
+
+	@Override
+	public List<TermVo> getList(String type, String chapter) {
+		return this.jdbcTemplate.query("SELECT * FROM TERM WHERE TYPE = ? AND CHAPTER = ? ORDER BY IDX", new Object[] {type, chapter}, this.termVoMapper);
 	}
 }

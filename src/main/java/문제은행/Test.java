@@ -86,9 +86,9 @@ public class Test
 		JComboBox<String> chapter = new JComboBox<String>();
 		chapter.setSize(150, 20);
 		chapter.setLocation(80, 110);
-		for(int i=0; i<con.pb.getSj().get("JAPAN_VOCA").chapterList.size(); i++)
+		for(int i=0; i<con.pb.getMap().get("JAPAN_VOCA").getChapterList().size(); i++)
 		{
-			chapter.addItem(con.pb.getSj().get("JAPAN_VOCA").chapterList.get(i));
+			chapter.addItem((String)con.pb.getMap().get("JAPAN_VOCA").getChapterList().get(i));
 		}
 		chapter.addItem("all");
 		
@@ -191,32 +191,32 @@ public class Test
 						{
 							case "ENGLISH_VOCA":
 								chapter.removeAllItems();
-								for(int i=0; i<con.pb.getSj().get("ENGLISH_VOCA").chapterList.size(); i++)
-									chapter.addItem(con.pb.getSj().get("ENGLISH_VOCA").chapterList.get(i));
+								for(int i=0; i<con.pb.getMap().get("ENGLISH_VOCA").getChapterList().size(); i++)
+									chapter.addItem((String)con.pb.getMap().get("ENGLISH_VOCA").getChapterList().get(i));
 								chapter.addItem("all");
 								break;
 							case "ENGINEER_INFORMATION_PROCESSING":
 								chapter.removeAllItems();
-								for(int i=0; i<con.pb.getSj().get("ENGINEER_INFORMATION_PROCESSING").chapterList.size(); i++)
-									chapter.addItem(con.pb.getSj().get("ENGINEER_INFORMATION_PROCESSING").chapterList.get(i));
+								for(int i=0; i<con.pb.getMap().get("ENGINEER_INFORMATION_PROCESSING").getChapterList().size(); i++)
+									chapter.addItem((String)con.pb.getMap().get("ENGINEER_INFORMATION_PROCESSING").getChapterList().get(i));
 								chapter.addItem("all");
 								break;
 							case "POWER_ELECTRONICS":
 								chapter.removeAllItems();
-								for(int i=0; i<con.pb.getSj().get("POWER_ELECTRONICS").chapterList.size(); i++)
-									chapter.addItem(con.pb.getSj().get("POWER_ELECTRONICS").chapterList.get(i));
+								for(int i=0; i<con.pb.getMap().get("POWER_ELECTRONICS").getChapterList().size(); i++)
+									chapter.addItem((String)con.pb.getMap().get("POWER_ELECTRONICS").getChapterList().get(i));
 								chapter.addItem("all");
 								break;
 							case "JAPAN_VOCA":
 								chapter.removeAllItems();
-								for(int i=0; i<con.pb.getSj().get("JAPAN_VOCA").chapterList.size(); i++)
-									chapter.addItem(con.pb.getSj().get("JAPAN_VOCA").chapterList.get(i));
+								for(int i=0; i<con.pb.getMap().get("JAPAN_VOCA").getChapterList().size(); i++)
+									chapter.addItem((String)con.pb.getMap().get("JAPAN_VOCA").getChapterList().get(i));
 								chapter.addItem("all");
 								break;
 							case "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT":
 								chapter.removeAllItems();
-								for(int i=0; i<con.pb.getSj().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").chapterList.size(); i++)
-									chapter.addItem(con.pb.getSj().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").chapterList.get(i));
+								for(int i=0; i<con.pb.getMap().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").getChapterList().size(); i++)
+									chapter.addItem((String)con.pb.getMap().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").getChapterList().get(i));
 								chapter.addItem("all");
 								break;
 						}
@@ -230,7 +230,11 @@ public class Test
 					public void actionPerformed(ActionEvent e)
 					{
 						question.setText("");
-						question.append(con.solve_start((String)type.getSelectedItem(), (String)subject.getSelectedItem(), (String)chapter.getSelectedItem(), (String)form.getSelectedItem()));
+						if(type.getSelectedItem().toString().equals("TERM")) {
+							question.append(con.termSolveStart((String)subject.getSelectedItem(), (String)chapter.getSelectedItem(), (String)form.getSelectedItem()));
+						}else if(type.getSelectedItem().toString().equals("CONCEPT")){
+							question.append(con.conceptSolveStart((String)subject.getSelectedItem(), (String)chapter.getSelectedItem(), (String)form.getSelectedItem()));
+						}
 					}
 				});
 		marking.addActionListener(new ActionListener()
@@ -238,7 +242,6 @@ public class Test
 					public void actionPerformed(ActionEvent e)
 					{
 						question.setText("");
-
 						question.append(con.marking((String)type.getSelectedItem()));
 					}
 				});

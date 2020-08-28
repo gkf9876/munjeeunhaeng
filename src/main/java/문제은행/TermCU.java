@@ -14,10 +14,10 @@ import 문제은행.Concept.dao.ConceptDao;
 import 문제은행.Concept.vo.ConceptVo;
 import 문제은행.Term.dao.TermDao;
 import 문제은행.Term.vo.TermVo;
-import 문제은행.모델.Question_bank;
+import 문제은행.model.QuestionBank;
 
 public class TermCU extends JDialog{
-	private Question_bank questionBank;
+	private QuestionBank questionBank;
 	
 	public TermCU(Frame frame, AppContext appContext, String name) {
 		questionBank = appContext.questionBank();

@@ -1,14 +1,12 @@
-﻿package 문제은행.모델;
+﻿package 문제은행.model;
 
-import java.util.List;
+import 문제은행.Term.vo.TermVo;
 
-import 문제은행.모델.Question_bank.Keyword;
-
-class English_voca extends Subject
+class EnglishVoca extends Subject<TermVo>
 {
-    public English_voca(String name, Keyword code, List<String> chapterList)
+    public EnglishVoca(String name, String subject)
     {
-    	super(name, code, chapterList);
+    	super(name, subject);
 
 		/*
 		 * HT[1].add_term("applicant", "n.지원자, 신청자",

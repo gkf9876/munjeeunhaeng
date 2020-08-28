@@ -17,16 +17,21 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import 문제은행.AppContext.AppContext;
 import 문제은행.Concept.dao.ConceptDao;
-import 문제은행.모델.Question_bank;
+import 문제은행.Concept.vo.ConceptVo;
+import 문제은행.model.QuestionBank;
 
 public class ConceptCU extends JDialog implements ActionListener{
 	private ConceptDao conceptDao;
-	private Question_bank questionBank;
+	private QuestionBank questionBank;
+	
+	private JComboBox<String> subject;
+	private JComboBox<String> chapter;
 	
 	private JLabel questionFileName;
 	private JLabel answerFileName;
@@ -43,7 +48,7 @@ public class ConceptCU extends JDialog implements ActionListener{
 		JLabel subjectName = new JLabel("과목");
 		subjectName.setSize(40, 40);
 		subjectName.setLocation(20, 10);
-		JComboBox<String> subject = new JComboBox<String>();
+		subject = new JComboBox<String>();
 		subject.addItem("ENGINEER_INFORMATION_PROCESSING");
 		subject.addItem("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT");
 		subject.setSize(150, 20);
@@ -55,12 +60,12 @@ public class ConceptCU extends JDialog implements ActionListener{
 		JLabel chapterName = new JLabel("챕터");
 		chapterName.setSize(40, 40);
 		chapterName.setLocation(20, 50);
-		JComboBox<String> chapter = new JComboBox<String>();
+		chapter = new JComboBox<String>();
 		chapter.setSize(150, 20);
 		chapter.setLocation(80, 60);
-		for(int i=0; i<appContext.questionBank().getSj().get("ENGINEER_INFORMATION_PROCESSING").chapterList.size(); i++)
+		for(int i=0; i<appContext.questionBank().getMap().get("ENGINEER_INFORMATION_PROCESSING").getChapterList().size(); i++)
 		{
-			chapter.addItem(questionBank.getSj().get("ENGINEER_INFORMATION_PROCESSING").chapterList.get(i));
+			chapter.addItem((String)questionBank.getMap().get("ENGINEER_INFORMATION_PROCESSING").getChapterList().get(i));
 		}
 		this.add(chapterName);
 		this.add(chapter);
@@ -73,13 +78,13 @@ public class ConceptCU extends JDialog implements ActionListener{
 						{
 							case "ENGINEER_INFORMATION_PROCESSING":
 								chapter.removeAllItems();
-								for(int i=0; i<questionBank.getSj().get("ENGINEER_INFORMATION_PROCESSING").chapterList.size(); i++)
-									chapter.addItem(questionBank.getSj().get("ENGINEER_INFORMATION_PROCESSING").chapterList.get(i));
+								for(int i=0; i<questionBank.getMap().get("ENGINEER_INFORMATION_PROCESSING").getChapterList().size(); i++)
+									chapter.addItem((String)questionBank.getMap().get("ENGINEER_INFORMATION_PROCESSING").getChapterList().get(i));
 								break;
 							case "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT":
 								chapter.removeAllItems();
-								for(int i=0; i<questionBank.getSj().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").chapterList.size(); i++)
-									chapter.addItem(questionBank.getSj().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").chapterList.get(i));
+								for(int i=0; i<questionBank.getMap().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").getChapterList().size(); i++)
+									chapter.addItem((String)questionBank.getMap().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").getChapterList().get(i));
 								break;
 						}
 					}
@@ -150,56 +155,70 @@ public class ConceptCU extends JDialog implements ActionListener{
 				answerFileName.setText(file.getPath());
 			}
 		}else if(e.getSource() == dialogOkButton) {
-			//문제 파일 복사
-			File questionFile = new File(questionFileName.getText());
-			SimpleDateFormat format = new SimpleDateFormat ("yyyyMMddHHmmss");
-			Calendar time = Calendar.getInstance();
-			String formatTime = format.format(time.getTime());
+			ConceptVo conceptVo = new ConceptVo();
 			
-			File copyQuestionFile = new File(formatTime + "_Q");
-			try {
-				FileInputStream questionInputStream = new FileInputStream(questionFile);
-				FileOutputStream questionOutputStream = new FileOutputStream(copyQuestionFile);
-				byte[] buffer = new byte[1024];
+			if(questionFileName.getText() != null && !questionFileName.getText().trim().equals("")) {
+				//문제 파일 복사
+				File questionFile = new File(questionFileName.getText());
+				SimpleDateFormat format = new SimpleDateFormat ("yyyyMMddHHmmss");
+				Calendar time = Calendar.getInstance();
+				String formatTime = format.format(time.getTime());
 				
-				int length;
-				while ((length = questionInputStream.read(buffer)) > 0){
-					questionOutputStream.write(buffer, 0, length);
+				File copyQuestionFile = new File(formatTime + "_Q");
+				try {
+					FileInputStream questionInputStream = new FileInputStream(questionFile);
+					FileOutputStream questionOutputStream = new FileOutputStream(copyQuestionFile);
+					byte[] buffer = new byte[1024];
+					
+					int length;
+					while ((length = questionInputStream.read(buffer)) > 0){
+						questionOutputStream.write(buffer, 0, length);
+					}
+					questionInputStream.close();
+					questionOutputStream.close();
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
-				questionInputStream.close();
-				questionOutputStream.close();
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				conceptVo.setQuestion(formatTime + "_Q");
 			}
 			
 			//답안 파일 복사
-			File answerFile = new File(answerFileName.getText());
-			time = Calendar.getInstance();
-			formatTime = format.format(time.getTime());
-			
-			File copyAnswerFile = new File(formatTime + "_A");
-			try {
-				FileInputStream answerInputStream = new FileInputStream(answerFile);
-				FileOutputStream answerOutputStream = new FileOutputStream(copyAnswerFile);
-				byte[] buffer = new byte[1024];
+			if(answerFileName.getText() != null && !answerFileName.getText().trim().equals("")) {
 				
-				int length;
-				while ((length = answerInputStream.read(buffer)) > 0){
-					answerOutputStream.write(buffer, 0, length);
+				File answerFile = new File(answerFileName.getText());
+				SimpleDateFormat format = new SimpleDateFormat ("yyyyMMddHHmmss");
+				Calendar time = Calendar.getInstance();
+				String formatTime = format.format(time.getTime());
+				
+				File copyAnswerFile = new File(formatTime + "_A");
+				try {
+					FileInputStream answerInputStream = new FileInputStream(answerFile);
+					FileOutputStream answerOutputStream = new FileOutputStream(copyAnswerFile);
+					byte[] buffer = new byte[1024];
+					
+					int length;
+					while ((length = answerInputStream.read(buffer)) > 0){
+						answerOutputStream.write(buffer, 0, length);
+					}
+					answerInputStream.close();
+					answerOutputStream.close();
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
-				answerInputStream.close();
-				answerOutputStream.close();
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				conceptVo.setAnswer(formatTime + "_A");
 			}
+			
+			conceptVo.setSubject(subject.getSelectedItem().toString());
+			conceptVo.setChapter(chapter.getSelectedItem().toString());
+			this.conceptDao.add(conceptVo);
 		}
 	}
 }
