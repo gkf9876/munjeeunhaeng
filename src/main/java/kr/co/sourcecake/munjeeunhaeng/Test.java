@@ -231,9 +231,10 @@ public class Test
 					{
 						question.setText("");
 						if(type.getSelectedItem().toString().equals("TERM")) {
-							question.append(con.termSolveStart((String)subject.getSelectedItem(), (String)chapter.getSelectedItem(), (String)form.getSelectedItem()));
+							question.append(con.termSolveStart(subject.getSelectedItem().toString(), chapter.getSelectedItem().toString(), form.getSelectedItem().toString()));
 						}else if(type.getSelectedItem().toString().equals("CONCEPT")){
-							question.append(con.conceptSolveStart((String)subject.getSelectedItem(), (String)chapter.getSelectedItem(), (String)form.getSelectedItem()));
+							question.append(con.conceptSolveStart(subject.getSelectedItem().toString(), chapter.getSelectedItem().toString(), form.getSelectedItem().toString()));
+							
 						}
 					}
 				});
@@ -251,22 +252,22 @@ public class Test
 					{
 						if (type.getSelectedItem() == "TERM")
 						{
-							question.append(con.Answer_input((String)type.getSelectedItem(), input.getText()));
-							question.append(con.set_question((String)type.getSelectedItem()));
+							question.append(con.answerInput(type.getSelectedItem().toString(), input.getText()));
+							question.append(con.setQuestion(type.getSelectedItem().toString()));
 						}
 						else
 						{
 							//개념문제에 맞게 답을 적으면 바로 답이 맞는지 확인할 수 있게 했다.
 							if (count == 0)
 							{
-								question.append(con.Answer_input((String)type.getSelectedItem(), input.getText()));
+								question.append(con.answerInput(type.getSelectedItem().toString(), input.getText()));
 								count++;
 							}
 							else
 							{
 								question.setText("");
-								question.append(con.set_question((String)type.getSelectedItem()));
-								//count = 0;
+								question.append(con.setQuestion(type.getSelectedItem().toString()));
+								count = 0;
 							}
 						}
 						
@@ -280,21 +281,21 @@ public class Test
 					{
 						if (type.getSelectedItem() == "TERM")
 						{
-							question.append(con.Answer_input((String)type.getSelectedItem(), input.getText()));
-							question.append(con.set_question((String)type.getSelectedItem()));
+							question.append(con.answerInput(type.getSelectedItem().toString(), input.getText()));
+							question.append(con.setQuestion(type.getSelectedItem().toString()));
 						}
 						else
 						{
 							//개념문제에 맞게 답을 적으면 바로 답이 맞는지 확인할 수 있게 했다.
 							if (count == 0)
 							{
-								question.append(con.Answer_input((String)type.getSelectedItem(), input.getText()));
+								question.append(con.answerInput(type.getSelectedItem().toString(), input.getText()));
 								count++;
 							}
 							else
 							{
 								question.setText("");
-								question.append(con.set_question((String)type.getSelectedItem()));
+								question.append(con.setQuestion(type.getSelectedItem().toString()));
 								count = 0;
 							}
 						}

@@ -1,10 +1,13 @@
 ﻿package kr.co.sourcecake.munjeeunhaeng.model;
 
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.swing.ImageIcon;
 
 import kr.co.sourcecake.munjeeunhaeng.concept.dao.ConceptDao;
 import kr.co.sourcecake.munjeeunhaeng.concept.vo.ConceptVo;
@@ -20,8 +23,8 @@ public class QuestionBank
 		return map;
 	}
 
-	public List<String> question = new ArrayList<String>();
-	public List<String> answer = new ArrayList<String>();
+	public List<TermVo> termQuestion = new ArrayList<TermVo>();
+	public List<ConceptVo> conceptQuestion = new ArrayList<ConceptVo>();
 
 	TermDao termDao;
 	ConceptDao conceptDao;
@@ -83,11 +86,25 @@ public class QuestionBank
 		//정보관리기술사 개념 정보 불러오기
 		ProfessionalEngineerInformationManagement professionalEngineerInformationManagement = new ProfessionalEngineerInformationManagement("정보관리기술사", "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT");
 		professionalEngineerInformationManagement.setChapterList(conceptDao.selectChapterList("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT"));
+		
 		Map<String, List<ConceptVo>> professionalEngineerInformationManagementMap = new HashMap<String, List<ConceptVo>>();
+		List<Image> professionalEngineerInformationManagementQuestionImages = new ArrayList<Image>();
+		List<Image> professionalEngineerInformationManagementAnswerImages = new ArrayList<Image>();
+		
 		for(String chapter : professionalEngineerInformationManagement.getChapterList()) {
 			professionalEngineerInformationManagementMap.put(chapter, conceptDao.getList("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", chapter));
+			
+			for(int i=0; i<professionalEngineerInformationManagementMap.get(chapter).size(); i++) {
+				String question = professionalEngineerInformationManagementMap.get(chapter).get(i).getQuestion();
+				String answer = professionalEngineerInformationManagementMap.get(chapter).get(i).getAnswer();
+				
+				professionalEngineerInformationManagementQuestionImages.add(new ImageIcon(question).getImage());
+				professionalEngineerInformationManagementAnswerImages.add(new ImageIcon(answer).getImage());
+			}
 		}
 		professionalEngineerInformationManagement.setInfoMap(professionalEngineerInformationManagementMap);
+		professionalEngineerInformationManagement.setQuestionImages(professionalEngineerInformationManagementQuestionImages);
+		professionalEngineerInformationManagement.setAnswerImages(professionalEngineerInformationManagementAnswerImages);
 		map.put("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", professionalEngineerInformationManagement);
 	}
 
@@ -99,31 +116,29 @@ public class QuestionBank
 			
 			for (int i = 0; i < list.size(); i++) {
 				if(form.equals("WORDTOTRANSLATE")){
-					question.add(list.get(i).getWord());
-					answer.add(list.get(i).getTranslate());
+					termQuestion.add(list.get(i));
 				}else if(form.equals("TRANSLATETOWORD")) {
-					question.add(list.get(i).getTranslate());
-					answer.add(list.get(i).getWord());
+					TermVo term = list.get(i);
+					String word = term.getWord();
+					String translate = term.getTranslate();
+					term.setWord(translate);
+					term.setTranslate(word);
+					termQuestion.add(term);
 				}else if(form.equals("RANDOM")) {
-					if(((int)(Math.random() * 10) % 2) == 1)
-					{
-						question.add(list.get(i).getWord());
-						answer.add(list.get(i).getTranslate());
-					}
-					else
-					{
-						question.add(list.get(i).getTranslate());
-						answer.add(list.get(i).getWord());
+					if(((int)(Math.random() * 10) % 2) == 1){
+						termQuestion.add(list.get(i));
+					}else{
+						TermVo term = list.get(i);
+						String word = term.getWord();
+						String translate = term.getTranslate();
+						term.setWord(translate);
+						term.setTranslate(word);
+						termQuestion.add(term);
 					}
 				}else if(form.equals("EXAMPLE_SENTENCE")) {
-					question.add("\n 예문 : " + list.get(i).getExercise() + "\r\n" + " 단어 : " + list.get(i).getWord());
-					answer.add(list.get(i).getTranslate());
+					termQuestion.add(list.get(i));
 				}else if(form.equals("GRAMMAR")) {
-					if (list.get(i).getGrammarQuestion() != null)
-					{
-						question.add(list.get(i).getGrammarQuestion());
-						answer.add(list.get(i).getGrammarAnswer());
-					}
+					termQuestion.add(list.get(i));
 				}
 			}
 		}else if(type.equals("CONCEPT")) {
@@ -132,21 +147,24 @@ public class QuestionBank
 
 			for (int i = 0; i < list.size(); i++) {
 				if(form.equals("INTERPRET")){
-					question.add(list.get(i).getQuestion());
-					answer.add(list.get(i).getAnswer());
+					conceptQuestion.add(list.get(i));
 				}else if(form.equals("INFERENCE")) {
-					question.add(list.get(i).getQuestion());
-					answer.add(list.get(i).getAnswer());
+					ConceptVo concept = list.get(i);
+					String question = concept.getQuestion();
+					String answer = concept.getAnswer();
+					concept.setQuestion(answer);
+					concept.setAnswer(question);
+					conceptQuestion.add(concept);
 				}else if(form.equals("RANDOM")) {
-					if(((int)(Math.random() * 10) % 2) == 1)
-					{
-						question.add(list.get(i).getQuestion());
-						answer.add(list.get(i).getAnswer());
-					}
-					else
-					{
-						question.add(list.get(i).getAnswer());
-						answer.add(list.get(i).getQuestion());
+					if(((int)(Math.random() * 10) % 2) == 1){
+						conceptQuestion.add(list.get(i));
+					}else{
+						ConceptVo concept = list.get(i);
+						String question = concept.getQuestion();
+						String answer = concept.getAnswer();
+						concept.setQuestion(answer);
+						concept.setAnswer(question);
+						conceptQuestion.add(concept);
 					}
 				}
 			}
@@ -165,34 +183,29 @@ public class QuestionBank
 			
 			for (int i = 0; i < list.size(); i++) {
 				if(form.equals("WORDTOTRANSLATE")) {
-					question.add(list.get(i).getWord());
-					answer.add(list.get(i).getTranslate());
+					termQuestion.add(list.get(i));
 				}else if(form.equals("TRANSLATETOWORD")) {
-					question.add(list.get(i).getTranslate());
-					answer.add(list.get(i).getWord());
+					TermVo term = list.get(i);
+					String word = term.getWord();
+					String translate = term.getTranslate();
+					term.setWord(translate);
+					term.setTranslate(word);
+					termQuestion.add(term);
 				}else if(form.equals("RANDOM")) {
-					if(((int)(Math.random() * 10) % 2) == 1)
-					{
-						question.add(list.get(i).getWord());
-						answer.add(list.get(i).getTranslate());
-					}
-					else
-					{
-						question.add(list.get(i).getTranslate());
-						answer.add(list.get(i).getWord());
+					if(((int)(Math.random() * 10) % 2) == 1){
+						termQuestion.add(list.get(i));
+					}else{
+						TermVo term = list.get(i);
+						String word = term.getWord();
+						String translate = term.getTranslate();
+						term.setWord(translate);
+						term.setTranslate(word);
+						termQuestion.add(term);
 					}
 				}else if(form.equals("EXAMPLE_SENTENCE")) {
-					if (list.get(i).getExercise() != null)
-					{
-						question.add("\n 예문 : " + list.get(i).getExercise() + "\r\n" + " 단어 : " + list.get(i).getWord());
-						answer.add(list.get(i).getTranslate());
-					}
+					termQuestion.add(list.get(i));
 				}else if(form.equals("GRAMMAR")) {
-					if (list.get(i).getGrammarQuestion() != null)
-					{
-						question.add(list.get(i).getGrammarQuestion());
-						answer.add(list.get(i).getGrammarAnswer());
-					}
+					termQuestion.add(list.get(i));
 				}
 			}
 		}else if(type.equals("CONCEPT")) {
@@ -205,21 +218,24 @@ public class QuestionBank
 			
 			for (int i = 0; i < list.size(); i++) {
 				if(form.equals("INTERPRET")) {
-					question.add(list.get(i).getWord());
-					answer.add(list.get(i).getInterpret());
+					conceptQuestion.add(list.get(i));
 				}else if(form.equals("INFERENCE")) {
-					question.add(list.get(i).getInterpret());
-					answer.add(list.get(i).getWord());
+					ConceptVo concept = list.get(i);
+					String question = concept.getQuestion();
+					String answer = concept.getAnswer();
+					concept.setQuestion(answer);
+					concept.setAnswer(question);
+					conceptQuestion.add(concept);
 				}else if(form.equals("RANDOM")) {
-					if(((int)(Math.random() * 10) % 2) == 1)
-					{
-						question.add(list.get(i).getWord());
-						answer.add(list.get(i).getInterpret());
-					}
-					else
-					{
-						question.add(list.get(i).getInterpret());
-						answer.add(list.get(i).getWord());
+					if(((int)(Math.random() * 10) % 2) == 1){
+						conceptQuestion.add(list.get(i));
+					}else{
+						ConceptVo concept = list.get(i);
+						String question = concept.getQuestion();
+						String answer = concept.getAnswer();
+						concept.setQuestion(answer);
+						concept.setAnswer(question);
+						conceptQuestion.add(concept);
 					}
 				}
 			}
