@@ -1,12 +1,11 @@
 ﻿package kr.co.sourcecake.munjeeunhaeng.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
-import kr.co.sourcecake.munjeeunhaeng.appcontext.AppContext;
 import kr.co.sourcecake.munjeeunhaeng.concept.dao.ConceptDao;
 import kr.co.sourcecake.munjeeunhaeng.concept.vo.ConceptVo;
 import kr.co.sourcecake.munjeeunhaeng.term.dao.TermDao;
@@ -14,11 +13,10 @@ import kr.co.sourcecake.munjeeunhaeng.term.vo.TermVo;
 
 public class QuestionBank
 {
-	private Map<String, Subject> map;
-	private Random rd;
+	private Map<String, Subject<?>> map;
 
 	public String name;
-	public Map<String, Subject> getMap() {
+	public Map<String, Subject<?>> getMap() {
 		return map;
 	}
 
@@ -40,7 +38,7 @@ public class QuestionBank
 	}
 	
 	public void getData() {
-		map = new HashMap<String, Subject>();
+		map = new HashMap<String, Subject<?>>();
 		
 		//해커스 단어 정보 불러오기
 		EnglishVoca englishVoca = new EnglishVoca("해커스", "ENGLISH_VOCA");
@@ -91,240 +89,140 @@ public class QuestionBank
 		}
 		professionalEngineerInformationManagement.setInfoMap(professionalEngineerInformationManagementMap);
 		map.put("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", professionalEngineerInformationManagement);
-		rd = new Random();
 	}
 
 	public void setChapterExam(String type, String subject, String chapter, String form)
 	{
-		switch (type)
-		{
-			case "TERM":
-				{
-					switch (subject)
+		if(type.equals("TERM")) {
+			List<TermVo> list = (List<TermVo>)this.map.get(subject).getInfoMap().get(chapter);
+			Collections.shuffle(list);
+			
+			for (int i = 0; i < list.size(); i++) {
+				if(form.equals("WORDTOTRANSLATE")){
+					question.add(list.get(i).getWord());
+					answer.add(list.get(i).getTranslate());
+				}else if(form.equals("TRANSLATETOWORD")) {
+					question.add(list.get(i).getTranslate());
+					answer.add(list.get(i).getWord());
+				}else if(form.equals("RANDOM")) {
+					if(((int)(Math.random() * 10) % 2) == 1)
 					{
-						case "ENGLISH_VOCA":
-							break;
-						case "POWER_ELECTRONICS":
-							break;
-						case "JAPAN_VOCA":
-							break;
-						default:
-							break;
+						question.add(list.get(i).getWord());
+						answer.add(list.get(i).getTranslate());
 					}
+					else
+					{
+						question.add(list.get(i).getTranslate());
+						answer.add(list.get(i).getWord());
+					}
+				}else if(form.equals("EXAMPLE_SENTENCE")) {
+					question.add("\n 예문 : " + list.get(i).getExercise() + "\r\n" + " 단어 : " + list.get(i).getWord());
+					answer.add(list.get(i).getTranslate());
+				}else if(form.equals("GRAMMAR")) {
+					if (list.get(i).getGrammarQuestion() != null)
+					{
+						question.add(list.get(i).getGrammarQuestion());
+						answer.add(list.get(i).getGrammarAnswer());
+					}
+				}
+			}
+		}else if(type.equals("CONCEPT")) {
+			List<ConceptVo> list = (List<ConceptVo>)this.map.get(subject).getInfoMap().get(chapter);
+			Collections.shuffle(list);
 
-					switch (form)
+			for (int i = 0; i < list.size(); i++) {
+				if(form.equals("INTERPRET")){
+					question.add(list.get(i).getQuestion());
+					answer.add(list.get(i).getAnswer());
+				}else if(form.equals("INFERENCE")) {
+					question.add(list.get(i).getQuestion());
+					answer.add(list.get(i).getAnswer());
+				}else if(form.equals("RANDOM")) {
+					if(((int)(Math.random() * 10) % 2) == 1)
 					{
-						case "WORDTOTRANSLATE":
-							break;
-						case "TRANSLATETOWORD":
-							break;
-						case "RANDOM":
-							break;
-						case "EXAMPLE_SENTENCE":
-							break;
-						case "GRAMMAR":
-							break;
+						question.add(list.get(i).getQuestion());
+						answer.add(list.get(i).getAnswer());
+					}
+					else
+					{
+						question.add(list.get(i).getAnswer());
+						answer.add(list.get(i).getQuestion());
 					}
 				}
-				break;
-			case "CONCEPT":
-				{
-					switch (subject)
-					{
-						case "ENGINEER_INFORMATION_PROCESSING":
-							break;
-						case "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT":
-							break;
-						default:
-							break;
-					}
-					
-					switch (form)
-					{
-						case "INTERPRET":
-							break;
-						case "INFERENCE":
-							break;
-						case "RANDOM":
-							break;
-					}
-				}
-				break;
+			}
 		}
 	}
 
-	public void set_chapter_range_exam(String type, String subject, int start_chapter, int end_chapter, String form)
+	public void setAllChapterExam(String type, String subject, String form)
 	{
-		switch (type)
-		{
-			case "TERM":
-				{
-					List<TermVo> list = new ArrayList<TermVo>();
-
-					switch (subject)
+		if(type.equals("TERM")){
+			List<TermVo> list = new ArrayList<TermVo>();
+			
+			for(String chapter : this.map.get(subject).getChapterList()) {
+				list.addAll((List<TermVo>)this.map.get(subject).getInfoMap().get(chapter));
+			}
+			Collections.shuffle(list);
+			
+			for (int i = 0; i < list.size(); i++) {
+				if(form.equals("WORDTOTRANSLATE")) {
+					question.add(list.get(i).getWord());
+					answer.add(list.get(i).getTranslate());
+				}else if(form.equals("TRANSLATETOWORD")) {
+					question.add(list.get(i).getTranslate());
+					answer.add(list.get(i).getWord());
+				}else if(form.equals("RANDOM")) {
+					if(((int)(Math.random() * 10) % 2) == 1)
 					{
-						case "ENGLISH_VOCA":
-							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll((List<TermVo>)this.map.get("ENGLISH_VOCA").getInfoMap().get(Integer.toString(i)));
-							}
-							break;
-						case "POWER_ELECTRONICS":
-							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll((List<TermVo>)this.map.get("POWER_ELECTRONICS").getInfoMap().get(Integer.toString(i)));
-							}
-							break;
-						case "JAPAN_VOCA":
-							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll((List<TermVo>)this.map.get("JAPAN_VOCA").getInfoMap().get(Integer.toString(i)));
-							}
-							break;
-						default:
-							break;
+						question.add(list.get(i).getWord());
+						answer.add(list.get(i).getTranslate());
 					}
-
-					int[] ran = new int[list.size()];
-
-					for (int i = 0; i < list.size(); i++)
+					else
 					{
-						int cnt = 0;
-						ran[i] = rd.nextInt(list.size());
-
-						for (int j = 0; j < i; j++)
-							if (ran[j] == ran[i])
-								cnt++;
-
-						if (cnt != 0)
-							i--;
+						question.add(list.get(i).getTranslate());
+						answer.add(list.get(i).getWord());
 					}
-
-					switch (form)
+				}else if(form.equals("EXAMPLE_SENTENCE")) {
+					if (list.get(i).getExercise() != null)
 					{
-						case "WORDTOTRANSLATE":
-							for (int i = 0; i < list.size(); i++)
-							{
-								question.add(String.format(list.get(ran[i]).getWord()));
-								answer.add(String.format(list.get(ran[i]).getTranslate()));
-							}
-							break;
-						case "TRANSLATETOWORD":
-							for (int i = 0; i < list.size(); i++)
-							{
-								question.add(String.format(list.get(ran[i]).getTranslate()));
-								answer.add(String.format(list.get(ran[i]).getWord()));
-							}
-							break;
-						case "RANDOM":
-							for(int i=0; i<list.size(); i++)
-							{
-								if(rd.nextInt(2) == 1)
-								{
-									question.add(String.format(list.get(ran[i]).getWord()));
-									answer.add(String.format(list.get(ran[i]).getTranslate()));
-								}
-								else
-								{
-									question.add(String.format(list.get(ran[i]).getTranslate()));
-									answer.add(String.format(list.get(ran[i]).getWord()));
-								}
-							}
-							break;
-						case "EXAMPLE_SENTENCE":
-							int j = 0;
-							for (int i = 0; i < list.size(); i++)
-							{
-								if (list.get(ran[i]).getExercise() != null)
-								{
-									question.add("\n 예문 : " + String.format(list.get(ran[i]).getExercise()) + "\r\n" + " 단어 : " + String.format(list.get(ran[i]).getWord()));
-									answer.add(String.format(list.get(ran[i]).getTranslate()));
-								}
-							}
-							break;
-						case "GRAMMAR":
-							int k = 0;
-							for (int i = 0; i < list.size(); i++)
-							{
-								if (list.get(ran[i]).getGrammarQuestion() != null)
-								{
-									question.add(String.format(list.get(ran[i]).getGrammarQuestion()));
-									answer.add(String.format(list.get(ran[i]).getGrammarAnswer()));
-								}
-							}
-							break;
+						question.add("\n 예문 : " + list.get(i).getExercise() + "\r\n" + " 단어 : " + list.get(i).getWord());
+						answer.add(list.get(i).getTranslate());
+					}
+				}else if(form.equals("GRAMMAR")) {
+					if (list.get(i).getGrammarQuestion() != null)
+					{
+						question.add(list.get(i).getGrammarQuestion());
+						answer.add(list.get(i).getGrammarAnswer());
 					}
 				}
-				break;
-			case "CONCEPT":
-				{
-					List<ConceptVo> list = new ArrayList<ConceptVo>();
+			}
+		}else if(type.equals("CONCEPT")) {
+			List<ConceptVo> list = new ArrayList<ConceptVo>();
 
-					switch (subject)
+			for(String chapter : this.map.get(subject).getChapterList()) {
+				list.addAll((List<ConceptVo>)this.map.get(subject).getInfoMap().get(chapter));
+			}
+			Collections.shuffle(list);
+			
+			for (int i = 0; i < list.size(); i++) {
+				if(form.equals("INTERPRET")) {
+					question.add(list.get(i).getWord());
+					answer.add(list.get(i).getInterpret());
+				}else if(form.equals("INFERENCE")) {
+					question.add(list.get(i).getInterpret());
+					answer.add(list.get(i).getWord());
+				}else if(form.equals("RANDOM")) {
+					if(((int)(Math.random() * 10) % 2) == 1)
 					{
-						case "ENGINEER_INFORMATION_PROCESSING":
-							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll((List<ConceptVo>)this.map.get("ENGINEER_INFORMATION_PROCESSING").getInfoMap().get(Integer.toString(i)));
-							}
-							break;
-						case "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT":
-							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll((List<ConceptVo>)this.map.get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").getInfoMap().get(Integer.toString(i)));
-							}
-							break;
-						default:
-							for (int i = start_chapter; i < end_chapter; i++) {
-								list.addAll((List<ConceptVo>)this.map.get("ENGINEER_INFORMATION_PROCESSING").getInfoMap().get(Integer.toString(i)));
-							}
-							break;
+						question.add(list.get(i).getWord());
+						answer.add(list.get(i).getInterpret());
 					}
-
-					int[] ran = new int[list.size()];
-
-					for (int i = 0; i < list.size(); i++)
+					else
 					{
-						int cnt = 0;
-						ran[i] = rd.nextInt(list.size());
-
-						for (int j = 0; j < i; j++)
-							if (ran[j] == ran[i])
-								cnt++;
-
-						if (cnt != 0)
-							i--;
-					}
-
-					switch (form)
-					{
-						case "INTERPRET":
-							for (int i = 0; i < list.size(); i++)
-							{
-								question.add(String.format(list.get(ran[i]).getWord()));
-								answer.add(String.format(list.get(ran[i]).getInterpret()));
-							}
-							break;
-						case "INFERENCE":
-							for (int i = 0; i < list.size(); i++)
-							{
-								question.add(String.format(list.get(ran[i]).getInterpret()));
-								answer.add(String.format(list.get(ran[i]).getWord()));
-							}
-							break;
-						case "RANDOM":
-							for (int i = 0; i < list.size(); i++)
-							{
-								if (rd.nextInt(2) == 1)
-								{
-									question.add(String.format(list.get(ran[i]).getWord()));
-									answer.add(String.format(list.get(ran[i]).getInterpret()));
-								}
-								else
-								{
-									question.add(String.format(list.get(ran[i]).getInterpret()));
-									answer.add(String.format(list.get(ran[i]).getWord()));
-								}
-							}
-							break;
+						question.add(list.get(i).getInterpret());
+						answer.add(list.get(i).getWord());
 					}
 				}
-				break;
+			}
 		}
 	}
 }

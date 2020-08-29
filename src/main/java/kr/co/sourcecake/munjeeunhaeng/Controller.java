@@ -120,19 +120,19 @@ class Controller
 				switch (form)
 				{
 					case "WORDTOTRANSLATE":
-						pb.set_chapter_range_exam("TERM", SJ.getSubject(), 1, 10, "WORDTOTRANSLATE");
+						pb.setAllChapterExam("TERM", SJ.getSubject(), "WORDTOTRANSLATE");
 						break;
 					case "TRANSLATETOWORD":
-						pb.set_chapter_range_exam("TERM", SJ.getSubject(), 1, 10, "TRANSLATETOWORD");
+						pb.setAllChapterExam("TERM", SJ.getSubject(), "TRANSLATETOWORD");
 						break;
 					case "RANDOM":
-						pb.set_chapter_range_exam("TERM", SJ.getSubject(), 1, 10, "RANDOM");
+						pb.setAllChapterExam("TERM", SJ.getSubject(), "RANDOM");
 						break;
 					case "EXAMPLE_SENTENCE":
-						pb.set_chapter_range_exam("TERM", SJ.getSubject(), 1, 10, "EXAMPLE_SENTENCE");
+						pb.setAllChapterExam("TERM", SJ.getSubject(), "EXAMPLE_SENTENCE");
 						break;
 					case "GRAMMAR":
-						pb.set_chapter_range_exam("TERM", SJ.getSubject(), 1, 10, "GRAMMAR");
+						pb.setAllChapterExam("TERM", SJ.getSubject(), "GRAMMAR");
 						break;
 					default:
 						break;
@@ -211,16 +211,16 @@ class Controller
 				switch (form)
 				{
 					case "INTERPRET":
-						pb.set_chapter_range_exam("CONCEPT", SJ.getSubject(), 1, 10, "INTERPRET");
+						pb.setAllChapterExam("CONCEPT", SJ.getSubject(), "INTERPRET");
 						break;
 					case "INFERENCE":
-						pb.set_chapter_range_exam("CONCEPT", SJ.getSubject(), 1, 10, "INFERENCE");
+						pb.setAllChapterExam("CONCEPT", SJ.getSubject(), "INFERENCE");
 						break;
 					case "RANDOM":
-						pb.set_chapter_range_exam("CONCEPT", SJ.getSubject(), 1, 10, "RANDOM");
+						pb.setAllChapterExam("CONCEPT", SJ.getSubject(), "RANDOM");
 						break;
 					default:
-						pb.set_chapter_range_exam("CONCEPT", SJ.getSubject(), 1, 10, "INTERPRET");
+						pb.setAllChapterExam("CONCEPT", SJ.getSubject(), "INTERPRET");
 						break;
 				}
 
