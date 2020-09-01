@@ -86,25 +86,11 @@ public class QuestionBank
 		//정보관리기술사 개념 정보 불러오기
 		ProfessionalEngineerInformationManagement professionalEngineerInformationManagement = new ProfessionalEngineerInformationManagement("정보관리기술사", "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT");
 		professionalEngineerInformationManagement.setChapterList(conceptDao.selectChapterList("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT"));
-		
 		Map<String, List<ConceptVo>> professionalEngineerInformationManagementMap = new HashMap<String, List<ConceptVo>>();
-		List<Image> professionalEngineerInformationManagementQuestionImages = new ArrayList<Image>();
-		List<Image> professionalEngineerInformationManagementAnswerImages = new ArrayList<Image>();
-		
 		for(String chapter : professionalEngineerInformationManagement.getChapterList()) {
 			professionalEngineerInformationManagementMap.put(chapter, conceptDao.getList("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", chapter));
-			
-			for(int i=0; i<professionalEngineerInformationManagementMap.get(chapter).size(); i++) {
-				String question = professionalEngineerInformationManagementMap.get(chapter).get(i).getQuestion();
-				String answer = professionalEngineerInformationManagementMap.get(chapter).get(i).getAnswer();
-				
-				professionalEngineerInformationManagementQuestionImages.add(new ImageIcon(question).getImage());
-				professionalEngineerInformationManagementAnswerImages.add(new ImageIcon(answer).getImage());
-			}
 		}
 		professionalEngineerInformationManagement.setInfoMap(professionalEngineerInformationManagementMap);
-		professionalEngineerInformationManagement.setQuestionImages(professionalEngineerInformationManagementQuestionImages);
-		professionalEngineerInformationManagement.setAnswerImages(professionalEngineerInformationManagementAnswerImages);
 		map.put("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT", professionalEngineerInformationManagement);
 	}
 

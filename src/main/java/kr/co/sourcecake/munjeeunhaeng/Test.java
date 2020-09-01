@@ -233,8 +233,16 @@ public class Test
 						if(type.getSelectedItem().toString().equals("TERM")) {
 							question.append(con.termSolveStart(subject.getSelectedItem().toString(), chapter.getSelectedItem().toString(), form.getSelectedItem().toString()));
 						}else if(type.getSelectedItem().toString().equals("CONCEPT")){
-							question.append(con.conceptSolveStart(subject.getSelectedItem().toString(), chapter.getSelectedItem().toString(), form.getSelectedItem().toString()));
+							String imsi = con.conceptSolveStart(subject.getSelectedItem().toString(), chapter.getSelectedItem().toString(), form.getSelectedItem().toString());
 							
+							if(con.pb.conceptQuestion.get(con.count).getQuestion() != null) {
+								ConceptView dialog3 = new ConceptView(f, "개념문제 풀기");
+								dialog3.setQuestion(con.pb.conceptQuestion.get(con.count));
+								dialog3.setSize(720, 1000);
+								dialog3.setVisible(true);
+							}else {
+								question.append(imsi);
+							}
 						}
 					}
 				});
@@ -250,7 +258,7 @@ public class Test
 				{
 					public void actionPerformed(ActionEvent e)
 					{
-						if (type.getSelectedItem() == "TERM")
+						if (type.getSelectedItem().toString() == "TERM")
 						{
 							question.append(con.answerInput(type.getSelectedItem().toString(), input.getText()));
 							question.append(con.setQuestion(type.getSelectedItem().toString()));
@@ -266,8 +274,22 @@ public class Test
 							else
 							{
 								question.setText("");
-								question.append(con.setQuestion(type.getSelectedItem().toString()));
-								count = 0;
+								
+								if(con.count < con.pb.conceptQuestion.size()) {
+									if(con.pb.conceptQuestion.get(con.count).getQuestion() != null) {
+										ConceptView dialog3 = new ConceptView(f, "개념문제 풀기");
+										dialog3.setQuestion(con.pb.conceptQuestion.get(con.count));
+										dialog3.setSize(720, 1000);
+										dialog3.setVisible(true);
+										con.count++;
+										count = 1;
+									}else {
+										question.append(con.setQuestion(type.getSelectedItem().toString()));
+										count = 0;
+									}
+								}else {
+									question.setText("시험 종료");
+								}
 							}
 						}
 						
@@ -295,8 +317,22 @@ public class Test
 							else
 							{
 								question.setText("");
-								question.append(con.setQuestion(type.getSelectedItem().toString()));
-								count = 0;
+								
+								if(con.count < con.pb.conceptQuestion.size()) {
+									if(con.pb.conceptQuestion.get(con.count).getQuestion() != null) {
+										ConceptView dialog3 = new ConceptView(f, "개념문제 풀기");
+										dialog3.setQuestion(con.pb.conceptQuestion.get(con.count));
+										dialog3.setSize(720, 1000);
+										dialog3.setVisible(true);
+										con.count++;
+										count = 1;
+									}else {
+										question.append(con.setQuestion(type.getSelectedItem().toString()));
+										count = 0;
+									}
+								}else {
+									question.setText("시험 종료");
+								}
 							}
 						}
 						

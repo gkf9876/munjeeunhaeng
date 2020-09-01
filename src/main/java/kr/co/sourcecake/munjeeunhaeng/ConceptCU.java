@@ -43,6 +43,8 @@ public class ConceptCU extends JDialog implements ActionListener{
 	public ConceptCU(Frame frame, AppContext appContext, String name) {
 		this.conceptDao = appContext.conceptDao();
 		this.questionBank = appContext.questionBank();
+		this.setName(name);
+		this.setTitle(name);
 		this.setLayout(null);
 		
 		JLabel subjectName = new JLabel("과목");
@@ -136,7 +138,7 @@ public class ConceptCU extends JDialog implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == questionFileButton) {
 			JFileChooser dlg = new JFileChooser();
-			FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG Images", "jpg");
+			FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG Images", "jpg", "PNG");
 			dlg.setFileFilter(filter);
 			
 			int returnVal = dlg.showSaveDialog(null);
@@ -146,7 +148,7 @@ public class ConceptCU extends JDialog implements ActionListener{
 			}
 		}else if(e.getSource() == answerFileButton) {
 			JFileChooser dlg = new JFileChooser();
-			FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG Images", "jpg");
+			FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG Images", "jpg", "PNG");
 			dlg.setFileFilter(filter);
 			
 			int returnVal = dlg.showSaveDialog(null);
