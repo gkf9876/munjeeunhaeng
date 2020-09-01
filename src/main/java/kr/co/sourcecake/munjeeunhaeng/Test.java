@@ -240,6 +240,7 @@ public class Test
 								dialog3.setQuestion(con.pb.conceptQuestion.get(con.count));
 								dialog3.setSize(720, 1000);
 								dialog3.setVisible(true);
+								con.count++;
 							}else {
 								question.append(imsi);
 							}
