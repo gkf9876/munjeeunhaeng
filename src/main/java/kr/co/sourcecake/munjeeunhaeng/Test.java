@@ -55,7 +55,7 @@ public class Test
 		item2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dialog2.setSize(500, 300);
+				dialog2.setSize(500, 600);
 				dialog2.setVisible(true);
 			}
 		}); // 메뉴아이템에 Action 리스너 설정screenMenu.add(item);

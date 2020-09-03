@@ -1,10 +1,12 @@
 package kr.co.sourcecake.munjeeunhaeng;
 
 import java.awt.Frame;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -13,12 +15,15 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import kr.co.sourcecake.munjeeunhaeng.appcontext.AppContext;
@@ -33,12 +38,16 @@ public class ConceptCU extends JDialog implements ActionListener{
 	private JComboBox<String> subject;
 	private JComboBox<String> chapter;
 	
+	private JFileChooser dlg;
+	
 	private JLabel questionFileName;
 	private JLabel answerFileName;
 
 	private JButton questionFileButton;
 	private JButton answerFileButton;
 	private JButton dialogOkButton;
+	
+	private JLabel imageLabel = null;
 	
 	public ConceptCU(Frame frame, AppContext appContext, String name) {
 		this.conceptDao = appContext.conceptDao();
@@ -92,6 +101,10 @@ public class ConceptCU extends JDialog implements ActionListener{
 					}
 				});
 
+		dlg = new JFileChooser();
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG Images", "jpg", "PNG");
+		dlg.setFileFilter(filter);
+		
 		JLabel questionName = new JLabel("문제파일");
 		questionName.setSize(100, 40);
 		questionName.setLocation(20, 90);
@@ -125,10 +138,13 @@ public class ConceptCU extends JDialog implements ActionListener{
 		this.add(answerFileButton);
 		this.add(answerName);
 		this.add(answerFileName);
+
+		imageLabel = new JLabel("", SwingUtilities.CENTER);
+		this.add(imageLabel);
 		
 		dialogOkButton = new JButton("OK");
 		dialogOkButton.setSize(100, 20);
-		dialogOkButton.setLocation(350, 200);
+		dialogOkButton.setLocation(350, 400);
 		dialogOkButton.addActionListener(this);
 		
 		this.add(dialogOkButton);
@@ -137,24 +153,52 @@ public class ConceptCU extends JDialog implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == questionFileButton) {
-			JFileChooser dlg = new JFileChooser();
-			FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG Images", "jpg", "PNG");
-			dlg.setFileFilter(filter);
+			dlg.setCurrentDirectory(dlg.getCurrentDirectory());
 			
 			int returnVal = dlg.showSaveDialog(null);
 			if(returnVal == 0) {
 				File file = dlg.getSelectedFile();
 				questionFileName.setText(file.getPath());
+				
+				BufferedImage img;
+				try {
+					img = ImageIO.read(new File(file.getPath()));
+					float W = img.getWidth();
+					float H = img.getHeight();
+					float h = 200;
+					float w = W * h / H;
+					Image dimg = img.getScaledInstance((int)w, (int)h, Image.SCALE_SMOOTH);
+					ImageIcon imageIcon = new ImageIcon(dimg);
+					imageLabel.setBounds(50, 200, (int)w, (int)h);
+					imageLabel.setIcon(imageIcon);
+				} catch (IOException except) {
+					// TODO Auto-generated catch block
+					except.printStackTrace();
+				}
 			}
 		}else if(e.getSource() == answerFileButton) {
-			JFileChooser dlg = new JFileChooser();
-			FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG Images", "jpg", "PNG");
-			dlg.setFileFilter(filter);
+			dlg.setCurrentDirectory(dlg.getCurrentDirectory());
 			
 			int returnVal = dlg.showSaveDialog(null);
 			if(returnVal == 0) {
 				File file = dlg.getSelectedFile();
 				answerFileName.setText(file.getPath());
+				
+				BufferedImage img;
+				try {
+					img = ImageIO.read(new File(file.getPath()));
+					float W = img.getWidth();
+					float H = img.getHeight();
+					float h = 200;
+					float w = W * h / H;
+					Image dimg = img.getScaledInstance((int)w, (int)h, Image.SCALE_SMOOTH);
+					ImageIcon imageIcon = new ImageIcon(dimg);
+					imageLabel.setBounds(50, 200, (int)w, (int)h);
+					imageLabel.setIcon(imageIcon);
+				} catch (IOException except) {
+					// TODO Auto-generated catch block
+					except.printStackTrace();
+				}
 			}
 		}else if(e.getSource() == dialogOkButton) {
 			ConceptVo conceptVo = new ConceptVo();
