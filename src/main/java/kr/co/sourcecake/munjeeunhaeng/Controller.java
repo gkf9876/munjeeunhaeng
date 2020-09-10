@@ -58,10 +58,7 @@ class Controller
 			imsi += "\r\n";
 			
 			//개념의 경우 답 입력하자마자 문제와 답을 보여준다.
-			if (type == "CONCEPT")
-			{
-				String answer = pb.conceptQuestion.get(count - 1).getAnswer().replace("\\r\\n", "\r\n");
-				imsi += ("답 : " + answer + "\r\n");
+			if (type == "CONCEPT"){
 				imsi += "\r\n";
 			}
 
@@ -81,7 +78,7 @@ class Controller
 			}
 		}else if(type.equals("CONCEPT")) {
 			if (count < pb.conceptQuestion.size()){
-				if (pb.conceptQuestion.get(count).getQuestion() != "")
+				if (pb.conceptQuestion.get(count).getQuestion().length > 0)
 					imsi = String.format("(%d/%d) %s : \r\n", count + 1, pb.conceptQuestion.size(), pb.conceptQuestion.get(count).getQuestion());
 			}
 		}
@@ -127,7 +124,7 @@ class Controller
 
 		input = new String[pb.conceptQuestion.size()];
 
-		if (pb.conceptQuestion.size() > 0 && pb.conceptQuestion.get(0).getQuestion() != "")
+		if (pb.conceptQuestion.size() > 0 && pb.conceptQuestion.get(0).getQuestion().length > 0)
 			imsi = String.format("(%d/%d) %s : \r\n", 1, pb.conceptQuestion.size(), pb.conceptQuestion.get(0).getQuestion());
 
 		return imsi;

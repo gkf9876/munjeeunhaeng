@@ -29,8 +29,8 @@ public class ConceptDaoImpl implements ConceptDao{
 			conceptVo.setInterpret(rs.getString("INTERPRET"));
 			conceptVo.setSubject(rs.getString("SUBJECT"));
 			conceptVo.setChapter(rs.getString("CHAPTER"));
-			conceptVo.setQuestion(rs.getString("QUESTION"));
-			conceptVo.setAnswer(rs.getString("ANSWER"));
+			conceptVo.setQuestion(rs.getBytes("QUESTION"));
+			conceptVo.setAnswer(rs.getBytes("ANSWER"));
 			return conceptVo;
 		}
 	};

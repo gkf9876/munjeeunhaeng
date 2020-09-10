@@ -6,6 +6,7 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 
@@ -65,7 +66,8 @@ public class ConceptView extends JDialog implements ActionListener{
 			
 			BufferedImage img;
 			try {
-				img = ImageIO.read(new File(question.getAnswer()));
+				ByteArrayInputStream inputStream = new ByteArrayInputStream(question.getAnswer());
+				img = ImageIO.read(inputStream);
 				float W = img.getWidth();
 				float H = img.getHeight();
 				float w = 700;
@@ -96,7 +98,8 @@ public class ConceptView extends JDialog implements ActionListener{
 		
 		BufferedImage img;
 		try {
-			img = ImageIO.read(new File(question.getQuestion()));
+			ByteArrayInputStream inputStream = new ByteArrayInputStream(question.getQuestion());
+			img = ImageIO.read(inputStream);
 			float W = img.getWidth();
 			float H = img.getHeight();
 			float w = 700;

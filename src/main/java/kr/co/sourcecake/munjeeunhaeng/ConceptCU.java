@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -21,8 +22,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -39,6 +40,8 @@ public class ConceptCU extends JDialog implements ActionListener{
 	private JComboBox<String> chapter;
 	
 	private JFileChooser dlg;
+	
+	private JTextField word;
 	
 	private JLabel questionFileName;
 	private JLabel answerFileName;
@@ -74,36 +77,29 @@ public class ConceptCU extends JDialog implements ActionListener{
 		chapter = new JComboBox<String>();
 		chapter.setSize(150, 20);
 		chapter.setLocation(80, 60);
-		for(int i=0; i<appContext.questionBank().getMap().get("ENGINEER_INFORMATION_PROCESSING").getChapterList().size(); i++)
-		{
-			chapter.addItem((String)questionBank.getMap().get("ENGINEER_INFORMATION_PROCESSING").getChapterList().get(i));
+		for(int i=0; i<appContext.questionBank().getMap().get(subject.getItemAt(0)).getChapterList().size(); i++){
+			chapter.addItem((String)questionBank.getMap().get(subject.getItemAt(0)).getChapterList().get(i));
 		}
 		this.add(chapterName);
 		this.add(chapter);
 
-		subject.addItemListener(new ItemListener()
-				{
-					public void itemStateChanged(ItemEvent e)
-					{
-						switch (e.getItem().toString())
-						{
-							case "ENGINEER_INFORMATION_PROCESSING":
-								chapter.removeAllItems();
-								for(int i=0; i<questionBank.getMap().get("ENGINEER_INFORMATION_PROCESSING").getChapterList().size(); i++)
-									chapter.addItem((String)questionBank.getMap().get("ENGINEER_INFORMATION_PROCESSING").getChapterList().get(i));
-								break;
-							case "PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT":
-								chapter.removeAllItems();
-								for(int i=0; i<questionBank.getMap().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").getChapterList().size(); i++)
-									chapter.addItem((String)questionBank.getMap().get("PROFESSIONAL_ENGINEER_INFORMATION_MANAGEMENT").getChapterList().get(i));
-								break;
-						}
-					}
-				});
+		subject.addItemListener(new ItemListener(){
+				public void itemStateChanged(ItemEvent e){
+					chapter.removeAllItems();
+					
+					for(int i=0; i<questionBank.getMap().get(e.getItem().toString()).getChapterList().size(); i++)
+						chapter.addItem((String)questionBank.getMap().get(e.getItem().toString()).getChapterList().get(i));
+				}
+			});
 
 		dlg = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG Images", "jpg", "PNG");
 		dlg.setFileFilter(filter);
+		
+		word = new JTextField();
+		word.setSize(150, 40);
+		word.setLocation(300, 50);
+		this.add(word);
 		
 		JLabel questionName = new JLabel("문제파일");
 		questionName.setSize(100, 40);
@@ -210,18 +206,20 @@ public class ConceptCU extends JDialog implements ActionListener{
 				Calendar time = Calendar.getInstance();
 				String formatTime = format.format(time.getTime());
 				
-				File copyQuestionFile = new File(formatTime + "_Q");
 				try {
 					FileInputStream questionInputStream = new FileInputStream(questionFile);
-					FileOutputStream questionOutputStream = new FileOutputStream(copyQuestionFile);
+					ByteArrayOutputStream questionOutputStream = new ByteArrayOutputStream();
 					byte[] buffer = new byte[1024];
 					
 					int length;
 					while ((length = questionInputStream.read(buffer)) > 0){
 						questionOutputStream.write(buffer, 0, length);
 					}
+					conceptVo.setQuestion(questionOutputStream.toByteArray());
+					
 					questionInputStream.close();
 					questionOutputStream.close();
+					
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -229,7 +227,6 @@ public class ConceptCU extends JDialog implements ActionListener{
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				conceptVo.setQuestion(formatTime + "_Q");
 			}
 			
 			//답안 파일 복사
@@ -240,16 +237,17 @@ public class ConceptCU extends JDialog implements ActionListener{
 				Calendar time = Calendar.getInstance();
 				String formatTime = format.format(time.getTime());
 				
-				File copyAnswerFile = new File(formatTime + "_A");
 				try {
 					FileInputStream answerInputStream = new FileInputStream(answerFile);
-					FileOutputStream answerOutputStream = new FileOutputStream(copyAnswerFile);
+					ByteArrayOutputStream answerOutputStream = new ByteArrayOutputStream();
 					byte[] buffer = new byte[1024];
 					
 					int length;
 					while ((length = answerInputStream.read(buffer)) > 0){
 						answerOutputStream.write(buffer, 0, length);
 					}
+					conceptVo.setAnswer(answerOutputStream.toByteArray());
+					
 					answerInputStream.close();
 					answerOutputStream.close();
 				} catch (FileNotFoundException e1) {
@@ -259,9 +257,9 @@ public class ConceptCU extends JDialog implements ActionListener{
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				conceptVo.setAnswer(formatTime + "_A");
 			}
 			
+			conceptVo.setWord(word.getText());
 			conceptVo.setSubject(subject.getSelectedItem().toString());
 			conceptVo.setChapter(chapter.getSelectedItem().toString());
 			this.conceptDao.add(conceptVo);

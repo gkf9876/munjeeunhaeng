@@ -6,8 +6,8 @@ public class ConceptVo {
 	private String interpret;
 	private String subject;
 	private String chapter;
-	private String question;
-	private String answer;
+	private byte[] question;
+	private byte[] answer;
 	
 	public int getIdx() {
 		return idx;
@@ -39,16 +39,16 @@ public class ConceptVo {
 	public void setChapter(String chapter) {
 		this.chapter = chapter;
 	}
-	public String getQuestion() {
+	public byte[] getQuestion() {
 		return question;
 	}
-	public void setQuestion(String question) {
+	public void setQuestion(byte[] question) {
 		this.question = question;
 	}
-	public String getAnswer() {
+	public byte[] getAnswer() {
 		return answer;
 	}
-	public void setAnswer(String answer) {
+	public void setAnswer(byte[] answer) {
 		this.answer = answer;
 	}
 }

@@ -136,8 +136,8 @@ public class QuestionBank
 					conceptQuestion.add(list.get(i));
 				}else if(form.equals("INFERENCE")) {
 					ConceptVo concept = list.get(i);
-					String question = concept.getQuestion();
-					String answer = concept.getAnswer();
+					byte[] question = concept.getQuestion();
+					byte[] answer = concept.getAnswer();
 					concept.setQuestion(answer);
 					concept.setAnswer(question);
 					conceptQuestion.add(concept);
@@ -146,8 +146,8 @@ public class QuestionBank
 						conceptQuestion.add(list.get(i));
 					}else{
 						ConceptVo concept = list.get(i);
-						String question = concept.getQuestion();
-						String answer = concept.getAnswer();
+						byte[] question = concept.getQuestion();
+						byte[] answer = concept.getAnswer();
 						concept.setQuestion(answer);
 						concept.setAnswer(question);
 						conceptQuestion.add(concept);
@@ -207,8 +207,8 @@ public class QuestionBank
 					conceptQuestion.add(list.get(i));
 				}else if(form.equals("INFERENCE")) {
 					ConceptVo concept = list.get(i);
-					String question = concept.getQuestion();
-					String answer = concept.getAnswer();
+					byte[] question = concept.getQuestion();
+					byte[] answer = concept.getAnswer();
 					concept.setQuestion(answer);
 					concept.setAnswer(question);
 					conceptQuestion.add(concept);
@@ -217,8 +217,8 @@ public class QuestionBank
 						conceptQuestion.add(list.get(i));
 					}else{
 						ConceptVo concept = list.get(i);
-						String question = concept.getQuestion();
-						String answer = concept.getAnswer();
+						byte[] question = concept.getQuestion();
+						byte[] answer = concept.getAnswer();
 						concept.setQuestion(answer);
 						concept.setAnswer(question);
 						conceptQuestion.add(concept);
