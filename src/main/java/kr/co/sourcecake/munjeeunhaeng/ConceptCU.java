@@ -23,8 +23,10 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import kr.co.sourcecake.munjeeunhaeng.appcontext.AppContext;
@@ -96,44 +98,56 @@ public class ConceptCU extends JDialog implements ActionListener{
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG Images", "jpg", "PNG");
 		dlg.setFileFilter(filter);
 		
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(null, "문제", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setToolTipText("");
+		panel.setLayout(null);
+		panel.setBounds(10, 100, 465, 200);
+		this.add(panel);
+		
+		JLabel wordName = new JLabel("이름");
+		wordName.setSize(100, 40);
+		wordName.setLocation(20, 10);
+		
 		word = new JTextField();
-		word.setSize(150, 40);
-		word.setLocation(300, 50);
-		this.add(word);
+		word.setSize(350, 25);
+		word.setLocation(80, 20);
+		panel.add(wordName);
+		panel.add(word);
 		
 		JLabel questionName = new JLabel("문제파일");
 		questionName.setSize(100, 40);
-		questionName.setLocation(20, 90);
+		questionName.setLocation(20, 50);
 
 		questionFileName = new JLabel("");
 		questionFileName.setSize(250, 40);
-		questionFileName.setLocation(80, 90);
+		questionFileName.setLocation(80, 50);
 		
 		questionFileButton = new JButton("찾아보기");
 		questionFileButton.setSize(100, 20);
-		questionFileButton.setLocation(350, 100);
+		questionFileButton.setLocation(350, 60);
 		questionFileButton.addActionListener(this);
 		
-		this.add(questionFileButton);
-		this.add(questionName);
-		this.add(questionFileName);
+		panel.add(questionFileButton);
+		panel.add(questionName);
+		panel.add(questionFileName);
 
 		JLabel answerName = new JLabel("답안파일");
 		answerName.setSize(100, 40);
-		answerName.setLocation(20, 130);
+		answerName.setLocation(20, 90);
 
 		answerFileName = new JLabel("");
 		answerFileName.setSize(250, 40);
-		answerFileName.setLocation(80, 130);
+		answerFileName.setLocation(80, 90);
 		
 		answerFileButton = new JButton("찾아보기");
 		answerFileButton.setSize(100, 20);
-		answerFileButton.setLocation(350, 140);
+		answerFileButton.setLocation(350, 100);
 		answerFileButton.addActionListener(this);
 		
-		this.add(answerFileButton);
-		this.add(answerName);
-		this.add(answerFileName);
+		panel.add(answerFileButton);
+		panel.add(answerName);
+		panel.add(answerFileName);
 
 		imageLabel = new JLabel("", SwingUtilities.CENTER);
 		this.add(imageLabel);
