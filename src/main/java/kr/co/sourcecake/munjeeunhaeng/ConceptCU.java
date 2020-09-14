@@ -102,7 +102,7 @@ public class ConceptCU extends JDialog implements ActionListener{
 		panel.setBorder(new TitledBorder(null, "문제", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel.setToolTipText("");
 		panel.setLayout(null);
-		panel.setBounds(10, 100, 465, 200);
+		panel.setBounds(10, 100, 465, 140);
 		this.add(panel);
 		
 		JLabel wordName = new JLabel("이름");
@@ -154,7 +154,7 @@ public class ConceptCU extends JDialog implements ActionListener{
 		
 		dialogOkButton = new JButton("OK");
 		dialogOkButton.setSize(100, 20);
-		dialogOkButton.setLocation(350, 400);
+		dialogOkButton.setLocation(350, 520);
 		dialogOkButton.addActionListener(this);
 		
 		this.add(dialogOkButton);
@@ -179,7 +179,7 @@ public class ConceptCU extends JDialog implements ActionListener{
 					float w = W * h / H;
 					Image dimg = img.getScaledInstance((int)w, (int)h, Image.SCALE_SMOOTH);
 					ImageIcon imageIcon = new ImageIcon(dimg);
-					imageLabel.setBounds(50, 200, (int)w, (int)h);
+					imageLabel.setBounds(10, 300, (int)w, (int)h);
 					imageLabel.setIcon(imageIcon);
 				} catch (IOException except) {
 					// TODO Auto-generated catch block
@@ -203,7 +203,7 @@ public class ConceptCU extends JDialog implements ActionListener{
 					float w = W * h / H;
 					Image dimg = img.getScaledInstance((int)w, (int)h, Image.SCALE_SMOOTH);
 					ImageIcon imageIcon = new ImageIcon(dimg);
-					imageLabel.setBounds(50, 200, (int)w, (int)h);
+					imageLabel.setBounds(10, 300, (int)w, (int)h);
 					imageLabel.setIcon(imageIcon);
 				} catch (IOException except) {
 					// TODO Auto-generated catch block
